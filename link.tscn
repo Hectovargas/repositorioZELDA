@@ -1,6 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://wx775h6gysli"]
+[gd_scene load_steps=48 format=3 uid="uid://wx775h6gysli"]
 
 [ext_resource type="Script" path="res://link.gd" id="1_h4jya"]
+[ext_resource type="Texture2D" uid="uid://bcax86bfiwoo4" path="res://RECURSO DE VIDEO E IMAGENES/Sprites/Link1.png" id="4_dsthb"]
 [ext_resource type="Texture2D" uid="uid://dti2wldnuhc5j" path="res://Sprites/Link_Misc.png" id="4_lh425"]
 [ext_resource type="Texture2D" uid="uid://bguyexyuq0yiw" path="res://elegirBando/letreros&Espada/pixil-frame-0 (7).png" id="4_oy5kl"]
 [ext_resource type="Texture2D" uid="uid://bcax86bfiwoo4" path="res://Sprites/Link1.png" id="4_w3b4u"]
@@ -128,6 +129,14 @@ region = Rect2(88, 120, 22, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0ttn"]
 atlas = ExtResource("4_lh425")
 region = Rect2(120, 120, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ay1"]
+atlas = ExtResource("4_dsthb")
+region = Rect2(29, 150, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0la4"]
+atlas = ExtResource("4_dsthb")
+region = Rect2(58, 150, 29, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fus4l"]
 atlas = ExtResource("4_w3b4u")
@@ -289,6 +298,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ay1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0la4")
+}],
+"loop": true,
+"name": &"disparoflecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fus4l")
 }],
 "loop": true,
@@ -336,7 +356,7 @@ script = ExtResource("1_h4jya")
 z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_o2v6d")
-animation = &"Attack_Right"
+animation = &"disparoflecha"
 autoplay = "WalkDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -438,3 +458,5 @@ z_index = 3
 position = Vector2(1, -16)
 scale = Vector2(1.0625, 1)
 texture = ExtResource("9_78myw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

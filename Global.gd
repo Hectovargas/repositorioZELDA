@@ -21,3 +21,4 @@ var nacionalista = false
 var obtenciongema = false
 var espadahabilitada = false
 var attacking = false
+var flechando = false
