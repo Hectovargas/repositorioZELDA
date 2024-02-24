@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://deaehg233oxjp"
+path="res://.godot/imported/2 (frfr) (17).mp3-7feb890633ad3cc11afe326609c2cb1f.mp3str"
+
+[deps]
+
+source_file="res://lvl 1/2 (frfr) (17).mp3"
+dest_files=["res://.godot/imported/2 (frfr) (17).mp3-7feb890633ad3cc11afe326609c2cb1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

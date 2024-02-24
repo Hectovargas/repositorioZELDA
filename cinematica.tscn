@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://bb14ivh8cwvg5"]
+
+[ext_resource type="Script" path="res://Cinematica.gd" id="1_qnaag"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsolp"]
+font_size = 12
+
+[sub_resource type="Animation" id="Animation_rqwxd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2h1dt"]
+resource_name = "type"
+length = 11.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdmff"]
+_data = {
+"RESET": SubResource("Animation_rqwxd"),
+"type": SubResource("Animation_2h1dt")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_d2fdd"]
+font_names = PackedStringArray("Calibri")
+
+[sub_resource type="LabelSettings" id="LabelSettings_55nqp"]
+font = SubResource("SystemFont_d2fdd")
+font_size = 22
+font_color = Color(0.45098, 0.45098, 0.45098, 1)
+
+[node name="Cinematica" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qnaag")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Image" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 30.0
+scale = Vector2(28.84, 16.24)
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -4.0
+offset_top = 480.0
+offset_right = 36.0
+offset_bottom = 520.0
+scale = Vector2(29.12, 4.2)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 494.0
+offset_right = 47.0
+offset_bottom = 517.0
+scale = Vector2(1.84434, 2.03228)
+text = "zcxzczcxcz"
+label_settings = SubResource("LabelSettings_bsolp")
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_sdmff")
+}
+
+[node name="audios" type="AudioStreamPlayer" parent="CanvasLayer"]
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 919.0
+offset_top = 624.0
+offset_right = 1149.0
+offset_bottom = 658.0
+text = "pulse ENTER para skipear"
+label_settings = SubResource("LabelSettings_55nqp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]

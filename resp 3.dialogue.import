@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://psfxdnilr286"
+path="res://.godot/imported/resp 3.dialogue-37cb0e6281f1ead1804d5ba426392946.tres"
+
+[deps]
+
+source_file="res://resp 3.dialogue"
+dest_files=["res://.godot/imported/resp 3.dialogue-37cb0e6281f1ead1804d5ba426392946.tres"]
+
+[params]
+
+defaults=true

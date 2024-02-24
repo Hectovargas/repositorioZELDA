@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://couqjgidimocy"
+path="res://.godot/imported/instrucciones laberinto.dialogue-fa9fb24ef397b44dc8acc5967251295d.tres"
+
+[deps]
+
+source_file="res://instrucciones laberinto.dialogue"
+dest_files=["res://.godot/imported/instrucciones laberinto.dialogue-fa9fb24ef397b44dc8acc5967251295d.tres"]
+
+[params]
+
+defaults=true

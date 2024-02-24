@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddchh7wrpadyj"
+path="res://.godot/imported/3 (frfr) (14).mp3-5306c2bd1c7978644be49d8b9d93c5e9.mp3str"
+
+[deps]
+
+source_file="res://lvl 1/3 (frfr) (14).mp3"
+dest_files=["res://.godot/imported/3 (frfr) (14).mp3-5306c2bd1c7978644be49d8b9d93c5e9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://178khy1lab4m"
+path="res://.godot/imported/no puede salir.dialogue-a78be0c42b0644a80015f14096c4db64.tres"
+
+[deps]
+
+source_file="res://no puede salir.dialogue"
+dest_files=["res://.godot/imported/no puede salir.dialogue-a78be0c42b0644a80015f14096c4db64.tres"]
+
+[params]
+
+defaults=true

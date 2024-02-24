@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dwuhmxm7fomk"
+path="res://.godot/imported/corazonObtenido.dialogue-2c5547ad5fc3dca728cfc3c4bb01bdb4.tres"
+
+[deps]
+
+source_file="res://corazonObtenido.dialogue"
+dest_files=["res://.godot/imported/corazonObtenido.dialogue-2c5547ad5fc3dca728cfc3c4bb01bdb4.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://oh6jfoly41sf"
+path="res://.godot/imported/dialogo union nacionalista.dialogue-58d60b483306c2d79b6b2ea65102adcd.tres"
+
+[deps]
+
+source_file="res://dialogo union nacionalista.dialogue"
+dest_files=["res://.godot/imported/dialogo union nacionalista.dialogue-58d60b483306c2d79b6b2ea65102adcd.tres"]
+
+[params]
+
+defaults=true

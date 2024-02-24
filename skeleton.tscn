@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqul2nuvo1n1c"]
+
+[ext_resource type="Texture2D" uid="uid://bfp65ipf5iohy" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_cjw25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c4t1"]
+atlas = ExtResource("1_cjw25")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wfq2"]
+atlas = ExtResource("1_cjw25")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y12mr"]
+atlas = ExtResource("1_cjw25")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1u8u"]
+atlas = ExtResource("1_cjw25")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trkcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c4t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wfq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y12mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1u8u")
+}],
+"loop": true,
+"name": &"idle_Skeleton",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6bxha"]
+
+[node name="skeleton" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_trkcg")
+animation = &"idle_Skeleton"
+autoplay = "idle_Skeleton"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_6bxha")

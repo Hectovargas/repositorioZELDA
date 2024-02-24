@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c6g452qtlfq60"
+path="res://.godot/imported/dialogo bandosss.dialogue-9299b5e9339cdee408d6114c87a63676.tres"
+
+[deps]
+
+source_file="res://dialogo bandosss.dialogue"
+dest_files=["res://.godot/imported/dialogo bandosss.dialogue-9299b5e9339cdee408d6114c87a63676.tres"]
+
+[params]
+
+defaults=true

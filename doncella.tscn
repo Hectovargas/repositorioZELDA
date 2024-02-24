@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bevy8a5w4axi8"]
+
+[ext_resource type="Script" path="res://doncella.gd" id="1_kea61"]
+[ext_resource type="Texture2D" uid="uid://bxktaf0peuy12" path="res://Sprites/Maidens.png" id="1_w1nd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkos6"]
+atlas = ExtResource("1_w1nd5")
+region = Rect2(0, 275, 27, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67uvx"]
+atlas = ExtResource("1_w1nd5")
+region = Rect2(59, 275, 27, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsl8t"]
+atlas = ExtResource("1_w1nd5")
+region = Rect2(86, 275, 27, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loo17"]
+atlas = ExtResource("1_w1nd5")
+region = Rect2(248, 277, 26, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8se2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkos6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67uvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsl8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loo17")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26gd8"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6wrl"]
+radius = 20.0998
+
+[node name="Doncella" type="CharacterBody2D"]
+script = ExtResource("1_kea61")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h8se2")
+autoplay = "default"
+frame_progress = 0.766708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_26gd8")
+
+[node name="territorio" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="territorio"]
+shape = SubResource("CircleShape2D_d6wrl")
+
+[connection signal="body_entered" from="territorio" to="." method="_on_territorio_body_entered"]

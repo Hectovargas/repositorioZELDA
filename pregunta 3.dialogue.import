@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ciluext16l0xc"
+path="res://.godot/imported/pregunta 3.dialogue-cc9af0f26eea6588318249ab1f154a75.tres"
+
+[deps]
+
+source_file="res://pregunta 3.dialogue"
+dest_files=["res://.godot/imported/pregunta 3.dialogue-cc9af0f26eea6588318249ab1f154a75.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://co3taye775xyi"]
+
+[ext_resource type="Script" path="res://stalfos_spawn.gd" id="1_yu7ks"]
+
+[node name="StalfosSpawn" type="Node2D"]
+script = ExtResource("1_yu7ks")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(294, -35)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(442, -31)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(618, -26)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(757, -25)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://obr22geqa3bn"
+path="res://.godot/imported/question5.dialogue-ff000e8ff29de23a605aa364d66b34d1.tres"
+
+[deps]
+
+source_file="res://artMinigame/Dialogues_Art_MiniGame/questions/question5.dialogue"
+dest_files=["res://.godot/imported/question5.dialogue-ff000e8ff29de23a605aa364d66b34d1.tres"]
+
+[params]
+
+defaults=true

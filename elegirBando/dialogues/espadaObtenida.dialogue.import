@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://du53pi3gb0sku"
+path="res://.godot/imported/espadaObtenida.dialogue-e9a80d553c7dba9c5bb7471112e727e2.tres"
+
+[deps]
+
+source_file="res://elegirBando/dialogues/espadaObtenida.dialogue"
+dest_files=["res://.godot/imported/espadaObtenida.dialogue-e9a80d553c7dba9c5bb7471112e727e2.tres"]
+
+[params]
+
+defaults=true

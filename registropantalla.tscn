@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://ciiup83uaq4ah"]
+
+[ext_resource type="Script" path="res://ACCEDER.gd" id="1_k03iv"]
+[ext_resource type="Texture2D" uid="uid://bx2atkp2s4sjt" path="res://fondoopaco.png" id="1_yl1gg"]
+[ext_resource type="Texture2D" uid="uid://nsi7j8siorsv" path="res://RECURSO DE VIDEO E IMAGENES/Large Buttons/pixil-frame-0 (4).png" id="3_31ow1"]
+[ext_resource type="Texture2D" uid="uid://cmhxm7u64cm6b" path="res://RECURSO DE VIDEO E IMAGENES/Large Buttons/pixil-frame-0 (5).png" id="4_rmoxn"]
+[ext_resource type="Texture2D" uid="uid://d2yjk2i08kilm" path="res://RECURSO DE VIDEO E IMAGENES/Large Buttons/pixil-frame-0 (6).png" id="5_7q8tn"]
+[ext_resource type="Texture2D" uid="uid://cgfabvmhfq10n" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (10).png" id="7_jqwbd"]
+[ext_resource type="Texture2D" uid="uid://t1hubrnat15u" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (12).png" id="8_phb2c"]
+[ext_resource type="Texture2D" uid="uid://bpha7behckwbi" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (11).png" id="9_a57nt"]
+
+[sub_resource type="SystemFont" id="SystemFont_2w8hu"]
+font_names = PackedStringArray("Segoe UI")
+
+[sub_resource type="LabelSettings" id="LabelSettings_b2s4x"]
+font = SubResource("SystemFont_2w8hu")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 15
+outline_color = Color(0.894118, 0, 0.898039, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_25l11"]
+font_names = PackedStringArray("Segoe UI")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vcyq"]
+font = SubResource("SystemFont_25l11")
+font_size = 40
+font_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+outline_size = 15
+outline_color = Color(0.772549, 0, 0.776471, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_c1swq"]
+font_names = PackedStringArray("Tahoma")
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3qfx"]
+font = SubResource("SystemFont_c1swq")
+font_size = 64
+font_color = Color(0.0196078, 0.0196078, 0, 1)
+outline_size = 23
+outline_color = Color(0.184314, 0.494118, 1, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_hhi37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5fdpw"]
+font = SubResource("SystemFont_hhi37")
+font_size = 22
+font_color = Color(0.00784314, 1, 0.313726, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k03iv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 653.0
+texture = ExtResource("1_yl1gg")
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.232
+anchor_bottom = 0.794
+offset_left = 295.0
+offset_top = 357.0
+offset_right = 260.128
+offset_bottom = -106.482
+text = "Contraseña:"
+label_settings = SubResource("LabelSettings_b2s4x")
+
+[node name="LineEdit" type="LineEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 252.0
+offset_right = 748.0
+offset_bottom = 283.0
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 235.0
+offset_right = 531.0
+offset_bottom = 290.0
+text = "Usuario:"
+label_settings = SubResource("LabelSettings_8vcyq")
+
+[node name="LineEdit2" type="LineEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 379.0
+offset_right = 752.0
+offset_bottom = 410.0
+
+[node name="Label3" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.34
+anchor_bottom = 0.28
+offset_left = 496.0
+offset_top = 55.0
+offset_right = 361.36
+offset_bottom = -39.84
+text = "Registro"
+label_settings = SubResource("LabelSettings_b3qfx")
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 497.0
+offset_right = 756.0
+offset_bottom = 625.0
+texture_normal = ExtResource("3_31ow1")
+texture_pressed = ExtResource("4_rmoxn")
+texture_hover = ExtResource("5_7q8tn")
+
+[node name="TextureButton2" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 530.0
+offset_right = 247.0
+offset_bottom = 621.0
+texture_normal = ExtResource("7_jqwbd")
+texture_pressed = ExtResource("8_phb2c")
+texture_hover = ExtResource("9_a57nt")
+
+[node name="Label4" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 448.0
+offset_right = 749.0
+offset_bottom = 490.0
+label_settings = SubResource("LabelSettings_5fdpw")
+
+[connection signal="pressed" from="NinePatchRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]

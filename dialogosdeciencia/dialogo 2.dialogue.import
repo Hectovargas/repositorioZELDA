@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://byacifp1oi8us"
+path="res://.godot/imported/dialogo 2.dialogue-bcbef7bb91a1a38438ecfb18c40d0066.tres"
+
+[deps]
+
+source_file="res://dialogosdeciencia/dialogo 2.dialogue"
+dest_files=["res://.godot/imported/dialogo 2.dialogue-bcbef7bb91a1a38438ecfb18c40d0066.tres"]
+
+[params]
+
+defaults=true

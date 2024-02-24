@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://ff7830xeonh5"]
+
+[ext_resource type="VideoStream" path="res://Fondo-de-Pantalla-Animado-Hero-de-The-Legend-of-Zelda-_-en-Movimiento-_4K_-_HD_-_2_.ogv" id="1_44og6"]
+[ext_resource type="Script" path="res://registro.gd" id="1_wh8aj"]
+[ext_resource type="Texture2D" uid="uid://c5ng4uwqhevuh" path="res://RECURSO DE VIDEO E IMAGENES/Square Buttons/pixil-frame-0 (1).png" id="2_bsb07"]
+[ext_resource type="Texture2D" uid="uid://r8ft0gc5ryq1" path="res://RECURSO DE VIDEO E IMAGENES/Square Buttons/pixil-frame-0 (3).png" id="3_qykgk"]
+[ext_resource type="Texture2D" uid="uid://bgf8iw4ylptnl" path="res://RECURSO DE VIDEO E IMAGENES/Square Buttons/pixil-frame-0 (2).png" id="4_eo0io"]
+
+[sub_resource type="SystemFont" id="SystemFont_uii42"]
+font_names = PackedStringArray("Rockwell")
+font_weight = 975
+font_stretch = 125
+msdf_pixel_range = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvsmj"]
+font = SubResource("SystemFont_uii42")
+font_size = 54
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.847059, 1, 0.117647, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Registro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wh8aj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("1_44og6")
+autoplay = true
+loop = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoStreamPlayer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.047
+anchor_bottom = 0.047
+offset_left = 74.0
+offset_top = 41.638
+offset_right = 1124.0
+offset_bottom = 620.638
+
+[node name="titulo" type="Label" parent="VideoStreamPlayer/VBoxContainer"]
+layout_mode = 2
+text = "GamIFICacion"
+label_settings = SubResource("LabelSettings_rvsmj")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VideoStreamPlayer"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 315.0
+offset_right = 696.0
+offset_bottom = 418.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VideoStreamPlayer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("4_eo0io")
+texture_pressed = ExtResource("3_qykgk")
+texture_hover = ExtResource("2_bsb07")
+
+[connection signal="pressed" from="VideoStreamPlayer/VBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]

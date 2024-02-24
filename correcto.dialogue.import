@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dpfxsouwsbokg"
+path="res://.godot/imported/correcto.dialogue-0f6fd74992074f7deb0c7b7b41db9d94.tres"
+
+[deps]
+
+source_file="res://correcto.dialogue"
+dest_files=["res://.godot/imported/correcto.dialogue-0f6fd74992074f7deb0c7b7b41db9d94.tres"]
+
+[params]
+
+defaults=true

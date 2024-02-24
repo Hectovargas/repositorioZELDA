@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bs6fyx5pc2fkt"
+path="res://.godot/imported/instrucciones ciencia.dialogue-5e15600daa6433323a5d2a3d00b3e26d.tres"
+
+[deps]
+
+source_file="res://instrucciones ciencia.dialogue"
+dest_files=["res://.godot/imported/instrucciones ciencia.dialogue-5e15600daa6433323a5d2a3d00b3e26d.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://djd1k6dwn2nym"]
+
+[ext_resource type="Texture2D" uid="uid://drcrstvq1phdy" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Shaman/Idle/Idle-Sheet.png" id="1_6an5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftlqb"]
+atlas = ExtResource("1_6an5c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp4wx"]
+atlas = ExtResource("1_6an5c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtwwj"]
+atlas = ExtResource("1_6an5c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p5ln"]
+atlas = ExtResource("1_6an5c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6r8o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftlqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp4wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtwwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p5ln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r42u8"]
+
+[node name="orc1_3" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6r8o")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_r42u8")

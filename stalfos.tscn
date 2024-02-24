@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dntnjah2tke8h"]
+
+[ext_resource type="Texture2D" uid="uid://bf66hqi6ikp4c" path="res://Sprites/StalfosPolitica.png" id="1_rkjss"]
+[ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://Sprites/Stalfos.png" id="1_x0bap"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqsn"]
+atlas = ExtResource("1_x0bap")
+region = Rect2(24, 324, 24, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i33ct"]
+atlas = ExtResource("1_x0bap")
+region = Rect2(48, 324, 24, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhtqi"]
+atlas = ExtResource("1_x0bap")
+region = Rect2(72, 324, 24, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4fsv"]
+atlas = ExtResource("1_rkjss")
+region = Rect2(0, 0, 31, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0asa"]
+atlas = ExtResource("1_rkjss")
+region = Rect2(31, 0, 31, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd11f"]
+atlas = ExtResource("1_rkjss")
+region = Rect2(62, 0, 31, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb1ur"]
+atlas = ExtResource("1_rkjss")
+region = Rect2(93, 0, 31, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3n7m"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i33ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhtqi")
+}],
+"loop": false,
+"name": &"dead!",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4fsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0asa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd11f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb1ur")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjcqp"]
+radius = 12.0
+
+[node name="Stalfos" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+sprite_frames = SubResource("SpriteFrames_v3n7m")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bjcqp")

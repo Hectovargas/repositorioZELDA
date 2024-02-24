@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://3uuulb2lmagn"
+path="res://.godot/imported/resp preg 1.dialogue-e9c86196e42b140e1db28d9d3e90251f.tres"
+
+[deps]
+
+source_file="res://resp preg 1.dialogue"
+dest_files=["res://.godot/imported/resp preg 1.dialogue-e9c86196e42b140e1db28d9d3e90251f.tres"]
+
+[params]
+
+defaults=true

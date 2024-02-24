@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ckts8g6wlrq1l"
+path="res://.godot/imported/pregunta 1 laberinto.dialogue-acdb14ba6cc4811af0b68757d991e5e0.tres"
+
+[deps]
+
+source_file="res://pregunta 1 laberinto.dialogue"
+dest_files=["res://.godot/imported/pregunta 1 laberinto.dialogue-acdb14ba6cc4811af0b68757d991e5e0.tres"]
+
+[params]
+
+defaults=true
