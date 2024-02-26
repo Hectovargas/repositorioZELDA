@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ch44i1gkn3yrj" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Stone Ground.png" id="8_ksnp1"]
 [ext_resource type="Texture2D" uid="uid://dv5b284yq0kdf" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Wall.png" id="9_1q7fh"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="13_re0rc"]
-[ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://RECURSO DE VIDEO E IMAGENES/Sprites/Stalfos.png" id="13_rryav"]
+[ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://Sprites/Stalfos.png" id="13_rryav"]
 [ext_resource type="Script" path="res://CharacterBody2D2.gd" id="15_psv2p"]
 [ext_resource type="Script" path="res://CharacterBody2D3.gd" id="16_btuuq"]
 [ext_resource type="Script" path="res://CharacterBody2D4.gd" id="17_dwqxu"]

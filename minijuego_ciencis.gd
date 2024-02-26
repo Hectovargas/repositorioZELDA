@@ -19,8 +19,9 @@ var pescados = 0
 var fallos = 0
 var fallosleves = 0
 var minNumber := 0.0
-var maxNumber := 1
+var maxNumber := 0.6
 var num = 0
+var extraerpez = false
 var rng := RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,23 +29,20 @@ func _ready():
 	$AreaDeSalida/AnimatedSprite2D.play("default")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		$Jugador/Sprite2D3/Label.set_text(str(fallosleves))
+		$Jugador/nopescados/Label.set_text(str(fallosleves))
 		if(valor == false && wincondition==false):
 			if( fallos == 1 ):
 				$TileMap/AnimatedSprite2D.show()
 				$TileMap/AnimatedSprite2D.play("1")
-				maxNumber = 1.4
 			if( fallos == 2 ):
 				$TileMap/AnimatedSprite2D.play("2")
-				maxNumber = 1.5
 			if( fallos >= 3 ):
 				$TileMap/AnimatedSprite2D.play("3")
-				maxNumber = 2
-			$Jugador/Sprite2D/ProgressBar.value = 40
+			$Jugador/tabladepesca/ProgressBar.value = 40
 			valor = true
-		$Jugador/Sprite2D2/Label.set_text(str(pescados))
+		$Jugador/pescados/Label.set_text(str(pescados))
 
-		if $Jugador.position.x > 214 && $Jugador.position.y > 375 && $Jugador.position.x < 380 && $Jugador.position.y < 400 && wincondition==false:
+		if $Jugador.position.x > 214 && $Jugador.position.y > 375 && $Jugador.position.x < 380 && $Jugador.position.y < 400 && wincondition==false && extraerpez==false && preguntado==false:
 			if Input.is_key_pressed(KEY_E) && pescando==false:
 				pescando=true
 				$Jugador/CUERDA.show()
@@ -56,124 +54,135 @@ func _process(delta):
 	#Aqui empieza el juego
 		if pescando==true && preguntado==false && wincondition==false:
 			var randomNumber := rng.randf() * (maxNumber - minNumber) + minNumber
-			
-			$Jugador/Sprite2D.show()
-			
-			if $Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y >=-27 && $Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y<= 11:
+			$Jugador/tabladepesca.show()
+			#-----------------------------------------------------------------------------
+			if $Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y >=-27 && $Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y<= 11:
 				if(superior==true):
-					$Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y += velocity
-				if(inferior==true):
-					$Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y -= velocity
 					
-				if($Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y <=-25):
+					$Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y += velocity
+					
+				if(inferior==true):
+					$Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y -= velocity
+					
+				if($Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y <=-25):
+					
 					superior = true
 					inferior = false
-				if $Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y >= 9:
+					
+				if $Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y >= 9:
+					
 					superior = false
 					inferior = true
 				if cambio == true:
+					
 					cambio = false
 					await get_tree().create_timer(0.7).timeout
 					velocity=randomNumber
 					cambio = true
-			if($Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y > $Jugador/Sprite2D/areaDelJugador.position.y-4 && $Jugador/Sprite2D/AreaDeMovimientoAleatorio.position.y < $Jugador/Sprite2D/areaDelJugador.position.y+4):
-				$Jugador/Sprite2D/ProgressBar.value += 1
+					
+			if($Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y > $Jugador/tabladepesca/areaDelJugador.position.y-4 && $Jugador/tabladepesca/AreaDeMovimientoAleatorio.position.y < $Jugador/tabladepesca/areaDelJugador.position.y+4):
+				$Jugador/tabladepesca/ProgressBar.value += 0.85
 			else:
-				$Jugador/Sprite2D/ProgressBar.value -=0.65
+				$Jugador/tabladepesca/ProgressBar.value -=0.50
 			
 			if Input.is_key_pressed(KEY_SPACE):
-				if($Jugador/Sprite2D/areaDelJugador.position.y >= -26):
-					$Jugador/Sprite2D/areaDelJugador.position.y -= 0.6
+				if($Jugador/tabladepesca/areaDelJugador.position.y >= -26):
+					$Jugador/tabladepesca/areaDelJugador.position.y -= 0.6
 				else:
-					$Jugador/Sprite2D/areaDelJugador.position.y +=0
+					$Jugador/tabladepesca/areaDelJugador.position.y +=0
 			else:
-				if($Jugador/Sprite2D/areaDelJugador.position.y <= 9):
-					$Jugador/Sprite2D/areaDelJugador.position.y += 0.6
+				if($Jugador/tabladepesca/areaDelJugador.position.y <= 9):
+					$Jugador/tabladepesca/areaDelJugador.position.y += 0.6
 				else:
-					$Jugador/Sprite2D/areaDelJugador.position.y +=0
-			if $Jugador/Sprite2D/ProgressBar.value == 100:
+					$Jugador/tabladepesca/areaDelJugador.position.y +=0
+			#------------------------------------------------------------------------------------
+			if $Jugador/tabladepesca/ProgressBar.value == 100:
 				Global.pescar = false
-				pescados += 1
-				$Jugador/Sprite2D/ProgressBar.value = 40
+				$Jugador/tabladepesca/ProgressBar.value = 40
 				pescando=false
 				$Jugador/CUERDA.hide()
-				$Jugador/Sprite2D.hide()
-				$Jugador/pseudoanimacionpez.show()
-				await get_tree().create_timer(0.2).timeout
-				while true:
-					var posy = $Jugador/pseudoanimacionpez.position.y
-					if(posy > 1):
-						await get_tree().create_timer(0.01).timeout
-						$Jugador/pseudoanimacionpez.position.y -=1
-					else:
-						$Jugador/pseudoanimacionpez.position.y = 70
-						valor = true
-						$Jugador/pseudoanimacionpez.hide()
-						break;
-				if pescados==6:
-					$AreaDeSalida/AnimatedSprite2D.show()
-					$AreaDeSalida/AnimatedSprite2D.position = Vector2(454,366)
-					wincondition = true
-
-
-			if $Jugador/Sprite2D/ProgressBar.value == 0:
-				if(aumento==false):
-					aumento=true
-					fallosleves += 1
-				$Jugador/CUERDA.hide()
-				$Jugador/Sprite2D.hide()
-				Global.pescar = false
-				$Jugador/Sprite2D/ProgressBar.value = 50
-				aumento=false
-				if(fallosleves==6):
-					$Jugador/CUERDA.hide()
-					$Jugador/Sprite2D.hide()
-					$Jugador/TextureRect.hide()
-					pescando=false
-					Global.pescar=true
-					secuenciatiburon()
-					await get_tree().create_timer(15).timeout
-					Global.pescar=false
-					Global.vida=Global.maxvida
-					get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
-					
-				if(preguntado == false && fallosleves<6):
+				$Jugador/tabladepesca.hide()
+				#----------------------------------------------------
+				if(preguntado == false && fallosleves<6 && extraerpez == false):
 					
 					$Jugador/TextureRect.show()
-					
 					$Jugador/TextureRect2.show()
 					
 					preguntado = true
 					
 					while true:
+						
 						num = rng.randi_range(1,5)
+						
 						if (num == 1 && pregunta1==false):
 							$Jugador/TextureRect2/Label.set_text("Entre los siguientes renacentistas seleccione, uno de los precursores filósofo-científico del heliocentrismo")
 							$Jugador/TextureRect/Label.set_text(" 1) Tomas Moro. 2) Galileo. 3) Platón. 4) Arquimedes")
-							pregunta1=true
 							break
+							
 						if (num == 2 && pregunta2==false):
 							$Jugador/TextureRect2/Label.set_text("El método científico se introduce por tres filósofos. uno de los 4 mencionados no es precursor del método científico")
 							$Jugador/TextureRect/Label.set_text("1) Francis Bacon. 2) Galileo Galilei. 3)Nicolas Maquiavelo. 4) René Descartes")
-							pregunta2=true
 							break
+							
 						if (num == 3 && pregunta3==false):
 							$Jugador/TextureRect2/Label.set_text("Es uno de los precursores del pensamiento Moderno")
 							$Jugador/TextureRect/Label.set_text("1) Isaac Newton. 2) René Descartes. 3) Erasmo de Roterdam. 4) Francis Bacon")
-							pregunta3=true
 							break
+							
 						if (num == 4 && pregunta4==false):
 							$Jugador/TextureRect2/Label.set_text("De los siguientes filósofos niega el geocentrismo (teoría que afirma que el centro de nuestro sistema solar es la tierra) ")
 							$Jugador/TextureRect/Label.set_text(" 1) Aristóteles. 2) Nicolás Copérnico. 3) Tomás de Aquino. 4) Isaac Newton")
-							pregunta4=true
 							break
+							
 						if (num == 5 && pregunta5==false):
 							$Jugador/TextureRect/Label.set_text("1) El astrolabio. 2) La imprenta. 3) La Nao y la Carabela. 4) El Telescopio")
 							$Jugador/TextureRect2/Label.set_text("Uno de los inventos que suscitó un conocimiento ilimitado, fue el de Gutenberg")
-							pregunta5=true
 							break
+							
 						if(pregunta1 && pregunta2 && pregunta3 && pregunta4 && pregunta5):
 							break
+			#---------------------------------------------
+		if extraerpez == true:
+			$Jugador/pseudoanimacionpez.show()
+			await get_tree().create_timer(0.2).timeout
+			while true:
+					var posy = $Jugador/pseudoanimacionpez.position.y
+					if(posy > 1):
+						await get_tree().create_timer(0.3).timeout
+						$Jugador/pseudoanimacionpez.position.y -=1
+					else:
+						extraerpez = false
+						$Jugador/pseudoanimacionpez.position.y = 100
+						valor = true
+						$Jugador/pseudoanimacionpez.hide()
+						break;
+			if pescados==5:
+				$AreaDeSalida/AnimatedSprite2D.show()
+				$AreaDeSalida/AnimatedSprite2D.position = Vector2(454,366)
+				wincondition = true
+				
+			if $Jugador/tabladepesca/ProgressBar.value == 0:
+				if(aumento==false):
+					aumento=true
+					fallosleves += 1
+				$Jugador/CUERDA.hide()
+				$Jugador/tabladepesca.hide()
+				pescando=false
+				Global.pescar = false
+				$Jugador/tabladepesca/ProgressBar.value = 30
+				aumento=false
+				
+				if(fallosleves==6):
+					$Jugador/CUERDA.hide()
+					$Jugador/tabladepesca.hide()
+					$Jugador/TextureRect.hide()
+					pescando=false
+					Global.pescar=true
+					secuenciatiburon()
+					await get_tree().create_timer(10).timeout
+					Global.pescar=false
+					Global.vida=Global.maxvida
+					get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 
 
 func _on_area_de_salida_body_entered(body):
@@ -201,17 +210,9 @@ func _on_area_de_pesca_body_exited(body):
 		Global.pescar = false
 
 
-func _on_area_de_movimiento_aleatorio_body_entered(body):
-	pass
-
-
 func _on_area_del_jugador_body_entered(body):
 	if body.is_in_group("Jugador"):
 		dentro = true
-
-
-func _on_area_de_movimiento_aleatorio_body_exited(body):
-	pass
 
 
 func _on_area_del_jugador_body_exited(body):
@@ -223,18 +224,18 @@ func _on_area_del_jugador_body_exited(body):
 
 func _on_texture_button_pressed():
 	if(aumento==false):
-		fallos += 1
+		fallosleves += 1
 		aumento=false
 	$Jugador/TextureRect.hide()
 	$Jugador/TextureRect2/Label.set_text("INCORRECTO")
 	await get_tree().create_timer(2).timeout
-	if(fallos==4):
+	if(fallosleves==6):
 		$Jugador/CUERDA.hide()
-		$Jugador/Sprite2D.hide()
+		$Jugador/tabladepesca.hide()
 		Global.pescar=true
 		$Jugador/TextureRect2.hide()
 		secuenciatiburon()
-		await get_tree().create_timer(15).timeout
+		await get_tree().create_timer(10).timeout
 		Global.vida=Global.maxvida
 		Global.pescar=false
 		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
@@ -251,21 +252,33 @@ func _on_texture_button_2_pressed():
 	if(num != 2):
 		$Jugador/TextureRect2/Label.set_text("CORRECTO")
 		$Jugador/TextureRect.hide()
+		extraerpez = true
+		pescados+=1
+		if (num == 1):
+			pregunta1=true
+		if (num == 2):
+			pregunta2=true
+		if (num == 3):
+			pregunta3=true
+		if (num == 4):
+			pregunta4=true
+		if (num == 5):
+			pregunta5=true
 	else:
 		if(aumento==false):
-			fallos += 1
+			fallosleves += 1
 			aumento=true
 		$Jugador/TextureRect.hide()
 		$Jugador/TextureRect2/Label.set_text("INCORRECTO")
 
 	await get_tree().create_timer(2).timeout
-	if(fallos==4):
+	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
-			$Jugador/Sprite2D.hide()
+			$Jugador/tabladepesca.hide()
 			Global.pescar=true
 			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
-			await get_tree().create_timer(15).timeout
+			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
@@ -281,21 +294,33 @@ func _on_texture_button_3_pressed():
 	if(num == 2):
 		$Jugador/TextureRect2/Label.set_text("CORRECTO")
 		$Jugador/TextureRect.hide()
+		extraerpez=true
+		pescados+=1
+		if (num == 1):
+			pregunta1=true
+		if (num == 2):
+			pregunta2=true
+		if (num == 3):
+			pregunta3=true
+		if (num == 4):
+			pregunta4=true
+		if (num == 5):
+			pregunta5=true
 	else:
 		if(aumento==false):
-			fallos += 1
+			fallosleves += 1
 			aumento=true
 		
 		$Jugador/TextureRect2/Label.set_text("INCORRECTO")
 		$Jugador/TextureRect.hide()
 	await get_tree().create_timer(2).timeout
-	if(fallos==4):
+	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
-			$Jugador/Sprite2D.hide()
+			$Jugador/tabladepesca.hide()
 			Global.pescar=true
 			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
-			await get_tree().create_timer(15).timeout
+			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
@@ -309,18 +334,18 @@ func _on_texture_button_3_pressed():
 
 func _on_texture_button_4_pressed():
 	if(aumento==false):
-		fallos += 1
+		fallosleves += 1
 		aumento=true
 	$Jugador/TextureRect2/Label.set_text("INCORRECTO")
 	$Jugador/TextureRect.hide()
 	await get_tree().create_timer(2).timeout
-	if(fallos==4):
+	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
-			$Jugador/Sprite2D.hide()
+			$Jugador/tabladepesca.hide()
 			Global.pescar=true
 			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
-			await get_tree().create_timer(15).timeout
+			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")

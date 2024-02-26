@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://85k3jge3sijp"]
+[gd_scene load_steps=124 format=3 uid="uid://85k3jge3sijp"]
 
 [ext_resource type="Script" path="res://minijuego_ciencis.gd" id="1_pc3iv"]
 [ext_resource type="Texture2D" uid="uid://c6035p8gqr0iv" path="res://RECURSO DE VIDEO E IMAGENES/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2-ALL_by_AxulArt.png" id="1_pn33a"]
@@ -15,7 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://b7w0yuigi2rfi" path="res://RECURSO DE VIDEO E IMAGENES/SCR2/100/doorA_1.png" id="12_ke4jf"]
 [ext_resource type="Texture2D" uid="uid://7j55epargwv8" path="res://RECURSO DE VIDEO E IMAGENES/SCR2/100/floatingrocks_1.png" id="13_apd3e"]
 [ext_resource type="Texture2D" uid="uid://bg20vrtsfg1vo" path="res://tabla de pesca.png" id="13_y2i81"]
+[ext_resource type="Script" path="res://AreaDeMovimientoAleatorio.gd" id="14_2qjb2"]
+[ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="15_7ptve"]
+[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="15_lwa3c"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="15_v72wt"]
 [ext_resource type="Texture2D" uid="uid://ct0ryoq7nfgs4" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/fish_01e.png" id="18_2gbh4"]
+[ext_resource type="Texture2D" uid="uid://peqnly6qwpg4" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/fish_01c.png" id="18_frhdw"]
 [ext_resource type="Texture2D" uid="uid://ct8cnpf40t4hb" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Banners/Carved_9Slides.png" id="21_by4pc"]
 [ext_resource type="Texture2D" uid="uid://dx36wd034cj1x" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/potion_03b.png" id="22_dw1dh"]
 [ext_resource type="Texture2D" uid="uid://1diok60bkhh8" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/potion_01a.png" id="23_uhhct"]
@@ -14797,16 +14802,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0oam"]
+texture = ExtResource("15_lwa3c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56vew"]
+size = Vector2(5.07936, 1.87754)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b41dr"]
+size = Vector2(3.959, 1.35714)
+
 [sub_resource type="LabelSettings" id="LabelSettings_glg2k"]
 font = ExtResource("25_fo0ha")
 
-[sub_resource type="LabelSettings" id="LabelSettings_rbfqq"]
-font = ExtResource("25_fo0ha")
+[sub_resource type="SystemFont" id="SystemFont_tcp2n"]
+font_names = PackedStringArray("Verdana")
 
 [sub_resource type="LabelSettings" id="LabelSettings_rhmd0"]
-font = ExtResource("25_fo0ha")
+font = SubResource("SystemFont_tcp2n")
 font_color = Color(0, 0, 0.0313726, 1)
-outline_size = 2
 shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_uoqn0"]
@@ -14824,6 +14837,9 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_t74bs"]
 font = ExtResource("25_fo0ha")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbfqq"]
+font = ExtResource("25_fo0ha")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0uxwt"]
 atlas = ExtResource("28_ga0v2")
@@ -15114,46 +15130,82 @@ position = Vector2(28, 68)
 scale = Vector2(0.354167, 0.269965)
 sprite_frames = SubResource("SpriteFrames_blhpr")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Jugador"]
+[node name="tabladepesca" type="Sprite2D" parent="Jugador"]
 visible = false
 z_index = 5
 position = Vector2(-44, 41)
 scale = Vector2(2.95313, 3.0625)
 texture = ExtResource("13_y2i81")
 
-[node name="Label" type="Label" parent="Jugador/Sprite2D2"]
+[node name="ProgressBar" type="ProgressBar" parent="Jugador/tabladepesca"]
+z_index = 6
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -85.0
+offset_right = -10.0
+offset_bottom = -54.0
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxTexture_k0oam")
+value = 0.04
+fill_mode = 3
+show_percentage = false
+script = ExtResource("15_v72wt")
+
+[node name="AreaDeMovimientoAleatorio" type="Area2D" parent="Jugador/tabladepesca" groups=["Jugador", "pesca"]]
+z_index = 6
+position = Vector2(-20.3175, -1.95918)
+script = ExtResource("14_2qjb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/tabladepesca/AreaDeMovimientoAleatorio" groups=["pesca"]]
+position = Vector2(-0.169247, 0)
+shape = SubResource("RectangleShape2D_56vew")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/tabladepesca/AreaDeMovimientoAleatorio" groups=["Jugador"]]
+position = Vector2(7.22557e-05, -0.571426)
+scale = Vector2(0.31746, 0.214285)
+texture = ExtResource("18_frhdw")
+
+[node name="areaDelJugador" type="Area2D" parent="Jugador/tabladepesca" groups=["Jugador"]]
+position = Vector2(-20.9947, -21.2245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/tabladepesca/areaDelJugador" groups=["Jugador"]]
+position = Vector2(0.390877, 0.301018)
+shape = SubResource("RectangleShape2D_b41dr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/tabladepesca/areaDelJugador"]
+position = Vector2(0.423306, 0.489802)
+scale = Vector2(0.103174, 0.0357143)
+texture = ExtResource("15_7ptve")
+
+[node name="Marker2D" type="Marker2D" parent="Jugador/tabladepesca"]
+position = Vector2(-20.317, 10)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Jugador/tabladepesca"]
+z_index = 6
+position = Vector2(-11.8863, -24.931)
+scale = Vector2(0.342937, 0.300047)
+texture = ExtResource("18_2gbh4")
+
+[node name="pseudoanimacionpez" type="Sprite2D" parent="Jugador"]
+visible = false
+position = Vector2(1, 100)
+scale = Vector2(1.4375, 1.23438)
+texture = ExtResource("18_2gbh4")
+
+[node name="pescados" type="Sprite2D" parent="Jugador"]
+position = Vector2(110.148, -65.3437)
+scale = Vector2(1.10645, 1.04297)
+texture = ExtResource("18_2gbh4")
+
+[node name="Label" type="Label" parent="Jugador/pescados"]
 offset_left = 11.6152
 offset_top = -11.176
 offset_right = 36.6152
 offset_bottom = 11.824
 text = "0"
 label_settings = SubResource("LabelSettings_glg2k")
-
-[node name="pseudoanimacionpez" type="Sprite2D" parent="Jugador"]
-visible = false
-position = Vector2(1, 70)
-scale = Vector2(1.4375, 1.23438)
-texture = ExtResource("18_2gbh4")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Jugador"]
-position = Vector2(110.148, -65.3437)
-scale = Vector2(1.10645, 1.04297)
-texture = ExtResource("18_2gbh4")
-
-[node name="Label" type="Label" parent="Jugador/Sprite2D3"]
-offset_left = 12.0
-offset_top = -7.0
-offset_right = 40.0
-offset_bottom = 14.0
-text = "0"
-label_settings = SubResource("LabelSettings_rbfqq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Jugador/Sprite2D3"]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(-1.25813, 0.0178347)
-rotation = -5.12778
-scale = Vector2(0.0285387, 0.0331218)
-texture = ExtResource("27_pdpfq")
 
 [node name="TextureRect" type="TextureRect" parent="Jugador"]
 visible = false
@@ -15304,10 +15356,25 @@ offset_bottom = 58.8667
 label_settings = SubResource("LabelSettings_rhmd0")
 autowrap_mode = 3
 
-[node name="Sprite2D4" type="Sprite2D" parent="Jugador"]
+[node name="nopescados" type="Sprite2D" parent="Jugador"]
 position = Vector2(110.359, -44.0179)
 scale = Vector2(1.08017, 1.00224)
 texture = ExtResource("27_0d6mm")
+
+[node name="Label" type="Label" parent="Jugador/nopescados"]
+offset_left = 12.0
+offset_top = -7.0
+offset_right = 40.0
+offset_bottom = 14.0
+text = "0"
+label_settings = SubResource("LabelSettings_rbfqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/nopescados"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1.25813, 0.0178347)
+rotation = -5.12778
+scale = Vector2(0.0285387, 0.0331218)
+texture = ExtResource("27_pdpfq")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Jugador"]
 z_index = 4
@@ -15339,6 +15406,10 @@ position = Vector2(370, 327)
 shape = SubResource("RectangleShape2D_qtb3p")
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Jugador/tabladepesca/AreaDeMovimientoAleatorio" to="." method="_on_area_de_movimiento_aleatorio_body_entered"]
+[connection signal="body_exited" from="Jugador/tabladepesca/AreaDeMovimientoAleatorio" to="." method="_on_area_de_movimiento_aleatorio_body_exited"]
+[connection signal="body_entered" from="Jugador/tabladepesca/areaDelJugador" to="." method="_on_area_del_jugador_body_entered"]
+[connection signal="body_exited" from="Jugador/tabladepesca/areaDelJugador" to="." method="_on_area_del_jugador_body_exited"]
 [connection signal="pressed" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Jugador/TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Jugador/TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]

@@ -1,18 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhnf6n6r3g5gf"]
+[gd_scene load_steps=36 format=3 uid="uid://dhnf6n6r3g5gf"]
 
 [ext_resource type="Texture2D" uid="uid://bi8k23mn8iw2h" path="res://Sprites/WorldTilesets/snow-expansion.png" id="1_ejk1p"]
 [ext_resource type="Script" path="res://zona_war.gd" id="1_v2kvv"]
-[ext_resource type="PackedScene" path="res://orc.tscn" id="2_n5hnh"]
-[ext_resource type="PackedScene" path="res://skeleton.tscn" id="3_03h36"]
+[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="3_03h36"]
+[ext_resource type="Texture2D" uid="uid://b1rky2gjiudbi" path="res://relojsprite.png" id="3_dypwt"]
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="4_ux7da"]
-[ext_resource type="PackedScene" path="res://orc_1_2.tscn" id="5_ufbh7"]
-[ext_resource type="PackedScene" path="res://orc_1_3.tscn" id="6_4jcu7"]
-[ext_resource type="PackedScene" path="res://orc_1_4.tscn" id="7_248ff"]
-[ext_resource type="PackedScene" uid="uid://h4vlp5j2pud7" path="res://skeleton_1_2.tscn" id="8_2n7ul"]
+[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="5_ufbh7"]
+[ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="6_ejgc3"]
+[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="7_248ff"]
+[ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="7_t3dlp"]
 [ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="9_c2icj"]
-[ext_resource type="PackedScene" path="res://skeleton_1_4.tscn" id="10_xctjm"]
-[ext_resource type="Texture2D" uid="uid://dtt04oqw7bom8" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Banners/Carved_3Slides.png" id="11_csgst"]
-[ext_resource type="Texture2D" uid="uid://8c8otl0aigen" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Hover.png" id="13_hinmj"]
+[ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="11_qksqu"]
+[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_2gfeo"]
 [ext_resource type="FontFile" uid="uid://diyobwgto0rdo" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="14_rixff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygbij"]
@@ -308,6 +307,56 @@ texture = ExtResource("1_ejk1p")
 [sub_resource type="TileSet" id="TileSet_gb8hy"]
 sources/0 = SubResource("TileSetAtlasSource_ygbij")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b54gg"]
+atlas = ExtResource("3_dypwt")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46g2c"]
+atlas = ExtResource("3_dypwt")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_187ee"]
+atlas = ExtResource("3_dypwt")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaeln"]
+atlas = ExtResource("3_dypwt")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khscf"]
+atlas = ExtResource("3_dypwt")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76gew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b54gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46g2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_187ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaeln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khscf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SystemFont" id="SystemFont_ie321"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3f8wo"]
+font = SubResource("SystemFont_ie321")
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2548"]
 size = Vector2(8, 8)
 
@@ -328,10 +377,35 @@ font = ExtResource("14_rixff")
 font_size = 20
 outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_jht6r"]
+font_names = PackedStringArray("Verdana")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ycnvo"]
+font = SubResource("SystemFont_jht6r")
+
+[sub_resource type="Curve" id="Curve_sn6j5"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mplqd"]
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 154.717), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_qfpjt"]
+_data = [Vector2(1, 0.683019), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="SystemFont" id="SystemFont_w05om"]
+font_names = PackedStringArray("Verdana")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5e11u"]
+font = SubResource("SystemFont_w05om")
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_v2kvv")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gb8hy")
@@ -340,59 +414,68 @@ layer_0/tile_data = PackedInt32Array(0, 524288, 0, 1, 524288, 0, 2, 524288, 0, 3
 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 position = Vector2(403, 257)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.4, 1.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Camera2D"]
+visible = false
+position = Vector2(10, -109)
+scale = Vector2(0.484375, 0.450521)
+sprite_frames = SubResource("SpriteFrames_76gew")
+
+[node name="Label" type="Label" parent="TileMap/Camera2D/AnimatedSprite2D"]
+offset_left = 97.0
+offset_top = -36.0
+offset_right = 194.0
+offset_bottom = 48.0
+label_settings = SubResource("LabelSettings_3f8wo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_y2548")
 
-[node name="orc2" parent="." instance=ExtResource("2_n5hnh")]
-position = Vector2(115, 151)
-
-[node name="orc" parent="." instance=ExtResource("2_n5hnh")]
-position = Vector2(122, 290)
-
-[node name="skeleton" parent="." instance=ExtResource("3_03h36")]
-position = Vector2(623, 157)
-
 [node name="Jugador" parent="." instance=ExtResource("4_ux7da")]
-position = Vector2(557, 225)
+position = Vector2(416, 205)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+zoom = Vector2(3, 3)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-offset_left = 230.0
-offset_top = 83.0
-offset_right = 585.0
-offset_bottom = 188.0
-texture = ExtResource("11_csgst")
+z_index = 5
+offset_left = -23.0
+offset_top = 32.0
+offset_right = 879.0
+offset_bottom = 129.0
+texture = ExtResource("6_ejgc3")
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 106.0
-offset_right = 81.0
-offset_bottom = 146.0
-texture_normal = ExtResource("13_hinmj")
+offset_left = 149.0
+offset_top = 101.0
+offset_right = 189.0
+offset_bottom = 141.0
+texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton"]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 24.0
 offset_top = 15.0
 offset_right = 42.0
-offset_bottom = 40.0
+offset_bottom = 41.0
 text = "A
 "
 label_settings = SubResource("LabelSettings_47wo1")
 
 [node name="TextureButton2" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 244.0
-offset_top = 110.0
-offset_right = 284.0
-offset_bottom = 150.0
-texture_normal = ExtResource("13_hinmj")
+offset_left = 669.0
+offset_top = 102.0
+offset_right = 709.0
+offset_bottom = 142.0
+texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton2"]
@@ -407,11 +490,11 @@ label_settings = SubResource("LabelSettings_4scw0")
 
 [node name="TextureButton3" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 173.0
-offset_right = 82.0
-offset_bottom = 213.0
-texture_normal = ExtResource("13_hinmj")
+offset_left = 147.0
+offset_top = 241.0
+offset_right = 187.0
+offset_bottom = 281.0
+texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton3"]
@@ -426,11 +509,11 @@ label_settings = SubResource("LabelSettings_pngva")
 
 [node name="TextureButton4" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 245.0
-offset_top = 172.0
-offset_right = 285.0
-offset_bottom = 212.0
-texture_normal = ExtResource("13_hinmj")
+offset_left = 671.0
+offset_top = 227.0
+offset_right = 711.0
+offset_bottom = 267.0
+texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton4"]
@@ -446,57 +529,250 @@ label_settings = SubResource("LabelSettings_8a4et")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 11.0
-offset_right = 346.0
-offset_bottom = 94.0
-autowrap_mode = 3
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-offset_left = 231.0
-offset_top = 322.0
-offset_right = 578.0
-offset_bottom = 415.0
-texture = ExtResource("11_csgst")
-
-[node name="Label" type="Label" parent="TextureRect2"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 10.0
-offset_right = 333.0
-offset_bottom = 86.0
+offset_left = 106.0
+offset_top = 7.0
+offset_right = 779.0
+offset_bottom = 79.0
+label_settings = SubResource("LabelSettings_ycnvo")
 autowrap_mode = 3
 
 [node name="orc1_2" parent="." instance=ExtResource("5_ufbh7")]
-position = Vector2(216, 180)
+position = Vector2(216, 158)
+scale = Vector2(2, 2)
 
-[node name="orc1_3" parent="." instance=ExtResource("6_4jcu7")]
-position = Vector2(115, 215)
+[node name="botonorco1" type="TextureButton" parent="orc1_2"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_2gfeo")
 
 [node name="orc1_4" parent="." instance=ExtResource("7_248ff")]
-position = Vector2(218, 262)
+position = Vector2(216, 293)
+scale = Vector2(2, 2)
 
-[node name="Skeleton1_2" parent="." instance=ExtResource("8_2n7ul")]
-position = Vector2(709, 150)
+[node name="botonorco2" type="TextureButton" parent="orc1_4"]
+offset_left = -15.0
+offset_top = -19.0
+offset_right = 15.0
+offset_bottom = 18.0
+ignore_texture_size = true
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_2gfeo")
 
 [node name="skeleton1_3" parent="." instance=ExtResource("9_c2icj")]
 position = Vector2(617, 284)
+scale = Vector2(2, 2)
 
-[node name="skeleton1_4" parent="." instance=ExtResource("10_xctjm")]
-position = Vector2(695, 310)
+[node name="botonesqueleto" type="TextureButton" parent="skeleton1_3"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonesqueleto"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_2gfeo")
+
+[node name="skeleton" parent="." instance=ExtResource("3_03h36")]
+position = Vector2(623, 157)
+rotation = 0.00266727
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto2" type="TextureButton" parent="skeleton"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton/botonesqueleto2"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_2gfeo")
 
 [node name="Ataque" type="Button" parent="."]
-offset_left = 367.0
-offset_top = 222.0
-offset_right = 439.0
-offset_bottom = 253.0
+offset_left = 379.0
+offset_top = 52.0
+offset_right = 451.0
+offset_bottom = 83.0
 size_flags_horizontal = 4
 text = "ATAQUE
 "
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(873, 138)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 1.28
+randomness = 1.0
+fixed_fps = 60
+draw_order = 1
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.352941, 0.352941, 0.352941, 1)
+anim_speed_curve = SubResource("Curve_mplqd")
+anim_offset_curve = SubResource("Curve_qfpjt")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(908, 74)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+position = Vector2(930, 278)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 2.28
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.447059, 0.447059, 0.447059, 1)
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+position = Vector2(868, 328)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 1.48
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="."]
+position = Vector2(849, 166)
+rotation = 2.31886
+amount = 15
+lifetime = 20.0
+explosiveness = 0.54
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
+position = Vector2(894, 389)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="."]
+position = Vector2(891, 220)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("11_qksqu")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_sn6j5")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 5
+offset_left = -45.0
+offset_top = 339.0
+offset_right = 857.0
+offset_bottom = 436.0
+texture = ExtResource("6_ejgc3")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 7.0
+offset_right = 779.0
+offset_bottom = 79.0
+label_settings = SubResource("LabelSettings_5e11u")
+autowrap_mode = 3
 
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
+[connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
+[connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
+[connection signal="mouse_entered" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_entered"]
+[connection signal="mouse_exited" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_exited"]
+[connection signal="pressed" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_pressed"]
+[connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_exited"]
+[connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
+[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
+[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]

@@ -121,10 +121,18 @@ func _process(delta):
 			$AnimatedSprite2D.play("Attack_Right")
 			await get_tree().create_timer(1).timeout
 			Global.attacking = false
+		elif Global.ataqueinverso==true:
+			$AnimatedSprite2D.play("attack_left")
+			await get_tree().create_timer(1).timeout
+			Global.ataqueinverso = false
 		elif Global.flechando == true:
 			$AnimatedSprite2D.play("disparoflecha")
 			await get_tree().create_timer(1).timeout
 			Global.flechando = false
+		elif Global.posicionbatalla==true:
+			$AnimatedSprite2D.play("posicionbatalla")
+		elif Global.posicionbatallainversa == true:
+			$AnimatedSprite2D.play("posicionbatallainversa")
 		else:
 			if Global.vida < 1:
 				vivo = false

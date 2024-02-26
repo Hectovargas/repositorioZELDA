@@ -1,6 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkpvrquxt35bp"]
+[gd_scene load_steps=15 format=3 uid="uid://dkpvrquxt35bp"]
 
+[ext_resource type="Script" path="res://skeleton_1_3.gd" id="1_2wh53"]
 [ext_resource type="Texture2D" uid="uid://bnukmuis120av" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Rogue/Idle/Idle-Sheet.png" id="1_sgvm7"]
+[ext_resource type="Texture2D" uid="uid://xjmm2gjccs7i" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Rogue/Death/Death-Sheet.png" id="2_2juxc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oux0w"]
+atlas = ExtResource("2_2juxc")
+region = Rect2(64, 21, 64, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l3ew"]
+atlas = ExtResource("2_2juxc")
+region = Rect2(128, 21, 64, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siicp"]
+atlas = ExtResource("2_2juxc")
+region = Rect2(192, 21, 64, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6old"]
+atlas = ExtResource("2_2juxc")
+region = Rect2(256, 21, 64, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h14xi"]
+atlas = ExtResource("2_2juxc")
+region = Rect2(320, 21, 64, 43)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acl6n"]
 atlas = ExtResource("1_sgvm7")
@@ -22,6 +44,26 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oux0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l3ew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siicp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6old")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h14xi")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_acl6n")
 }, {
 "duration": 1.0,
@@ -41,11 +83,13 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3tqf"]
 
 [node name="skeleton1_3" type="CharacterBody2D"]
+script = ExtResource("1_2wh53")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hwaxg")
-animation = &"idle"
+animation = &"daño"
 autoplay = "idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_v3tqf")

@@ -1,6 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtqkxtpqqsgne"]
+[gd_scene load_steps=14 format=3 uid="uid://dhvtwf0bj8g"]
 
+[ext_resource type="Script" path="res://orc_1_4.gd" id="1_a4dk5"]
 [ext_resource type="Texture2D" uid="uid://b5dkt65rlt7j8" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Idle/Idle-Sheet.png" id="1_m07x0"]
+[ext_resource type="Texture2D" uid="uid://d3cam6fi3t6tb" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet.png" id="2_3adrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrd06"]
+atlas = ExtResource("2_3adrt")
+region = Rect2(231, 40, 33, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odidr"]
+atlas = ExtResource("2_3adrt")
+region = Rect2(330, 40, 33, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plqwu"]
+atlas = ExtResource("2_3adrt")
+region = Rect2(429, 40, 33, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmjan"]
+atlas = ExtResource("2_3adrt")
+region = Rect2(516, 40, 56, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2lyt"]
 atlas = ExtResource("1_m07x0")
@@ -22,6 +40,23 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wrd06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odidr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plqwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmjan")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_m2lyt")
 }, {
 "duration": 1.0,
@@ -41,12 +76,12 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kv6jl"]
 
 [node name="orc1_4" type="CharacterBody2D"]
+script = ExtResource("1_a4dk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nunrt")
+animation = &"daño"
 autoplay = "default"
-frame = 3
-frame_progress = 0.704291
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kv6jl")
