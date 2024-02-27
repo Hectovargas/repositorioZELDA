@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dntnjah2tke8h"]
+[gd_scene load_steps=13 format=3 uid="uid://dntnjah2tke8h"]
 
+[ext_resource type="Script" path="res://stalfos.gd" id="1_1jlb7"]
 [ext_resource type="Texture2D" uid="uid://bf66hqi6ikp4c" path="res://Sprites/StalfosPolitica.png" id="1_rkjss"]
 [ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://Sprites/Stalfos.png" id="1_x0bap"]
 
@@ -70,6 +71,7 @@ animations = [{
 radius = 12.0
 
 [node name="Stalfos" type="CharacterBody2D"]
+script = ExtResource("1_1jlb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 3
@@ -80,3 +82,9 @@ autoplay = "walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bjcqp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -27)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

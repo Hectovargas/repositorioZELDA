@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cc8vytlciid76"
+path="res://.godot/imported/shooter2.dialogue-73329ade7b757849fd6c785237f3ab92.tres"
+
+[deps]
+
+source_file="res://shooter2.dialogue"
+dest_files=["res://.godot/imported/shooter2.dialogue-73329ade7b757849fd6c785237f3ab92.tres"]
+
+[params]
+
+defaults=true

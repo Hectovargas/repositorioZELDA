@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://1n1nlp1tieme"
+path="res://.godot/imported/shooter3.dialogue-cbaf49939134be093fc968258d100e49.tres"
+
+[deps]
+
+source_file="res://shooter3.dialogue"
+dest_files=["res://.godot/imported/shooter3.dialogue-cbaf49939134be093fc968258d100e49.tres"]
+
+[params]
+
+defaults=true

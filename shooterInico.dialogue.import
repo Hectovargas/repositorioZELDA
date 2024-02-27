@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://0a50wclfhprl"
+path="res://.godot/imported/shooterInico.dialogue-32d2a45536889700d1f02023392a980a.tres"
+
+[deps]
+
+source_file="res://shooterInico.dialogue"
+dest_files=["res://.godot/imported/shooterInico.dialogue-32d2a45536889700d1f02023392a980a.tres"]
+
+[params]
+
+defaults=true

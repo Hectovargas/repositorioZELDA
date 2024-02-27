@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dp1wijek7jvtw"
+path="res://.godot/imported/shooter1.dialogue-50e071d4abe0d088b3ef43f6bb931e71.tres"
+
+[deps]
+
+source_file="res://shooter1.dialogue"
+dest_files=["res://.godot/imported/shooter1.dialogue-50e071d4abe0d088b3ef43f6bb931e71.tres"]
+
+[params]
+
+defaults=true

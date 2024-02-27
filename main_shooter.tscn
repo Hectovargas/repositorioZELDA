@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://main_shooter.gd" id="1_bynpl"]
 [ext_resource type="PackedScene" uid="uid://cif780fnx86pe" path="res://shooter_politica.tscn" id="1_l2ykv"]
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="2_dewkj"]
-[ext_resource type="PackedScene" path="res://stalfos_spawn.tscn" id="3_vqeup"]
-[ext_resource type="PackedScene" path="res://stalfos.tscn" id="4_0gy67"]
+[ext_resource type="PackedScene" uid="uid://co3taye775xyi" path="res://stalfos_spawn.tscn" id="3_vqeup"]
+[ext_resource type="PackedScene" uid="uid://dntnjah2tke8h" path="res://stalfos.tscn" id="4_0gy67"]
 [ext_resource type="PackedScene" uid="uid://crmdlvjyhq3a" path="res://arrow.tscn" id="6_iaymd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5a7v"]
