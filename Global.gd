@@ -29,3 +29,5 @@ var dañoenemy = false
 var dañoenemy2 =  false
 var dañoenemy3 =  false
 var dañoenemy4 =  false
+var nadando = false
+var trajeagua=false

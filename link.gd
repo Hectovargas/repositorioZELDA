@@ -141,29 +141,55 @@ func _process(delta):
 				$AnimatedSprite2D.play("MUERTEDEFINITIVA")
 				velocity=Vector2(0,0)
 			else:
-				var Direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-				velocity = Direction * Speed
-				
-				
-				if Direction != Vector2.ZERO:
-					LastDirection=Direction
-				
-				if Direction.x!=0:
-					AnimatedSprite.play("WalkRight")
+				if Global.nadando==false:
+					var Direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+					velocity = Direction * Speed
 					
-				elif Direction.y <0:
-					AnimatedSprite.play("WalkUp")
-				elif Direction.y >0:
-					AnimatedSprite.play("WalkDown")
+					
+					if Direction != Vector2.ZERO:
+						LastDirection=Direction
+					
+					if Direction.x!=0:
+						AnimatedSprite.play("WalkRight")
+						
+					elif Direction.y <0:
+						AnimatedSprite.play("WalkUp")
+					elif Direction.y >0:
+						AnimatedSprite.play("WalkDown")
+					else:
+						if LastDirection.x !=0:
+							AnimatedSprite.play("Idle_Right")
+						elif LastDirection.y <0:
+							AnimatedSprite.play("Idle_up")
+						elif LastDirection.y >0:
+							AnimatedSprite.play("Idle_Down")
+					AnimatedSprite.flip_h = LastDirection.x >0
 				else:
-					if LastDirection.x !=0:
-						AnimatedSprite.play("Idle_Right")
-					elif LastDirection.y <0:
-						AnimatedSprite.play("Idle_up")
-					elif LastDirection.y >0:
-						AnimatedSprite.play("Idle_Down")
-				AnimatedSprite.flip_h = LastDirection.x >0
-				
+					var Direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+					velocity = Direction * Speed
+					
+					
+					if Direction != Vector2.ZERO:
+						LastDirection=Direction
+					
+					if Direction.x!=0:
+						AnimatedSprite.play("nadoladoizq")
+						
+					elif Direction.y <0:
+						AnimatedSprite.play("nadoatras")
+					elif Direction.y >0:
+						AnimatedSprite.play("Nadofrente")
+					elif Direction==Vector2(0,0):
+						AnimatedSprite.play("standnado")
+					else:
+						if LastDirection.x !=0:
+							AnimatedSprite.play("Idle_Right")
+						elif LastDirection.y <0:
+							AnimatedSprite.play("Idle_up")
+						elif LastDirection.y >0:
+							AnimatedSprite.play("Idle_Down")
+					AnimatedSprite.flip_h = LastDirection.x >0
+			
 
 
 
