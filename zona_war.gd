@@ -3,6 +3,7 @@ var pregunta1= false
 var pregunta2=false
 var preguntado = true
 var num=0
+var numero=0
 var contador=0
 var numerodeenemigo = 0
 var sintiempo = false
@@ -72,6 +73,9 @@ func _process(delta):
 
 
 func _on_ataque_pressed():
+	$TileMap/Camera2D/AnimatedSprite2D.stop()
+	numero = rng.randi_range(6, 9)
+	$TileMap/Camera2D/AnimatedSprite2D/Label2.set_text("Tiempo: "+str(numero))
 	respuestarespondida=false
 	contador=0
 	$Ataque.hide()
@@ -98,7 +102,7 @@ func _on_ataque_pressed():
 			contador += 1
 			$TileMap/Camera2D/AnimatedSprite2D/Label.set_text(str(contador))
 			await get_tree().create_timer(1).timeout
-			if contador==10 && respuestarespondida== false && sintiempo==false:
+			if contador==numero && respuestarespondida== false && sintiempo==false:
 				fallaprgunta()
 				$TileMap/Camera2D/AnimatedSprite2D.hide()
 				break
@@ -254,10 +258,12 @@ func aciertapregunta():
 		$Jugador/Camera2D.zoom = Vector2(5,5)
 		await get_tree().create_timer(0.5).timeout
 		$Jugador/Camera2D.zoom = Vector2(6,6)
+		$Jugador/AudioStreamPlayer2D.play()
 		if Global.empirista==true:
 			Global.attacking = true
 		else:
 			Global.ataqueinverso = true
+		
 		if numerodeenemigo==1:
 			Global.dañoenemy=true
 			await get_tree().create_timer(1).timeout
