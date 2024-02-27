@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cif780fnx86pe"]
+[gd_scene load_steps=22 format=3 uid="uid://cif780fnx86pe"]
 
 [ext_resource type="Texture2D" uid="uid://oml6xr4snk4u" path="res://RECURSO DE VIDEO E IMAGENES/Inner.png" id="1_5hk51"]
 [ext_resource type="Script" path="res://shooter_politica.gd" id="1_mk6v4"]
@@ -7,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="3_hrn7j"]
 [ext_resource type="Texture2D" uid="uid://cw44oqxps0g7c" path="res://RECURSO DE VIDEO E IMAGENES/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2_by_AxulArt.png" id="4_uxuwh"]
 [ext_resource type="Texture2D" uid="uid://d1apbm7mguia4" path="res://RECURSO DE VIDEO E IMAGENES/Sprites/tilesets/plains.png" id="6_bb16f"]
-[ext_resource type="Texture2D" uid="uid://bxeety11yd13s" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_01e.png" id="6_ftns8"]
 [ext_resource type="Texture2D" uid="uid://de73nvgeya638" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Grass.png" id="7_1wrju"]
-[ext_resource type="Script" path="res://flecha.gd" id="7_wb6t0"]
 [ext_resource type="Texture2D" uid="uid://ch44i1gkn3yrj" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Stone Ground.png" id="8_ksnp1"]
 [ext_resource type="Texture2D" uid="uid://dv5b284yq0kdf" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Wall.png" id="9_1q7fh"]
+[ext_resource type="PackedScene" uid="uid://crmdlvjyhq3a" path="res://arrow.tscn" id="11_r5x3b"]
 [ext_resource type="PackedScene" uid="uid://dntnjah2tke8h" path="res://stalfos.tscn" id="13_m8ww4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iorjt"]
@@ -7055,9 +7054,6 @@ sources/5 = SubResource("TileSetAtlasSource_m5d60")
 sources/6 = SubResource("TileSetAtlasSource_4fiqt")
 sources/7 = SubResource("TileSetAtlasSource_sd71j")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n0ba"]
-size = Vector2(8.25, 8.75)
-
 [node name="Shooter(Politica)" type="Node2D"]
 script = ExtResource("1_mk6v4")
 
@@ -7077,22 +7073,10 @@ zoom = Vector2(0.9, 0.9)
 position = Vector2(227, 610)
 scale = Vector2(4, 4)
 
-[node name="flecha" type="Sprite2D" parent="TileMap/Link"]
-position = Vector2(-4, -20)
-rotation = 0.785398
-scale = Vector2(0.906845, 0.8926)
-texture = ExtResource("6_ftns8")
-script = ExtResource("7_wb6t0")
-
-[node name="Area2D" type="Area2D" parent="TileMap/Link/flecha"]
-position = Vector2(9.35692, 20.993)
-rotation = -0.793314
-scale = Vector2(1.11156, 1.11156)
-skew = 0.0158322
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Link/flecha/Area2D"]
-position = Vector2(7.12498, -25.625)
-shape = SubResource("RectangleShape2D_7n0ba")
+[node name="Arrow" parent="TileMap/Link" instance=ExtResource("11_r5x3b")]
+position = Vector2(0, -16)
+rotation = -1.57809
+scale = Vector2(2, 2)
 
 [node name="StalfoA" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(460, 61)
@@ -7110,4 +7094,4 @@ scale = Vector2(3.5, 3.5)
 position = Vector2(908, 62)
 scale = Vector2(3.5, 3.5)
 
-[connection signal="body_entered" from="TileMap/Link/flecha/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="TileMap/Link/Arrow" to="." method="_on_arrow_area_entered"]

@@ -71,13 +71,13 @@ animations = [{
 radius = 12.0
 
 [node name="Stalfos" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_1jlb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-light_mask = 3
-visibility_layer = 3
 sprite_frames = SubResource("SpriteFrames_v3n7m")
-animation = &"walking"
+animation = &"dead!"
 autoplay = "walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

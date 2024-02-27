@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Stalfos extends CharacterBody2D
 
 
 const SPEED = 300.0
@@ -28,4 +28,4 @@ func die():
 	queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	die()
+	queue_free()

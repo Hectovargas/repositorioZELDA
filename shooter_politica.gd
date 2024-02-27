@@ -34,7 +34,7 @@ func _process(delta):
 		if disparo == false:
 			Global.flechando=true
 			disparo=true
-			var flecha = $TileMap/Link/flecha.duplicate()
+			var flecha = $TileMap/Link/Arrow.duplicate()
 			flecha.position = $TileMap/Link.position
 			add_sibling(flecha)
 			await get_tree().create_timer(0.5).timeout
@@ -60,3 +60,9 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemy"):
 		print("puedo disparar")
+
+
+func _on_arrow_area_entered(area):
+	if area is Stalfos:
+		area.die()
+		$StalfoA.queue_free()
