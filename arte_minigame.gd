@@ -5,22 +5,27 @@ var esCofreCorrecto2:bool=false;
 var esCofreCorrecto3:bool=false;
 var esCofreCorrecto4:bool=false;
 var esCofreCorrecto5:bool=false;
+var lever:bool=false;
+var dentro:bool=true;
 var contador: int=0;
 var contadorQuestion: int=0;
 var contadorQuestion2: int=0;
 var contadorQuestion3: int=0;
 var contadorQuestion4: int=0;
+var contadorPuerta: int=0;
+var contadorPuerta2: int=0;
+var contadorPuerta3: int=0;
+var contadorPuerta4: int=0;
 var wincondition = false
-
+var key:bool=false;
+var Lever:bool=false;
 
 func _on_area_2dc_1_body_entered(body):
 	if body.is_in_group("Jugador"):
 		$Sprite2D.show()
 		esCofreCorrecto=true;
+		key=true;
 		$CHECK1.show()
-		$StaticBody2D5.position.x += 50;
-		$StaticBody2D5/CollisionShape2D.position.x += 50;
-		$PuertaCerrada.hide();
 		$audioCorrecto.play();
 
 func _on_area_2dc_2_body_entered(body):
@@ -51,6 +56,20 @@ func _on_area_2dc_4_body_entered(body):
 		$audioInCorrecto.play();
 
 func _process(delta):
+	if dentro==true && Input.is_key_pressed(KEY_E):
+		wincondition=true
+		$leverUp.hide();
+		$leverDown.show();
+		$PuertaCerrada5/StaticBody2D.position.x += 50;
+		$PuertaCerrada5/StaticBody2D/CollisionShape2D.position.x += 50;
+		$PuertaCerrada5.hide();
+		$audioUnlockDoor.play();
+	
+	if key==true:
+		$llave.position.x=$Jugador.position.x;
+		$llave.position.y=$Jugador.position.y-15;
+		$llave.show();
+	
 	if wincondition==true:
 		$AreaDeSalida.show()
 	if Global.vida == 0:
@@ -76,6 +95,7 @@ func _on_question_zone_2_body_entered(body):
 			$StaticBody2D5/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada.show();
 			$audioDoorShut.play();
+			key=false;
 
 func _on_question_zone_3_body_entered(body):
 	if body.is_in_group("Jugador"):
@@ -90,6 +110,7 @@ func _on_question_zone_3_body_entered(body):
 			$PuertaCerrada2/StaticBody2D22/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada2.show();
 			$audioDoorShut.play();
+			key=false;
 
 
 func _on_question_zone_4_body_entered(body):
@@ -105,6 +126,7 @@ func _on_question_zone_4_body_entered(body):
 			$PuertaCerrada3/StaticBody2D/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada3.show();
 			$audioDoorShut.play();
+			key=false;
 
 
 func _on_question_zone_5_body_entered(body):
@@ -120,6 +142,7 @@ func _on_question_zone_5_body_entered(body):
 			$PuertaCerrada4/StaticBody2D/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada4.show();
 			$audioDoorShut.play();
+			key=false;
 
 
 func _on_area_2d_body_entered(body):
@@ -129,10 +152,8 @@ func _on_area_2d_body_entered(body):
 		if Global.maxvida>Global.vida:
 			Global.vida=Global.vida+1
 		$CHECK2.show()
-		$PuertaCerrada2/StaticBody2D22.position.x += 50;
-		$PuertaCerrada2/StaticBody2D22/CollisionShape2D.position.x += 50;
-		$PuertaCerrada2.hide();
 		$audioCorrecto.play();
+		key=true;
 
 
 func _on_area_2d_2_body_entered(body):
@@ -181,10 +202,8 @@ func _on_area_2d_6_body_entered(body):
 		$Sprite2D10.show()
 		esCofreCorrecto3=true;
 		$CHECK3.show()
-		$PuertaCerrada3/StaticBody2D.position.x += 50;
-		$PuertaCerrada3/StaticBody2D/CollisionShape2D.position.x += 50;
-		$PuertaCerrada3.hide();
 		$audioCorrecto.play();
+		key=true;
 
 func _on_area_2d_7_body_entered(body):
 	if body.is_in_group("Jugador") && esCofreCorrecto3==false:
@@ -221,10 +240,8 @@ func _on_area_2d_10_body_entered(body):
 		$Sprite2D14.show()
 		esCofreCorrecto4=true;
 		$CHECK4.show()
-		$PuertaCerrada4/StaticBody2D.position.x += 50;
-		$PuertaCerrada4/StaticBody2D/CollisionShape2D.position.x += 50;
-		$PuertaCerrada4.hide();
 		$audioCorrecto.play();
+		key=true;
 
 
 func _on_area_2d_11_body_entered(body):
@@ -251,12 +268,10 @@ func _on_area_2d_13_body_entered(body):
 	if body.is_in_group("Jugador"):
 		$Sprite2D17.show()
 		esCofreCorrecto5=true;
-		wincondition=true
 		$CHECK5.show()
-		$PuertaCerrada5/StaticBody2D.position.x += 50;
-		$PuertaCerrada5/StaticBody2D/CollisionShape2D.position.x += 50;
-		$PuertaCerrada5.hide();
 		$audioCorrecto.play();
+		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/pullUpLever.dialogue"),"start");
+		Lever=true;
 
 
 func _on_area_2d_14_body_entered(body):
@@ -304,3 +319,66 @@ func _on_area_de_salida_body_entered(body):
 			await get_tree().create_timer(0.5).timeout
 			$AreaDeSalida.hide()
 			wincondition=false
+
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Jugador"):
+		if contadorPuerta==0 && key==true:
+			contadorPuerta+=1;
+			$StaticBody2D5.position.x += 50;
+			$StaticBody2D5/CollisionShape2D.position.x += 50;
+			$PuertaCerrada.hide();
+			$llave.hide();
+			$audioUnlockDoor.play();
+			key=false;
+
+
+
+
+func _on_area_llave_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Jugador"):
+		if contadorPuerta2==0 && key==true:
+			contadorPuerta2+=1;
+			$PuertaCerrada2/StaticBody2D22.position.x += 50;
+			$PuertaCerrada2/StaticBody2D22/CollisionShape2D.position.x += 50;
+			$PuertaCerrada2.hide();
+			$llave.hide();
+			$audioUnlockDoor.play();
+			key=false;
+
+
+func _on_area_llave_2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Jugador"):
+		if contadorPuerta3==0 && key==true:
+			contadorPuerta3+=1;
+			$PuertaCerrada3/StaticBody2D.position.x += 50;
+			$PuertaCerrada3/StaticBody2D/CollisionShape2D.position.x += 50;
+			$PuertaCerrada3.hide();
+			$llave.hide();
+			$audioUnlockDoor.play();
+			key=false;
+
+
+func _on_area_llave_3_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Jugador"):
+		if contadorPuerta4==0 && key==true:
+			contadorPuerta4+=1;
+			$PuertaCerrada4/StaticBody2D.position.x += 50;
+			$PuertaCerrada4/StaticBody2D/CollisionShape2D.position.x += 50;
+			$PuertaCerrada4.hide();
+			$llave.hide();
+			$audioUnlockDoor.play();
+			key=false;
+
+
+func _on_area_lever_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("Jugador"):
+		if Lever==true:
+			$StaticBody2D22/AreaLever/leverLabel.show();
+			dentro=true;
+		else:
+			dentro=false;
+
+
+func _on_area_lever_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	$StaticBody2D22/AreaLever/leverLabel.hide();

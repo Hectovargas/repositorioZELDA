@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bngaybi3bvgh"
+path="res://.godot/imported/pullUpLever.dialogue-c4370b2ce2a374e0d72c3f8c300de3ad.tres"
+
+[deps]
+
+source_file="res://artMinigame/Dialogues_Art_MiniGame/questions/pullUpLever.dialogue"
+dest_files=["res://.godot/imported/pullUpLever.dialogue-c4370b2ce2a374e0d72c3f8c300de3ad.tres"]
+
+[params]
+
+defaults=true
