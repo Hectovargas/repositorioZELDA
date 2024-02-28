@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://wx775h6gysli"]
+[gd_scene load_steps=79 format=3 uid="uid://wx775h6gysli"]
 
 [ext_resource type="Script" path="res://link.gd" id="1_h4jya"]
 [ext_resource type="Texture2D" uid="uid://22fnxbwugjiv" path="res://Sprites/Link2.png" id="4_jesy2"]
@@ -69,10 +69,6 @@ region = Rect2(58, 0, 29, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1rav"]
 atlas = ExtResource("4_lh425")
 region = Rect2(0, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vvobb"]
-atlas = ExtResource("4_lh425")
-region = Rect2(87, 210, 29, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44t5l"]
 atlas = ExtResource("4_rx1c0")
@@ -344,13 +340,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1rav")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vvobb")
 }],
 "loop": true,
 "name": &"MUERTO",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -605,8 +598,9 @@ script = ExtResource("1_h4jya")
 z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_o2v6d")
-animation = &"new_animation"
+animation = &"MUERTO"
 autoplay = "WalkDown"
+frame_progress = 0.285621
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -709,3 +703,4 @@ scale = Vector2(1.0625, 1)
 texture = ExtResource("9_78myw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false

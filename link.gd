@@ -133,6 +133,12 @@ func _process(delta):
 			$AnimatedSprite2D.play("posicionbatalla")
 		elif Global.posicionbatallainversa == true:
 			$AnimatedSprite2D.play("posicionbatallainversa")
+		elif Global.muerteencombate == true:
+			$AnimatedSprite2D.play("MUERTO")
+			await get_tree().create_timer(1).timeout
+			$AnimatedSprite2D.play("MUERTEDEFINITIVA")
+			await get_tree().create_timer(1).timeout
+			Global.muerteencombate = false
 		else:
 			if Global.vida < 1:
 				vivo = false

@@ -22,8 +22,21 @@ func _process(delta):
 			$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
 			$MapaInicial/Jugador/NinePatchRect.hide()
 			$MapaInicial/Jugador/AvisosLabel.set_text("")
-
+		if Global.caida==true:
+			$MapaInicial/Jugador.position.y+=4
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Jugador"):
 		Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+10)
 		get_tree().change_scene_to_file("res://primercastle.tscn")
+
+
+func _on_area_2d_3_body_entered(body):
+	if body.is_in_group("Jugador"):
+		$MapaInicial/Sprite2D3.show()
+		Global.caida = true
+
+
+func _on_area_2d_4_body_entered(body):
+	if body.is_in_group("Jugador"):
+		Global.caida = false
+		get_tree().change_scene_to_file("res://buceozone.tscn")

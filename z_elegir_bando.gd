@@ -72,6 +72,7 @@ func _on_area_racionalista_body_entered(body):
 func _on_salida_body_entered(body):
 	if body.is_in_group("Jugador"):
 		if Global.empirista==true || Global.nacionalista==true:
+			Global.sword=false
 			get_tree().change_scene_to_file("res://zona Inical.tscn")
 		else:
 			DialogueManager.show_dialogue_balloon(load("res://no puede salir.dialogue"),"start");
