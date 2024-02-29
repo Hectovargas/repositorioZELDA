@@ -7075,7 +7075,6 @@ scale = Vector2(4, 4)
 
 [node name="Arrow" parent="TileMap/Link" instance=ExtResource("11_r5x3b")]
 position = Vector2(0, -16)
-rotation = -1.57809
 scale = Vector2(2, 2)
 
 [node name="StalfoA" parent="." instance=ExtResource("13_m8ww4")]

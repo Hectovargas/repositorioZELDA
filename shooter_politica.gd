@@ -24,7 +24,6 @@ func _ready():
 	pregunta4.hide()
 	pregunta5.hide()
 	fallaste.hide()
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
