@@ -6,6 +6,7 @@ func _ready():
 	$alex.play("idle");
 	$adam.play("idle");
 	$bob.play("idle");
+	$amelia.play("idle");
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,7 +49,9 @@ func _on_area_registro_body_entered(body):
 		$Jugador/Panel.show();
 		$StaticBody2D.position.y+=50;
 		$StaticBody2D/CollisionShape2D.position.y+=50;
-		$adam.hide();
+		$adam.position.x=701;
+		$adam.position.y=-200;
+		$adam.play("idleDown");
 		registrado=true;
 
 func _on_area_registro_body_exited(body):
@@ -59,7 +62,7 @@ func _on_area_registro_body_exited(body):
 
 func _on_adam_area_body_entered(body):
 	if body.is_in_group("Jugador") && registrado==false:
-		$Jugador/msgRegistro.set_text("Tienes que registrarte con Bob
+		$Jugador/msgRegistro.set_text("Tienes que registrarte con Alex
 		antes de entrar a la universidad!")
 		$Jugador/msgRegistro.show();
 		$Jugador/Panel.show();

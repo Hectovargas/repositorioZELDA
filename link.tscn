@@ -592,7 +592,8 @@ height = 18.0
 [node name="Jugador" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-collision_mask = 2
+disable_mode = 1
+collision_mask = 3
 script = ExtResource("1_h4jya")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
