@@ -14,4 +14,5 @@ func _physics_process(delta):
 
 func die():
 	queue_free()
+	
 

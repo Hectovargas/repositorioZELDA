@@ -593,7 +593,7 @@ height = 18.0
 z_index = 1
 y_sort_enabled = true
 disable_mode = 1
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_h4jya")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
