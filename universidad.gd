@@ -51,6 +51,8 @@ func _on_area_registro_body_entered(body):
 		$StaticBody2D/CollisionShape2D.position.y+=50;
 		$adam.position.x=701;
 		$adam.position.y=-200;
+		
+		
 		$adam.play("idleDown");
 		registrado=true;
 
