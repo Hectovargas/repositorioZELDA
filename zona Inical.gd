@@ -47,3 +47,19 @@ func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Jugador"):
 		Global.videdurantecombate=Global.vida
 		Global.entroenpiramide=true
+		get_tree().change_scene_to_file("res://zone_desert.tscn")
+
+
+func _on_area_2d_5_body_entered(body):
+		if body.is_in_group("Jugador"):
+			$MapaInicial/Jugador.position= Vector2($MapaInicial/Area2D6/CollisionShape2D.position.x,$MapaInicial/Area2D6/CollisionShape2D.position.y+20)
+			
+
+
+func _on_area_2d_6_body_entered(body):
+		if body.is_in_group("Jugador"):
+			$MapaInicial/Jugador.position= Vector2($MapaInicial/Area2D5/CollisionShape2D.position.x,$MapaInicial/Area2D5/CollisionShape2D.position.y+20)
+
+func _on_area_2d_7_body_entered(body):
+		if body.is_in_group("Jugador"):
+			get_tree().change_scene_to_file("res://zone_mountains.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://ffxc4ko45xj"]
+[gd_scene load_steps=94 format=3 uid="uid://ffxc4ko45xj"]
 
 [ext_resource type="Script" path="res://zona Inical.gd" id="1_twnni"]
 [ext_resource type="Texture2D" uid="uid://b1yjgqyayhc66" path="res://RECURSO DE VIDEO E IMAGENES/Overworld.png" id="1_wn2e0"]
@@ -49059,6 +49059,9 @@ size = Vector2(20, 70.0001)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jafqx"]
 size = Vector2(79, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sw4f"]
+size = Vector2(27, 31)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(154, 119)
 script = ExtResource("1_twnni")
@@ -49245,7 +49248,28 @@ shape = SubResource("RectangleShape2D_82sbv")
 position = Vector2(-1352.5, 2324.5)
 shape = SubResource("RectangleShape2D_jafqx")
 
+[node name="Area2D5" type="Area2D" parent="MapaInicial"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapaInicial/Area2D5"]
+position = Vector2(2168.5, 2036.5)
+shape = SubResource("RectangleShape2D_8sw4f")
+
+[node name="Area2D6" type="Area2D" parent="MapaInicial"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapaInicial/Area2D6"]
+position = Vector2(2679, 1431)
+shape = SubResource("RectangleShape2D_8sw4f")
+
+[node name="Area2D7" type="Area2D" parent="MapaInicial"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapaInicial/Area2D7"]
+position = Vector2(2183, 1574)
+shape = SubResource("RectangleShape2D_8sw4f")
+
 [connection signal="body_entered" from="MapaInicial/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D3" to="." method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D4" to="." method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="MapaInicial/Area2D5" to="." method="_on_area_2d_5_body_entered"]
+[connection signal="body_entered" from="MapaInicial/Area2D6" to="." method="_on_area_2d_6_body_entered"]
+[connection signal="body_entered" from="MapaInicial/Area2D7" to="." method="_on_area_2d_7_body_entered"]
