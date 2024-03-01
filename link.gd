@@ -197,7 +197,8 @@ func _process(delta):
 					AnimatedSprite.flip_h = LastDirection.x >0
 			
 
-
-
 func _on_boton_de_preguntas_body_entered(body):
 	pass # Replace with function body.
+
+func die():
+	queue_free()

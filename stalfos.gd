@@ -15,3 +15,7 @@ func _physics_process(delta):
 func die():
 	queue_free()
 
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("jugador"):
+		body.die()
+		die()

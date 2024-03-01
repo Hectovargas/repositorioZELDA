@@ -16,6 +16,16 @@ func _ready():
 func _process(delta):
 	if Input.is_key_pressed(KEY_Z):
 		DialogueManager.show_dialogue_balloon(load("res://shooter1.dialogue"),"start")
+	elif Input.is_key_pressed(KEY_C):
+		DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"), "start")
+	elif Input.is_key_pressed(KEY_V):
+		DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"), "start")
+	elif Input.is_key_pressed(KEY_B):
+		DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"), "start")
+	elif Input.is_key_pressed(KEY_N):
+		DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"), "start")
+	elif Input.is_key_pressed(KEY_A):
+		DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
 	if Input.is_key_pressed(KEY_Q):
 		if disparo == false:
 			Global.flechando=true

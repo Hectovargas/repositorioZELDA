@@ -6726,7 +6726,6 @@ texture = ExtResource("16_ehhv1")
 [node name="CPUParticles2D8" type="CPUParticles2D" parent="."]
 position = Vector2(873, 138)
 rotation = 2.31886
-scale = Vector2(1, 1)
 amount = 15
 lifetime = 10.0
 speed_scale = 1.28
