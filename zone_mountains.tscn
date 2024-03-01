@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dso72pynwbixn"]
+[gd_scene load_steps=36 format=3 uid="uid://dso72pynwbixn"]
 
+[ext_resource type="Script" path="res://zone_mountains.gd" id="1_4f6vn"]
 [ext_resource type="Texture2D" uid="uid://bjbyh74phsbtm" path="res://Mobile - Idle Monster Frontier - Forest.png" id="1_lu8qx"]
 [ext_resource type="Texture2D" uid="uid://b1rky2gjiudbi" path="res://relojsprite.png" id="2_ah1e6"]
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="3_jf4yq"]
@@ -12,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://5nkdb5em3vwc" path="res://orc.tscn" id="10_1jh73"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="11_ofbit"]
 [ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="12_qogao"]
+[ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="13_3axv1"]
+[ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="14_p45sf"]
+[ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="15_bjxht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sg1lv"]
 texture = ExtResource("1_lu8qx")
@@ -6679,7 +6683,65 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="Curve" id="Curve_hikoo"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_0x52p"]
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 154.717), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ajc4r"]
+_data = [Vector2(1, 0.683019), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_yvg1b"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wkl6r"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_45ugg"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_504lu"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vdnru"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rs4te"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SystemFont" id="SystemFont_w05om"]
+font_names = PackedStringArray("Verdana")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohsv6"]
+font = SubResource("SystemFont_w05om")
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4f6vn")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6r4xq")
@@ -6789,6 +6851,224 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="skeleton1_4" parent="." instance=ExtResource("8_kmxxy")]
+position = Vector2(757, 213)
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto" type="TextureButton" parent="skeleton1_4"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton1_4/botonesqueleto"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
+[node name="skeleton" parent="." instance=ExtResource("9_301f2")]
+position = Vector2(746, 302)
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto2" type="TextureButton" parent="skeleton"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton/botonesqueleto2"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
+[node name="orc" parent="." instance=ExtResource("10_1jh73")]
+position = Vector2(407, 222)
+scale = Vector2(2, 2)
+
+[node name="botonorco1" type="TextureButton" parent="orc"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="orc/botonorco1"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
+[node name="orc1_4" parent="." instance=ExtResource("12_qogao")]
+position = Vector2(422, 310)
+scale = Vector2(2, 2)
+
+[node name="botonorco2" type="TextureButton" parent="orc1_4"]
+offset_left = -21.0
+offset_top = -15.5
+offset_right = 9.0
+offset_bottom = 21.5
+ignore_texture_size = true
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
+visible = false
+position = Vector2(10, 24.5)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(873, 138)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 1.28
+randomness = 1.0
+fixed_fps = 60
+draw_order = 1
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_hikoo")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.352941, 0.352941, 0.352941, 1)
+anim_speed_curve = SubResource("Curve_0x52p")
+anim_offset_curve = SubResource("Curve_ajc4r")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(908, 74)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_yvg1b")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+position = Vector2(930, 278)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 2.28
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_wkl6r")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.447059, 0.447059, 0.447059, 1)
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+position = Vector2(868, 328)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+speed_scale = 1.48
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_45ugg")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="."]
+position = Vector2(849, 166)
+rotation = 2.31886
+amount = 15
+lifetime = 20.0
+explosiveness = 0.54
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_504lu")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
+position = Vector2(894, 389)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_vdnru")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="."]
+position = Vector2(891, 220)
+rotation = 2.31886
+amount = 15
+lifetime = 10.0
+randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("13_3axv1")
+gravity = Vector2(-1000, 0)
+angular_velocity_min = 115.2
+angular_velocity_max = 129.6
+angular_velocity_curve = SubResource("Curve_rs4te")
+angle_max = 206.4
+scale_amount_min = 0.01
+scale_amount_max = 0.01
+color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 5
+offset_left = 67.0
+offset_top = 390.0
+offset_right = 1075.0
+offset_bottom = 487.0
+texture = ExtResource("14_p45sf")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -8.0
+offset_right = 764.0
+offset_bottom = 64.0
+label_settings = SubResource("LabelSettings_ohsv6")
+autowrap_mode = 3
+
+[node name="Musica de combate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_bjxht")
+volume_db = -10.111
+autoplay = true
+
 [node name="Ataque" type="Button" parent="."]
 offset_left = 506.0
 offset_top = 106.0
@@ -6801,28 +7081,16 @@ position = Vector2(18, 17)
 scale = Vector2(0.242188, 0.222656)
 texture = ExtResource("7_v731y")
 
-[node name="skeleton1_4" parent="." instance=ExtResource("8_kmxxy")]
-position = Vector2(757, 213)
-scale = Vector2(2, 2)
-
-[node name="skeleton" parent="." instance=ExtResource("9_301f2")]
-position = Vector2(746, 302)
-scale = Vector2(2, 2)
-
-[node name="orc" parent="." instance=ExtResource("10_1jh73")]
-position = Vector2(407, 222)
-scale = Vector2(2, 2)
-
-[node name="botonorco1" type="TextureButton" parent="orc"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="orc/botonorco1"]
-visible = false
-position = Vector2(0.5, 1.5)
-scale = Vector2(0.417969, 0.617188)
-texture = ExtResource("11_ofbit")
-
-[node name="orc1_4" parent="." instance=ExtResource("12_qogao")]
-position = Vector2(422, 310)
-scale = Vector2(2, 2)
+[connection signal="mouse_entered" from="skeleton1_4/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton1_4/botonesqueleto" to="." method="_on_botonesqueleto_mouse_exited"]
+[connection signal="pressed" from="skeleton1_4/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
+[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
+[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
+[connection signal="mouse_entered" from="orc/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
+[connection signal="mouse_exited" from="orc/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
+[connection signal="pressed" from="orc/botonorco1" to="." method="_on_botonorco_1_pressed"]
+[connection signal="mouse_entered" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_entered"]
+[connection signal="mouse_exited" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_exited"]
+[connection signal="pressed" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_pressed"]
+[connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]
