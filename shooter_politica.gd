@@ -1,34 +1,21 @@
 extends Node2D
 var disparo = false
-var instrucciones
-var pregunta1
-var pregunta2
-var pregunta3
-var pregunta4
-var pregunta5
-var fallaste
+
+#var pregunta1 = DialogueManager.show_dialogue_balloon(load("res://shooter1.dialogue"),"start")
+#var pregunta2 = DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"), "start")
+#var pregunta3 = DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"), "start")
+#var pregunta4 = DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"), "start")
+#var pregunta5 = DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"), "start")
+#var fallaste = DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	instrucciones = DialogueManager.show_dialogue_balloon(load("res://shooterInico.dialogue"))
-	pregunta1 = DialogueManager.show_dialogue_balloon(load("res://shooter1.dialogue"))
-	pregunta2 = DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"))
-	pregunta3 = DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"))
-	pregunta4 = DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"))
-	pregunta5 = DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"))
-	fallaste = DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"))
-	instrucciones.show()
-	pregunta1.hide()
-	pregunta2.hide()
-	pregunta3.hide()
-	pregunta4.hide()
-	pregunta5.hide()
-	fallaste.hide()
+	DialogueManager.show_dialogue_balloon(load("res://shooterInico.dialogue"),"start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_key_pressed(KEY_Z):
-		pregunta1.show()
+		DialogueManager.show_dialogue_balloon(load("res://shooter1.dialogue"),"start")
 	if Input.is_key_pressed(KEY_Q):
 		if disparo == false:
 			Global.flechando=true
@@ -62,6 +49,7 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_arrow_area_entered(area):
-	if area is Stalfos:
-		area.die()
-		$StalfoA.queue_free()
+	if area.is_in_group("enemy"):
+		print("memoriiii")
+		var stalf = area.get_parent()
+		stalf.die()
