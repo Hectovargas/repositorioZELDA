@@ -1,8 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkpvrquxt35bp"]
+[gd_scene load_steps=20 format=3 uid="uid://dkpvrquxt35bp"]
 
 [ext_resource type="Script" path="res://skeleton_1_3.gd" id="1_2wh53"]
 [ext_resource type="Texture2D" uid="uid://bnukmuis120av" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Rogue/Idle/Idle-Sheet.png" id="1_sgvm7"]
 [ext_resource type="Texture2D" uid="uid://xjmm2gjccs7i" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Rogue/Death/Death-Sheet.png" id="2_2juxc"]
+[ext_resource type="Texture2D" uid="uid://cuf50ytwxdqg6" path="res://imagenesTransparentes/archerSkeleton.png" id="2_po2jn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbkbe"]
+atlas = ExtResource("2_po2jn")
+region = Rect2(0, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwasg"]
+atlas = ExtResource("2_po2jn")
+region = Rect2(160, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0o0e"]
+atlas = ExtResource("2_po2jn")
+region = Rect2(320, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpuh5"]
+atlas = ExtResource("2_po2jn")
+region = Rect2(480, 0, 160, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oux0w"]
 atlas = ExtResource("2_2juxc")
@@ -44,6 +61,23 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lbkbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwasg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0o0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpuh5")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oux0w")
 }, {
 "duration": 1.0,
@@ -76,7 +110,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ppn1x")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -87,8 +121,7 @@ script = ExtResource("1_2wh53")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hwaxg")
-animation = &"daño"
-autoplay = "idle"
+autoplay = "default"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

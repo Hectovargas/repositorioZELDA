@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://beb2hh3rg5dc"]
+[gd_scene load_steps=38 format=3 uid="uid://beb2hh3rg5dc"]
 
 [ext_resource type="Texture2D" uid="uid://b5fj7xi8m8rkm" path="res://Sprites/WorldTilesets/desert_.png" id="1_2s2gw"]
 [ext_resource type="Script" path="res://zone_desert.gd" id="1_ihwuy"]
@@ -9,14 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://b1rky2gjiudbi" path="res://relojsprite.png" id="6_oq4vn"]
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="7_cfu4m"]
 [ext_resource type="AudioStream" uid="uid://v72guwgkoti8" path="res://Y2meta.app - Efecto de sonido de Katana (128 kbps).mp3" id="8_2lyew"]
+[ext_resource type="Texture2D" uid="uid://cxkdjsp5t6jkx" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Up.png" id="9_0e72l"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="10_ge4ft"]
+[ext_resource type="PackedScene" uid="uid://djd1k6dwn2nym" path="res://orc_1_3.tscn" id="11_5alow"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_bklh1"]
-[ext_resource type="FontFile" uid="uid://diyobwgto0rdo" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="13_5cgqf"]
+[ext_resource type="PackedScene" uid="uid://5nkdb5em3vwc" path="res://orc.tscn" id="13_oto67"]
 [ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="14_80l73"]
-[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="14_m3ohu"]
+[ext_resource type="PackedScene" uid="uid://h4vlp5j2pud7" path="res://skeleton_1_2.tscn" id="15_yghmx"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="16_ehhv1"]
-[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="16_iiges"]
-[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="18_a5hw5"]
 [ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="18_v43eh"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="19_hqqll"]
 [ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="20_oy7es"]
@@ -6479,59 +6479,48 @@ sources/3 = SubResource("TileSetAtlasSource_q8uje")
 sources/4 = SubResource("TileSetAtlasSource_pmf0d")
 sources/5 = SubResource("TileSetAtlasSource_pgqey")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b54gg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uysl4"]
 atlas = ExtResource("6_oq4vn")
 region = Rect2(192, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_46g2c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxwyn"]
 atlas = ExtResource("6_oq4vn")
 region = Rect2(384, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_187ee"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5v4g"]
 atlas = ExtResource("6_oq4vn")
 region = Rect2(576, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oaeln"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmcb7"]
 atlas = ExtResource("6_oq4vn")
 region = Rect2(768, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khscf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7toe"]
 atlas = ExtResource("6_oq4vn")
 region = Rect2(960, 0, 192, 192)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7awa2"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmyti"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b54gg")
+"texture": SubResource("AtlasTexture_uysl4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46g2c")
+"texture": SubResource("AtlasTexture_wxwyn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_187ee")
+"texture": SubResource("AtlasTexture_j5v4g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oaeln")
+"texture": SubResource("AtlasTexture_rmcb7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_khscf")
+"texture": SubResource("AtlasTexture_q7toe")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
 }]
-
-[sub_resource type="SystemFont" id="SystemFont_us0m1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_t5us3"]
-font = SubResource("SystemFont_us0m1")
-font_size = 60
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_sshf3"]
-font_size = 36
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve" id="Curve_7pp7d"]
 min_value = -360.0
@@ -6554,35 +6543,6 @@ max_value = 360.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969945, 360), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_brny8"]
-font = ExtResource("13_5cgqf")
-font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_en5nw"]
-font = ExtResource("13_5cgqf")
-font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_ep0yf"]
-font = ExtResource("13_5cgqf")
-font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_lbhay"]
-font = ExtResource("13_5cgqf")
-font_size = 20
-outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_hwfxb"]
-font_names = PackedStringArray("Verdana")
-
-[sub_resource type="LabelSettings" id="LabelSettings_sklss"]
-font = SubResource("SystemFont_hwfxb")
-
-[sub_resource type="SystemFont" id="SystemFont_cwr4t"]
-font_names = PackedStringArray("Verdana")
-
-[sub_resource type="LabelSettings" id="LabelSettings_ryf57"]
-font = SubResource("SystemFont_cwr4t")
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ihwuy")
 
@@ -6594,32 +6554,176 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536
 layer_1/name = "arboles y rocas"
 layer_1/tile_data = PackedInt32Array(1638416, 524289, 9, 1572880, 524289, 8, 1507344, 524289, 7, 1507345, 589825, 7, 1507346, 589825, 7, 1507348, 589825, 7, 1507347, 589825, 7, 1507349, 589825, 7, 1572881, 589825, 8, 1572882, 589825, 8, 1572883, 589825, 8, 1572885, 589825, 8, 1572884, 589825, 8, 1638422, 655361, 9, 1572886, 655361, 8, 1507350, 655361, 7, 1638423, 720897, 9, 1572887, 720897, 8, 1114116, 65538, 1, 1310759, 65538, 1, 131075, 65538, 1, 327721, 65538, 1, 1310728, 131074, 3, 1376264, 131074, 4, 1310729, 196610, 3, 1376265, 196610, 4, 1441821, 131074, 3, 1507357, 131074, 4, 1441822, 196610, 3, 1507358, 196610, 4)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap"]
-position = Vector2(378, 218)
-zoom = Vector2(1.55, 1.55)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap/Camera2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMap"]
 visible = false
-position = Vector2(29, -77)
-scale = Vector2(0.484375, 0.450521)
-sprite_frames = SubResource("SpriteFrames_7awa2")
+position = Vector2(335, 133)
+scale = Vector2(0.48, 0.485)
+sprite_frames = SubResource("SpriteFrames_rmyti")
 
-[node name="Label" type="Label" parent="TileMap/Camera2D/AnimatedSprite2D"]
-offset_left = 97.0
-offset_top = -36.0
-offset_right = 194.0
-offset_bottom = 48.0
-label_settings = SubResource("LabelSettings_t5us3")
+[node name="Label" type="Label" parent="TileMap/AnimatedSprite2D"]
+offset_right = 40.0
+offset_bottom = 23.0
 
-[node name="Label2" type="Label" parent="TileMap/Camera2D/AnimatedSprite2D"]
-offset_left = -293.161
-offset_top = 33.2948
-offset_right = -51.1618
-offset_bottom = 115.295
-label_settings = SubResource("LabelSettings_sshf3")
+[node name="Label2" type="Label" parent="TileMap/AnimatedSprite2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Jugador" parent="." instance=ExtResource("7_cfu4m")]
+position = Vector2(298, 187)
+scale = Vector2(2, 2)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jugador"]
+position = Vector2(0.5, 3)
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("8_2lyew")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = 17.0
+offset_right = 729.0
+offset_bottom = 95.0
+texture = ExtResource("9_0e72l")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 117.0
+offset_right = 174.0
+offset_bottom = 181.0
+texture_normal = ExtResource("10_ge4ft")
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 11.0
+offset_right = 66.0
+offset_bottom = 34.0
+text = "A"
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 111.0
+offset_right = 652.0
+offset_bottom = 175.0
+texture_normal = ExtResource("10_ge4ft")
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 11.0
+offset_right = 65.0
+offset_bottom = 34.0
+text = "B"
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 201.0
+offset_right = 174.0
+offset_bottom = 265.0
+texture_normal = ExtResource("10_ge4ft")
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 33.0
+text = "C
+"
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 202.0
+offset_right = 652.0
+offset_bottom = 266.0
+texture_normal = ExtResource("10_ge4ft")
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 65.0
+offset_bottom = 36.0
+text = "D"
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="orc1_3" parent="." instance=ExtResource("11_5alow")]
+position = Vector2(185, 149)
+scale = Vector2(2, 2)
+
+[node name="botonorco1" type="TextureButton" parent="orc1_3"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_3/botonorco1"]
+visible = false
+position = Vector2(0.5, 1.5)
+scale = Vector2(0.417969, 0.617188)
+texture = ExtResource("12_bklh1")
+
+[node name="orc" parent="." instance=ExtResource("13_oto67")]
+position = Vector2(195, 243)
+scale = Vector2(2, 2)
+
+[node name="botonorco2" type="TextureButton" parent="orc"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="orc/botonorco2"]
+visible = false
+position = Vector2(-0.999997, -2.38419e-07)
+scale = Vector2(0.460938, 0.699219)
+texture = ExtResource("12_bklh1")
+
+[node name="skeleton1_3" parent="." instance=ExtResource("14_80l73")]
+position = Vector2(535, 144)
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto" type="TextureButton" parent="skeleton1_3"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonesqueleto"]
+visible = false
+position = Vector2(5.5, 2.5)
+scale = Vector2(0.578125, 0.765625)
+texture = ExtResource("12_bklh1")
+
+[node name="Skeleton1_2" parent="." instance=ExtResource("15_yghmx")]
+position = Vector2(542, 245)
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto2" type="TextureButton" parent="Skeleton1_2"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Skeleton1_2/botonesqueleto2"]
+visible = false
+position = Vector2(-0.5, 0)
+scale = Vector2(0.4375, 0.617188)
+texture = ExtResource("12_bklh1")
+
+[node name="Ataque" type="Button" parent="."]
+offset_left = 301.0
+offset_top = 26.0
+offset_right = 446.0
+offset_bottom = 59.0
+text = "ATAQUE"
+
+[node name="Sprite2D" type="Sprite2D" parent="Ataque"]
+position = Vector2(18, 17)
+scale = Vector2(0.242188, 0.222656)
+texture = ExtResource("16_ehhv1")
 
 [node name="CPUParticles2D8" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(873, 138)
 rotation = 2.31886
 amount = 15
@@ -6641,7 +6745,6 @@ anim_speed_curve = SubResource("Curve_jpbax")
 anim_offset_curve = SubResource("Curve_401aw")
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(908, 74)
 rotation = 2.31886
 amount = 15
@@ -6659,7 +6762,6 @@ scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(930, 278)
 rotation = 2.31886
 amount = 15
@@ -6693,10 +6795,9 @@ angular_velocity_curve = SubResource("Curve_5cfiu")
 angle_max = 206.4
 scale_amount_min = 0.01
 scale_amount_max = 0.01
-color = Color(0.603922, 0.603922, 0, 1)
+color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="CPUParticles2D6" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0.133333, 1)
 position = Vector2(849, 166)
 rotation = 2.31886
 amount = 15
@@ -6715,7 +6816,6 @@ scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(894, 389)
 rotation = 2.31886
 amount = 15
@@ -6733,7 +6833,6 @@ scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="CPUParticles2D9" type="CPUParticles2D" parent="."]
-modulate = Color(1, 1, 0.0392157, 1)
 position = Vector2(891, 220)
 rotation = 2.31886
 amount = 15
@@ -6750,237 +6849,32 @@ scale_amount_min = 0.01
 scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
-[node name="Jugador" parent="." instance=ExtResource("7_cfu4m")]
-position = Vector2(416, 205)
-scale = Vector2(2, 2)
-
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
-zoom = Vector2(3, 3)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jugador"]
-position = Vector2(0.5, 3)
-scale = Vector2(0.5, 0.5)
-stream = ExtResource("8_2lyew")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = 5
-offset_left = -18.0
-offset_top = 14.0
-offset_right = 884.0
-offset_bottom = 111.0
-texture = ExtResource("19_hqqll")
-
-[node name="TextureButton" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 149.0
-offset_top = 101.0
-offset_right = 189.0
-offset_bottom = 141.0
-texture_normal = ExtResource("10_ge4ft")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 15.0
-offset_right = 42.0
-offset_bottom = 41.0
-text = "A
-"
-label_settings = SubResource("LabelSettings_brny8")
-
-[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 669.0
-offset_top = 102.0
-offset_right = 709.0
-offset_bottom = 142.0
-texture_normal = ExtResource("10_ge4ft")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton2"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 13.0
-offset_right = 39.0
-offset_bottom = 39.0
-text = "B
-"
-label_settings = SubResource("LabelSettings_en5nw")
-
-[node name="TextureButton3" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 147.0
-offset_top = 241.0
-offset_right = 187.0
-offset_bottom = 281.0
-texture_normal = ExtResource("10_ge4ft")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton3"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 10.0
-offset_right = 36.0
-offset_bottom = 33.0
-text = "C
-"
-label_settings = SubResource("LabelSettings_ep0yf")
-
-[node name="TextureButton4" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 671.0
-offset_top = 227.0
-offset_right = 711.0
-offset_bottom = 267.0
-texture_normal = ExtResource("10_ge4ft")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton4"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 13.0
-offset_right = 38.0
-offset_bottom = 62.0
-text = "D
-
-"
-label_settings = SubResource("LabelSettings_lbhay")
-
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 4.0
-offset_right = 791.0
-offset_bottom = 76.0
-label_settings = SubResource("LabelSettings_sklss")
-autowrap_mode = 3
-
-[node name="orc1_2" parent="." instance=ExtResource("14_m3ohu")]
-position = Vector2(216, 158)
-scale = Vector2(2, 2)
-
-[node name="botonorco1" type="TextureButton" parent="orc1_2"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_bklh1")
-
-[node name="orc1_4" parent="." instance=ExtResource("16_iiges")]
-position = Vector2(216, 293)
-scale = Vector2(2, 2)
-
-[node name="botonorco2" type="TextureButton" parent="orc1_4"]
-offset_left = -15.0
-offset_top = -19.0
-offset_right = 15.0
-offset_bottom = 18.0
-ignore_texture_size = true
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_bklh1")
-
-[node name="skeleton1_3" parent="." instance=ExtResource("14_80l73")]
-position = Vector2(617, 284)
-scale = Vector2(2, 2)
-
-[node name="botonesqueleto" type="TextureButton" parent="skeleton1_3"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonesqueleto"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_bklh1")
-
-[node name="skeleton" parent="." instance=ExtResource("18_a5hw5")]
-position = Vector2(623, 157)
-rotation = 0.00266727
-scale = Vector2(2, 2)
-
-[node name="botonesqueleto2" type="TextureButton" parent="skeleton"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="skeleton/botonesqueleto2"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_bklh1")
-
-[node name="Ataque" type="Button" parent="."]
-offset_left = 348.0
-offset_top = 52.0
-offset_right = 451.0
-offset_bottom = 83.0
-size_flags_horizontal = 4
-text = "ATAQUE
-"
-alignment = 2
-icon_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Ataque"]
-position = Vector2(21, 16)
-rotation = -0.00740052
-scale = Vector2(0.285156, 0.226563)
-texture = ExtResource("16_ehhv1")
-
 [node name="TextureRect2" type="TextureRect" parent="."]
 visible = false
-z_index = 5
-offset_left = -45.0
-offset_top = 339.0
-offset_right = 857.0
-offset_bottom = 436.0
+offset_left = -13.0
+offset_top = 295.0
+offset_right = 750.0
+offset_bottom = 359.0
 texture = ExtResource("19_hqqll")
 
 [node name="Label" type="Label" parent="TextureRect2"]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 7.0
-offset_right = 779.0
-offset_bottom = 79.0
-label_settings = SubResource("LabelSettings_ryf57")
-autowrap_mode = 3
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Musica de combate" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_oy7es")
 volume_db = -10.111
 autoplay = true
 
-[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
-[connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
-[connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
-[connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
-[connection signal="mouse_entered" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_entered"]
-[connection signal="mouse_exited" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_exited"]
-[connection signal="pressed" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_pressed"]
+[connection signal="mouse_entered" from="orc1_3/botonorco1" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="orc1_3/botonorco1" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="orc1_3/botonorco1" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="orc/botonorco2" to="." method="_on_botonorco_2_pressed"]
 [connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
 [connection signal="mouse_exited" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_exited"]
 [connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
-[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
-[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
-[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
+[connection signal="mouse_entered" from="Skeleton1_2/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
+[connection signal="mouse_exited" from="Skeleton1_2/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
+[connection signal="pressed" from="Skeleton1_2/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]

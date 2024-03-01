@@ -1,6 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://5nkdb5em3vwc"]
+[gd_scene load_steps=21 format=3 uid="uid://5nkdb5em3vwc"]
 
+[ext_resource type="Script" path="res://orc.gd" id="1_a2lil"]
 [ext_resource type="Texture2D" uid="uid://dop2wnjdg7xi" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Idle/Idle-Sheet.png" id="1_muto7"]
+[ext_resource type="Texture2D" uid="uid://dh2ovyitk821" path="res://imagenesTransparentes/baseOrc.png" id="2_8nlqe"]
+[ext_resource type="Texture2D" uid="uid://ba2k1fepkj1bs" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Death/Death-Sheet.png" id="3_t0e5j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvxp"]
+atlas = ExtResource("2_8nlqe")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8lax"]
+atlas = ExtResource("2_8nlqe")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpy64"]
+atlas = ExtResource("2_8nlqe")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uahj0"]
+atlas = ExtResource("2_8nlqe")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kng5i"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2l4"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glm6o"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83kew"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mer76"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qdbu"]
+atlas = ExtResource("3_t0e5j")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxku1"]
 atlas = ExtResource("1_muto7")
@@ -22,6 +65,46 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kcvxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8lax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpy64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uahj0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kng5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glm6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83kew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mer76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qdbu")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uxku1")
 }, {
 "duration": 1.0,
@@ -34,18 +117,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_gbfkg")
 }],
 "loop": true,
-"name": &"idle_orc",
+"name": &"idle",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60wn4"]
 
 [node name="orc" type="CharacterBody2D"]
+script = ExtResource("1_a2lil")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_534to")
-animation = &"idle_orc"
-autoplay = "idle_orc"
+animation = &"attack"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_60wn4")

@@ -353,10 +353,10 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="SystemFont" id="SystemFont_ie321"]
+[sub_resource type="SystemFont" id="SystemFont_njr5h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3f8wo"]
-font = SubResource("SystemFont_ie321")
+font = SubResource("SystemFont_njr5h")
 font_size = 60
 font_color = Color(0, 0, 0, 1)
 
@@ -384,11 +384,11 @@ font = ExtResource("14_rixff")
 font_size = 20
 outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_jht6r"]
+[sub_resource type="SystemFont" id="SystemFont_8a0h5"]
 font_names = PackedStringArray("Verdana")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ycnvo"]
-font = SubResource("SystemFont_jht6r")
+font = SubResource("SystemFont_8a0h5")
 
 [sub_resource type="Curve" id="Curve_sn6j5"]
 min_value = -360.0
@@ -405,11 +405,11 @@ point_count = 2
 _data = [Vector2(1, 0.683019), 0.0, 0.0, 0, 0]
 point_count = 1
 
-[sub_resource type="SystemFont" id="SystemFont_w05om"]
+[sub_resource type="SystemFont" id="SystemFont_wgnxf"]
 font_names = PackedStringArray("Verdana")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5e11u"]
-font = SubResource("SystemFont_w05om")
+font = SubResource("SystemFont_wgnxf")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_v2kvv")
@@ -769,7 +769,6 @@ scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
 z_index = 5
 offset_left = -45.0
 offset_top = 339.0
