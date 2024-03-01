@@ -7072,7 +7072,7 @@ sources/7 = SubResource("TileSetAtlasSource_sd71j")
 [sub_resource type="CircleShape2D" id="CircleShape2D_en3b4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2yf6"]
-radius = 8.18462
+radius = 8.1846
 height = 16.3692
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ou7tv"]
@@ -7142,6 +7142,13 @@ scale = Vector2(3.5, 3.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfoA/AreaStalfosA"]
 shape = SubResource("CircleShape2D_0mumn")
 
+[node name="Label" type="Label" parent="StalfoA/AreaStalfosA"]
+offset_left = -7.14286
+offset_top = -36.7143
+offset_right = 11.8571
+offset_bottom = -13.7143
+text = "A"
+
 [node name="StalfosB" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(604, 58)
 scale = Vector2(3.5, 3.5)
@@ -7150,6 +7157,13 @@ scale = Vector2(3.5, 3.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosB/AreaStalfosB"]
 shape = SubResource("CircleShape2D_scwni")
+
+[node name="Label" type="Label" parent="StalfosB"]
+offset_left = -7.14286
+offset_top = -36.7143
+offset_right = 11.8571
+offset_bottom = -13.7143
+text = "B"
 
 [node name="StalfosC" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(742, 65)
@@ -7160,6 +7174,13 @@ scale = Vector2(3.5, 3.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosC/AreaStalfosC"]
 shape = SubResource("CircleShape2D_bmqkg")
 
+[node name="Label" type="Label" parent="StalfosC"]
+offset_left = -7.14286
+offset_top = -36.7143
+offset_right = 11.8571
+offset_bottom = -13.7143
+text = "C"
+
 [node name="StalfosD" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(908, 62)
 scale = Vector2(3.5, 3.5)
@@ -7168,6 +7189,13 @@ scale = Vector2(3.5, 3.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosD/AreaStalfosD"]
 shape = SubResource("CircleShape2D_en3b4")
+
+[node name="Label" type="Label" parent="StalfosD"]
+offset_left = -7.14286
+offset_top = -36.7143
+offset_right = 11.8571
+offset_bottom = -13.7143
+text = "D"
 
 [node name="Sailda" type="Sprite2D" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dgxwblql87y7i"]
+[gd_scene load_steps=36 format=3 uid="uid://bq4usma38erw0"]
 
 [ext_resource type="Script" path="res://zone_tuberias.gd" id="1_8wmpj"]
 [ext_resource type="Texture2D" uid="uid://bn5dmu1y0rnlc" path="res://tuberias/Water+.png" id="1_vg3i4"]
@@ -271,6 +271,7 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_w05om")
 
 [node name="zone_tuberias" type="Node2D"]
+position = Vector2(2, -2)
 script = ExtResource("1_8wmpj")
 
 [node name="TileMap" type="TileMap" parent="."]

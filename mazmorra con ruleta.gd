@@ -128,7 +128,7 @@ func _on_area_2d_2_body_entered(body):
 
 func _on_area_2d_4_body_entered(body):
 	if body.is_in_group("Jugador"):
-		get_tree().change_scene_to_file("res://main_shooter.tscn")
+		get_tree().change_scene_to_file("res://shooter_politica.tscn")
 		Global.ruleteado = false;
 
 

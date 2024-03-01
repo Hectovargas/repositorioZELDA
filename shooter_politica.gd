@@ -10,7 +10,7 @@ var pregunta = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	DialogueManager.show_dialogue_balloon(load("res://shooterInico.dialogue"),"start")
+	DialogueManager.show_dialogue_balloon(load("res://ahooterinicio2.dialogue"),"start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -132,6 +132,7 @@ func _on_area_stalfos_a_body_entered(body):
 func _on_area_2d_area_entered(area):
 	Global.maxvida+=1
 	Global.vida+=1
+	$Area2D.position = Vector2(5000,5000)
 	
 
 

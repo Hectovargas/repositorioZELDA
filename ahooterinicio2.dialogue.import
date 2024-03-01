@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ccht4w1beg88j"
+path="res://.godot/imported/ahooterinicio2.dialogue-96908a249173462bab52d8a51a71ceb3.tres"
+
+[deps]
+
+source_file="res://ahooterinicio2.dialogue"
+dest_files=["res://.godot/imported/ahooterinicio2.dialogue-96908a249173462bab52d8a51a71ceb3.tres"]
+
+[params]
+
+defaults=true

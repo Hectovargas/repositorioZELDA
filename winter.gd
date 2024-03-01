@@ -13,4 +13,5 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Jugador"):
+		Global.videdurantecombate = Global.vida
 		get_tree().change_scene_to_file("res://zona_war.tscn")
