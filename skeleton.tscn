@@ -1,8 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://5b12ohsppvjq"]
+[gd_scene load_steps=20 format=3 uid="uid://5b12ohsppvjq"]
 
 [ext_resource type="Texture2D" uid="uid://bfp65ipf5iohy" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png" id="1_cjw25"]
 [ext_resource type="Script" path="res://skeleton.gd" id="1_qlho1"]
+[ext_resource type="Texture2D" uid="uid://bwcxbgge5tbky" path="res://imagenesTransparentes/baseEskeleton (1).png" id="2_e1psn"]
 [ext_resource type="Texture2D" uid="uid://ksokpfx0rh4" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png" id="2_u4eik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otns8"]
+atlas = ExtResource("2_e1psn")
+region = Rect2(0, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm57r"]
+atlas = ExtResource("2_e1psn")
+region = Rect2(160, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb6yf"]
+atlas = ExtResource("2_e1psn")
+region = Rect2(320, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2mol"]
+atlas = ExtResource("2_e1psn")
+region = Rect2(480, 0, 160, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds28j"]
 atlas = ExtResource("2_u4eik")
@@ -42,6 +59,23 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_trkcg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otns8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm57r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb6yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2mol")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ds28j")
@@ -87,7 +121,7 @@ script = ExtResource("1_qlho1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_trkcg")
-animation = &"daño"
+animation = &"ataque"
 autoplay = "idle_Skeleton"
 flip_h = true
 

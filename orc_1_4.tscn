@@ -1,8 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhvtwf0bj8g"]
+[gd_scene load_steps=19 format=3 uid="uid://dhvtwf0bj8g"]
 
 [ext_resource type="Script" path="res://orc_1_4.gd" id="1_a4dk5"]
 [ext_resource type="Texture2D" uid="uid://b5dkt65rlt7j8" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Idle/Idle-Sheet.png" id="1_m07x0"]
 [ext_resource type="Texture2D" uid="uid://d3cam6fi3t6tb" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet.png" id="2_3adrt"]
+[ext_resource type="Texture2D" uid="uid://f8toy187d76t" path="res://imagenesTransparentes/rogueOrc.png" id="2_t3yg1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyrm7"]
+atlas = ExtResource("2_t3yg1")
+region = Rect2(0, 0, 320, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef1s"]
+atlas = ExtResource("2_t3yg1")
+region = Rect2(320, 0, 320, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4qqg"]
+atlas = ExtResource("2_t3yg1")
+region = Rect2(640, 0, 320, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ct5"]
+atlas = ExtResource("2_t3yg1")
+region = Rect2(960, 0, 320, 335)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrd06"]
 atlas = ExtResource("2_3adrt")
@@ -38,6 +55,23 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nunrt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyrm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4qqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ct5")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wrd06")
@@ -80,7 +114,7 @@ script = ExtResource("1_a4dk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nunrt")
-animation = &"daño"
+animation = &"ataque"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
