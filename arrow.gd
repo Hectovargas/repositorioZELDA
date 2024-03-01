@@ -1,4 +1,4 @@
-extends Area2D
+class_name Arrow extends Area2D
 
 var speed = 300
 
@@ -20,9 +20,8 @@ func _on_body_entered(body):
 	queue_free()
 	if body.is_in_group("Jugador"):
 		Global.disparo = true
-	
 
 func _on_area_entered(area):
-	if area is Stalfos:
+	if area.is_in_group("enemy"):
 		area.die()
 		queue_free()

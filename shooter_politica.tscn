@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cif780fnx86pe"]
+[gd_scene load_steps=38 format=3 uid="uid://cif780fnx86pe"]
 
 [ext_resource type="Texture2D" uid="uid://oml6xr4snk4u" path="res://RECURSO DE VIDEO E IMAGENES/Inner.png" id="1_5hk51"]
 [ext_resource type="Script" path="res://shooter_politica.gd" id="1_mk6v4"]
@@ -11,7 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://ch44i1gkn3yrj" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Stone Ground.png" id="8_ksnp1"]
 [ext_resource type="Texture2D" uid="uid://dv5b284yq0kdf" path="res://RECURSO DE VIDEO E IMAGENES/Texture/TX Tileset Wall.png" id="9_1q7fh"]
 [ext_resource type="PackedScene" uid="uid://crmdlvjyhq3a" path="res://arrow.tscn" id="11_r5x3b"]
+[ext_resource type="Texture2D" uid="uid://vyxmxf4jgg7k" path="res://Sprites/InventoryRect.png" id="13_dwbhd"]
 [ext_resource type="PackedScene" uid="uid://dntnjah2tke8h" path="res://stalfos.tscn" id="13_m8ww4"]
+[ext_resource type="Texture2D" uid="uid://8v131xaoy8en" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore1.png" id="14_1ohfi"]
+[ext_resource type="Texture2D" uid="uid://pfrvtjby1e81" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore2.png" id="15_hpue8"]
+[ext_resource type="Texture2D" uid="uid://ctbls8ai7a7fc" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore3.png" id="16_qlesk"]
+[ext_resource type="Texture2D" uid="uid://2r73g18mmaao" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore4.png" id="17_0ueab"]
+[ext_resource type="Texture2D" uid="uid://d1oovffj6yj2c" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore5.png" id="18_fv7fy"]
+[ext_resource type="Texture2D" uid="uid://cpm2o4pev725y" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore6.png" id="19_8lcci"]
+[ext_resource type="Texture2D" uid="uid://cas721tbxx322" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore7.png" id="20_tj4v0"]
+[ext_resource type="Texture2D" uid="uid://c4h7m44g7jrqs" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore8.png" id="21_hhsu5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iorjt"]
 texture = ExtResource("1_5hk51")
@@ -7054,6 +7063,53 @@ sources/5 = SubResource("TileSetAtlasSource_m5d60")
 sources/6 = SubResource("TileSetAtlasSource_4fiqt")
 sources/7 = SubResource("TileSetAtlasSource_sd71j")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mumn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scwni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmqkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_en3b4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2yf6"]
+radius = 8.18462
+height = 16.3692
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ou7tv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1ohfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hpue8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qlesk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0ueab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fv7fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8lcci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tj4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hhsu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkxog"]
+radius = 11.0
+
 [node name="Shooter(Politica)" type="Node2D"]
 script = ExtResource("1_mk6v4")
 
@@ -7081,14 +7137,74 @@ scale = Vector2(2, 2)
 position = Vector2(460, 61)
 scale = Vector2(3.5, 3.5)
 
+[node name="AreaStalfosA" type="Area2D" parent="StalfoA"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StalfoA/AreaStalfosA"]
+shape = SubResource("CircleShape2D_0mumn")
+
 [node name="StalfosB" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(604, 58)
 scale = Vector2(3.5, 3.5)
+
+[node name="AreaStalfosB" type="Area2D" parent="StalfosB"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosB/AreaStalfosB"]
+shape = SubResource("CircleShape2D_scwni")
 
 [node name="StalfosC" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(742, 65)
 scale = Vector2(3.5, 3.5)
 
+[node name="AreaStalfosC" type="Area2D" parent="StalfosC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosC/AreaStalfosC"]
+shape = SubResource("CircleShape2D_bmqkg")
+
 [node name="StalfosD" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(908, 62)
 scale = Vector2(3.5, 3.5)
+
+[node name="AreaStalfosD" type="Area2D" parent="StalfosD"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosD/AreaStalfosD"]
+shape = SubResource("CircleShape2D_en3b4")
+
+[node name="Sailda" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(116, 62)
+scale = Vector2(3.42105, 3.42105)
+texture = ExtResource("13_dwbhd")
+
+[node name="AreaSalida" type="Area2D" parent="Sailda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sailda/AreaSalida"]
+shape = SubResource("CapsuleShape2D_r2yf6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(64, 115)
+
+[node name="heart" type="AnimatedSprite2D" parent="Area2D"]
+visible = false
+position = Vector2(153, -41)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ou7tv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(153, -40)
+shape = SubResource("CircleShape2D_fkxog")
+
+[node name="Label" type="Label" parent="Area2D"]
+visible = false
+offset_left = -51.0
+offset_top = -114.0
+offset_right = -11.0
+offset_bottom = -91.0
+scale = Vector2(2.52, 1)
+text = "GANASTE!!"
+
+[connection signal="area_entered" from="StalfosB/AreaStalfosB" to="." method="_on_area_stalfos_b_area_entered"]
+[connection signal="area_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_area_entered"]
+[connection signal="area_entered" from="StalfosD/AreaStalfosD" to="." method="_on_area_stalfos_d_area_entered"]
+[connection signal="area_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_area_entered"]
+[connection signal="body_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

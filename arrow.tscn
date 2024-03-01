@@ -21,7 +21,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Arrow" type="Area2D"]
+[node name="Arrow" type="Area2D" groups=["shoot"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_815e1")
@@ -42,4 +42,5 @@ frame_progress = 0.195692
 position = Vector2(0, 10)
 scale = Vector2(0.15, 0.15)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

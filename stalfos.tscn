@@ -44,6 +44,39 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dhtqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i33ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhtqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i33ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhtqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i33ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhtqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i33ct")
 }],
 "loop": false,
 "name": &"dead",
@@ -80,7 +113,7 @@ script = ExtResource("1_1jlb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v3n7m")
-animation = &"dead"
+animation = &"walking"
 autoplay = "walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

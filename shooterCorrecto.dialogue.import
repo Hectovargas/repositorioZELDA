@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dwr7c1tblgdkr"
+path="res://.godot/imported/shooterCorrecto.dialogue-39f64441b66fcf94c8b913c8b41bf4c8.tres"
+
+[deps]
+
+source_file="res://shooterCorrecto.dialogue"
+dest_files=["res://.godot/imported/shooterCorrecto.dialogue-39f64441b66fcf94c8b913c8b41bf4c8.tres"]
+
+[params]
+
+defaults=true
