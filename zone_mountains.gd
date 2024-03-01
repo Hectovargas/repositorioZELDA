@@ -9,7 +9,6 @@ var pregunta6=false
 var pregunta7= false
 var pregunta8=false
 var preguntado =true
-var vida = Global.vida
 var num=0
 var numero=0
 var contador=0
@@ -24,6 +23,7 @@ var terminarpelea = false
 var contadorfallos=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.vida=Global.videdurantecombate
 	if Global.empirista==true:
 		$Jugador.position = posicionJugadorimperialista
 		Global.posicionbatalla=true

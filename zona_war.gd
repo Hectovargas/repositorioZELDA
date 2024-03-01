@@ -95,7 +95,10 @@ func _process(delta):
 		terminarpelea = false
 		$Ataque.hide()
 		if contadorfallos==2:
-			Global.posicionbatalla=false
+			if Global.empirista==true:
+				Global.posicionbatalla=false
+			else:
+				Global.posicionbatallainversa=false
 			Global.muerteencombate=true
 			print("entre2")
 			$TextureRect2/Label.set_text("Fuiste derrotado en tu primera pelea")
@@ -117,14 +120,15 @@ func _process(delta):
 			$TextureRect2.show()
 			Global.vida = vida
 			await get_tree().create_timer(3).timeout
+			Global.posicionbatalla=false
 			get_tree().reload_current_scene()
 		else:
 			print("entre4")
 			$TextureRect2/Label.set_text("¡Has ganado!")
-		Global.posicionbatalla=false
 		$TextureRect2.show()
 		if(contadorfallos==0 || contadorfallos == 2):
 			await get_tree().create_timer(3).timeout
+			Global.posicionbatalla=false
 			get_tree().change_scene_to_file("res://zona Inical.tscn")
 
 
@@ -280,21 +284,25 @@ func fallaprgunta():
 	if numerodeenemigo==1:
 		var posicion = $orc1_2.position
 		$orc1_2.position = Vector2($Jugador.position.x-35,$Jugador.position.y)
+		Global.ataqueenemy=true
 		await get_tree().create_timer(1.5).timeout
 		$orc1_2.position=posicion
 	if numerodeenemigo==2:
 		var posicion = $orc1_4.position
-		$orc1_4.position = Vector2($Jugador.position.x-35,$Jugador.position.y)
+		$orc1_4.position = Vector2($Jugador.position.x-65,$Jugador.position.y)
+		Global.ataqueenemy2=true
 		await get_tree().create_timer(1.5).timeout
 		$orc1_4.position=posicion
 	if numerodeenemigo==3:
 		var posicion = $skeleton1_3.position
-		$skeleton1_3.position = Vector2($Jugador.position.x+35,$Jugador.position.y)
+		$skeleton1_3.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
+		Global.ataqueenemy3=true
 		await get_tree().create_timer(1.5).timeout
 		$skeleton1_3.position=posicion
 	if numerodeenemigo==4:
 		var posicion = $skeleton.position
-		$skeleton.position = Vector2($Jugador.position.x+35,$Jugador.position.y)
+		$skeleton.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
+		Global.ataqueenemy4=true
 		await get_tree().create_timer(1.5).timeout
 		$skeleton.position=posicion
 	Global.vida-=1

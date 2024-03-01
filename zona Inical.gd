@@ -32,11 +32,18 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_3_body_entered(body):
 	if body.is_in_group("Jugador"):
-		$MapaInicial/Sprite2D3.show()
-		Global.caida = true
+		if Global.entroenpiramide==true:
+			$MapaInicial/Sprite2D3.show()
+			Global.caida = true
 
 
 func _on_area_2d_4_body_entered(body):
 	if body.is_in_group("Jugador"):
 		Global.caida = false
 		get_tree().change_scene_to_file("res://buceozone.tscn")
+
+
+func _on_area_2d_2_body_entered(body):
+	if body.is_in_group("Jugador"):
+		Global.videdurantecombate=Global.vida
+		Global.entroenpiramide=true

@@ -10,3 +10,11 @@ func _process(delta):
 		await get_tree().create_timer(0.8).timeout
 		$AnimatedSprite2D.stop()
 		Global.dañoenemy=false
+	if Global.ataqueenemy==true:
+		print("entre2")
+		$AnimatedSprite2D.play("ataque")
+		$AnimatedSprite2D.scale = Vector2(0.8,0.8)
+		await get_tree().create_timer(0.8).timeout
+		$AnimatedSprite2D.stop()
+		Global.ataqueenemy=false
+		$AnimatedSprite2D.play("default")
