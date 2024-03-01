@@ -56,10 +56,3 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemy"):
 		print("puedo disparar")
-
-
-func _on_arrow_area_entered(area):
-	if area.is_in_group("enemy"):
-		print("memoriiii")
-		var stalf = area.get_parent()
-		stalf.die()

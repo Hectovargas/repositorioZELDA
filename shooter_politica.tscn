@@ -7092,5 +7092,3 @@ scale = Vector2(3.5, 3.5)
 [node name="StalfosD" parent="." instance=ExtResource("13_m8ww4")]
 position = Vector2(908, 62)
 scale = Vector2(3.5, 3.5)
-
-[connection signal="area_entered" from="TileMap/Link/Arrow" to="." method="_on_arrow_area_entered"]
