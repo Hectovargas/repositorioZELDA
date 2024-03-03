@@ -14,7 +14,15 @@ func change_scenes():
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Jugador"):
+	if body.is_in_group("Jugador") && Global.castillo==false:
 		$TileMap/Area2D/Sprite2D.show()
-		await get_tree().create_timer(0.10).timeout
+		Global.castillo = true
+		Global.caida = true
+		await get_tree().create_timer(0.20).timeout
+		Global.caida = false
 		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
+
+
+func _on_area_2d_2_body_entered(body):
+	if body.is_in_group("Jugador") :
+		get_tree().change_scene_to_file("res://Victoria.tscn")

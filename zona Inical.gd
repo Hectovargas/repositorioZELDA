@@ -26,10 +26,14 @@ func _process(delta):
 			$MapaInicial/Jugador/AvisosLabel.set_text("")
 		if Global.caida==true:
 			$MapaInicial/Jugador.position.y+=4
+		if Global.pelea1 && Global.pelea2 && Global.pelea3 && Global.pelea4:
+			Global.entradaCastillo=false
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Jugador"):
-		Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+10)
-		get_tree().change_scene_to_file("res://primercastle.tscn")
+		if Global.entradaCastillo == false:
+			Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+10)
+			get_tree().change_scene_to_file("res://primercastle.tscn")
+			Global.entradaCastillo=true
 
 
 func _on_area_2d_3_body_entered(body):
