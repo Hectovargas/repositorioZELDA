@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dhnf6n6r3g5gf"]
+[gd_scene load_steps=38 format=3 uid="uid://dhnf6n6r3g5gf"]
 
 [ext_resource type="Texture2D" uid="uid://bi8k23mn8iw2h" path="res://Sprites/WorldTilesets/snow-expansion.png" id="1_ejk1p"]
 [ext_resource type="Script" path="res://zona_war.gd" id="1_v2kvv"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="11_qksqu"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_2gfeo"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="13_8f2ny"]
-[ext_resource type="FontFile" uid="uid://diyobwgto0rdo" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="14_rixff"]
 [ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="15_3b87s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qt1cf"]
@@ -368,27 +367,28 @@ font_color = Color(0, 0, 0, 1)
 size = Vector2(8, 8)
 
 [sub_resource type="LabelSettings" id="LabelSettings_47wo1"]
-font = ExtResource("14_rixff")
-font_size = 20
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_hywmu"]
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4scw0"]
-font = ExtResource("14_rixff")
-font_size = 20
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_pngva"]
-font = ExtResource("14_rixff")
-font_size = 20
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_8a4et"]
-font = ExtResource("14_rixff")
-font_size = 20
+font_size = 40
 outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_m4bto"]
+[sub_resource type="SystemFont" id="SystemFont_q5chr"]
 font_names = PackedStringArray("Verdana")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ycnvo"]
-font = SubResource("SystemFont_m4bto")
+font = SubResource("SystemFont_q5chr")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve" id="Curve_sn6j5"]
 min_value = -360.0
@@ -404,12 +404,6 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_qfpjt"]
 _data = [Vector2(1, 0.683019), 0.0, 0.0, 0, 0]
 point_count = 1
-
-[sub_resource type="SystemFont" id="SystemFont_lm71b"]
-font_names = PackedStringArray("Verdana")
-
-[sub_resource type="LabelSettings" id="LabelSettings_5e11u"]
-font = SubResource("SystemFont_lm71b")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_v2kvv")
@@ -463,95 +457,127 @@ stream = ExtResource("5_1vuke")
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 z_index = 5
-offset_left = -23.0
-offset_top = 32.0
-offset_right = 879.0
-offset_bottom = 129.0
+offset_left = -100.0
+offset_top = 25.0
+offset_right = 908.0
+offset_bottom = 137.0
 texture = ExtResource("6_ejgc3")
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 101.0
-offset_right = 189.0
-offset_bottom = 141.0
+offset_left = 305.0
+offset_top = 326.0
+offset_right = 370.0
+offset_bottom = 382.0
 texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 15.0
-offset_right = 42.0
-offset_bottom = 41.0
+offset_left = 21.0
+offset_top = -4.0
+offset_right = 47.0
+offset_bottom = 51.0
 text = "A
 "
 label_settings = SubResource("LabelSettings_47wo1")
 
+[node name="Label2" type="Label" parent="TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 188.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_hywmu")
+
 [node name="TextureButton2" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 669.0
-offset_top = 102.0
-offset_right = 709.0
-offset_bottom = 142.0
+offset_left = 306.0
+offset_top = 394.0
+offset_right = 370.0
+offset_bottom = 448.0
 texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton2"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 13.0
-offset_right = 39.0
-offset_bottom = 39.0
+offset_left = 17.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 51.0
 text = "B
 "
 label_settings = SubResource("LabelSettings_4scw0")
 
+[node name="Label2" type="Label" parent="TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_hywmu")
+
 [node name="TextureButton3" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 241.0
-offset_right = 187.0
-offset_bottom = 281.0
+offset_left = 639.0
+offset_top = 328.0
+offset_right = 701.0
+offset_bottom = 383.0
 texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton3"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 10.0
-offset_right = 36.0
-offset_bottom = 33.0
+offset_left = 17.0
+offset_top = -6.0
+offset_right = 42.0
+offset_bottom = 49.0
 text = "C
 "
 label_settings = SubResource("LabelSettings_pngva")
 
+[node name="Label2" type="Label" parent="TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 5.0
+offset_right = 181.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_hywmu")
+
 [node name="TextureButton4" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 671.0
-offset_top = 227.0
-offset_right = 711.0
-offset_bottom = 267.0
+offset_left = 637.0
+offset_top = 394.0
+offset_right = 701.0
+offset_bottom = 450.0
 texture_normal = ExtResource("7_t3dlp")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="TextureRect/TextureButton4"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 13.0
-offset_right = 38.0
-offset_bottom = 62.0
+offset_left = 17.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 108.0
 text = "D
 
 "
 label_settings = SubResource("LabelSettings_8a4et")
 
+[node name="Label2" type="Label" parent="TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 205.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_hywmu")
+
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 7.0
-offset_right = 779.0
-offset_bottom = 79.0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 852.0
+offset_bottom = 98.0
 label_settings = SubResource("LabelSettings_ycnvo")
 autowrap_mode = 3
 
@@ -768,28 +794,28 @@ scale_amount_min = 0.01
 scale_amount_max = 0.01
 color = Color(0.603922, 0.603922, 0.603922, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-z_index = 5
-offset_left = -45.0
-offset_top = 339.0
-offset_right = 857.0
-offset_bottom = 436.0
-texture = ExtResource("6_ejgc3")
-
-[node name="Label" type="Label" parent="TextureRect2"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 7.0
-offset_right = 779.0
-offset_bottom = 79.0
-label_settings = SubResource("LabelSettings_5e11u")
-autowrap_mode = 3
-
 [node name="Musica de combate" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_3b87s")
 volume_db = -10.111
 autoplay = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 5
+offset_left = -19.0
+offset_top = 363.0
+offset_right = 862.0
+offset_bottom = 475.0
+texture = ExtResource("6_ejgc3")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 766.0
+offset_bottom = 98.0
+label_settings = SubResource("LabelSettings_ycnvo")
+autowrap_mode = 3
 
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -23,6 +23,7 @@ var terminarpelea = false
 var contadorfallos=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.estoyencombate=true
 	if Global.empirista==true:
 		$Jugador.position = posicionJugadorimperialista
 		Global.posicionbatalla=true
@@ -50,49 +51,73 @@ func _process(delta):
 				while true:
 					num = rng.randi_range(1,8)
 					if (num == 1 && pregunta1==false):
-						$TextureRect2/Label.set_text("A) Empiristas. B) Criticistas. C) Racionalistas. D) Dogmáticos ")
+						$TextureRect/TextureButton/Label2.set_text("Empiristas")
+						$TextureRect/TextureButton2/Label2.set_text("Criticistas")
+						$TextureRect/TextureButton3/Label2.set_text("Racionalistas")
+						$TextureRect/TextureButton4/Label2.set_text("Dogmáticos")
 						$TextureRect/Label.set_text("Para algunos de los siguientes filósofos, el criterio de verdad es la evidencia sensible:")
 						pregunta1=true
 						sintiempo=false
 						break
 					if (num == 2 && pregunta2==false):
-						$TextureRect2/Label.set_text("A) Racionalistas. B) Empiristas. C) Escolásticos. D) Escépticos ")
+						$TextureRect/TextureButton/Label2.set_text("Racionalistas")
+						$TextureRect/TextureButton2/Label2.set_text("Empiristas")
+						$TextureRect/TextureButton3/Label2.set_text("Escolásticos")
+						$TextureRect/TextureButton4/Label2.set_text("Escépticos")
 						$TextureRect/Label.set_text("De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos")
 						pregunta2=true
 						sintiempo=false
 						break
 					if (num == 3 && pregunta3==false):
-						$TextureRect2/Label.set_text("A) Epistemólogos. B) Racionalistas. C) Empiristas. D) Escépticos")
+						$TextureRect/TextureButton/Label2.set_text("Epistemólogos")
+						$TextureRect/TextureButton2/Label2.set_text("Racionalistas")
+						$TextureRect/TextureButton3/Label2.set_text("Empiristas")
+						$TextureRect/TextureButton4/Label2.set_text("Escépticos")
 						$TextureRect/Label.set_text("Para unos de los siguientes filósofos, la experiencia como única fuente del conocimiento.")
 						pregunta3=true
 						sintiempo=false
 						break
 					if (num == 4 && pregunta4==false):
-						$TextureRect2/Label.set_text("A) Epistemólogos. B) Racionalistas. C) Empiristas. D) Escépticos")
+						$TextureRect/TextureButton/Label2.set_text("Epistemólogos")
+						$TextureRect/TextureButton2/Label2.set_text("Racionalistas")
+						$TextureRect/TextureButton3/Label2.set_text("Empiristas")
+						$TextureRect/TextureButton4/Label2.set_text("Escépticos")
 						$TextureRect/Label.set_text("Filósofos para quienes la única fuente del conocimiento es la razón")
 						pregunta4=true
 						sintiempo=false
 						break
 					if (num == 5 && pregunta5==false):
-						$TextureRect2/Label.set_text("A) Empiristas. B) Idealistas. C) Racionalistas. D) Innatistas")
+						$TextureRect/TextureButton/Label2.set_text("Empiristas")
+						$TextureRect/TextureButton2/Label2.set_text("Idealistas")
+						$TextureRect/TextureButton3/Label2.set_text("Racionalistas")
+						$TextureRect/TextureButton4/Label2.set_text("Innatistas")
 						$TextureRect/Label.set_text("Filósofos que postulan las ideas innatas en el sujeto")
 						pregunta5=true
 						sintiempo=false
 						break
 					if (num == 6 && pregunta6==false):
-						$TextureRect2/Label.set_text("A) David Hume. B) John Locke. C) Nicolas Malebranch. D) Francis Bacon")
+						$TextureRect/TextureButton/Label2.set_text("David Hume")
+						$TextureRect/TextureButton2/Label2.set_text("John Locke")
+						$TextureRect/TextureButton3/Label2.set_text("Nicolas Malebranch")
+						$TextureRect/TextureButton4/Label2.set_text("Francis Bacon")
 						$TextureRect/Label.set_text("De los siguientes filósofos selecciones el que no se considera Racionalista")
 						pregunta6=true
 						sintiempo=false
 						break
 					if (num == 7 && pregunta7==false):
-						$TextureRect2/Label.set_text("A) Empirismo. B) Criticismo. C) Racionalismo. D) Epistemología")
+						$TextureRect/TextureButton/Label2.set_text("Empirismo")
+						$TextureRect/TextureButton2/Label2.set_text("Criticismo")
+						$TextureRect/TextureButton3/Label2.set_text("Racionalismo")
+						$TextureRect/TextureButton4/Label2.set_text("Epistemología")
 						$TextureRect/Label.set_text("Es la doctrina que establece que todos nuestros conocimientos provienen de la razón.")
 						pregunta7=true
 						sintiempo=false
 						break
 					if (num == 8 && pregunta8==false):
-						$TextureRect2/Label.set_text("A) George Berkeley. B) David Hume. C) Leibniz. D) Hipatía")
+						$TextureRect/TextureButton/Label2.set_text("George Berkeley")
+						$TextureRect/TextureButton2/Label2.set_text("David Hume")
+						$TextureRect/TextureButton3/Label2.set_text("Leibniz")
+						$TextureRect/TextureButton4/Label2.set_text("Hipatía")
 						$TextureRect/Label.set_text("Uno de los siguientes filósofos, postula las ideas innatas en el sujeto:")
 						pregunta8=true
 						sintiempo=false
@@ -109,6 +134,7 @@ func _process(delta):
 				Global.muerteencombate=true
 				print("entre2")
 				$TextureRect2/Label.set_text("Fuiste derrotado en tu primera pelea")
+				$TextureRect2.show()
 				if Global.empirista==true:
 					Global.dañoenemy3=true
 					Global.dañoenemy4=true
@@ -126,8 +152,7 @@ func _process(delta):
 				$TextureRect2/Label.set_text("Empate, El Combate seguira")
 				$TextureRect2.show()
 				Global.vida = Global.videdurantecombate
-				await get_tree().create_timer(3).timeout
-				Global.posicionbatalla=false
+				await get_tree().create_timer(2).timeout
 				get_tree().reload_current_scene()
 			else:
 				print("entre4")
@@ -135,6 +160,8 @@ func _process(delta):
 			$TextureRect2.show()
 			if(contadorfallos==0 || contadorfallos == 2):
 				await get_tree().create_timer(3).timeout
+				Global.estoyencombate=false
+				Global.pelea1 = true
 				Global.posicionbatalla=false
 				get_tree().change_scene_to_file("res://zona Inical.tscn")
 
@@ -163,18 +190,17 @@ func _on_ataque_pressed():
 			pregunta7=false
 		if(num == 8):
 			pregunta8=false
-		var texto = $TextureRect2/Label.get_text()
+		var texto = $TextureRect/Label.get_text()
 		$TextureRect2/Label.set_text("Primero Tienes Que seleccionar un enemigo")
 		$TextureRect2.show()
 		await get_tree().create_timer(2).timeout
 		$TextureRect2.hide()
 		preguntado=false
 		$Ataque.show()
-		$TextureRect2/Label.set_text(texto)
 	else:
 		preguntado=false
 		$TextureRect.show()
-		$TextureRect2.show()
+		$TextureRect.show()
 		$TileMap/Camera2D/AnimatedSprite2D.show()
 		$TileMap/Camera2D/AnimatedSprite2D.play("default")
 		while true:
@@ -283,9 +309,6 @@ func fallaprgunta():
 	$Ataque.hide()
 	respuestarespondida=true
 	$TextureRect.hide()
-	$TextureRect2/Label.set_text("Fallaste")
-	await get_tree().create_timer(1).timeout
-	$TextureRect2.hide()
 	preguntado=false
 	await get_tree().create_timer(1).timeout
 	if numerodeenemigo==1:
@@ -320,6 +343,7 @@ func fallaprgunta():
 func aciertapregunta():
 		$Ataque.hide()
 		respuestarespondida=true
+		$TextureRect.hide()
 		if Global.empirista==true:
 			#mover personaje hacia enemigo seleccionado
 			if numerodeenemigo==1:
@@ -333,10 +357,6 @@ func aciertapregunta():
 				$Jugador.position = Vector2($skeleton1_3.position.x-35,$skeleton1_3.position.y)
 			else:
 				$Jugador.position = Vector2($skeleton.position.x-35,$skeleton.position.y)
-			
-		#esconder pregunta
-		$TextureRect.hide()
-		$TextureRect2.hide()
 		#efecto de camara en ataque
 		$Jugador/Camera2D.make_current()
 		await get_tree().create_timer(0.5).timeout

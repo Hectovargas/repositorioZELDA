@@ -1,7 +1,9 @@
 extends Node2D
 var cambiar_escena = false
 var escena_actual = "zona Inical"
-
+var esqueleto = preload("res://esqueleto.tscn")
+var numeroaleatorio
+var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MapaInicial/Jugador.position = Global.posicion
@@ -40,13 +42,17 @@ func _on_area_2d_3_body_entered(body):
 func _on_area_2d_4_body_entered(body):
 	if body.is_in_group("Jugador"):
 		Global.caida = false
+		Global.pelea2 = true
+		Global.posicion= Vector2($MapaInicial/Jugador.position.x+200,$MapaInicial/Jugador.position.y-100)
 		get_tree().change_scene_to_file("res://buceozone.tscn")
 
 
 func _on_area_2d_2_body_entered(body):
 	if body.is_in_group("Jugador"):
+		Global.pelea2 = true
 		Global.videdurantecombate=Global.vida
 		Global.entroenpiramide=true
+		Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+20)
 		get_tree().change_scene_to_file("res://zone_desert.tscn")
 
 
@@ -62,5 +68,51 @@ func _on_area_2d_6_body_entered(body):
 
 func _on_area_2d_7_body_entered(body):
 		if body.is_in_group("Jugador"):
+			Global.pelea4 = true
 			Global.videdurantecombate= Global.vida
+			Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+20)
 			get_tree().change_scene_to_file("res://zone_mountains.tscn")
+
+
+func _on_area_2d_8_body_entered(body):
+		if body.is_in_group("Jugador"):
+			Global.videdurantecombate= Global.vida
+			get_tree().change_scene_to_file("res://universidad.tscn")
+
+
+func _on_area_2d_9_body_entered(body):
+		if body.is_in_group("Jugador"):
+			Global.pelea1 = true
+			Global.videdurantecombate= Global.vida
+			Global.posicion= Vector2($MapaInicial/Jugador.position.x,$MapaInicial/Jugador.position.y+20)
+			get_tree().change_scene_to_file("res://zona_war.tscn")
+
+
+func _on_timer_timeout():
+	if Global.espadahabilitada == true:
+		var enemigo = esqueleto.instantiate()
+		numeroaleatorio = random.randi_range(0, 10)
+		match numeroaleatorio:
+			0:
+				enemigo.position = $Marker2D.position
+			1:
+				enemigo.position = $Marker2D2.position
+			2:
+				enemigo.position = $Marker2D3.position
+			3:
+				enemigo.position = $Marker2D4.position
+			4:
+				enemigo.position = $Marker2D5.position
+			5:
+				enemigo.position = $Marker2D6.position
+			6:
+				enemigo.position = $Marker2D7.position
+			7:
+				enemigo.position = $Marker2D8.position
+			8:
+				enemigo.position = $Marker2D9.position
+			9:
+				enemigo.position = $Marker2D10.position
+			10:
+				enemigo.position = $Marker2D11.position
+		add_child(enemigo)

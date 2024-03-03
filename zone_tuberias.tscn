@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bq4usma38erw0"]
+[gd_scene load_steps=34 format=3 uid="uid://bq4usma38erw0"]
 
 [ext_resource type="Script" path="res://zone_tuberias.gd" id="1_8wmpj"]
 [ext_resource type="Texture2D" uid="uid://bn5dmu1y0rnlc" path="res://tuberias/Water+.png" id="1_vg3i4"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://v72guwgkoti8" path="res://Y2meta.app - Efecto de sonido de Katana (128 kbps).mp3" id="4_tkdm8"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="5_iind7"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="6_fhjfa"]
-[ext_resource type="FontFile" uid="uid://diyobwgto0rdo" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="7_noog6"]
 [ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="8_75734"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="9_0e26d"]
 [ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="10_0ku30"]
@@ -239,36 +238,29 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhn3s"]
 size = Vector2(8, 8)
 
-[sub_resource type="LabelSettings" id="LabelSettings_k83gl"]
-font = ExtResource("7_noog6")
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_0jokx"]
+font_size = 40
 
-[sub_resource type="LabelSettings" id="LabelSettings_0ylem"]
-font = ExtResource("7_noog6")
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_g0uka"]
+font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_q0jql"]
-font = ExtResource("7_noog6")
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_qhdhg"]
+font_size = 40
 
-[sub_resource type="LabelSettings" id="LabelSettings_iohme"]
-font = ExtResource("7_noog6")
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_mgonv"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_ihuc1"]
+font_size = 40
 outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_jht6r"]
+[sub_resource type="SystemFont" id="SystemFont_m4bto"]
 font_names = PackedStringArray("Verdana")
-subpixel_positioning = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_d75gk"]
-font = SubResource("SystemFont_jht6r")
-
-[sub_resource type="SystemFont" id="SystemFont_w05om"]
-font_names = PackedStringArray("Verdana")
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_mbxrx"]
-font = SubResource("SystemFont_w05om")
+[sub_resource type="LabelSettings" id="LabelSettings_n7h4p"]
+font = SubResource("SystemFont_m4bto")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
 
 [node name="zone_tuberias" type="Node2D"]
 position = Vector2(2, -2)
@@ -321,101 +313,6 @@ zoom = Vector2(3, 3)
 position = Vector2(0.5, 3)
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("4_tkdm8")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = 5
-offset_left = -23.0
-offset_top = 32.0
-offset_right = 879.0
-offset_bottom = 129.0
-texture = ExtResource("5_iind7")
-
-[node name="TextureButton" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 149.0
-offset_top = 101.0
-offset_right = 189.0
-offset_bottom = 141.0
-texture_normal = ExtResource("6_fhjfa")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 15.0
-offset_right = 42.0
-offset_bottom = 41.0
-text = "A
-"
-label_settings = SubResource("LabelSettings_k83gl")
-
-[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 669.0
-offset_top = 102.0
-offset_right = 709.0
-offset_bottom = 142.0
-texture_normal = ExtResource("6_fhjfa")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton2"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 13.0
-offset_right = 39.0
-offset_bottom = 39.0
-text = "B
-"
-label_settings = SubResource("LabelSettings_0ylem")
-
-[node name="TextureButton3" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 147.0
-offset_top = 241.0
-offset_right = 187.0
-offset_bottom = 281.0
-texture_normal = ExtResource("6_fhjfa")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton3"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 10.0
-offset_right = 36.0
-offset_bottom = 33.0
-text = "C
-"
-label_settings = SubResource("LabelSettings_q0jql")
-
-[node name="TextureButton4" type="TextureButton" parent="TextureRect"]
-layout_mode = 0
-offset_left = 671.0
-offset_top = 227.0
-offset_right = 711.0
-offset_bottom = 267.0
-texture_normal = ExtResource("6_fhjfa")
-ignore_texture_size = true
-
-[node name="Label" type="Label" parent="TextureRect/TextureButton4"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 13.0
-offset_right = 38.0
-offset_bottom = 62.0
-text = "D
-
-"
-label_settings = SubResource("LabelSettings_iohme")
-
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 7.0
-offset_right = 779.0
-offset_bottom = 79.0
-label_settings = SubResource("LabelSettings_d75gk")
-autowrap_mode = 3
 
 [node name="orc1_2" parent="." instance=ExtResource("8_75734")]
 position = Vector2(210, 174)
@@ -504,33 +401,155 @@ rotation = -0.00740052
 scale = Vector2(0.285156, 0.226563)
 texture = ExtResource("13_i3csc")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-z_index = 5
-offset_left = -45.0
-offset_top = 339.0
-offset_right = 857.0
-offset_bottom = 436.0
-texture = ExtResource("5_iind7")
-
-[node name="Label" type="Label" parent="TextureRect2"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 7.0
-offset_right = 779.0
-offset_bottom = 79.0
-label_settings = SubResource("LabelSettings_mbxrx")
-autowrap_mode = 3
-
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_4cojm")
 volume_db = -25.102
 autoplay = true
 
-[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 5
+offset_left = -104.0
+offset_top = 16.0
+offset_right = 936.0
+offset_bottom = 128.0
+texture = ExtResource("5_iind7")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 337.0
+offset_right = 392.0
+offset_bottom = 393.0
+texture_normal = ExtResource("6_fhjfa")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -4.0
+offset_right = 47.0
+offset_bottom = 51.0
+text = "A
+"
+label_settings = SubResource("LabelSettings_0jokx")
+
+[node name="Label2" type="Label" parent="TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 188.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_g0uka")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 400.0
+offset_right = 392.0
+offset_bottom = 454.0
+texture_normal = ExtResource("6_fhjfa")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 51.0
+text = "B
+"
+label_settings = SubResource("LabelSettings_qhdhg")
+
+[node name="Label2" type="Label" parent="TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_g0uka")
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 337.0
+offset_right = 722.0
+offset_bottom = 392.0
+texture_normal = ExtResource("6_fhjfa")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -6.0
+offset_right = 42.0
+offset_bottom = 49.0
+text = "C
+"
+label_settings = SubResource("LabelSettings_mgonv")
+
+[node name="Label2" type="Label" parent="TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 5.0
+offset_right = 181.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_g0uka")
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 400.0
+offset_right = 724.0
+offset_bottom = 456.0
+texture_normal = ExtResource("6_fhjfa")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 108.0
+text = "D
+
+"
+label_settings = SubResource("LabelSettings_ihuc1")
+
+[node name="Label2" type="Label" parent="TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 205.0
+offset_bottom = 42.0
+label_settings = SubResource("LabelSettings_g0uka")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 875.0
+offset_bottom = 98.0
+label_settings = SubResource("LabelSettings_n7h4p")
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 5
+offset_left = -19.0
+offset_top = 363.0
+offset_right = 862.0
+offset_bottom = 475.0
+texture = ExtResource("5_iind7")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 766.0
+offset_bottom = 98.0
+label_settings = SubResource("LabelSettings_n7h4p")
+autowrap_mode = 3
+
 [connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
 [connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
 [connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
@@ -544,3 +563,7 @@ autoplay = true
 [connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
 [connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]

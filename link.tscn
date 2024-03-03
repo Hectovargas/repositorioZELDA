@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://wx775h6gysli"]
+[gd_scene load_steps=92 format=3 uid="uid://wx775h6gysli"]
 
 [ext_resource type="Script" path="res://link.gd" id="1_h4jya"]
 [ext_resource type="Texture2D" uid="uid://22fnxbwugjiv" path="res://Sprites/Link2.png" id="4_jesy2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bl8eiu6y0tqeo" path="res://Sprites/SNES - The Legend of Zelda A Link to the Past - Link.png" id="7_bb78m"]
 [ext_resource type="Texture2D" uid="uid://dhrqqh8n8qbp8" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01e.png" id="8_52rgn"]
 [ext_resource type="Texture2D" uid="uid://os1yvhlhygke" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01d.png" id="9_78myw"]
+[ext_resource type="Texture2D" uid="uid://daoiqhx8qtv5l" path="res://trifuerza.png" id="10_mgxmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjxlo"]
 atlas = ExtResource("4_w3b4u")
@@ -162,6 +163,50 @@ region = Rect2(328, 180, 28, 30)
 atlas = ExtResource("4_w3b4u")
 region = Rect2(356, 175, 28, 35)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnehc"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(0, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw7fk"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(29, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r77tm"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(58, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opkq4"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(87, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7ici"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(116, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h31vl"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(145, 90, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7slg"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(0, 175, 29, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2h43"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(29, 175, 29, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si0jp"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(58, 175, 29, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbsof"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(87, 175, 29, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opbok"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(116, 175, 29, 35)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4ay1"]
 atlas = ExtResource("4_w3b4u")
 region = Rect2(29, 150, 29, 30)
@@ -185,6 +230,10 @@ region = Rect2(557, 142, 16, 22)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c3ok"]
 atlas = ExtResource("4_rx1c0")
 region = Rect2(487, 31, 15, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhunv"]
+atlas = ExtResource("4_w3b4u")
+region = Rect2(415, 156, 27, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fus4l"]
 atlas = ExtResource("4_w3b4u")
@@ -437,7 +486,50 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack_left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnehc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw7fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r77tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opkq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7ici")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h31vl")
+}],
+"loop": true,
+"name": &"attackdown",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7slg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2h43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si0jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbsof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opbok")
+}],
+"loop": true,
+"name": &"attackup",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -484,6 +576,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhunv")
+}],
+"loop": true,
+"name": &"obtencionTrifuerza",
 "speed": 5.0
 }, {
 "frames": [{
@@ -601,8 +701,9 @@ script = ExtResource("1_h4jya")
 z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_o2v6d")
-animation = &"Attack_Right"
+animation = &"attackdown"
 autoplay = "WalkDown"
+frame_progress = 0.492121
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -610,17 +711,25 @@ y_sort_enabled = true
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_7hppb")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(6, -15)
+scale = Vector2(0.0853041, 0.0620777)
+texture = ExtResource("10_mgxmx")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false
-offset_left = -28.0
-offset_top = -31.0
-offset_right = 37.0
-offset_bottom = -10.0
+z_index = 10
+offset_left = -119.0
+offset_top = -131.0
+offset_right = 14.0
+offset_bottom = -102.0
 
 [node name="coracointainer" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(4, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(9, 7)
+scale = Vector2(0.657, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora1" type="Sprite2D" parent="RichTextLabel/coracointainer"]
@@ -628,8 +737,8 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer2" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(10, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(21, 7)
+scale = Vector2(0.657, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora2" type="Sprite2D" parent="RichTextLabel/coracointainer2"]
@@ -637,8 +746,8 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer3" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(16, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(33, 7)
+scale = Vector2(0.657, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora3" type="Sprite2D" parent="RichTextLabel/coracointainer3"]
@@ -646,8 +755,8 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer4" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(22, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(45, 7)
+scale = Vector2(0.657, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora4" type="Sprite2D" parent="RichTextLabel/coracointainer4"]
@@ -655,8 +764,8 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer5" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(28, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(56.7922, 7)
+scale = Vector2(0.681441, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora5" type="Sprite2D" parent="RichTextLabel/coracointainer5"]
@@ -664,8 +773,8 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer6" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(34, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(69, 7)
+scale = Vector2(0.688, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora6" type="Sprite2D" parent="RichTextLabel/coracointainer6"]
@@ -673,22 +782,26 @@ texture = ExtResource("6_67npl")
 
 [node name="coracointainer7" type="Sprite2D" parent="RichTextLabel"]
 visible = false
-position = Vector2(40, 7)
-scale = Vector2(0.323529, 0.308824)
+position = Vector2(81.625, 7.1875)
+scale = Vector2(0.7, 0.627)
 texture = ExtResource("5_us2vr")
 
 [node name="cora7" type="Sprite2D" parent="RichTextLabel/coracointainer7"]
 texture = ExtResource("6_67npl")
 
 [node name="LOGORACIONALISTA" type="Sprite2D" parent="RichTextLabel"]
-visible = false
-position = Vector2(53, 10)
+position = Vector2(99, 9)
 texture = ExtResource("8_52rgn")
 
 [node name="LOGOEMPIRISTA" type="Sprite2D" parent="RichTextLabel"]
-visible = false
-position = Vector2(53, 10)
+position = Vector2(99, 9)
 texture = ExtResource("9_78myw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RichTextLabel"]
+visible = false
+position = Vector2(117, 16)
+scale = Vector2(0.0912162, 0.0743243)
+texture = ExtResource("10_mgxmx")
 
 [node name="LOGORACIONALISTA" type="Sprite2D" parent="."]
 visible = false
