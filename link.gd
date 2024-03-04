@@ -82,6 +82,7 @@ func _process(delta):
 			match Global.vida:
 				0:
 					$RichTextLabel.hide()
+					$RichTextLabel/coracointainer/cora1.hide()
 				1:
 					$RichTextLabel/coracointainer/cora1.show()
 					$RichTextLabel/coracointainer2/cora2.hide()
@@ -210,9 +211,8 @@ func _process(delta):
 				if Global.vida < 1:
 					vivo = false
 					$AnimatedSprite2D.stop()
-					$AnimatedSprite2D.play("MUERTO")
-					$AnimatedSprite2D.play("MUERTEDEFINITIVA")
 					velocity=Vector2(0,0)
+					$AnimatedSprite2D.play("MUERTEDEFINITIVA")
 				else:
 					if Global.nadando==false:
 						var Direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")

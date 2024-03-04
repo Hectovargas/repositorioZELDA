@@ -30,6 +30,8 @@ func _process(delta):
 			$MapaInicial/Jugador.position.y+=4
 		if Global.pelea1 && Global.pelea2 && Global.pelea3 && Global.pelea4:
 			Global.entradaCastillo=false
+		if Global.vida < 1:
+			get_tree().change_scene_to_file("res://gameover.tscn")
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Jugador"):
 		if Global.entradaCastillo == false:

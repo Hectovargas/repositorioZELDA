@@ -40,8 +40,7 @@ func _process(delta):
 		Global.posicionbatallainversa=false
 		Global.muerteencombate = true
 		await get_tree().create_timer(2).timeout
-		Global.vida=Global.maxvida
-		get_tree().change_scene_to_file("res://zona Inical.tscn")
+		get_tree().change_scene_to_file("res://gameover.tscn")
 	else:
 		print("contador =" + str(contadorpreguntas))
 		print("num: "+str(num))
@@ -129,6 +128,7 @@ func _process(delta):
 			terminarpelea = false
 			$Ataque.hide()
 			if contadorfallos==2:
+				Global.peleas-=1
 				if Global.empirista==true:
 					Global.posicionbatalla=false
 				else:
@@ -157,6 +157,7 @@ func _process(delta):
 				await get_tree().create_timer(2).timeout
 				get_tree().reload_current_scene()
 			else:
+				Global.peleas+=1
 				print("entre4")
 				$TextureRect2/Label.set_text("¡Has ganado!")
 			$TextureRect2.show()

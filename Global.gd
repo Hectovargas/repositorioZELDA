@@ -2,6 +2,7 @@ extends Node
 var posicion = Vector2(-18,37)
 var vida = 3
 var maxvida = 3
+var peleas = 0
 var empezar = false
 var ciencia = false
 var arte = false
@@ -20,7 +21,7 @@ var sword =false;
 var empirista = false
 var nacionalista = false
 var obtenciongema = false
-var espadahabilitada = false
+var espadahabilitada = true
 var attacking = false
 var ataqueinverso = false
 var flechando = false

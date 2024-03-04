@@ -33,13 +33,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if Global.vida==0:
 		Global.posicionbatalla=false
 		Global.posicionbatallainversa=false
 		Global.muerteencombate = true
-		await get_tree().create_timer(1).timeout
-		Global.vida=Global.maxvida
-		get_tree().change_scene_to_file("res://zona Inical.tscn")
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://gameover.tscn")
 	else:
 		print("contador =" + str(contadorpreguntas))
 		print("num: "+str(num))
@@ -127,6 +127,7 @@ func _process(delta):
 			terminarpelea = false
 			$Ataque.hide()
 			if contadorfallos==2:
+				Global.peleas-=1
 				if Global.empirista==true:
 					Global.posicionbatalla=false
 				else:
@@ -157,8 +158,10 @@ func _process(delta):
 			else:
 				print("entre4")
 				$TextureRect2/Label.set_text("¡Has ganado!")
+				Global.peleas+=1
 			$TextureRect2.show()
 			if(contadorfallos==0 || contadorfallos == 2):
+				
 				await get_tree().create_timer(3).timeout
 				Global.estoyencombate=false
 				Global.pelea1 = true

@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://yc2h7b44raau"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_4uo0x"]
+[ext_resource type="Texture2D" uid="uid://da0yrlmt183n2" path="res://RECURSO DE VIDEO E IMAGENES/fondo-abstracto-textura.jpg" id="2_4i48y"]
+[ext_resource type="Texture2D" uid="uid://ckqqwm045r47" path="res://RECURSO DE VIDEO E IMAGENES/luz.png" id="3_ur0xc"]
+[ext_resource type="Texture2D" uid="uid://bhm8ikoa8ur0y" path="res://pixil-frame-0 (3).png" id="4_vsucu"]
+[ext_resource type="Texture2D" uid="uid://dy52xpult1ri8" path="res://pixil-frame-0 (4).png" id="5_egwyu"]
+[ext_resource type="Texture2D" uid="uid://cfxhym4530s0x" path="res://pixil-frame-0 (5).png" id="5_qyljg"]
+[ext_resource type="Texture2D" uid="uid://bcdkpbtfulyyo" path="res://pixil-frame-0 (2).png" id="6_7v8x5"]
+[ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="6_p0dvg"]
+[ext_resource type="Texture2D" uid="uid://cto73427akchk" path="res://pixil-frame-0 (1).png" id="7_fs187"]
+[ext_resource type="Texture2D" uid="uid://bnd0uhe5x0uyg" path="res://pixil-frame-0 (7).png" id="8_3783y"]
+[ext_resource type="Texture2D" uid="uid://c356d1hxjh64y" path="res://pixil-frame-0 (8).png" id="11_3y5eo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayhld"]
+size = Vector2(109, 50.5)
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4uo0x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 646.0
+texture = ExtResource("2_4i48y")
+expand_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="TextureRect"]
+position = Vector2(574, 556)
+scale = Vector2(0.63968, 0.315592)
+energy = 2.54
+texture = ExtResource("3_ur0xc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="TextureRect"]
+position = Vector2(580, 191.875)
+scale = Vector2(0.314843, 0.406922)
+energy = 3.17
+texture = ExtResource("3_ur0xc")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 366.0
+offset_right = 531.0
+offset_bottom = 513.0
+texture_normal = ExtResource("4_vsucu")
+texture_pressed = ExtResource("5_qyljg")
+texture_hover = ExtResource("5_egwyu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 365.0
+offset_right = 935.0
+offset_bottom = 513.0
+texture_normal = ExtResource("6_7v8x5")
+texture_pressed = ExtResource("8_3783y")
+texture_hover = ExtResource("7_fs187")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Jugador" parent="TextureRect" instance=ExtResource("6_p0dvg")]
+z_index = 10
+position = Vector2(551, -214)
+scale = Vector2(5, 5)
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 12.0
+offset_right = 1014.0
+offset_bottom = 358.0
+texture = ExtResource("11_3y5eo")
+
+[node name="Area2D" type="Area2D" parent="TextureRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
+position = Vector2(544, 621)
+shape = SubResource("RectangleShape2D_ayhld")
+
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="body_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_body_entered"]
