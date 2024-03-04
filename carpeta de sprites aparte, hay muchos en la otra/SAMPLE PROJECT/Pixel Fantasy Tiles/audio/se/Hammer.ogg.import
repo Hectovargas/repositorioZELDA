@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chxj4g6vqrdot"
+path="res://.godot/imported/Hammer.ogg-87c0bb37ed388e835b42cd77ebdca6ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Hammer.ogg"
+dest_files=["res://.godot/imported/Hammer.ogg-87c0bb37ed388e835b42cd77ebdca6ac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

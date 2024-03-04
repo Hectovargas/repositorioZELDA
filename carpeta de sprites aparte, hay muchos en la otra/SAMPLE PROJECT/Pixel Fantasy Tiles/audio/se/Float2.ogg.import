@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2s1wnf7nckke"
+path="res://.godot/imported/Float2.ogg-11d88a69e3a8e83650db6c2efdc4758b.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Float2.ogg"
+dest_files=["res://.godot/imported/Float2.ogg-11d88a69e3a8e83650db6c2efdc4758b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

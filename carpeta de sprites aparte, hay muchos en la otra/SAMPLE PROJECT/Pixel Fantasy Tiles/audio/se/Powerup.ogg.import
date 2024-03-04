@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5g7qj3rn8poc"
+path="res://.godot/imported/Powerup.ogg-8edd181d7be1bffc0d24569b8ac655dd.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Powerup.ogg"
+dest_files=["res://.godot/imported/Powerup.ogg-8edd181d7be1bffc0d24569b8ac655dd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

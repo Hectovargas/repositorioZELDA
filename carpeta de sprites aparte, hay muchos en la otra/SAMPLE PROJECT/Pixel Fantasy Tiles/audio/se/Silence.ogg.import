@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dolwtpklcancu"
+path="res://.godot/imported/Silence.ogg-a2dce1a5db1cae231d643a74c189a75b.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Silence.ogg"
+dest_files=["res://.godot/imported/Silence.ogg-a2dce1a5db1cae231d643a74c189a75b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

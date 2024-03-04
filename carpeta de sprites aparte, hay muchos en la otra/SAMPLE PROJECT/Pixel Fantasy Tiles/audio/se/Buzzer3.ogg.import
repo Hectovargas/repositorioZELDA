@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d38b2v3wu27q2"
+path="res://.godot/imported/Buzzer3.ogg-7e39f9c229bb15d752c8e8a6e475e6af.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Buzzer3.ogg"
+dest_files=["res://.godot/imported/Buzzer3.ogg-7e39f9c229bb15d752c8e8a6e475e6af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

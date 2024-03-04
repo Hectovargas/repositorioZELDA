@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ejuv5w6m0jtt"
+path="res://.godot/imported/Siren.ogg-ecdc5d28a4e2918e9c23368e12f726bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Siren.ogg"
+dest_files=["res://.godot/imported/Siren.ogg-ecdc5d28a4e2918e9c23368e12f726bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m6denerl0qyo"
+path="res://.godot/imported/Crossbow.ogg-0b4a8c2134848a929976d9367281a216.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Crossbow.ogg"
+dest_files=["res://.godot/imported/Crossbow.ogg-0b4a8c2134848a929976d9367281a216.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

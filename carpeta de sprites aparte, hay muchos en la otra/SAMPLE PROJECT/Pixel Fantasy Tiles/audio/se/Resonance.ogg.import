@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc320xb0fivk0"
+path="res://.godot/imported/Resonance.ogg-52a10b51c82cd3e2a2b9bfdc1bad374e.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Resonance.ogg"
+dest_files=["res://.godot/imported/Resonance.ogg-52a10b51c82cd3e2a2b9bfdc1bad374e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

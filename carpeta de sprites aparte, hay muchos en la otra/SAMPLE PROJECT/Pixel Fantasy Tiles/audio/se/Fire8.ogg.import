@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byjjhimfm1gj3"
+path="res://.godot/imported/Fire8.ogg-25db362d8139d0844a39efd95b3bd4d2.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Fire8.ogg"
+dest_files=["res://.godot/imported/Fire8.ogg-25db362d8139d0844a39efd95b3bd4d2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

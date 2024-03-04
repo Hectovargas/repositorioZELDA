@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfex47knlimli"
+path="res://.godot/imported/Laser2.ogg-2af472c231b75f7dc35176c500ccdbbe.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Laser2.ogg"
+dest_files=["res://.godot/imported/Laser2.ogg-2af472c231b75f7dc35176c500ccdbbe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

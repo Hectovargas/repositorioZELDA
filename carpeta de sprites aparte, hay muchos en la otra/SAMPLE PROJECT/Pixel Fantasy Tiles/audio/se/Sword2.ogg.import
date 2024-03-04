@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5jj7sspge3v6"
+path="res://.godot/imported/Sword2.ogg-1a96c53203313c4efa4fb970624e706f.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Sword2.ogg"
+dest_files=["res://.godot/imported/Sword2.ogg-1a96c53203313c4efa4fb970624e706f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blnneyuia18ki"
+path="res://.godot/imported/Saint8.ogg-7532e7b55326f95f82dbe6411f0a1f43.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Saint8.ogg"
+dest_files=["res://.godot/imported/Saint8.ogg-7532e7b55326f95f82dbe6411f0a1f43.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

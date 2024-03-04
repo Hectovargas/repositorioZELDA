@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bd4tevb5rbuvv"
+path="res://.godot/imported/Horn.ogg-fa365b62301aa1faa34bd738486d6039.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Horn.ogg"
+dest_files=["res://.godot/imported/Horn.ogg-fa365b62301aa1faa34bd738486d6039.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

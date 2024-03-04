@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvffao4cnfovv"
+path="res://.godot/imported/Parry.ogg-7d70458264f268ae6e75c5422a8399b3.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Parry.ogg"
+dest_files=["res://.godot/imported/Parry.ogg-7d70458264f268ae6e75c5422a8399b3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

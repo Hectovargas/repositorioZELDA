@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byt4kp6iy5qtb"
+path="res://.godot/imported/Wolf.ogg-982cf163289e86525ccb806b43a48b79.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Wolf.ogg"
+dest_files=["res://.godot/imported/Wolf.ogg-982cf163289e86525ccb806b43a48b79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

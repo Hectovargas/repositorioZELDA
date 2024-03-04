@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b773h45etwfph"
+path="res://.godot/imported/Door7.ogg-40e89a404b32dbce367a4cc053b089ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Door7.ogg"
+dest_files=["res://.godot/imported/Door7.ogg-40e89a404b32dbce367a4cc053b089ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

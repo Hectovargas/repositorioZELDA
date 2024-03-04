@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b8h5cxeano31g"
+path="res://.godot/imported/Wind1.ogg-f6bd2f24f0e5f7c157602c2d6f8b356b.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Wind1.ogg"
+dest_files=["res://.godot/imported/Wind1.ogg-f6bd2f24f0e5f7c157602c2d6f8b356b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

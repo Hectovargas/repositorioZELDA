@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://biefudlwilbkd"
+path="res://.godot/imported/Paralyze3.ogg-1a9d1244bb571d20d0b86f5a15921a20.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Paralyze3.ogg"
+dest_files=["res://.godot/imported/Paralyze3.ogg-1a9d1244bb571d20d0b86f5a15921a20.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

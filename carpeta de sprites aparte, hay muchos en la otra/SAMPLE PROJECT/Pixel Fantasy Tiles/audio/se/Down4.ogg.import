@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyxd1p2lsklvg"
+path="res://.godot/imported/Down4.ogg-70adf633029c0354b991b12a8509188d.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Down4.ogg"
+dest_files=["res://.godot/imported/Down4.ogg-70adf633029c0354b991b12a8509188d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://18y2hq5apt83"
+path="res://.godot/imported/Starlight.ogg-02779ccb874d7704b426b4695d09a4b6.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Starlight.ogg"
+dest_files=["res://.godot/imported/Starlight.ogg-02779ccb874d7704b426b4695d09a4b6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

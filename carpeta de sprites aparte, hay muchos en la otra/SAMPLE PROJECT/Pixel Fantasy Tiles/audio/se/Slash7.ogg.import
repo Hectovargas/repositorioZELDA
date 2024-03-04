@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://h6mdecqlf5j6"
+path="res://.godot/imported/Slash7.ogg-22c392c1f199aee65281aa79f4ff56ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Slash7.ogg"
+dest_files=["res://.godot/imported/Slash7.ogg-22c392c1f199aee65281aa79f4ff56ad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

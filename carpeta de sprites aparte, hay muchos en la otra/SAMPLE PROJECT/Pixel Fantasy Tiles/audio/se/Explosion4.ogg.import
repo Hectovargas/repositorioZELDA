@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btj27g86qe2ni"
+path="res://.godot/imported/Explosion4.ogg-349f9692bcee361255adc3206526c8ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Explosion4.ogg"
+dest_files=["res://.godot/imported/Explosion4.ogg-349f9692bcee361255adc3206526c8ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

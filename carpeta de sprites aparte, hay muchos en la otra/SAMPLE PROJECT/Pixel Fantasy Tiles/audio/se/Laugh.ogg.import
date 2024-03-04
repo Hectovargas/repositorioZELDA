@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clbe2bacmr8b7"
+path="res://.godot/imported/Laugh.ogg-12409f28408fdd10ec15f9b3d09e007d.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Laugh.ogg"
+dest_files=["res://.godot/imported/Laugh.ogg-12409f28408fdd10ec15f9b3d09e007d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

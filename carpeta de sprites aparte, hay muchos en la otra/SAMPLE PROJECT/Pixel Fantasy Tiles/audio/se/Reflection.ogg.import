@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://boc3v0b6tuo25"
+path="res://.godot/imported/Reflection.ogg-129c1b67c775e2624084213b39f916c3.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Reflection.ogg"
+dest_files=["res://.godot/imported/Reflection.ogg-129c1b67c775e2624084213b39f916c3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

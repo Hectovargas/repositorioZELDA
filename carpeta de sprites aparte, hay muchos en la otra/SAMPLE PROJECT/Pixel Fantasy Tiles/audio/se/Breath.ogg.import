@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv7lm744gk087"
+path="res://.godot/imported/Breath.ogg-c0332cd05a9e2ede63687d5facad1a9a.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Breath.ogg"
+dest_files=["res://.godot/imported/Breath.ogg-c0332cd05a9e2ede63687d5facad1a9a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

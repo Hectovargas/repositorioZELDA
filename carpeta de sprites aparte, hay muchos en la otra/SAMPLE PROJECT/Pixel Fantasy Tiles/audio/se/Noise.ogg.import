@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtfbo6c184mpx"
+path="res://.godot/imported/Noise.ogg-8cfbdcd3c3a89f825d4479e502aed610.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Noise.ogg"
+dest_files=["res://.godot/imported/Noise.ogg-8cfbdcd3c3a89f825d4479e502aed610.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

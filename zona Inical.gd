@@ -9,6 +9,8 @@ func _ready():
 	$MapaInicial/Jugador.position = Global.posicion
 
 func _process(delta):
+		if Global.trifuerza==true:
+			$Sprite2D.show()
 		if Global.espadahabilitada == true:
 			$MapaInicial/StaticBody2D.position = Vector2(-1000,-1000)
 			$MapaInicial/StaticBody2D2.position = Vector2(-1000,-1000)
@@ -120,3 +122,14 @@ func _on_timer_timeout():
 			10:
 				enemigo.position = $Marker2D11.position
 		add_child(enemigo)
+
+
+func _on_area_2d_10_body_entered(body):
+	if body.is_in_group("Jugador"):
+		if Global.trifuerza==true:
+			get_tree().change_scene_to_file("res://universidad.tscn")
+		else:
+			$MapaInicial/Jugador/NinePatchRect.show()
+			$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aun No eres Digno de entrar A UNITEC")
+			await get_tree().create_timer(3).timeout
+			$MapaInicial/Jugador/NinePatchRect.hide()

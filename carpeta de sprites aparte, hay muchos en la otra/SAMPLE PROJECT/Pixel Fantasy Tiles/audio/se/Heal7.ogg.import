@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b4rckhk81cgki"
+path="res://.godot/imported/Heal7.ogg-22ee584d7dba86b9e80e3030a2586eca.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Heal7.ogg"
+dest_files=["res://.godot/imported/Heal7.ogg-22ee584d7dba86b9e80e3030a2586eca.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

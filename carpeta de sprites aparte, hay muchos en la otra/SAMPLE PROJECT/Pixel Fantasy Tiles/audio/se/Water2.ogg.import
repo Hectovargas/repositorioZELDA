@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vuacuysv5e3h"
+path="res://.godot/imported/Water2.ogg-c80394b0fb03f1fd8d80897e9e44544c.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Water2.ogg"
+dest_files=["res://.godot/imported/Water2.ogg-c80394b0fb03f1fd8d80897e9e44544c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8mgis4gwya7n"
+path="res://.godot/imported/Saint4.ogg-3ed5d9ba60238fdcb2f9e6b74ad416fe.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Saint4.ogg"
+dest_files=["res://.godot/imported/Saint4.ogg-3ed5d9ba60238fdcb2f9e6b74ad416fe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

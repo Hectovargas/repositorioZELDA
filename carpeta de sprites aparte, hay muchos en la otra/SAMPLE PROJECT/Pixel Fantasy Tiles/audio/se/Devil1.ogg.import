@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djoeqvgi1sp2g"
+path="res://.godot/imported/Devil1.ogg-00534a9d8378bc2303d5d28b1b2201bd.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Devil1.ogg"
+dest_files=["res://.godot/imported/Devil1.ogg-00534a9d8378bc2303d5d28b1b2201bd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfqe6jegqjxs5"
+path="res://.godot/imported/Switch1.ogg-3bc72435ba8957f339a599e8e0bda53d.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Switch1.ogg"
+dest_files=["res://.godot/imported/Switch1.ogg-3bc72435ba8957f339a599e8e0bda53d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

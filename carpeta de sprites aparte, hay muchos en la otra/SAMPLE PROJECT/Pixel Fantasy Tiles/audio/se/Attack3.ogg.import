@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://v4sncym3sjlr"
+path="res://.godot/imported/Attack3.ogg-7445feccaa3d94055c6cda0b71fc18e8.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Attack3.ogg"
+dest_files=["res://.godot/imported/Attack3.ogg-7445feccaa3d94055c6cda0b71fc18e8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

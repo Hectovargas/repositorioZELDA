@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://biui42rqxfjc8"
+path="res://.godot/imported/Electrocardiogram.ogg-6f4d4f78888cee72c42e72782ad73b17.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Electrocardiogram.ogg"
+dest_files=["res://.godot/imported/Electrocardiogram.ogg-6f4d4f78888cee72c42e72782ad73b17.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

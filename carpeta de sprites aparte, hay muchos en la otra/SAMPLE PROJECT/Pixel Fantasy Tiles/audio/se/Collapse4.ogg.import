@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5sp7n3jn8818"
+path="res://.godot/imported/Collapse4.ogg-10affecfa90d43702e3b86829e69f57a.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Collapse4.ogg"
+dest_files=["res://.godot/imported/Collapse4.ogg-10affecfa90d43702e3b86829e69f57a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

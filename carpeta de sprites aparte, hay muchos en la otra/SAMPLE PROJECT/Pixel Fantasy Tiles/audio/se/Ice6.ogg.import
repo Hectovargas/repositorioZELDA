@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3q6c0jbxn15u"
+path="res://.godot/imported/Ice6.ogg-7b4f37a928de9b1f838685b6b26bd3b1.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Ice6.ogg"
+dest_files=["res://.godot/imported/Ice6.ogg-7b4f37a928de9b1f838685b6b26bd3b1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

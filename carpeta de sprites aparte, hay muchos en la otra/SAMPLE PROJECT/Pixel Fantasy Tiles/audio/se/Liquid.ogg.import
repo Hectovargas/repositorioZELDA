@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://co1kfrx0t8p30"
+path="res://.godot/imported/Liquid.ogg-f038b32eba3d1e4b2d987952ad9462a6.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Liquid.ogg"
+dest_files=["res://.godot/imported/Liquid.ogg-f038b32eba3d1e4b2d987952ad9462a6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

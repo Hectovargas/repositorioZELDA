@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://22gw52rtnfwp"
+path="res://.godot/imported/Growl.ogg-3004e4af549212a2bf95de160c67fc40.oggvorbisstr"
+
+[deps]
+
+source_file="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/audio/se/Growl.ogg"
+dest_files=["res://.godot/imported/Growl.ogg-3004e4af549212a2bf95de160c67fc40.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
