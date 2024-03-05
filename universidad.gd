@@ -53,7 +53,7 @@ func _on_area_registro_body_entered(body):
 		$adam.position.y=-200;
 		
 		
-		$adam.play("idleDown");
+		$adam.play("idle");
 		registrado=true;
 
 func _on_area_registro_body_exited(body):
