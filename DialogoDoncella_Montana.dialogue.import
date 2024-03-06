@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bv6eemf7lgjkp"
+path="res://.godot/imported/DialogoDoncella_Montana.dialogue-d6761db5463fab2d182da805da612dbd.tres"
+
+[deps]
+
+source_file="res://DialogoDoncella_Montana.dialogue"
+dest_files=["res://.godot/imported/DialogoDoncella_Montana.dialogue-d6761db5463fab2d182da805da612dbd.tres"]
+
+[params]
+
+defaults=true

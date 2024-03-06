@@ -1,0 +1,150 @@
+[gd_scene load_steps=18 format=3 uid="uid://5b12ohsppvjq"]
+
+[ext_resource type="Script" path="res://Wolf.gd" id="1_evfjf"]
+[ext_resource type="Texture2D" uid="uid://bwmixvpeuc786" path="res://Mobile - Senran no Samurai Kingdom JPN - Werewolf Soldier (1).png" id="2_yu8bp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crjjq"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(348, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc85k"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(464, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74i6x"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(348, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82jmy"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(580, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0peri"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(619, 0, 103, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2at88"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(0, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkeff"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(696, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvdps"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(696, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii0g8"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(812, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvhfx"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(0, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52dfq"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(116, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbqq8"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(348, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a325j"]
+atlas = ExtResource("2_yu8bp")
+region = Rect2(232, 0, 116, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trkcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crjjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc85k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc85k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74i6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82jmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82jmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0peri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0peri")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2at88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkeff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvdps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii0g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii0g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii0g8")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvhfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52dfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbqq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52dfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a325j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52dfq")
+}],
+"loop": true,
+"name": &"idle_wolf",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wrvcr"]
+radius = 50.01
+
+[node name="Wolf" type="CharacterBody2D"]
+script = ExtResource("1_evfjf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_trkcg")
+animation = &"idle_wolf"
+autoplay = "idle_wolf"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 9)
+shape = SubResource("CircleShape2D_wrvcr")

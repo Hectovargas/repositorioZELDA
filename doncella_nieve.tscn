@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://bttfun6yo8jpv"]
+
+[ext_resource type="Script" path="res://doncella_nieve.gd" id="1_auyys"]
+[ext_resource type="Texture2D" uid="uid://bxktaf0peuy12" path="res://Sprites/Maidens.png" id="1_lbfny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sshwu"]
+atlas = ExtResource("1_lbfny")
+region = Rect2(0, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x144"]
+atlas = ExtResource("1_lbfny")
+region = Rect2(60, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apiwx"]
+atlas = ExtResource("1_lbfny")
+region = Rect2(90, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alnq8"]
+atlas = ExtResource("1_lbfny")
+region = Rect2(120, 0, 30, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qrhe"]
+atlas = ExtResource("1_lbfny")
+region = Rect2(148, 0, 37, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q76nf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sshwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x144")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apiwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alnq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qrhe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iix4a"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03328"]
+radius = 60.0
+
+[node name="DoncellaNieve" type="CharacterBody2D"]
+script = ExtResource("1_auyys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q76nf")
+frame_progress = 0.695869
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_iix4a")
+
+[node name="territorio" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="territorio"]
+shape = SubResource("CircleShape2D_03328")
+
+[connection signal="body_entered" from="territorio" to="." method="_on_territorio_body_entered"]
+[connection signal="body_exited" from="territorio" to="." method="_on_territorio_body_exited"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cfs568o7hhsvk"
+path="res://.godot/imported/DialogoDoncella_Desierto.dialogue-19be5d6546cb29016df2291fc92fe323.tres"
+
+[deps]
+
+source_file="res://DialogoDoncella_Desierto.dialogue"
+dest_files=["res://.godot/imported/DialogoDoncella_Desierto.dialogue-19be5d6546cb29016df2291fc92fe323.tres"]
+
+[params]
+
+defaults=true
