@@ -1,0 +1,137 @@
+[gd_scene load_steps=16 format=3 uid="uid://dhvtwf0bj8g"]
+
+[ext_resource type="Script" path="res://samurai.gd" id="1_a4dk5"]
+[ext_resource type="Texture2D" uid="uid://dj4a5t38um610" path="res://Mobile - Senran no Samurai Kingdom JPN - White Tiger Soldier.png" id="2_32a7x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18cgm"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(232, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5kuw"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(464, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ghml"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(464, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmwc3"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(580, 266, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es46d"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(594, 0, 112, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwl0r"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(696, 266, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khbhj"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(696, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptcqv"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(812, 133, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkdme"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(0, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3jh3"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(116, 0, 116, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gc7w"]
+atlas = ExtResource("2_32a7x")
+region = Rect2(232, 0, 116, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nunrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18cgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5kuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5kuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ghml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ghml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmwc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmwc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es46d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es46d")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwl0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khbhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khbhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khbhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptcqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptcqv")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkdme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3jh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gc7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3jh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8yxa"]
+radius = 69.4622
+
+[node name="samurai" type="CharacterBody2D"]
+script = ExtResource("1_a4dk5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nunrt")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 4)
+shape = SubResource("CircleShape2D_i8yxa")

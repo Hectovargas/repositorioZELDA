@@ -11,6 +11,25 @@ func _ready():
 func _process(delta):
 		if Global.trifuerza==true:
 			$Sprite2D.show()
+		if Global.pelea1 == true:
+			if Global.dialogo==true:
+				$MapaInicial/Jugador/NinePatchRect.show()
+				$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
+				$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
+			else:
+				$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
+				$MapaInicial/Jugador/NinePatchRect.hide()
+				$MapaInicial/Jugador/AvisosLabel.set_text("")
+		if Global.pelea2 == true:
+			if Global.dialogo==true:
+				$MapaInicial/Jugador/NinePatchRect.show()
+				$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
+				$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
+			else:
+				$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
+				$MapaInicial/Jugador/NinePatchRect.hide()
+				$MapaInicial/Jugador/AvisosLabel.set_text("")
+				
 		if Global.espadahabilitada == true:
 			$MapaInicial/StaticBody2D.position = Vector2(-1000,-1000)
 			$MapaInicial/StaticBody2D2.position = Vector2(-1000,-1000)
@@ -22,10 +41,16 @@ func _process(delta):
 				$MapaInicial/Jugador/NinePatchRect/TextureRect2.show()
 				$MapaInicial/Jugador/NinePatchRect.show()
 				$MapaInicial/Jugador/NinePatchRect/Label.set_text("No puedes pasar hasta que tengas un arma")
+		elif Global.dialogo==true:
+			$MapaInicial/Jugador/NinePatchRect.show()
+			$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
+			$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
 		else:
 			$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
 			$MapaInicial/Jugador/NinePatchRect.hide()
 			$MapaInicial/Jugador/AvisosLabel.set_text("")
+		
+			
 		if Global.caida==true:
 			$MapaInicial/Jugador.position.y+=4
 		if Global.pelea1 && Global.pelea2 && Global.pelea3 && Global.pelea4:

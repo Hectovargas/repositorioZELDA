@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://ffxc4ko45xj"]
+[gd_scene load_steps=116 format=3 uid="uid://ffxc4ko45xj"]
 
 [ext_resource type="Script" path="res://zona Inical.gd" id="1_twnni"]
 [ext_resource type="Texture2D" uid="uid://b1yjgqyayhc66" path="res://RECURSO DE VIDEO E IMAGENES/Overworld.png" id="1_wn2e0"]
@@ -53,6 +53,9 @@
 [ext_resource type="PackedScene" uid="uid://bevy8a5w4axi8" path="res://doncella.tscn" id="49_salqp"]
 [ext_resource type="Texture2D" uid="uid://cwd7qjgh3jirb" path="res://RECURSO DE VIDEO E IMAGENES/SCR2/RMMV/!$doorA_3.png" id="52_m03hi"]
 [ext_resource type="Texture2D" uid="uid://b6p50akqxtc0s" path="res://pixil-frame-0.png" id="53_plm3c"]
+[ext_resource type="PackedScene" uid="uid://bttfun6yo8jpv" path="res://doncella_nieve.tscn" id="54_3c84f"]
+[ext_resource type="PackedScene" uid="uid://x4h76x1kge0m" path="res://doncella_desierto.tscn" id="55_yexja"]
+[ext_resource type="PackedScene" uid="uid://dxj8g1gfli7mc" path="res://doncella_montana.tscn" id="56_wdebp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grqdw"]
 texture = ExtResource("1_wn2e0")
@@ -54947,6 +54950,15 @@ position = Vector2(-643, 1326)
 scale = Vector2(2.71875, 3.4375)
 texture = ExtResource("53_plm3c")
 vframes = 2
+
+[node name="DoncellaNieve" parent="." instance=ExtResource("54_3c84f")]
+position = Vector2(797, 1352)
+
+[node name="DoncellaDesierto" parent="." instance=ExtResource("55_yexja")]
+position = Vector2(2496, 322)
+
+[node name="DoncellaMontana" parent="." instance=ExtResource("56_wdebp")]
+position = Vector2(-1769, 386)
 
 [connection signal="body_entered" from="MapaInicial/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D2" to="." method="_on_area_2d_2_body_entered"]

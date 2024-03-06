@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bi8k23mn8iw2h" path="res://Sprites/WorldTilesets/snow-expansion.png" id="1_ejk1p"]
 [ext_resource type="Script" path="res://zona_war.gd" id="1_v2kvv"]
-[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="3_03h36"]
+[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://wolf.tscn" id="3_03h36"]
 [ext_resource type="Texture2D" uid="uid://b1rky2gjiudbi" path="res://relojsprite.png" id="3_dypwt"]
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="4_ux7da"]
 [ext_resource type="AudioStream" uid="uid://v72guwgkoti8" path="res://Y2meta.app - Efecto de sonido de Katana (128 kbps).mp3" id="5_1vuke"]
-[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="5_ufbh7"]
+[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://yeti.tscn" id="5_ufbh7"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="6_ejgc3"]
-[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="7_248ff"]
+[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://samurai.tscn" id="7_248ff"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="7_t3dlp"]
-[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="9_c2icj"]
+[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://elefante.tscn" id="9_c2icj"]
 [ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="11_qksqu"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_2gfeo"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="13_8f2ny"]
@@ -454,6 +454,60 @@ position = Vector2(0.5, 3)
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("5_1vuke")
 
+[node name="Wolf" parent="." instance=ExtResource("3_03h36")]
+position = Vector2(588, 152)
+
+[node name="botonWolf" type="TextureButton" parent="Wolf"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Wolf/botonWolf"]
+visible = false
+position = Vector2(12, 9.5)
+scale = Vector2(1.375, 1.29688)
+texture = ExtResource("12_2gfeo")
+
+[node name="elefante" parent="." instance=ExtResource("9_c2icj")]
+position = Vector2(603, 272)
+
+[node name="botonElefante" type="TextureButton" parent="elefante"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="elefante/botonElefante"]
+visible = false
+position = Vector2(1.99999, 12.5)
+scale = Vector2(1.71875, 1.39063)
+texture = ExtResource("12_2gfeo")
+
+[node name="samurai" parent="." instance=ExtResource("7_248ff")]
+position = Vector2(244, 134)
+
+[node name="BotonSamurai" type="TextureButton" parent="samurai"]
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 27.0
+
+[node name="PointLight2D" type="PointLight2D" parent="samurai/BotonSamurai"]
+visible = false
+position = Vector2(-15, 6.5)
+scale = Vector2(1.46875, 1.20313)
+texture = ExtResource("12_2gfeo")
+
+[node name="yeti" parent="." instance=ExtResource("5_ufbh7")]
+position = Vector2(235, 292)
+
+[node name="botonYeti" type="TextureButton" parent="yeti"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="yeti/botonYeti"]
+visible = false
+position = Vector2(-1.5, 4.5)
+scale = Vector2(0.953125, 1.14063)
+texture = ExtResource("12_2gfeo")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 z_index = 5
@@ -580,76 +634,6 @@ offset_right = 852.0
 offset_bottom = 98.0
 label_settings = SubResource("LabelSettings_ycnvo")
 autowrap_mode = 3
-
-[node name="orc1_2" parent="." instance=ExtResource("5_ufbh7")]
-position = Vector2(216, 158)
-scale = Vector2(2, 2)
-
-[node name="botonorco1" type="TextureButton" parent="orc1_2"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_2gfeo")
-
-[node name="orc1_4" parent="." instance=ExtResource("7_248ff")]
-position = Vector2(216, 293)
-scale = Vector2(2, 2)
-
-[node name="botonorco2" type="TextureButton" parent="orc1_4"]
-offset_left = -15.0
-offset_top = -19.0
-offset_right = 15.0
-offset_bottom = 18.0
-ignore_texture_size = true
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_2gfeo")
-
-[node name="skeleton1_3" parent="." instance=ExtResource("9_c2icj")]
-position = Vector2(617, 284)
-scale = Vector2(2, 2)
-
-[node name="botonesqueleto" type="TextureButton" parent="skeleton1_3"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonesqueleto"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_2gfeo")
-
-[node name="skeleton" parent="." instance=ExtResource("3_03h36")]
-position = Vector2(623, 157)
-rotation = 0.00266727
-scale = Vector2(2, 2)
-
-[node name="botonesqueleto2" type="TextureButton" parent="skeleton"]
-offset_left = -11.5
-offset_top = -15.5
-offset_right = 11.5
-offset_bottom = 16.5
-
-[node name="PointLight2D" type="PointLight2D" parent="skeleton/botonesqueleto2"]
-visible = false
-position = Vector2(13.75, 19.25)
-scale = Vector2(0.414063, 0.539063)
-energy = 3.0
-texture = ExtResource("12_2gfeo")
 
 [node name="Ataque" type="Button" parent="."]
 offset_left = 348.0
@@ -817,20 +801,20 @@ offset_bottom = 98.0
 label_settings = SubResource("LabelSettings_ycnvo")
 autowrap_mode = 3
 
+[connection signal="mouse_entered" from="Wolf/botonWolf" to="." method="_on_boton_wolf_mouse_entered"]
+[connection signal="mouse_exited" from="Wolf/botonWolf" to="." method="_on_boton_wolf_mouse_exited"]
+[connection signal="pressed" from="Wolf/botonWolf" to="." method="_on_boton_wolf_pressed"]
+[connection signal="mouse_entered" from="elefante/botonElefante" to="." method="_on_boton_elefante_mouse_entered"]
+[connection signal="mouse_exited" from="elefante/botonElefante" to="." method="_on_boton_elefante_mouse_exited"]
+[connection signal="pressed" from="elefante/botonElefante" to="." method="_on_boton_elefante_pressed"]
+[connection signal="mouse_entered" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_mouse_entered"]
+[connection signal="mouse_exited" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_mouse_exited"]
+[connection signal="pressed" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_pressed"]
+[connection signal="mouse_entered" from="yeti/botonYeti" to="." method="_on_boton_yeti_mouse_entered"]
+[connection signal="mouse_exited" from="yeti/botonYeti" to="." method="_on_boton_yeti_mouse_exited"]
+[connection signal="pressed" from="yeti/botonYeti" to="." method="_on_boton_yeti_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
-[connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
-[connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
-[connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
-[connection signal="mouse_entered" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_entered"]
-[connection signal="mouse_exited" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_exited"]
-[connection signal="pressed" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_pressed"]
-[connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
-[connection signal="mouse_exited" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_exited"]
-[connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
-[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
-[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
-[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]

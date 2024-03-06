@@ -16,4 +16,4 @@ func _process(delta):
 		await get_tree().create_timer(0.8).timeout
 		$AnimatedSprite2D.stop()
 		Global.ataqueenemy4=false
-		$AnimatedSprite2D.play("idle_Skeleton")
+		$AnimatedSprite2D.play("idle_wolf")

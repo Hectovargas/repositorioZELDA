@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=3 uid="uid://dccd8r1euj34f"]
+
+[ext_resource type="Script" path="res://yeti.gd" id="1_fcrgn"]
+[ext_resource type="Texture2D" uid="uid://i2he1434q7ga" path="res://PC Computer - Titan Souls - Yeti.png" id="2_eihdc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_210vh"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(303, 384, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x758o"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(393, 384, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3jmv"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(483, 384, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w448s"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(393, 896, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gacg6"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(483, 896, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2wss"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(573, 896, 90, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh7l3"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(0, 398, 102, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_728x5"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(102, 398, 102, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i804d"]
+atlas = ExtResource("2_eihdc")
+region = Rect2(204, 398, 102, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4bfj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_210vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_210vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x758o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x758o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3jmv")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w448s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w448s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w448s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gacg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gacg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2wss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2wss")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh7l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_728x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i804d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_728x5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y22kq"]
+radius = 44.0114
+
+[node name="yeti" type="CharacterBody2D"]
+script = ExtResource("1_fcrgn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4bfj4")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 5)
+shape = SubResource("CircleShape2D_y22kq")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

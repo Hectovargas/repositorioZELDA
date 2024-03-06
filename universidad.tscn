@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bpi8toagc6vl8"]
+[gd_scene load_steps=108 format=3 uid="uid://bpi8toagc6vl8"]
 
 [ext_resource type="Script" path="res://universidad.gd" id="1_c551n"]
 [ext_resource type="Texture2D" uid="uid://5epl5kh1ct0p" path="res://universidad/images/Modern_Interiors_Free_v2.2/Modern tiles_Free/Old/Tileset_16x16_1.png" id="1_qg72o"]
@@ -28,6 +28,13 @@
 [ext_resource type="Texture2D" uid="uid://bmpbjv5cntsog" path="res://universidad/images/Modern_Interiors_Free_v2.2/Modern tiles_Free/Characters_free/Amelia_16x16.png" id="17_nunq3"]
 [ext_resource type="Texture2D" uid="uid://de2rm0ufe3ktb" path="res://universidad/32x32.png" id="18_h76ra"]
 [ext_resource type="Texture2D" uid="uid://ckqqwm045r47" path="res://RECURSO DE VIDEO E IMAGENES/luz.png" id="22_r6fe0"]
+[ext_resource type="Texture2D" uid="uid://dkf1p6hahw7t2" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/book_02b.png" id="23_ptx8f"]
+[ext_resource type="Texture2D" uid="uid://b7ylant1a8djj" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/book_04c.png" id="24_eug70"]
+[ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="27_gnqr4"]
+[ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="28_brvss"]
+[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="29_ov61w"]
+[ext_resource type="Texture2D" uid="uid://137emxid4n5d" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Red_Connection_Down.png" id="30_nx88m"]
+[ext_resource type="FontFile" uid="uid://c20s8vvp5mm0b" path="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/fonts/mplus-2p-bold-sub.woff" id="31_jc8yd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbct2"]
 texture = ExtResource("1_qg72o")
@@ -31543,10 +31550,43 @@ sources/18 = SubResource("TileSetAtlasSource_3tigj")
 sources/19 = SubResource("TileSetAtlasSource_7ou3a")
 sources/20 = SubResource("TileSetAtlasSource_r4o22")
 
+[sub_resource type="LabelSettings" id="LabelSettings_15cta"]
+font = ExtResource("31_jc8yd")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_wnxps"]
 font = ExtResource("11_hbwjn")
 outline_size = 3
 outline_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l85xe"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3rg8"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctefl"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ed4sq"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xys5l"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_q5chr"]
+font_names = PackedStringArray("Verdana")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rudm7"]
+font = SubResource("SystemFont_q5chr")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlbom"]
 atlas = ExtResource("11_qm74c")
@@ -31726,7 +31766,7 @@ animations = [{
 font = ExtResource("11_hbwjn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krwcn"]
-size = Vector2(25, 21.5)
+size = Vector2(25, 31.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vby4u"]
 size = Vector2(31, 32)
@@ -31787,6 +31827,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdw0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgbno"]
+size = Vector2(13.8927, 14.7454)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75qyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krxkl"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_c551n")
@@ -31868,6 +31915,12 @@ scale = Vector2(0.190139, 0.1446)
 energy = 3.65
 texture = ExtResource("22_r6fe0")
 
+[node name="PointLight2D15" type="PointLight2D" parent="TileMap"]
+position = Vector2(637, -258)
+scale = Vector2(0.342087, 0.0601676)
+energy = 3.65
+texture = ExtResource("22_r6fe0")
+
 [node name="PointLight2D11" type="PointLight2D" parent="TileMap"]
 position = Vector2(451, -141)
 scale = Vector2(0.350294, 0.152611)
@@ -31892,31 +31945,369 @@ scale = Vector2(0.246986, 0.127124)
 energy = 3.65
 texture = ExtResource("22_r6fe0")
 
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+z_index = 4
+position = Vector2(625, -112)
+scale = Vector2(0.239583, 0.208333)
+texture = ExtResource("23_ptx8f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TileMap"]
+z_index = 4
+position = Vector2(694, -111)
+scale = Vector2(0.239583, 0.208333)
+texture = ExtResource("24_eug70")
+
 [node name="Jugador" parent="." instance=ExtResource("9_ty5s2")]
-position = Vector2(26, 210)
+position = Vector2(86, 157)
+
+[node name="pizarra" type="Sprite2D" parent="Jugador"]
+visible = false
+z_index = 8
+position = Vector2(5, 6)
+scale = Vector2(2.97588, -3.39622)
+texture = ExtResource("10_urh3v")
+
+[node name="0buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de ______________ y 
+representante de la ________________.
+Se convirtio en _________ tras _____________, 
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________"
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="1buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra'
+ y representante de la ________________.
+	Se convirtio en _________ tras _____________, 
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="2buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en _________ tras _____________,
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="3buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras _____________,
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________.
+"
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="4buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en
+su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="5buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra'
+ y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en
+su viaje se dedica a completar mazmorras
+	acompañado de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="6buenas" type="Label" parent="Jugador/pizarra"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en 
+su viaje se dedica a completar mazmorras
+	acompañado de su leal compañera 'Navi' el hada."
+label_settings = SubResource("LabelSettings_15cta")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(2, 4)
 zoom = Vector2(3, 3)
 
-[node name="Panel" type="Panel" parent="Jugador"]
+[node name="fondo" type="TextureRect" parent="Jugador"]
 visible = false
-offset_left = -104.0
-offset_top = 28.0
-offset_right = -64.0
-offset_bottom = 68.0
-scale = Vector2(5.9575, 1.33892)
+offset_left = -147.0
+offset_top = 17.0
+offset_right = -83.0
+offset_bottom = 81.0
+scale = Vector2(4.96021, 1.39405)
+texture = ExtResource("27_gnqr4")
 
 [node name="msgRegistro" type="Label" parent="Jugador"]
 visible = false
-offset_left = -91.0
-offset_top = 31.0
-offset_right = 212.0
-offset_bottom = 66.0
+z_index = 6
+offset_left = -95.0
+offset_top = 28.0
+offset_right = 208.0
+offset_bottom = 63.0
 scale = Vector2(0.678391, 0.741507)
 label_settings = SubResource("LabelSettings_wnxps")
 horizontal_alignment = 1
 vertical_alignment = 3
+
+[node name="TextureRect" type="TextureRect" parent="Jugador"]
+visible = false
+z_index = 5
+offset_left = -208.0
+offset_top = -93.0
+offset_right = 800.0
+offset_bottom = 19.0
+scale = Vector2(0.42365, 0.495382)
+texture = ExtResource("27_gnqr4")
+
+[node name="TextureButton" type="TextureButton" parent="Jugador/TextureRect"]
+layout_mode = 0
+offset_left = 179.501
+offset_top = 255.647
+offset_right = 244.501
+offset_bottom = 311.647
+texture_normal = ExtResource("28_brvss")
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 25.8572
+offset_top = 2.73944
+offset_right = 89.8572
+offset_bottom = 66.7394
+scale = Vector2(4.64085, 0.818778)
+texture = ExtResource("27_gnqr4")
+
+[node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -4.0
+offset_right = 47.0
+offset_bottom = 51.0
+text = "A
+"
+label_settings = SubResource("LabelSettings_l85xe")
+
+[node name="opcion" type="Label" parent="Jugador/TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 82.5077
+offset_top = 8.79537
+offset_right = 206.508
+offset_bottom = 45.7954
+label_settings = SubResource("LabelSettings_e3rg8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect/TextureButton"]
+visible = false
+position = Vector2(32.9385, 26.9632)
+scale = Vector2(0.681008, 0.769858)
+energy = 3.0
+texture = ExtResource("29_ov61w")
+
+[node name="TextureButton2" type="TextureButton" parent="Jugador/TextureRect"]
+layout_mode = 0
+offset_left = 180.501
+offset_top = 323.647
+offset_right = 244.501
+offset_bottom = 377.647
+texture_normal = ExtResource("28_brvss")
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton2"]
+offset_left = 25.8572
+offset_top = 2.73944
+offset_right = 89.8572
+offset_bottom = 66.7394
+scale = Vector2(4.64085, 0.818778)
+texture = ExtResource("27_gnqr4")
+
+[node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 51.0
+text = "B
+"
+label_settings = SubResource("LabelSettings_ctefl")
+
+[node name="opcion" type="Label" parent="Jugador/TextureRect/TextureButton2"]
+layout_mode = 0
+offset_left = 83.8682
+offset_top = 7.41063
+offset_right = 198.868
+offset_bottom = 44.4106
+label_settings = SubResource("LabelSettings_e3rg8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect/TextureButton2"]
+visible = false
+position = Vector2(32.9385, 26.9632)
+scale = Vector2(0.681008, 0.769858)
+energy = 3.0
+texture = ExtResource("29_ov61w")
+
+[node name="TextureButton3" type="TextureButton" parent="Jugador/TextureRect"]
+layout_mode = 0
+offset_left = 618.468
+offset_top = 260.726
+offset_right = 680.468
+offset_bottom = 315.726
+texture_normal = ExtResource("28_brvss")
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton3"]
+offset_left = 25.8572
+offset_top = 2.73944
+offset_right = 89.8572
+offset_bottom = 66.7394
+scale = Vector2(4.64085, 0.818778)
+texture = ExtResource("27_gnqr4")
+
+[node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -6.0
+offset_right = 42.0
+offset_bottom = 49.0
+text = "C
+"
+label_settings = SubResource("LabelSettings_ed4sq")
+
+[node name="opcion" type="Label" parent="Jugador/TextureRect/TextureButton3"]
+layout_mode = 0
+offset_left = 82.5824
+offset_top = 7.75364
+offset_right = 198.582
+offset_bottom = 44.7536
+label_settings = SubResource("LabelSettings_e3rg8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect/TextureButton3"]
+visible = false
+position = Vector2(32.9385, 26.9632)
+scale = Vector2(0.681008, 0.769858)
+energy = 3.0
+texture = ExtResource("29_ov61w")
+
+[node name="TextureButton4" type="TextureButton" parent="Jugador/TextureRect"]
+layout_mode = 0
+offset_left = 616.468
+offset_top = 326.726
+offset_right = 680.468
+offset_bottom = 382.726
+texture_normal = ExtResource("28_brvss")
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton4"]
+offset_left = 25.8572
+offset_top = 2.73944
+offset_right = 89.8572
+offset_bottom = 66.7394
+scale = Vector2(4.64085, 0.818778)
+texture = ExtResource("27_gnqr4")
+
+[node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 108.0
+text = "D
+
+"
+label_settings = SubResource("LabelSettings_xys5l")
+
+[node name="opcion" type="Label" parent="Jugador/TextureRect/TextureButton4"]
+layout_mode = 0
+offset_left = 79.8615
+offset_top = 8.36891
+offset_right = 220.861
+offset_bottom = 45.3689
+label_settings = SubResource("LabelSettings_e3rg8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect/TextureButton4"]
+visible = false
+position = Vector2(32.9385, 26.9632)
+scale = Vector2(0.681008, 0.769858)
+energy = 3.0
+texture = ExtResource("29_ov61w")
+
+[node name="Label" type="Label" parent="Jugador/TextureRect"]
+layout_mode = 0
+offset_left = 162.87
+offset_top = 6.05593
+offset_right = 862.87
+offset_bottom = 96.0559
+scale = Vector2(0.975292, 1)
+label_settings = SubResource("LabelSettings_rudm7")
+autowrap_mode = 3
+
+[node name="incorrecta" type="TextureRect" parent="Jugador"]
+visible = false
+offset_left = -69.0
+offset_top = -61.0
+offset_right = -5.0
+offset_bottom = 2.99999
+scale = Vector2(2.29576, 0.675076)
+texture = ExtResource("30_nx88m")
+
+[node name="correcta" type="TextureRect" parent="Jugador"]
+visible = false
+offset_left = -66.0
+offset_top = -60.0
+offset_right = -2.0
+offset_bottom = 3.99998
+scale = Vector2(1.96426, 0.685677)
+texture = ExtResource("27_gnqr4")
+
+[node name="Label" type="Label" parent="Jugador"]
+visible = false
+offset_left = -40.0
+offset_top = -52.0
+offset_right = 48.0
+offset_bottom = -28.0
+scale = Vector2(0.927295, 0.986051)
+text = "CORRECTA"
+label_settings = SubResource("LabelSettings_15cta")
 
 [node name="alex" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 47)
@@ -31939,7 +32330,7 @@ text = "Alex"
 label_settings = SubResource("LabelSettings_vynxr")
 
 [node name="adam" type="AnimatedSprite2D" parent="."]
-position = Vector2(383, 154)
+position = Vector2(403.5, 160.5)
 scale = Vector2(0.78125, 0.78125)
 sprite_frames = SubResource("SpriteFrames_534q2")
 animation = &"idle"
@@ -31974,27 +32365,31 @@ text = "Bob"
 label_settings = SubResource("LabelSettings_v2vof")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(403, 169)
+position = Vector2(426, 177)
+scale = Vector2(0.865582, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-20, -12)
+position = Vector2(-20, -16.875)
+scale = Vector2(1, 1.32001)
 shape = SubResource("RectangleShape2D_krwcn")
 
 [node name="areaRegistro" type="Area2D" parent="."]
-position = Vector2(160, 23)
+position = Vector2(145, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areaRegistro"]
 position = Vector2(-4, 20)
 shape = SubResource("RectangleShape2D_vby4u")
 
 [node name="areaMostrador" type="Area2D" parent="."]
-position = Vector2(212, 80)
+position = Vector2(211, 96)
+scale = Vector2(1.71524, 1.15392)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areaMostrador"]
 shape = SubResource("RectangleShape2D_rn7hy")
 
 [node name="adamArea" type="Area2D" parent="."]
-position = Vector2(384, 156)
+position = Vector2(411, 161)
+scale = Vector2(1.16509, -0.649561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="adamArea"]
 position = Vector2(-6, -3)
@@ -32015,9 +32410,49 @@ shape = SubResource("RectangleShape2D_cdw0s")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.12549, 0.12549, 0.12549, 1)
 
+[node name="areaLibro" type="Area2D" parent="."]
+position = Vector2(592, -86)
+scale = Vector2(2.15939, 1.47511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaLibro"]
+position = Vector2(35.1952, -33.8114)
+shape = SubResource("RectangleShape2D_qgbno")
+
+[node name="areaLibro2" type="Area2D" parent="."]
+position = Vector2(733, -135)
+scale = Vector2(1.44759, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaLibro2"]
+shape = SubResource("RectangleShape2D_75qyy")
+
+[node name="areaPizarra" type="Area2D" parent="."]
+position = Vector2(701, -231)
+scale = Vector2(6.6769, 1.00439)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaPizarra"]
+shape = SubResource("RectangleShape2D_krxkl")
+
+[connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton2" to="." method="_on_texture_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton2" to="." method="_on_texture_button_2_mouse_exited"]
+[connection signal="pressed" from="Jugador/TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton3" to="." method="_on_texture_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton3" to="." method="_on_texture_button_3_mouse_exited"]
+[connection signal="pressed" from="Jugador/TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_mouse_entered"]
+[connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_mouse_exited"]
+[connection signal="pressed" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="body_entered" from="areaRegistro" to="." method="_on_area_registro_body_entered"]
 [connection signal="body_exited" from="areaRegistro" to="." method="_on_area_registro_body_exited"]
 [connection signal="body_entered" from="areaMostrador" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="areaMostrador" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="adamArea" to="." method="_on_adam_area_body_entered"]
 [connection signal="body_exited" from="adamArea" to="." method="_on_adam_area_body_exited"]
+[connection signal="body_entered" from="areaLibro" to="." method="_on_area_libro_body_entered"]
+[connection signal="body_exited" from="areaLibro" to="." method="_on_area_libro_body_exited"]
+[connection signal="body_entered" from="areaLibro2" to="." method="_on_area_libro_2_body_entered"]
+[connection signal="body_exited" from="areaLibro2" to="." method="_on_area_libro_2_body_exited"]
+[connection signal="body_entered" from="areaPizarra" to="." method="_on_area_pizarra_body_entered"]
+[connection signal="body_exited" from="areaPizarra" to="." method="_on_area_pizarra_body_exited"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://x4h76x1kge0m"]
+
+[ext_resource type="Texture2D" uid="uid://bxktaf0peuy12" path="res://Sprites/Maidens.png" id="1_3j6et"]
+[ext_resource type="Script" path="res://doncella_desierto.gd" id="1_37xct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ffd"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(0, 68, 25, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhss8"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(75, 68, 25, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4udid"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(102, 68, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vyct"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(136, 68, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv423"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(170, 68, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceplg"]
+atlas = ExtResource("1_3j6et")
+region = Rect2(204, 68, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_383j2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ffd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ffd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhss8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4udid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vyct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceplg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fpaog"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ww0i4"]
+radius = 30.1496
+
+[node name="DoncellaDesierto" type="CharacterBody2D"]
+script = ExtResource("1_37xct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_383j2")
+autoplay = "default"
+frame = 1
+frame_progress = 0.541915
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_fpaog")
+
+[node name="territorio" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="territorio"]
+shape = SubResource("CircleShape2D_ww0i4")
+
+[connection signal="body_entered" from="territorio" to="." method="_on_territorio_body_entered"]
+[connection signal="body_exited" from="territorio" to="." method="_on_territorio_body_exited"]

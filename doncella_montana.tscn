@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://dxj8g1gfli7mc"]
+
+[ext_resource type="Script" path="res://DoncellaMontana.gd" id="1_hx6u4"]
+[ext_resource type="Texture2D" uid="uid://bxktaf0peuy12" path="res://Sprites/Maidens.png" id="2_roduo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0slo2"]
+atlas = ExtResource("2_roduo")
+region = Rect2(0, 140, 27, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8qlw"]
+atlas = ExtResource("2_roduo")
+region = Rect2(47, 137, 24, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6ox"]
+atlas = ExtResource("2_roduo")
+region = Rect2(75, 140, 25, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fahhj"]
+atlas = ExtResource("2_roduo")
+region = Rect2(102, 140, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfv1g"]
+atlas = ExtResource("2_roduo")
+region = Rect2(136, 140, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wgcw"]
+atlas = ExtResource("2_roduo")
+region = Rect2(170, 140, 34, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bil68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0slo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8qlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fahhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfv1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wgcw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3wrl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqocf"]
+radius = 30.0167
+
+[node name="DoncellaMontana" type="CharacterBody2D"]
+script = ExtResource("1_hx6u4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bil68")
+frame_progress = 0.0746753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_b3wrl")
+
+[node name="territorio" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="territorio"]
+shape = SubResource("CircleShape2D_sqocf")
+
+[connection signal="body_entered" from="territorio" to="." method="_on_territorio_body_entered"]
+[connection signal="body_exited" from="territorio" to="." method="_on_territorio_body_exited"]
