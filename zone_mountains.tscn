@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="6_x4wef"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="7_v731y"]
 [ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="9_301f2"]
+[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="11_hgymk"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="11_ofbit"]
+[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="12_qogao"]
 [ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="14_870w5"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="14_p45sf"]
-[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="15_1anir"]
 [ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="15_bjxht"]
-[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="16_j0m5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sg1lv"]
 texture = ExtResource("1_lu8qx")
@@ -9662,6 +9662,41 @@ position = Vector2(0.5, 3)
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("4_kykrp")
 
+[node name="orc1_2" parent="." instance=ExtResource("11_hgymk")]
+position = Vector2(216, 158)
+scale = Vector2(2, 2)
+
+[node name="botonorco1" type="TextureButton" parent="orc1_2"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
+[node name="orc1_4" parent="." instance=ExtResource("12_qogao")]
+position = Vector2(216, 293)
+scale = Vector2(2, 2)
+
+[node name="botonorco2" type="TextureButton" parent="orc1_4"]
+offset_left = -15.0
+offset_top = -19.0
+offset_right = 15.0
+offset_bottom = 18.0
+ignore_texture_size = true
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("11_ofbit")
+
 [node name="skeleton1_3" parent="." instance=ExtResource("14_870w5")]
 position = Vector2(617, 284)
 scale = Vector2(2, 2)
@@ -9697,34 +9732,6 @@ scale = Vector2(0.414063, 0.539063)
 energy = 3.0
 texture = ExtResource("11_ofbit")
 
-[node name="orc1_2" parent="." instance=ExtResource("15_1anir")]
-position = Vector2(225, 181)
-scale = Vector2(2, 2)
-
-[node name="botonorco1" type="TextureButton" parent="orc1_2"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
-visible = false
-position = Vector2(1, -3.5)
-scale = Vector2(0.6875, 0.75)
-texture = ExtResource("11_ofbit")
-
-[node name="orc1_4" parent="." instance=ExtResource("16_j0m5a")]
-position = Vector2(224, 280)
-scale = Vector2(2, 2)
-
-[node name="botonorco2" type="TextureButton" parent="orc1_4"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="orc1_4/botonorco2"]
-visible = false
-position = Vector2(-0.5, -1.5)
-scale = Vector2(0.664063, 0.820313)
-texture = ExtResource("11_ofbit")
-
 [node name="Ataque" type="Button" parent="."]
 offset_left = 348.0
 offset_top = 52.0
@@ -9748,6 +9755,7 @@ volume_db = -10.111
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 z_index = 5
 offset_left = -99.0
 offset_top = 16.0
@@ -9891,17 +9899,17 @@ offset_bottom = 98.0
 label_settings = SubResource("LabelSettings_00vv1")
 autowrap_mode = 3
 
-[connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
-[connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
-[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
-[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
-[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
 [connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
 [connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
 [connection signal="mouse_entered" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_entered"]
 [connection signal="mouse_exited" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_mouse_exited"]
 [connection signal="pressed" from="orc1_4/botonorco2" to="." method="_on_botonorco_2_pressed"]
+[connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
+[connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
+[connection signal="mouse_entered" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_mouse_exited"]
+[connection signal="pressed" from="skeleton/botonesqueleto2" to="." method="_on_botonesqueleto_2_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]

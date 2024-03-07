@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://wx775h6gysli" path="res://link.tscn" id="7_cfu4m"]
 [ext_resource type="AudioStream" uid="uid://v72guwgkoti8" path="res://Y2meta.app - Efecto de sonido de Katana (128 kbps).mp3" id="8_2lyew"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="10_ge4ft"]
-[ext_resource type="PackedScene" uid="uid://h4vlp5j2pud7" path="res://skeleton_1_2.tscn" id="16_6es2r"]
+[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_bklh1"]
+[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="14_80l73"]
+[ext_resource type="PackedScene" uid="uid://dgg060e187rbn" path="res://momia.tscn" id="14_irp8b"]
+[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="14_m3ohu"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="16_ehhv1"]
-[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="16_s4tss"]
-[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="16_x8xbv"]
-[ext_resource type="PackedScene" uid="uid://bnmyotj4i1wxa" path="res://momia.tscn" id="18_67tgl"]
 [ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="18_v43eh"]
+[ext_resource type="PackedScene" uid="uid://dqw85wpe7vuo8" path="res://buitre.tscn" id="19_3uhrd"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="19_hqqll"]
-[ext_resource type="PackedScene" uid="uid://gsc1bojavr7s" path="res://buitre.tscn" id="19_sbn3k"]
 [ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="20_oy7es"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtr2c"]
@@ -6756,6 +6756,72 @@ position = Vector2(0.5, 3)
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("8_2lyew")
 
+[node name="orc1_2" parent="." instance=ExtResource("14_m3ohu")]
+position = Vector2(216, 158)
+scale = Vector2(2, 2)
+
+[node name="botonorco1" type="TextureButton" parent="orc1_2"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="orc1_2/botonorco1"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_bklh1")
+
+[node name="buitre" parent="." instance=ExtResource("19_3uhrd")]
+position = Vector2(221, 281)
+scale = Vector2(2, 2)
+
+[node name="botonbuitre" type="TextureButton" parent="buitre"]
+offset_left = -23.5
+offset_top = -15.5
+offset_right = 16.5
+offset_bottom = 24.5
+
+[node name="PointLight2D" type="PointLight2D" parent="buitre/botonbuitre"]
+visible = false
+position = Vector2(17.5, 18)
+scale = Vector2(0.75, 0.820313)
+texture = ExtResource("12_bklh1")
+
+[node name="momia" parent="." instance=ExtResource("14_irp8b")]
+position = Vector2(597, 151)
+scale = Vector2(2, 2)
+
+[node name="botonmomia" type="TextureButton" parent="momia"]
+offset_left = -9.0
+offset_top = -7.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="PointLight2D" type="PointLight2D" parent="momia/botonmomia"]
+visible = false
+position = Vector2(19, 12.5)
+scale = Vector2(0.75, 0.835938)
+texture = ExtResource("12_bklh1")
+
+[node name="skeleton1_3" parent="." instance=ExtResource("14_80l73")]
+position = Vector2(617, 284)
+scale = Vector2(2, 2)
+
+[node name="botonesqueleto" type="TextureButton" parent="skeleton1_3"]
+offset_left = -11.5
+offset_top = -15.5
+offset_right = 11.5
+offset_bottom = 16.5
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonesqueleto"]
+visible = false
+position = Vector2(13.75, 19.25)
+scale = Vector2(0.414063, 0.539063)
+energy = 3.0
+texture = ExtResource("12_bklh1")
+
 [node name="Ataque" type="Button" parent="."]
 offset_left = 348.0
 offset_top = 52.0
@@ -6923,74 +6989,20 @@ offset_bottom = 91.0
 label_settings = SubResource("LabelSettings_gy04u")
 autowrap_mode = 3
 
-[node name="Skeleton1_2" parent="." instance=ExtResource("16_6es2r")]
-position = Vector2(543, 247)
-scale = Vector2(1.5, 1.5)
-
-[node name="botonSkeleton1_2" type="TextureButton" parent="Skeleton1_2"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="Skeleton1_2/botonSkeleton1_2"]
-visible = false
-texture = ExtResource("16_s4tss")
-
-[node name="skeleton" parent="." instance=ExtResource("16_x8xbv")]
-position = Vector2(550, 150)
-scale = Vector2(2, 2)
-
-[node name="botonSkeleton" type="TextureButton" parent="skeleton"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="skeleton/botonSkeleton"]
-visible = false
-position = Vector2(1, -1)
-scale = Vector2(0.765625, 0.765625)
-texture = ExtResource("16_s4tss")
-
-[node name="Momia" parent="." instance=ExtResource("18_67tgl")]
-position = Vector2(171, 239)
-scale = Vector2(2, 2)
-
-[node name="botonMomia" type="TextureButton" parent="Momia"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="Momia/botonMomia"]
-visible = false
-position = Vector2(9, 7.5)
-scale = Vector2(0.671875, 0.757813)
-texture = ExtResource("16_s4tss")
-
-[node name="Buitre" parent="." instance=ExtResource("19_sbn3k")]
-position = Vector2(188, 117)
-scale = Vector2(2, 2)
-
-[node name="botonBuitre" type="TextureButton" parent="Buitre"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="Buitre/botonBuitre"]
-visible = false
-position = Vector2(5, 7)
-scale = Vector2(0.648438, 0.75)
-texture = ExtResource("16_s4tss")
-
+[connection signal="mouse_entered" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_entered"]
+[connection signal="mouse_exited" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_mouse_exited"]
+[connection signal="pressed" from="orc1_2/botonorco1" to="." method="_on_botonorco_1_pressed"]
+[connection signal="mouse_entered" from="buitre/botonbuitre" to="." method="_on_botonbuitre_mouse_entered"]
+[connection signal="mouse_exited" from="buitre/botonbuitre" to="." method="_on_botonbuitre_mouse_exited"]
+[connection signal="pressed" from="buitre/botonbuitre" to="." method="_on_botonbuitre_pressed"]
+[connection signal="mouse_entered" from="momia/botonmomia" to="." method="_on_botonmomia_mouse_entered"]
+[connection signal="mouse_exited" from="momia/botonmomia" to="." method="_on_botonmomia_mouse_exited"]
+[connection signal="pressed" from="momia/botonmomia" to="." method="_on_botonmomia_pressed"]
+[connection signal="mouse_entered" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_mouse_exited"]
+[connection signal="pressed" from="skeleton1_3/botonesqueleto" to="." method="_on_botonesqueleto_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
-[connection signal="mouse_entered" from="Skeleton1_2/botonSkeleton1_2" to="." method="_on_boton_skeleton_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="Skeleton1_2/botonSkeleton1_2" to="." method="_on_boton_skeleton_1_2_mouse_exited"]
-[connection signal="pressed" from="Skeleton1_2/botonSkeleton1_2" to="." method="_on_boton_skeleton_1_2_pressed"]
-[connection signal="mouse_entered" from="skeleton/botonSkeleton" to="." method="_on_boton_skeleton_mouse_entered"]
-[connection signal="mouse_exited" from="skeleton/botonSkeleton" to="." method="_on_boton_skeleton_mouse_exited"]
-[connection signal="pressed" from="skeleton/botonSkeleton" to="." method="_on_boton_skeleton_pressed"]
-[connection signal="mouse_entered" from="Momia/botonMomia" to="." method="_on_boton_momia_mouse_entered"]
-[connection signal="mouse_exited" from="Momia/botonMomia" to="." method="_on_boton_momia_mouse_exited"]
-[connection signal="pressed" from="Momia/botonMomia" to="." method="_on_boton_momia_pressed"]
-[connection signal="mouse_entered" from="Buitre/botonBuitre" to="." method="_on_boton_buitre_mouse_entered"]
-[connection signal="mouse_exited" from="Buitre/botonBuitre" to="." method="_on_boton_buitre_mouse_exited"]
-[connection signal="pressed" from="Buitre/botonBuitre" to="." method="_on_boton_buitre_pressed"]

@@ -11,12 +11,16 @@ var dentroLibro:bool=false;
 var dentroPizarra:bool=false;
 var contadorPreguntas:int=0;
 var correcta:int=0;
-
+var terminoclass = false;
 var fases:int=0;
 var correctaLab:int=0;
 var dentroPizarron:bool=false;
-
+var terminolab = false
 func _process(delta):
+	
+	if dentroPizarra == true:
+		$Jugador.velocity = Vector2(0,0)
+		
 	if contadorPreguntas<3:
 		libro=true;
 	else :
@@ -25,8 +29,12 @@ func _process(delta):
 	if contadorPreguntas>=6:
 		libro2=false;
 		
-	if dentroPizarra==true && Input.is_key_pressed(KEY_ENTER):
+	if dentroPizarra==true && Input.is_key_pressed(KEY_ENTER)&& terminoclass==false:
 		$Jugador/pizarra.show();
+		$Jugador/fondo.hide();
+		$Jugador/msgRegistro.hide();
+		$Jugador/Label2.show()
+		
 		if correcta==0:
 			$"Jugador/pizarra/0buenas".show();
 		elif correcta==1:
@@ -44,6 +52,12 @@ func _process(delta):
 	
 	if dentroPizarron==true && Input.is_key_pressed(KEY_ENTER):
 		$Jugador/pizarronLaboratio.show();
+		$Jugador/fondo.hide();
+		$Jugador/msgRegistro.hide();
+		$Jugador/Buttonp.show()
+		$Jugador/Buttonp2.show()
+		$Jugador/Buttonp3.show()
+		$Jugador/Buttonp4.show()
 		$Jugador/pizarronLaboratio/Label.show();
 		if correctaLab==0:
 			$"Jugador/pizarronLaboratio/0pistas".show();
@@ -261,10 +275,15 @@ func _on_adam_area_body_entered(body):
 			$Jugador/fondo.show();
 			eKant=true;
 		else:
-			$Jugador/msgRegistro.set_text("Dirigete a la pizarra para,
-			adivinar quien es el personaje misterioso!");
-			$Jugador/msgRegistro.show();
-			$Jugador/fondo.show();
+			if terminoclass == false:
+				$Jugador/msgRegistro.set_text("Dirigete a la pizarra para,
+				adivinar quien es el personaje misterioso!");
+				$Jugador/msgRegistro.show();
+				$Jugador/fondo.show();
+			else:
+				$Jugador/msgRegistro.set_text("Ve al Laboratorio");
+				$Jugador/msgRegistro.show();
+				$Jugador/fondo.show();
 		
 
 func _on_adam_area_body_exited(body):
@@ -677,6 +696,7 @@ func _on_area_pizarra_body_entered(body):
 		$Jugador/fondo.show();
 		$Jugador/msgRegistro.set_text("Presiona ENTER para interactuar.");
 		$Jugador/msgRegistro.show();
+		
 
 
 func _on_area_pizarra_body_exited(body):
@@ -839,11 +859,15 @@ func _on_lab_4_body_exited(body):
 
 
 func _on_area_pizarron_body_entered(body):
-	if body.is_in_group("Jugador") && finished==true && finishedLab==true:
+	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false:
+		$Jugador/Label2.show()
 		dentroPizarron=true;
 		$Jugador/fondo.show();
 		$Jugador/msgRegistro.set_text("Presiona ENTER para interactuar.");
 		$Jugador/msgRegistro.show();
+		await get_tree().create_timer(3).timeout
+		$Jugador/fondo.hide();
+		$Jugador/msgRegistro.hide();
 
 
 func _on_area_pizarron_body_exited(body):
@@ -853,9 +877,8 @@ func _on_area_pizarron_body_exited(body):
 
 
 func _on_area_pizarron_2_body_entered(body):
-	if body.is_in_group("Jugador") && finished==true && finishedLab==true:
+	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false:
 		dentroPizarron=true;
-		$Jugador/fondo.show();
 		$Jugador/msgRegistro.set_text("Presiona ENTER para interactuar.");
 		$Jugador/msgRegistro.show();
 
@@ -864,3 +887,127 @@ func _on_area_pizarron_2_body_exited(body):
 	$Jugador/msgRegistro.hide();
 	$Jugador/fondo.hide();
 	dentroPizarron=false;
+
+
+func _on_button_pressed():
+	dentroPizarron=false;
+	$Jugador/Label2.hide()
+	$Jugador/pizarra.hide()
+	$Jugador/msgRegistro.show();
+	$Jugador/msgRegistro.set_text("¡FALLASTE!");
+	await get_tree().create_timer(1).timeout
+	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO")
+	$Jugador/fondo.show();
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()
+
+
+func _on_button_2_pressed():
+	dentroPizarron=false;
+	$Jugador/pizarra.hide()
+	$Jugador/Label2.hide()
+	$Jugador/msgRegistro.show();
+	$Jugador/fondo.show();
+	$Jugador/msgRegistro.set_text("¡ACERTASTE!");
+	await get_tree().create_timer(1).timeout
+	$Jugador/msgRegistro.set_text("AHORA TIENES QUE IR AL LABORATORIO")
+	await get_tree().create_timer(3).timeout
+	$Jugador/fondo.hide();
+	$Jugador/msgRegistro.hide();
+	terminoclass=true
+	
+func _on_button_3_pressed():
+	dentroPizarron=false;
+	$Jugador/pizarra.hide()
+	$Jugador/msgRegistro.show();
+	$Jugador/fondo.show();
+	$Jugador/Label2.hide()
+	$Jugador/msgRegistro.set_text("¡FALLASTE!");
+	await get_tree().create_timer(1).timeout
+	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()
+
+
+func _on_button_4_pressed():
+	dentroPizarron=false;
+	$Jugador/pizarra.hide()
+	$Jugador/msgRegistro.show();
+	$Jugador/Label2.hide()
+	$Jugador/fondo.show();
+	$Jugador/msgRegistro.set_text("¡FALLASTE!");
+	await get_tree().create_timer(1).timeout
+	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()
+
+
+func _on_buttonp_pressed():
+	$Jugador/Buttonp.hide()
+	$Jugador/Buttonp2.hide()
+	$Jugador/Buttonp3.hide()
+	$Jugador/Buttonp4.hide()
+	$Jugador/pizarronLaboratio.hide()
+	descartes=false;
+	fases=0
+	finishedLab=false
+	dentroPizarron=false;
+	$Jugador/fondo.show()
+	$Jugador/msgRegistro.show()
+	$Jugador/msgRegistro.set_text("Fallaste")
+	await get_tree().create_timer(3).timeout
+	$Jugador/fondo.hide()
+	$Jugador/msgRegistro.hide()
+	$Jugador.position = $TileMap/Marker2D.position
+
+func _on_buttonp_2_pressed():
+	$Jugador/Buttonp.hide()
+	$Jugador/Buttonp2.hide()
+	$Jugador/Buttonp3.hide()
+	$Jugador/Buttonp4.hide()
+	$Jugador/pizarronLaboratio.hide()
+	$Jugador/fondo.show()
+	$Jugador/msgRegistro.show()
+	$Jugador/msgRegistro.set_text("Acertaste")
+	terminolab = true
+	await get_tree().create_timer(3).timeout
+	$Jugador/fondo.hide()
+	$Jugador/msgRegistro.hide()
+	
+	
+func _on_buttonp_3_pressed():
+	$Jugador/Buttonp.hide()
+	$Jugador/Buttonp2.hide()
+	$Jugador/Buttonp3.hide()
+	$Jugador/Buttonp4.hide()
+	$Jugador/pizarronLaboratio.hide()
+	descartes=false;
+	finishedLab=false
+	fases=0
+	dentroPizarron=false;
+	$Jugador/fondo.show()
+	$Jugador/msgRegistro.show()
+	$Jugador/msgRegistro.set_text("Fallaste")
+	await get_tree().create_timer(3).timeout
+	$Jugador/fondo.hide()
+	$Jugador/msgRegistro.hide()
+	$Jugador.position = $TileMap/Marker2D.position
+
+
+func _on_buttonp_4_pressed():
+	$Jugador/Buttonp.hide()
+	$Jugador/Buttonp2.hide()
+	$Jugador/Buttonp3.hide()
+	$Jugador/Buttonp4.hide()
+	$Jugador/pizarronLaboratio.hide()
+	descartes=false;
+	fases=0
+	finishedLab=false
+	dentroPizarron=false;
+	$Jugador/fondo.show()
+	$Jugador/msgRegistro.show()
+	$Jugador/msgRegistro.set_text("Fallaste")
+	await get_tree().create_timer(3).timeout
+	$Jugador/fondo.hide()
+	$Jugador/msgRegistro.hide()
+	$Jugador.position = $TileMap/Marker2D.position

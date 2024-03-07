@@ -289,7 +289,7 @@ func _on_botonesqueleto_mouse_entered():
 
 
 func _on_botonesqueleto_mouse_exited():
-	$skeleton1_3/botonesqueleto/PointLight2D.hide() 
+	$skeleton1_3/botonesqueleto/PointLight2D.hide()	
 
 
 func _on_botonesqueleto_2_mouse_entered():
@@ -297,7 +297,7 @@ func _on_botonesqueleto_2_mouse_entered():
 
 
 func _on_botonesqueleto_2_mouse_exited():
-	$skeleton/botonesqueleto2/PointLight2D.hide()
+	$skeleton/botonesqueleto2/PointLight2D.hide()	
 
 
 func _on_botonesqueleto_2_pressed():

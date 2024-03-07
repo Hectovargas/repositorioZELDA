@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://bpi8toagc6vl8"]
+[gd_scene load_steps=124 format=3 uid="uid://bpi8toagc6vl8"]
 
 [ext_resource type="Script" path="res://universidad.gd" id="1_c551n"]
 [ext_resource type="Texture2D" uid="uid://5epl5kh1ct0p" path="res://universidad/images/Modern_Interiors_Free_v2.2/Modern tiles_Free/Old/Tileset_16x16_1.png" id="1_qg72o"]
@@ -30,10 +30,14 @@
 [ext_resource type="Texture2D" uid="uid://ckqqwm045r47" path="res://RECURSO DE VIDEO E IMAGENES/luz.png" id="22_r6fe0"]
 [ext_resource type="Texture2D" uid="uid://dkf1p6hahw7t2" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/book_02b.png" id="23_ptx8f"]
 [ext_resource type="Texture2D" uid="uid://b7ylant1a8djj" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/book_04c.png" id="24_eug70"]
+[ext_resource type="Texture2D" uid="uid://jmfdv5pjtxy1" path="res://Princess-Zelda-Sprite.png" id="27_6i58a"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="27_gnqr4"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="28_brvss"]
+[ext_resource type="Texture2D" uid="uid://bcax86bfiwoo4" path="res://Sprites/Link1.png" id="28_kn5bv"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="29_ov61w"]
+[ext_resource type="Texture2D" uid="uid://bxktaf0peuy12" path="res://Sprites/Maidens.png" id="29_pn2xa"]
 [ext_resource type="Texture2D" uid="uid://137emxid4n5d" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Red_Connection_Down.png" id="30_nx88m"]
+[ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://Sprites/Stalfos.png" id="30_sahx6"]
 [ext_resource type="FontFile" uid="uid://c20s8vvp5mm0b" path="res://carpeta de sprites aparte, hay muchos en la otra/SAMPLE PROJECT/Pixel Fantasy Tiles/fonts/mplus-2p-bold-sub.woff" id="31_jc8yd"]
 [ext_resource type="Texture2D" uid="uid://tc7m1e5snobh" path="res://universidad/personajeAnonimo/image.png" id="32_jo0jc"]
 [ext_resource type="Texture2D" uid="uid://bj6aqpmv1xkr8" path="res://universidad/personajeAnonimo/image (1).png" id="33_rwohn"]
@@ -31594,6 +31598,11 @@ font = SubResource("SystemFont_q5chr")
 font_size = 22
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_063hu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_thhtp"]
+font = SubResource("SystemFont_063hu")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlbom"]
 atlas = ExtResource("11_qm74c")
 region = Rect2(288, 0, 16, 32)
@@ -31972,6 +31981,9 @@ position = Vector2(694, -111)
 scale = Vector2(0.239583, 0.208333)
 texture = ExtResource("24_eug70")
 
+[node name="Marker2D" type="Marker2D" parent="TileMap"]
+position = Vector2(74, 176)
+
 [node name="Jugador" parent="." instance=ExtResource("9_ty5s2")]
 position = Vector2(86, 157)
 
@@ -32082,10 +32094,86 @@ su viaje se dedica a completar mazmorras
 label_settings = SubResource("LabelSettings_15cta")
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador/pizarra"]
-position = Vector2(-5.7126, -6.47779)
+position = Vector2(7.39277, -13.8389)
 scale = Vector2(0.209643, 0.234261)
 energy = 2.0
 texture = ExtResource("22_r6fe0")
+
+[node name="Button" type="Button" parent="Jugador/pizarra"]
+z_index = 9
+offset_left = -51.7494
+offset_top = -19.1389
+offset_right = 42.2506
+offset_bottom = 11.8611
+scale = Vector2(0.21, -0.234)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ZELDA"
+alignment = 2
+text_overrun_behavior = 2
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/pizarra/Button"]
+position = Vector2(9.601, 12.5831)
+scale = Vector2(0.750026, 0.486323)
+texture = ExtResource("27_6i58a")
+
+[node name="Button2" type="Button" parent="Jugador/pizarra"]
+z_index = 9
+offset_left = -29.2351
+offset_top = -18.55
+offset_right = 56.7649
+offset_bottom = 12.45
+scale = Vector2(0.21, -0.234)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LINK"
+alignment = 2
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/pizarra/Button2"]
+position = Vector2(22.4963, 12.7062)
+scale = Vector2(2.71096, 1.77848)
+texture = ExtResource("28_kn5bv")
+hframes = 19
+vframes = 8
+
+[node name="Button3" type="Button" parent="Jugador/pizarra"]
+z_index = 9
+offset_left = -7.39277
+offset_top = -18.8445
+offset_right = 120.607
+offset_bottom = 12.1555
+scale = Vector2(0.21, -0.234)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DONCELLA"
+alignment = 2
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/pizarra/Button3"]
+position = Vector2(12.8013, 12.5831)
+scale = Vector2(1.84694, 1.28737)
+texture = ExtResource("29_pn2xa")
+hframes = 13
+vframes = 12
+
+[node name="Button4" type="Button" parent="Jugador/pizarra"]
+z_index = 9
+offset_left = 22.1783
+offset_top = -19.1389
+offset_right = 134.178
+offset_bottom = 11.8611
+scale = Vector2(0.21, -0.234)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "STALFO"
+alignment = 2
+expand_icon = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/pizarra/Button4"]
+position = Vector2(14.4015, 1.2583)
+scale = Vector2(2.01043, 1.53297)
+texture = ExtResource("30_sahx6")
+hframes = 19
+vframes = 9
+frame = 38
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(2, 4)
@@ -32345,7 +32433,6 @@ scale = Vector2(2.94621, 3.41058)
 texture = ExtResource("10_urh3v")
 
 [node name="Label" type="Label" parent="Jugador/pizarronLaboratio"]
-visible = false
 offset_left = -59.3983
 offset_top = -28.4409
 offset_right = 278.602
@@ -32387,6 +32474,61 @@ texture = ExtResource("35_cnn5a")
 [node name="5pistas" type="Sprite2D" parent="Jugador/pizarronLaboratio"]
 visible = false
 texture = ExtResource("36_dgkmo")
+
+[node name="Label2" type="Label" parent="Jugador"]
+visible = false
+z_index = 9
+offset_left = -133.0
+offset_top = 39.0
+offset_right = 145.0
+offset_bottom = 62.0
+text = "ADIVINA DE QUE PERSONAJE HABLA"
+label_settings = SubResource("LabelSettings_thhtp")
+autowrap_mode = 3
+
+[node name="Buttonp" type="Button" parent="Jugador"]
+visible = false
+z_index = 9
+offset_left = 96.0
+offset_top = 17.0
+offset_right = 169.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "KENNY"
+
+[node name="Buttonp2" type="Button" parent="Jugador"]
+visible = false
+z_index = 9
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 90.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ZELDA"
+
+[node name="Buttonp3" type="Button" parent="Jugador"]
+visible = false
+z_index = 9
+offset_left = 95.0
+offset_top = -36.0
+offset_right = 168.0
+offset_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LINK"
+
+[node name="Buttonp4" type="Button" parent="Jugador"]
+visible = false
+z_index = 9
+offset_left = 17.0
+offset_top = -36.0
+offset_right = 90.0
+offset_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "GANON"
 
 [node name="alex" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 47)
@@ -32560,6 +32702,10 @@ scale = Vector2(2.0154, 1.20325)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areaPizarron2"]
 shape = SubResource("RectangleShape2D_26h2k")
 
+[connection signal="pressed" from="Jugador/pizarra/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Jugador/pizarra/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Jugador/pizarra/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Jugador/pizarra/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Jugador/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
@@ -32572,6 +32718,10 @@ shape = SubResource("RectangleShape2D_26h2k")
 [connection signal="mouse_entered" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_mouse_entered"]
 [connection signal="mouse_exited" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_mouse_exited"]
 [connection signal="pressed" from="Jugador/TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="Jugador/Buttonp" to="." method="_on_buttonp_pressed"]
+[connection signal="pressed" from="Jugador/Buttonp2" to="." method="_on_buttonp_2_pressed"]
+[connection signal="pressed" from="Jugador/Buttonp3" to="." method="_on_buttonp_3_pressed"]
+[connection signal="pressed" from="Jugador/Buttonp4" to="." method="_on_buttonp_4_pressed"]
 [connection signal="body_entered" from="areaRegistro" to="." method="_on_area_registro_body_entered"]
 [connection signal="body_exited" from="areaRegistro" to="." method="_on_area_registro_body_exited"]
 [connection signal="body_entered" from="areaMostrador" to="." method="_on_area_2d_body_entered"]
