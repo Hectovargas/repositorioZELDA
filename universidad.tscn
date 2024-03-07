@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://bpi8toagc6vl8"]
+[gd_scene load_steps=125 format=3 uid="uid://bpi8toagc6vl8"]
 
 [ext_resource type="Script" path="res://universidad.gd" id="1_c551n"]
 [ext_resource type="Texture2D" uid="uid://5epl5kh1ct0p" path="res://universidad/images/Modern_Interiors_Free_v2.2/Modern tiles_Free/Old/Tileset_16x16_1.png" id="1_qg72o"]
@@ -31563,7 +31563,6 @@ sources/20 = SubResource("TileSetAtlasSource_r4o22")
 [sub_resource type="LabelSettings" id="LabelSettings_15cta"]
 font = ExtResource("31_jc8yd")
 font_size = 14
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnxps"]
 font = ExtResource("11_hbwjn")
@@ -31596,6 +31595,10 @@ font_names = PackedStringArray("Verdana")
 [sub_resource type="LabelSettings" id="LabelSettings_rudm7"]
 font = SubResource("SystemFont_q5chr")
 font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x223o"]
+font = ExtResource("31_jc8yd")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_063hu"]
@@ -32212,11 +32215,11 @@ texture = ExtResource("27_gnqr4")
 
 [node name="TextureButton" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 146.347
-offset_top = 179.767
-offset_right = 211.347
-offset_bottom = 235.767
-scale = Vector2(0.953505, 0.713694)
+offset_left = 139.266
+offset_top = 173.969
+offset_right = 204.266
+offset_bottom = 229.969
+scale = Vector2(1.09811, 0.871426)
 texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
@@ -32226,7 +32229,7 @@ offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
 offset_bottom = 66.7394
-scale = Vector2(5.22049, 0.818778)
+scale = Vector2(5.22049, 0.900031)
 texture = ExtResource("27_gnqr4")
 
 [node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton"]
@@ -32256,11 +32259,11 @@ texture = ExtResource("29_ov61w")
 
 [node name="TextureButton2" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 146.347
-offset_top = 230.508
-offset_right = 210.347
-offset_bottom = 284.508
-scale = Vector2(0.942339, 0.758785)
+offset_left = 134.545
+offset_top = 231.958
+offset_right = 198.545
+offset_bottom = 285.958
+scale = Vector2(1.11103, 0.960242)
 texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
@@ -32270,7 +32273,7 @@ offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
 offset_bottom = 66.7394
-scale = Vector2(5.24907, 0.798279)
+scale = Vector2(5.26568, 0.9268)
 texture = ExtResource("27_gnqr4")
 
 [node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton2"]
@@ -32300,11 +32303,11 @@ texture = ExtResource("29_ov61w")
 
 [node name="TextureButton3" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 571.226
-offset_top = 179.767
-offset_right = 633.226
-offset_bottom = 234.767
-scale = Vector2(1.03747, 0.793923)
+offset_left = 559.424
+offset_top = 171.069
+offset_right = 621.424
+offset_bottom = 226.069
+scale = Vector2(1.12149, 0.897171)
 texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
@@ -32314,7 +32317,7 @@ offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
 offset_bottom = 66.7394
-scale = Vector2(4.85937, 0.818778)
+scale = Vector2(5.10437, 0.997528)
 texture = ExtResource("27_gnqr4")
 
 [node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton3"]
@@ -32344,11 +32347,11 @@ texture = ExtResource("29_ov61w")
 
 [node name="TextureButton4" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 571.226
-offset_top = 229.059
-offset_right = 635.226
-offset_bottom = 285.059
-scale = Vector2(1.02088, 0.818884)
+offset_left = 557.064
+offset_top = 233.408
+offset_right = 621.064
+offset_bottom = 289.408
+scale = Vector2(1.17121, 0.886244)
 texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
@@ -32358,7 +32361,7 @@ offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
 offset_bottom = 66.7394
-scale = Vector2(4.90576, 0.784964)
+scale = Vector2(4.95435, 0.9472)
 texture = ExtResource("27_gnqr4")
 
 [node name="Label" type="Label" parent="Jugador/TextureRect/TextureButton4"]
@@ -32417,13 +32420,13 @@ texture = ExtResource("27_gnqr4")
 
 [node name="Label" type="Label" parent="Jugador"]
 visible = false
-offset_left = -40.0
-offset_top = -52.0
-offset_right = 48.0
-offset_bottom = -28.0
-scale = Vector2(0.927295, 0.986051)
+offset_left = -36.0
+offset_top = -54.0
+offset_right = 52.0
+offset_bottom = -30.0
+scale = Vector2(0.755089, 1.06706)
 text = "CORRECTA"
-label_settings = SubResource("LabelSettings_15cta")
+label_settings = SubResource("LabelSettings_x223o")
 
 [node name="pizarronLaboratio" type="Sprite2D" parent="Jugador"]
 visible = false
@@ -32473,7 +32476,15 @@ texture = ExtResource("35_cnn5a")
 
 [node name="5pistas" type="Sprite2D" parent="Jugador/pizarronLaboratio"]
 visible = false
+position = Vector2(-33.9419, 5.2777)
+scale = Vector2(0.116869, 0.10528)
 texture = ExtResource("36_dgkmo")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/pizarronLaboratio"]
+position = Vector2(7.39277, -13.8389)
+scale = Vector2(0.209643, 0.234261)
+energy = 2.0
+texture = ExtResource("22_r6fe0")
 
 [node name="Label2" type="Label" parent="Jugador"]
 visible = false
@@ -32529,6 +32540,167 @@ offset_bottom = -5.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "GANON"
+
+[node name="pizarraClue" type="Sprite2D" parent="Jugador"]
+visible = false
+z_index = 8
+position = Vector2(5, 6)
+scale = Vector2(2.97588, -3.39622)
+texture = ExtResource("10_urh3v")
+
+[node name="0buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de ______________ y 
+representante de la ________________.
+Se convirtio en _________ tras _____________, 
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________"
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="1buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra'
+ y representante de la ________________.
+	Se convirtio en _________ tras _____________, 
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="2buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en _________ tras _____________,
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="3buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras _____________,
+en su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________.
+"
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="4buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en
+su viaje se dedica a _________________,
+	acompañad_ de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="5buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra'
+ y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en
+su viaje se dedica a completar mazmorras
+	acompañado de su leal compañer_ __________."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="6buenas" type="Label" parent="Jugador/pizarraClue"]
+visible = false
+offset_left = -58.47
+offset_top = 24.7334
+offset_right = 280.53
+offset_bottom = 141.733
+scale = Vector2(0.346714, -0.30079)
+text = "Tu personaje es portador de la 'Espada Maestra' 
+y representante de la Trifuerza del Valor.
+	Se convirtio en un heroe tras salvar Hyrule, en 
+su viaje se dedica a completar mazmorras
+	acompañado de su leal compañera 'Navi' el hada."
+label_settings = SubResource("LabelSettings_15cta")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/pizarraClue"]
+position = Vector2(7.39277, -13.8389)
+scale = Vector2(0.209643, 0.234261)
+energy = 2.0
+texture = ExtResource("22_r6fe0")
+
+[node name="pizarronClue" type="Sprite2D" parent="Jugador"]
+visible = false
+z_index = 8
+position = Vector2(5, 7)
+scale = Vector2(2.94621, 3.41058)
+texture = ExtResource("10_urh3v")
+
+[node name="0pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-31.5659, 5.27769)
+scale = Vector2(0.142131, 0.101661)
+texture = ExtResource("32_jo0jc")
+
+[node name="1pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-31.2265, 4.69128)
+scale = Vector2(0.142615, 0.0984508)
+texture = ExtResource("33_rwohn")
+
+[node name="2pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-31.2265, 5.5709)
+scale = Vector2(0.141926, 0.103473)
+texture = ExtResource("34_2x60s")
+
+[node name="3pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-31.2265, 5.8641)
+scale = Vector2(0.126679, 0.0876102)
+texture = ExtResource("35_men82")
+
+[node name="4pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-31.5659, 5.5709)
+scale = Vector2(0.128834, 0.104692)
+texture = ExtResource("35_cnn5a")
+
+[node name="5pistas" type="Sprite2D" parent="Jugador/pizarronClue"]
+visible = false
+position = Vector2(-33.9419, 5.2777)
+scale = Vector2(0.116869, 0.10528)
+texture = ExtResource("36_dgkmo")
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/pizarronClue"]
+position = Vector2(7.39277, -13.8389)
+scale = Vector2(0.209643, 0.234261)
+energy = 2.0
+texture = ExtResource("22_r6fe0")
 
 [node name="alex" type="AnimatedSprite2D" parent="."]
 position = Vector2(212, 47)
