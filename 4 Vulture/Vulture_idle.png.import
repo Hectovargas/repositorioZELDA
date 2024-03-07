@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkejsga3lmix"
-path="res://.godot/imported/DS DSi - Dragon Quest 4 The Chapters of the Chosen - Bodkin Archer Bodkin Bowyer Bodkin Fletcher.png-07212856a4bb64aecfaea3ea6427bb4e.ctex"
+uid="uid://1thfj1dlvw2p"
+path="res://.godot/imported/Vulture_idle.png-bb9cf821d1e499c4381f9905c7e8867d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DS DSi - Dragon Quest 4 The Chapters of the Chosen - Bodkin Archer Bodkin Bowyer Bodkin Fletcher.png"
-dest_files=["res://.godot/imported/DS DSi - Dragon Quest 4 The Chapters of the Chosen - Bodkin Archer Bodkin Bowyer Bodkin Fletcher.png-07212856a4bb64aecfaea3ea6427bb4e.ctex"]
+source_file="res://4 Vulture/Vulture_idle.png"
+dest_files=["res://.godot/imported/Vulture_idle.png-bb9cf821d1e499c4381f9905c7e8867d.ctex"]
 
 [params]
 

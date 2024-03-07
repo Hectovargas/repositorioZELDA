@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://haaloo6fsbjm"]
+[gd_scene load_steps=9 format=3 uid="uid://haaloo6fsbjm"]
 
+[ext_resource type="Script" path="res://skeleton_1_4.gd" id="1_ibhkp"]
 [ext_resource type="Texture2D" uid="uid://cos1nlcfmeqd8" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Idle/Idle-Sheet.png" id="1_sh5sw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vaf8l"]
@@ -41,6 +42,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjwm4"]
 
 [node name="skeleton1_4" type="CharacterBody2D"]
+script = ExtResource("1_ibhkp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mrp5w")

@@ -295,15 +295,15 @@ func _on_boton_wolf_mouse_exited():
 	$Wolf/botonWolf/PointLight2D.hide()	
 
 
-func _on_boton_elefante_mouse_entered():
-	$elefante/botonElefante/PointLight2D.show()
+func _on_boton_skeletons_mouse_entered():
+	$skeleton1_3/botonSkeletons/PointLight2D.show()
 
 
-func _on_boton_elefante_mouse_exited():
-	$elefante/botonElefante/PointLight2D.hide()	
+func _on_boton_skeletons_mouse_exited():
+	$skeleton1_3/botonSkeletons/PointLight2D.hide()	
 
 
-func _on_boton_elefante_pressed():
+func _on_boton_skeletons_pressed():
 	if Global.nacionalista == true :
 		print("ai4")
 		numerodeenemigo = 4
@@ -328,11 +328,11 @@ func fallaprgunta():
 		await get_tree().create_timer(1.5).timeout
 		$yeti.position=posicion
 	if numerodeenemigo==3:
-		var posicion = $elefante.position
-		$elefante.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
+		var posicion = $skeleton1_3.position
+		$skeleton1_3.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
 		Global.ataqueenemy3=true
 		await get_tree().create_timer(1.5).timeout
-		$elefante.position=posicion
+		$skeleton1_3.position=posicion
 	if numerodeenemigo==4:
 		var posicion = $Wolf.position
 		$Wolf.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
@@ -358,9 +358,9 @@ func aciertapregunta():
 		if Global.nacionalista==true:
 			#mover personaje hacia enemigo seleccionado
 			if numerodeenemigo==3:
-				$Jugador.position = Vector2($elefante.position.x-35,$elefante.position.y)
+				$Jugador.position = Vector2($Wolf.position.x-35,$Wolf.position.y)
 			else:
-				$Jugador.position = Vector2($elefante.position.x-35,$elefante.position.y)
+				$Jugador.position = Vector2($skeleton1_3.position.x-35,$skeleton1_3.position.y)
 		#efecto de camara en ataque
 		$Jugador/Camera2D.make_current()
 		await get_tree().create_timer(0.5).timeout
@@ -404,4 +404,5 @@ func aciertapregunta():
 		numerodeenemigo=0
 		contadorpreguntas+=1
 		$Ataque.show()
+
 

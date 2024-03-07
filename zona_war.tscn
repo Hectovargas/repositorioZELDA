@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="6_ejgc3"]
 [ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://samurai.tscn" id="7_248ff"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="7_t3dlp"]
-[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://elefante.tscn" id="9_c2icj"]
+[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="9_c2icj"]
 [ext_resource type="Texture2D" uid="uid://denpwhj5nkmbe" path="res://RECURSO DE VIDEO E IMAGENES/snowy.png" id="11_qksqu"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="12_2gfeo"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="13_8f2ny"]
@@ -456,28 +456,18 @@ stream = ExtResource("5_1vuke")
 
 [node name="Wolf" parent="." instance=ExtResource("3_03h36")]
 position = Vector2(588, 152)
+scale = Vector2(1.5, 1.5)
 
 [node name="botonWolf" type="TextureButton" parent="Wolf"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -17.0
+offset_top = -21.0
+offset_right = 23.0
+offset_bottom = 19.0
 
 [node name="PointLight2D" type="PointLight2D" parent="Wolf/botonWolf"]
 visible = false
-position = Vector2(12, 9.5)
-scale = Vector2(1.375, 1.29688)
-texture = ExtResource("12_2gfeo")
-
-[node name="elefante" parent="." instance=ExtResource("9_c2icj")]
-position = Vector2(603, 272)
-
-[node name="botonElefante" type="TextureButton" parent="elefante"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PointLight2D" type="PointLight2D" parent="elefante/botonElefante"]
-visible = false
-position = Vector2(1.99999, 12.5)
-scale = Vector2(1.71875, 1.39063)
+position = Vector2(29, 32.1875)
+scale = Vector2(1.08854, 0.78711)
 texture = ExtResource("12_2gfeo")
 
 [node name="samurai" parent="." instance=ExtResource("7_248ff")]
@@ -491,7 +481,7 @@ offset_bottom = 27.0
 
 [node name="PointLight2D" type="PointLight2D" parent="samurai/BotonSamurai"]
 visible = false
-position = Vector2(-15, 6.5)
+position = Vector2(14, 23)
 scale = Vector2(1.46875, 1.20313)
 texture = ExtResource("12_2gfeo")
 
@@ -499,13 +489,15 @@ texture = ExtResource("12_2gfeo")
 position = Vector2(235, 292)
 
 [node name="botonYeti" type="TextureButton" parent="yeti"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 22.0
+offset_bottom = 22.0
 
 [node name="PointLight2D" type="PointLight2D" parent="yeti/botonYeti"]
 visible = false
-position = Vector2(-1.5, 4.5)
-scale = Vector2(0.953125, 1.14063)
+position = Vector2(14, 23.5)
+scale = Vector2(1.28125, 1.20313)
 texture = ExtResource("12_2gfeo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -801,12 +793,25 @@ offset_bottom = 98.0
 label_settings = SubResource("LabelSettings_ycnvo")
 autowrap_mode = 3
 
+[node name="skeleton1_3" parent="." instance=ExtResource("9_c2icj")]
+position = Vector2(619, 306)
+scale = Vector2(2, 2)
+
+[node name="botonSkeletons" type="TextureButton" parent="skeleton1_3"]
+offset_left = -18.5
+offset_top = -20.0
+offset_right = 21.5
+offset_bottom = 20.0
+
+[node name="PointLight2D" type="PointLight2D" parent="skeleton1_3/botonSkeletons"]
+visible = false
+position = Vector2(18.5, 19.5)
+scale = Vector2(0.835938, 0.8125)
+texture = ExtResource("12_2gfeo")
+
 [connection signal="mouse_entered" from="Wolf/botonWolf" to="." method="_on_boton_wolf_mouse_entered"]
 [connection signal="mouse_exited" from="Wolf/botonWolf" to="." method="_on_boton_wolf_mouse_exited"]
 [connection signal="pressed" from="Wolf/botonWolf" to="." method="_on_boton_wolf_pressed"]
-[connection signal="mouse_entered" from="elefante/botonElefante" to="." method="_on_boton_elefante_mouse_entered"]
-[connection signal="mouse_exited" from="elefante/botonElefante" to="." method="_on_boton_elefante_mouse_exited"]
-[connection signal="pressed" from="elefante/botonElefante" to="." method="_on_boton_elefante_pressed"]
 [connection signal="mouse_entered" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_mouse_entered"]
 [connection signal="mouse_exited" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_mouse_exited"]
 [connection signal="pressed" from="samurai/BotonSamurai" to="." method="_on_boton_samurai_pressed"]
@@ -818,3 +823,6 @@ autowrap_mode = 3
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="pressed" from="Ataque" to="." method="_on_ataque_pressed"]
+[connection signal="mouse_entered" from="skeleton1_3/botonSkeletons" to="." method="_on_boton_skeletons_mouse_entered"]
+[connection signal="mouse_exited" from="skeleton1_3/botonSkeletons" to="." method="_on_boton_skeletons_mouse_exited"]
+[connection signal="pressed" from="skeleton1_3/botonSkeletons" to="." method="_on_boton_skeletons_pressed"]
