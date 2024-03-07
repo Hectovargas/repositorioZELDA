@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 func _on_ready():
 	$AnimatedSprite2Dpass.play("default")
 	
@@ -16,4 +15,4 @@ func _process(delta):
 		await get_tree().create_timer(0.8).timeout
 		$AnimatedSprite2D.stop()
 		Global.ataqueenemy4=false
-		$AnimatedSprite2D.play("idle_wolf")
+		$AnimatedSprite2D.play("default")
