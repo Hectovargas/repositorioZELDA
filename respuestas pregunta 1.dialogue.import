@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://y2bb1nttnktn"
+path="res://.godot/imported/respuestas pregunta 1.dialogue-7d751ce4da8023220b3d7af35b37e8e2.tres"
+
+[deps]
+
+source_file="res://respuestas pregunta 1.dialogue"
+dest_files=["res://.godot/imported/respuestas pregunta 1.dialogue-7d751ce4da8023220b3d7af35b37e8e2.tres"]
+
+[params]
+
+defaults=true

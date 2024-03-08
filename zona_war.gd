@@ -240,12 +240,12 @@ func _on_texture_button_2_pressed():
 		fallaprgunta()
 
 func _on_texture_button_3_pressed():
+	contador=0
 	$TileMap/Camera2D/AnimatedSprite2D.hide()
 	$TileMap/Camera2D/AnimatedSprite2D.stop()
 	if num == 3 || num == 5 || num == 6 || num == 7 || num == 8:
 		aciertapregunta()
 	else:
-		contador=0
 		fallaprgunta()
 
 func _on_texture_button_4_pressed():

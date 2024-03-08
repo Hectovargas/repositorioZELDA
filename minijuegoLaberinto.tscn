@@ -12013,6 +12013,7 @@ offset_top = 21.0
 offset_right = 143.0
 offset_bottom = 61.0
 texture = ExtResource("10_s6jy5")
+region_rect = Rect2(0, 0, 64, 64)
 
 [node name="TextureRect" type="TextureRect" parent="TileMap/Jugador/NinePatchRect"]
 layout_mode = 0
