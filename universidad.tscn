@@ -32154,6 +32154,7 @@ texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
 [node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton2"]
+layout_mode = 0
 offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
@@ -32196,6 +32197,7 @@ texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
 [node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton3"]
+layout_mode = 0
 offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572
@@ -32238,6 +32240,7 @@ texture_normal = ExtResource("28_brvss")
 ignore_texture_size = true
 
 [node name="TextureRect" type="TextureRect" parent="Jugador/TextureRect/TextureButton4"]
+layout_mode = 0
 offset_left = 25.8572
 offset_top = 2.73944
 offset_right = 89.8572

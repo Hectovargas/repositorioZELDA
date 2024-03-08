@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cif780fnx86pe"]
+[gd_scene load_steps=39 format=3 uid="uid://cif780fnx86pe"]
 
 [ext_resource type="Texture2D" uid="uid://oml6xr4snk4u" path="res://RECURSO DE VIDEO E IMAGENES/Inner.png" id="1_5hk51"]
 [ext_resource type="Script" path="res://shooter_politica.gd" id="1_mk6v4"]
@@ -7110,6 +7110,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkxog"]
 radius = 11.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_68yx2"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
 [node name="Shooter(Politica)" type="Node2D"]
 script = ExtResource("1_mk6v4")
 
@@ -7230,9 +7234,22 @@ offset_bottom = -91.0
 scale = Vector2(2.52, 1)
 text = "GANASTE!!"
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MostrarTimer" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 11.0
+offset_right = 1145.0
+offset_bottom = 62.0
+scale = Vector2(0.988014, 1.05047)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_68yx2")
+
 [connection signal="area_entered" from="StalfosB/AreaStalfosB" to="." method="_on_area_stalfos_b_area_entered"]
 [connection signal="area_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_area_entered"]
 [connection signal="area_entered" from="StalfosD/AreaStalfosD" to="." method="_on_area_stalfos_d_area_entered"]
 [connection signal="area_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_area_entered"]
 [connection signal="body_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

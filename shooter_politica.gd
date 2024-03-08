@@ -8,8 +8,10 @@ var pregunta = 0
 @onready var heart = $Area2D/heart
 @onready var label = $Area2D/Label
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time.	
 func _ready():
+	_on_timer_timeout()
+	timerReset()
 	DialogueManager.show_dialogue_balloon(load("res://ahooterinicio2.dialogue"),"start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -174,3 +176,26 @@ func _on_area_stalfos_d_area_entered(area):
 		fallosresp+=1
 		DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
 		
+
+var sec=0
+var Dsec=1
+func _on_timer_timeout():
+	print("ENTRE AL TIEMPO")
+	while sec<=20:
+		sec+=1
+		if (sec==1) || (sec==00): 
+			$MostrarTimer.text="00:00"
+			print(str(sec))
+		elif sec>=0 && sec<=9:
+			$MostrarTimer.text="0"+":0"+str(sec)
+			print(str(sec))
+		else:
+			$MostrarTimer.text="0"+":"+str(sec)
+			print(str(sec))
+	if sec>20:
+		
+		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
+	pass
+
+func timerReset():
+	sec=Dsec
