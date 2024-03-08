@@ -23,42 +23,39 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sailda.hide()
 	if Input.is_key_pressed(KEY_Z):
+		timerReset()
 		pregunta = 1
 		DialogueManager.show_dialogue_balloon(load("res://shooter1.dialogue"),"start")
 		print("pregunta #: " +  str(pregunta))
-	#elif Input.is_key_pressed(KEY_C):
-		#pregunta = 2
-		#DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"), "start")
-		#print("pregunta #: " +  str(pregunta))
-	#elif Input.is_key_pressed(KEY_V):
-		#pregunta = 3
-		#DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"), "start")
-		#print("pregunta #: " +  str(pregunta))
-	#elif Input.is_key_pressed(KEY_B):
-		#pregunta = 4
-		#DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"), "start")
-		#print("pregunta #: " +  str(pregunta))
-	#elif Input.is_key_pressed(KEY_N):
-		#pregunta = 5
-		#DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"), "start")
-		#print("pregunta #: " +  str(pregunta))
-		#if win == true:
-		#	sailda.visible = true
-		#	heart.visible = true
-		#	label.visible = true
-		#	$Area2D/heart.play("default")
-		#	Global.maxvida+=1
-		#	Global.vida+=1
-	#elif Input.is_key_pressed(KEY_A):
-		#fallosresp+=1
-		#DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
-		#print(fallosresp)
-	#elif Input.is_key_pressed(KEY_D):
-		#buenosresp+=1
-		#DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"), "start")
-		#print(buenosresp)
+	elif Input.is_key_pressed(KEY_C):
+		timerReset()
+		pregunta = 2
+		DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"), "start")
+		print("pregunta #: " +  str(pregunta))
+	elif Input.is_key_pressed(KEY_V):
+		timerReset()
+		pregunta = 3
+		DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"), "start")
+		print("pregunta #: " +  str(pregunta))
+	elif Input.is_key_pressed(KEY_B):
+		timerReset()
+		pregunta = 4
+		DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"), "start")
+		print("pregunta #: " +  str(pregunta))
+	elif Input.is_key_pressed(KEY_N):
+		timerReset()
+		pregunta = 5
+		DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"), "start")
+		print("pregunta #: " +  str(pregunta))
+	elif Input.is_key_pressed(KEY_A):
+		fallosresp+=1
+		DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
+		print(fallosresp)
+	elif Input.is_key_pressed(KEY_D):
+		buenosresp+=1
+		DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"), "start")
+		print(buenosresp)
 	if Input.is_key_pressed(KEY_Q):
 		if disparo == false:
 			Global.flechando=true
@@ -93,17 +90,6 @@ func _on_area_2d_body_entered(body):
 		print("puedo disparar")
 
 
-
-func _on_area_salida_area_entered(area):
-	get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
-
-
-func _on_area_2d_area_entered(area):
-	Global.maxvida+=1
-	Global.vida+=1
-	$Area2D.position = Vector2(5000,5000)
-
-
 func _on_timer_timeout():
 	print("ENTRE AL TIEMPO")
 	if sec==0:
@@ -115,8 +101,15 @@ func _on_timer_timeout():
 		mostrar_timer.text="0"+":0"+str(sec)
 	else:
 		mostrar_timer.text="0"+":"+str(sec)
+		if pregunta ==5 and sec==15:
+			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"), "start")
+			sailda.visible = true
+			heart.visible = true
+			$Area2D/heart.play("default")
+			Global.maxvida+=1
+			Global.vida+=1
 	if sec==0:
-		if sec==0 and pregunta5:
+		if sec==0 && pregunta5:
 			DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"), "start")
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 		cambiarPregunta()
@@ -139,8 +132,57 @@ func cambiarPregunta():
 		pregunta=5
 
 
-func _on_area_stalfos_a_area_entered(area):
-	if is_in_group("shoot"):
+func _on_area_salida_body_entered(body):
+	if body.is_in_group("jugador"):
+		Global.maxvida+=1
+		Global.vida+=1
+		$Area2D.position = Vector2(5000,5000)
+		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
+
+
+func _on_area_stalfos_d_body_entered(body):
+	if body.is_in_group("shoot"):
+		print("Estoy dentro!")
+		if pregunta>0:
+			DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"),"start")
+			timerReset()
+			Global.vida-=1
+			cambiarPregunta()
+	pass
+
+
+func _on_area_stalfos_c_body_entered(body):
+	if body.is_in_group("shoot"):
+		print("Estoy dentro!")
+		if pregunta==4:
+			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
+			timerReset()
+			cambiarPregunta()
+		elif pregunta!=4:
+			DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"),"start")
+			timerReset()
+			Global.vida-=1
+			cambiarPregunta()
+	pass
+
+
+func _on_area_stalfos_b_body_entered(body):
+	if body.is_in_group("shoot"):
+		print("Estoy dentro!")
+		if pregunta!=1 || pregunta!=4:
+			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
+			timerReset()
+			cambiarPregunta()
+		elif pregunta==2 || pregunta == 4:
+			DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"),"start")
+			timerReset()
+			Global.vida-=1
+			cambiarPregunta()
+	pass
+
+
+func _on_area_stalfos_a_body_entered(body):
+	if body.is_in_group("shoot"):
 		print("Estoy dentro!")
 		if pregunta==1:
 			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
@@ -151,3 +193,4 @@ func _on_area_stalfos_a_area_entered(area):
 			timerReset()
 			Global.vida-=1
 			cambiarPregunta()
+	pass

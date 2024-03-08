@@ -7071,9 +7071,8 @@ sources/7 = SubResource("TileSetAtlasSource_sd71j")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_en3b4"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2yf6"]
-radius = 8.1846
-height = 16.3692
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h2is"]
+radius = 34.7131
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ou7tv"]
 animations = [{
@@ -7201,16 +7200,16 @@ offset_right = 11.8571
 offset_bottom = -11.5714
 text = "D"
 
+[node name="AreaSalida" type="Area2D" parent="."]
+
+[node name="ColSalida" type="CollisionShape2D" parent="AreaSalida"]
+position = Vector2(116, 60)
+shape = SubResource("CircleShape2D_2h2is")
+
 [node name="Sailda" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(116, 62)
 scale = Vector2(3.42105, 3.42105)
 texture = ExtResource("13_dwbhd")
-
-[node name="AreaSalida" type="Area2D" parent="Sailda"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sailda/AreaSalida"]
-shape = SubResource("CapsuleShape2D_r2yf6")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(64, 115)
@@ -7247,8 +7246,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_68yx2")
 
-[connection signal="area_entered" from="StalfoA/AreaStalfosA" to="." method="_on_area_stalfos_a_area_entered"]
-[connection signal="area_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_area_entered"]
-[connection signal="body_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_body_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="StalfoA/AreaStalfosA" to="." method="_on_area_stalfos_a_body_entered"]
+[connection signal="body_entered" from="StalfosB/AreaStalfosB" to="." method="_on_area_stalfos_b_body_entered"]
+[connection signal="area_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_area_entered"]
+[connection signal="body_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_body_entered"]
+[connection signal="body_entered" from="StalfosD/AreaStalfosD" to="." method="_on_area_stalfos_d_body_entered"]
+[connection signal="area_entered" from="AreaSalida" to="." method="_on_area_salida_area_entered"]
+[connection signal="body_entered" from="AreaSalida" to="." method="_on_area_salida_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
