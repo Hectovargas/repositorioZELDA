@@ -6,6 +6,7 @@ var final = true
 func _ready():
 	$TileMap/portal/AnimatedSprite2D.play("default")
 	$TileMap/AnimatedSprite2D.play("default")
+	Global.progreso += 3
 	if Global.empirista==true:
 		$MusicaEmpirista.play()
 		$TileMap/impi1.play("new_animation")
@@ -55,9 +56,9 @@ func _on_area_2d_body_entered(body):
 		$TileMap/Jugador.show()
 		await get_tree().create_timer(2.5).timeout
 		$TileMap/Jugador/RichTextLabel2.show()
-		$TileMap/Jugador/RichTextLabel2/TextureRect/Label.set_text("Gracias Link, Como agraecimiento te otorgo el poder de la trifuerza")
+		$TileMap/Jugador/RichTextLabel2/TextureRect/Label.set_text("Gracias Link, Como agradecimiento te otorgo el poder de la trifuerza")
 		await get_tree().create_timer(4).timeout
-		$TileMap/Jugador/RichTextLabel2/TextureRect/Label.set_text("esto te dara acceso unico a un lugar donde consegiras conocimiento y habilidades")
+		$TileMap/Jugador/RichTextLabel2/TextureRect/Label.set_text("Esto te dara acceso unico a un lugar donde conseguiras conocimiento y habilidades")
 		await get_tree().create_timer(5).timeout
 		$TileMap/Jugador/RichTextLabel2/TextureRect/Label.set_text("llamado la universidad")
 		await get_tree().create_timer(5).timeout

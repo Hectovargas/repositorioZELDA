@@ -25,6 +25,7 @@ var extraerpez = false
 var rng := RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.progreso += 8
 	$Instrucciones/AnimatedSprite2D2.play("secuencia")
 	$AreaDeSalida/AnimatedSprite2D.play("default")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -241,6 +242,10 @@ func _on_area_del_jugador_body_exited(body):
 
 
 func _on_texture_button_pressed():
+	$Jugador/TextureRect/TextureButton.hide()
+	$Jugador/TextureRect/TextureButton2.hide()
+	$Jugador/TextureRect/TextureButton3.hide()
+	$Jugador/TextureRect/TextureButton4.hide()
 	if(aumento==false):
 		fallosleves += 1
 		aumento=false
@@ -256,6 +261,10 @@ func _on_texture_button_pressed():
 		Global.pescar=false
 		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
+	$Jugador/TextureRect/TextureButton.show()
+	$Jugador/TextureRect/TextureButton2.show()
+	$Jugador/TextureRect/TextureButton3.show()
+	$Jugador/TextureRect/TextureButton4.show()
 	valor=false
 	pescando=false
 	preguntado = false
@@ -265,6 +274,10 @@ func _on_texture_button_pressed():
 func _on_texture_button_2_pressed():
 
 	if(num != 2):
+		$Jugador/TextureRect/TextureButton.hide()
+		$Jugador/TextureRect/TextureButton2.hide()
+		$Jugador/TextureRect/TextureButton3.hide()
+		$Jugador/TextureRect/TextureButton4.hide()
 		$Jugador/TextureRect/Label.set_text("CORRECTO")
 		extraerpez = true
 		pescados+=1
@@ -295,6 +308,10 @@ func _on_texture_button_2_pressed():
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
+	$Jugador/TextureRect/TextureButton.show()
+	$Jugador/TextureRect/TextureButton2.show()
+	$Jugador/TextureRect/TextureButton3.show()
+	$Jugador/TextureRect/TextureButton4.show()
 	valor=false
 	pescando=false
 	preguntado = false
@@ -302,6 +319,10 @@ func _on_texture_button_2_pressed():
 
 
 func _on_texture_button_3_pressed():
+	$Jugador/TextureRect/TextureButton.hide()
+	$Jugador/TextureRect/TextureButton2.hide()
+	$Jugador/TextureRect/TextureButton3.hide()
+	$Jugador/TextureRect/TextureButton4.hide()
 	if(num == 2):
 		$Jugador/TextureRect/Label.set_text("CORRECTO")
 		extraerpez=true
@@ -333,6 +354,10 @@ func _on_texture_button_3_pressed():
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
+	$Jugador/TextureRect/TextureButton.show()
+	$Jugador/TextureRect/TextureButton2.show()
+	$Jugador/TextureRect/TextureButton3.show()
+	$Jugador/TextureRect/TextureButton4.show()
 	valor=false
 	preguntado = false
 	pescando=false
@@ -340,6 +365,10 @@ func _on_texture_button_3_pressed():
 
 
 func _on_texture_button_4_pressed():
+	$Jugador/TextureRect/TextureButton.hide()
+	$Jugador/TextureRect/TextureButton2.hide()
+	$Jugador/TextureRect/TextureButton3.hide()
+	$Jugador/TextureRect/TextureButton4.hide()
 	if(aumento==false):
 		fallosleves += 1
 		aumento=true
@@ -355,6 +384,10 @@ func _on_texture_button_4_pressed():
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
+	$Jugador/TextureRect/TextureButton.show()
+	$Jugador/TextureRect/TextureButton2.show()
+	$Jugador/TextureRect/TextureButton3.show()
+	$Jugador/TextureRect/TextureButton4.show()
 	valor=false
 	pescando=false
 	preguntado = false

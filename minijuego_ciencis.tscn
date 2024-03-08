@@ -15312,6 +15312,7 @@ text = "2"
 label_settings = SubResource("LabelSettings_itqrv")
 
 [node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton2"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 2.0
 offset_right = 170.0
@@ -15337,6 +15338,7 @@ text = "3"
 label_settings = SubResource("LabelSettings_rnvg4")
 
 [node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton3"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 1.0
 offset_right = 172.0
@@ -15362,6 +15364,7 @@ text = "4"
 label_settings = SubResource("LabelSettings_t74bs")
 
 [node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton4"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 1.0
 offset_right = 172.0

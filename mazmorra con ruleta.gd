@@ -11,6 +11,8 @@ var probabilidades_Arte = 2000
 var finishcondition = false
 
 func _ready():
+	if Global.ciencia==false && Global.politica==false && Global.historia==false && Global.arte==false:
+		Global.progreso += 5
 	if Global.politica==true:
 		probabilidades_Arte*3
 		probabilidades_Ciencia*3

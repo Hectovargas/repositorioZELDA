@@ -36,7 +36,8 @@ func _on_area_2dc_2_body_entered(body):
 		$Sprite2D2/AnimatedSprite2D.stop()
 		Global.vida=Global.vida-1
 		$audioInCorrecto.play();
-
+func _ready():
+	Global.progreso += 8
 func _on_area_2dc_3_body_entered(body):
 	if body.is_in_group("Jugador") && esCofreCorrecto==false:
 		$Sprite2D3.show()

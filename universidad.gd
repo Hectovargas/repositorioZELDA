@@ -16,6 +16,8 @@ var fases:int=0;
 var correctaLab:int=0;
 var dentroPizarron:bool=false;
 var terminolab = false
+
+	
 func _process(delta):
 	
 	if dentroPizarra == true:
@@ -208,6 +210,7 @@ const respuestas:Array=[
 ]
 
 func _ready():
+	Global.progreso += 8
 	$alex.play("idle");
 	$adam.play("idle");
 	$bob.play("idle");
@@ -898,6 +901,7 @@ func _on_button_pressed():
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO")
 	$Jugador/fondo.show();
 	await get_tree().create_timer(3).timeout
+	Global.progreso -= 8
 	get_tree().reload_current_scene()
 
 
@@ -911,6 +915,7 @@ func _on_button_2_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("AHORA TIENES QUE IR AL LABORATORIO")
 	await get_tree().create_timer(3).timeout
+	Global.progreso += 10
 	$Jugador/fondo.hide();
 	$Jugador/msgRegistro.hide();
 	Global.logo1=true
@@ -926,6 +931,7 @@ func _on_button_3_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
 	await get_tree().create_timer(3).timeout
+	Global.progreso -= 5 
 	get_tree().reload_current_scene()
 
 
@@ -939,6 +945,7 @@ func _on_button_4_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
 	await get_tree().create_timer(3).timeout
+	Global.progreso -= 5
 	get_tree().reload_current_scene()
 
 
@@ -973,6 +980,7 @@ func _on_buttonp_2_pressed():
 	terminolab = true
 	await get_tree().create_timer(3).timeout
 	$Jugador/fondo.hide()
+	Global.progreso += 10
 	$Jugador/msgRegistro.hide()
 	
 	

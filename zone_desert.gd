@@ -24,6 +24,7 @@ var terminarpelea = false
 var contadorfallos=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.progreso += 8
 	Global.estoyencombate=true
 	if Global.empirista==true:
 		$Jugador.position = posicionJugadorimperialista
@@ -166,6 +167,7 @@ func _process(delta):
 				Global.estoyencombate=false
 				Global.pelea1 = true
 				Global.posicionbatalla=false
+				Global.posicionbatallainversa=false
 				get_tree().change_scene_to_file("res://zona Inical.tscn")
 
 

@@ -16,6 +16,13 @@ func _physics_process(delta):
 	
 
 func _process(delta):
+	if Input.is_key_pressed(KEY_G):
+		$TextureProgressBar.value = Global.progreso
+		$TextureProgressBar.show()
+		$RichTextLabel.hide()
+		$TextureProgressBar/Label.set_text(str($TextureProgressBar.value) + "%")
+		await get_tree().create_timer(2.5).timeout;
+		$TextureProgressBar.hide()
 	controldireccion()
 	if Global.logo1== true:
 		$RichTextLabel/Sprite2D.show()
@@ -73,6 +80,7 @@ func _process(delta):
 		else:
 			if Input.is_key_pressed(KEY_F):
 				$RichTextLabel.show()
+				$TextureProgressBar.hide()
 				await get_tree().create_timer(3).timeout
 				$RichTextLabel.hide()
 				

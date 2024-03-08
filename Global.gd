@@ -3,6 +3,7 @@ var posicion = Vector2(-18,37)
 var vida = 3
 var maxvida = 3
 var peleas = 0
+var progreso = 0
 var empezar = false
 var ciencia = false
 var arte = false

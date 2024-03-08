@@ -30,6 +30,7 @@ func _ready():
 	dialogoCorazon.hide()
 	InstruccionesLaberintos.hide()
 	vida = Global.vida
+	Global.progreso += 8
 	$AnimatedSprite2D.play("default")
 	
 

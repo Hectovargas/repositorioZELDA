@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://wx775h6gysli"]
+[gd_scene load_steps=95 format=3 uid="uid://wx775h6gysli"]
 
 [ext_resource type="Script" path="res://link.gd" id="1_h4jya"]
 [ext_resource type="Texture2D" uid="uid://22fnxbwugjiv" path="res://Sprites/Link2.png" id="4_jesy2"]
@@ -691,6 +691,9 @@ animations = [{
 radius = 6.0
 height = 18.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_r6fo6"]
+font_size = 20
+
 [node name="Jugador" type="CharacterBody2D" groups=["jugador"]]
 z_index = 1
 y_sort_enabled = true
@@ -834,3 +837,19 @@ texture = ExtResource("9_78myw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+
+[node name="TextureProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -80.0
+offset_top = -71.0
+offset_right = 82.0
+offset_bottom = -31.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 4.0
+offset_right = 210.0
+offset_bottom = 34.0
+label_settings = SubResource("LabelSettings_r6fo6")

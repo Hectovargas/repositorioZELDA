@@ -6774,7 +6774,7 @@ energy = 3.0
 texture = ExtResource("12_bklh1")
 
 [node name="buitre" parent="." instance=ExtResource("19_3uhrd")]
-position = Vector2(221, 281)
+position = Vector2(261, 281)
 scale = Vector2(2, 2)
 
 [node name="botonbuitre" type="TextureButton" parent="buitre"]
