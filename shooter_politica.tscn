@@ -7111,7 +7111,7 @@ animations = [{
 radius = 11.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_68yx2"]
-font_size = 30
+font_size = 36
 font_color = Color(0, 0, 0, 1)
 
 [node name="Shooter(Politica)" type="Node2D"]
@@ -7147,10 +7147,10 @@ scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_0mumn")
 
 [node name="Label" type="Label" parent="StalfoA/AreaStalfosA"]
-offset_left = -5.71429
-offset_top = 10.8571
-offset_right = 13.2857
-offset_bottom = 33.8571
+offset_left = -6.0
+offset_top = -34.2857
+offset_right = 13.0
+offset_bottom = -11.2857
 text = "A"
 
 [node name="StalfosB" parent="." instance=ExtResource("13_m8ww4")]
@@ -7163,10 +7163,10 @@ scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_scwni")
 
 [node name="Label" type="Label" parent="StalfosB"]
-offset_left = -3.71429
-offset_top = 10.8571
-offset_right = 15.2857
-offset_bottom = 33.8571
+offset_left = -5.42858
+offset_top = -34.2857
+offset_right = 13.5714
+offset_bottom = -11.2857
 text = "B"
 
 [node name="StalfosC" parent="." instance=ExtResource("13_m8ww4")]
@@ -7179,10 +7179,10 @@ scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_bmqkg")
 
 [node name="Label" type="Label" parent="StalfosC"]
-offset_left = -5.71429
-offset_top = 9.42857
-offset_right = 13.2857
-offset_bottom = 32.4286
+offset_left = -6.0
+offset_top = -35.1429
+offset_right = 13.0
+offset_bottom = -12.1428
 text = "C"
 
 [node name="StalfosD" parent="." instance=ExtResource("13_m8ww4")]
@@ -7195,10 +7195,10 @@ scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_en3b4")
 
 [node name="Label" type="Label" parent="StalfosD"]
-offset_left = -5.42857
-offset_top = 8.85714
-offset_right = 13.5714
-offset_bottom = 31.8571
+offset_left = -7.14286
+offset_top = -34.5714
+offset_right = 11.8571
+offset_bottom = -11.5714
 text = "D"
 
 [node name="Sailda" type="Sprite2D" parent="."]
@@ -7235,20 +7235,19 @@ scale = Vector2(2.52, 1)
 text = "GANASTE!!"
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="MostrarTimer" type="Label" parent="."]
-offset_left = 990.0
-offset_top = 11.0
-offset_right = 1145.0
-offset_bottom = 62.0
+offset_left = 1105.0
+offset_top = -16.0
+offset_right = 1192.0
+offset_bottom = 35.0
 scale = Vector2(0.988014, 1.05047)
 size_flags_horizontal = 8
 size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_68yx2")
 
-[connection signal="area_entered" from="StalfosB/AreaStalfosB" to="." method="_on_area_stalfos_b_area_entered"]
-[connection signal="area_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_area_entered"]
-[connection signal="area_entered" from="StalfosD/AreaStalfosD" to="." method="_on_area_stalfos_d_area_entered"]
+[connection signal="area_entered" from="StalfoA/AreaStalfosA" to="." method="_on_area_stalfos_a_area_entered"]
 [connection signal="area_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_area_entered"]
 [connection signal="body_entered" from="Sailda/AreaSalida" to="." method="_on_area_salida_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
