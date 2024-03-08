@@ -16,8 +16,6 @@ var fases:int=0;
 var correctaLab:int=0;
 var dentroPizarron:bool=false;
 var terminolab = false
-
-	
 func _process(delta):
 	
 	if dentroPizarra == true:
@@ -60,6 +58,7 @@ func _process(delta):
 		$Jugador/Buttonp2.show()
 		$Jugador/Buttonp3.show()
 		$Jugador/Buttonp4.show()
+		$Jugador/pizarronLaboratio/Label.show();
 		if correctaLab==0:
 			$"Jugador/pizarronLaboratio/0pistas".show();
 		elif correctaLab==1:
@@ -210,7 +209,6 @@ const respuestas:Array=[
 ]
 
 func _ready():
-	Global.progreso += 8
 	$alex.play("idle");
 	$adam.play("idle");
 	$bob.play("idle");
@@ -374,6 +372,50 @@ func _on_texture_button_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+			
+		if correcta==0:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/0buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/0buenas".hide();
+		elif correcta==1:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/1buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/1buenas".hide();
+		elif correcta==2:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/2buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/2buenas".hide();
+		elif correcta==3:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/3buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/3buenas".hide();
+		elif correcta==4:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/4buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/4buenas".hide();
+		elif correcta==5:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/5buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/5buenas".hide();
+		elif correcta==6:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/6buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/6buenas".hide();
+			
 		contadorPreguntas+=1;
 		actualizar();
 		$Jugador/TextureRect.show();
@@ -396,7 +438,7 @@ func _on_texture_button_pressed():
 			$Jugador/fondo.show();
 			finished=true;
 	else:
-		if fases==4 || fases==5:
+		if fases==3 || fases==4:
 			correctaLab+=1;
 			$Jugador/TextureRect.hide();
 			$Jugador/Label.set_text("CORRECTA");
@@ -413,6 +455,44 @@ func _on_texture_button_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+			
+		if correctaLab==0:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/0pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/0pistas".hide();
+		elif correctaLab==1:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/1pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/1pistas".hide();
+		elif correctaLab==2:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/2pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/2pistas".hide();
+		elif correctaLab==3:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/3pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/3pistas".hide();
+		elif correctaLab==4:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/4pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/4pistas".hide();
+		elif correctaLab==5:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/5pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/5pistas".hide();
+			
 		fases+=1;
 		if fases==3:
 			finishedLab=true;
@@ -458,6 +538,49 @@ func _on_texture_button_2_pressed():
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
 			
+		if correcta==0:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/0buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/0buenas".hide();
+		elif correcta==1:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/1buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/1buenas".hide();
+		elif correcta==2:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/2buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/2buenas".hide();
+		elif correcta==3:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/3buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/3buenas".hide();
+		elif correcta==4:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/4buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/4buenas".hide();
+		elif correcta==5:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/5buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/5buenas".hide();
+		elif correcta==6:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/6buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/6buenas".hide();
+			
 		contadorPreguntas+=1;
 		actualizar();
 		$Jugador/TextureRect.show();
@@ -498,6 +621,44 @@ func _on_texture_button_2_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+		
+		if correctaLab==0:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/0pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/0pistas".hide();
+		elif correctaLab==1:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/1pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/1pistas".hide();
+		elif correctaLab==2:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/2pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/2pistas".hide();
+		elif correctaLab==3:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/3pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/3pistas".hide();
+		elif correctaLab==4:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/4pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/4pistas".hide();
+		elif correctaLab==5:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/5pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/5pistas".hide();
+			
 		fases+=1;
 		if fases==3:
 			finishedLab=true;
@@ -533,6 +694,49 @@ func _on_texture_button_3_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/correcta.hide();
 			$Jugador/Label.hide();
+			
+		if correcta==0:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/0buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/0buenas".hide();
+		elif correcta==1:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/1buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/1buenas".hide();
+		elif correcta==2:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/2buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/2buenas".hide();
+		elif correcta==3:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/3buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/3buenas".hide();
+		elif correcta==4:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/4buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/4buenas".hide();
+		elif correcta==5:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/5buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/5buenas".hide();
+		elif correcta==6:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/6buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/6buenas".hide();
 			
 		contadorPreguntas+=1;
 		actualizar();
@@ -575,6 +779,44 @@ func _on_texture_button_3_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+			
+		if correctaLab==0:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/0pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/0pistas".hide();
+		elif correctaLab==1:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/1pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/1pistas".hide();
+		elif correctaLab==2:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/2pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/2pistas".hide();
+		elif correctaLab==3:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/3pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/3pistas".hide();
+		elif correctaLab==4:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/4pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/4pistas".hide();
+		elif correctaLab==5:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/5pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/5pistas".hide();
+		
 		fases+=1;
 		if fases==3:
 			finishedLab=true;
@@ -600,6 +842,49 @@ func _on_texture_button_4_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+		if correcta==0:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/0buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/0buenas".hide();
+		elif correcta==1:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/1buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/1buenas".hide();
+		elif correcta==2:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/2buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/2buenas".hide();
+		elif correcta==3:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/3buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/3buenas".hide();
+		elif correcta==4:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/4buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/4buenas".hide();
+		elif correcta==5:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/5buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/5buenas".hide();
+		elif correcta==6:
+			$Jugador/pizarraClue.show();
+			$"Jugador/pizarraClue/6buenas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarraClue.hide();
+			$"Jugador/pizarraClue/6buenas".hide();
+			
 		contadorPreguntas+=1;
 		actualizar();
 		$Jugador/TextureRect.show();
@@ -640,6 +925,44 @@ func _on_texture_button_4_pressed():
 			await get_tree().create_timer(1.5).timeout;
 			$Jugador/incorrecta.hide();
 			$Jugador/Label.hide();
+			
+		if correctaLab==0:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/0pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/0pistas".hide();
+		elif correctaLab==1:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/1pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/1pistas".hide();
+		elif correctaLab==2:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/2pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/2pistas".hide();
+		elif correctaLab==3:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/3pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/3pistas".hide();
+		elif correctaLab==4:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/4pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/4pistas".hide();
+		elif correctaLab==5:
+			$Jugador/pizarronClue.show();
+			$"Jugador/pizarronClue/5pistas".show();
+			await get_tree().create_timer(2.5).timeout;
+			$Jugador/pizarronClue.hide();
+			$"Jugador/pizarronClue/5pistas".hide();
+		
 		fases+=1;
 		if fases==3:
 			finishedLab=true;
@@ -861,7 +1184,7 @@ func _on_lab_4_body_exited(body):
 
 
 func _on_area_pizarron_body_entered(body):
-	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false:
+	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false && fases>=6:
 		$Jugador/Label2.show()
 		dentroPizarron=true;
 		$Jugador/fondo.show();
@@ -879,10 +1202,14 @@ func _on_area_pizarron_body_exited(body):
 
 
 func _on_area_pizarron_2_body_entered(body):
-	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false:
+	if body.is_in_group("Jugador") && finished==true && finishedLab==true && terminolab == false && fases>=6:
 		dentroPizarron=true;
 		$Jugador/msgRegistro.set_text("Presiona ENTER para interactuar.");
 		$Jugador/msgRegistro.show();
+		$Jugador/fondo.show();
+		await get_tree().create_timer(3).timeout
+		$Jugador/fondo.hide();
+		$Jugador/msgRegistro.hide();
 
 
 func _on_area_pizarron_2_body_exited(body):
@@ -901,7 +1228,6 @@ func _on_button_pressed():
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO")
 	$Jugador/fondo.show();
 	await get_tree().create_timer(3).timeout
-	Global.progreso -= 8
 	get_tree().reload_current_scene()
 
 
@@ -915,10 +1241,8 @@ func _on_button_2_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("AHORA TIENES QUE IR AL LABORATORIO")
 	await get_tree().create_timer(3).timeout
-	Global.progreso += 10
 	$Jugador/fondo.hide();
 	$Jugador/msgRegistro.hide();
-	Global.logo1=true
 	terminoclass=true
 	
 func _on_button_3_pressed():
@@ -931,7 +1255,6 @@ func _on_button_3_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
 	await get_tree().create_timer(3).timeout
-	Global.progreso -= 5 
 	get_tree().reload_current_scene()
 
 
@@ -945,7 +1268,6 @@ func _on_button_4_pressed():
 	await get_tree().create_timer(1).timeout
 	$Jugador/msgRegistro.set_text("TIENES QUE VOLVER A REPETIR EL CURSO");
 	await get_tree().create_timer(3).timeout
-	Global.progreso -= 5
 	get_tree().reload_current_scene()
 
 
@@ -976,11 +1298,9 @@ func _on_buttonp_2_pressed():
 	$Jugador/fondo.show()
 	$Jugador/msgRegistro.show()
 	$Jugador/msgRegistro.set_text("Acertaste")
-	Global.logo2=true
 	terminolab = true
 	await get_tree().create_timer(3).timeout
 	$Jugador/fondo.hide()
-	Global.progreso += 10
 	$Jugador/msgRegistro.hide()
 	
 	

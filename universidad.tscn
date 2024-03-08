@@ -31563,6 +31563,7 @@ sources/20 = SubResource("TileSetAtlasSource_r4o22")
 [sub_resource type="LabelSettings" id="LabelSettings_15cta"]
 font = ExtResource("31_jc8yd")
 font_size = 14
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wnxps"]
 font = ExtResource("11_hbwjn")
