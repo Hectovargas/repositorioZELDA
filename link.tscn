@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://wx775h6gysli"]
+[gd_scene load_steps=94 format=3 uid="uid://wx775h6gysli"]
 
 [ext_resource type="Script" path="res://link.gd" id="1_h4jya"]
 [ext_resource type="Texture2D" uid="uid://22fnxbwugjiv" path="res://Sprites/Link2.png" id="4_jesy2"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dhrqqh8n8qbp8" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01e.png" id="8_52rgn"]
 [ext_resource type="Texture2D" uid="uid://os1yvhlhygke" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01d.png" id="9_78myw"]
 [ext_resource type="Texture2D" uid="uid://daoiqhx8qtv5l" path="res://trifuerza.png" id="10_mgxmx"]
+[ext_resource type="Texture2D" uid="uid://ctxdiatn3rnov" path="res://WhatsApp Image 2024-03-07 at 8.19.18 PM (2).png" id="15_kmdsx"]
+[ext_resource type="Texture2D" uid="uid://b76upctexc42y" path="res://WhatsApp Image 2024-03-07 at 8.19.18 PM (1) (1).png" id="16_we7j3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjxlo"]
 atlas = ExtResource("4_w3b4u")
@@ -722,7 +724,7 @@ visible = false
 z_index = 10
 offset_left = -119.0
 offset_top = -131.0
-offset_right = 14.0
+offset_right = 64.0
 offset_bottom = -102.0
 
 [node name="coracointainer" type="Sprite2D" parent="RichTextLabel"]
@@ -789,10 +791,12 @@ texture = ExtResource("5_us2vr")
 texture = ExtResource("6_67npl")
 
 [node name="LOGORACIONALISTA" type="Sprite2D" parent="RichTextLabel"]
+visible = false
 position = Vector2(99, 9)
 texture = ExtResource("8_52rgn")
 
 [node name="LOGOEMPIRISTA" type="Sprite2D" parent="RichTextLabel"]
+visible = false
 position = Vector2(99, 9)
 texture = ExtResource("9_78myw")
 
@@ -801,6 +805,18 @@ visible = false
 position = Vector2(117, 16)
 scale = Vector2(0.0912162, 0.0743243)
 texture = ExtResource("10_mgxmx")
+
+[node name="Sprite2D" type="Sprite2D" parent="RichTextLabel"]
+visible = false
+position = Vector2(142, 11)
+scale = Vector2(0.122066, 0.120213)
+texture = ExtResource("15_kmdsx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RichTextLabel"]
+visible = false
+position = Vector2(166, 12)
+scale = Vector2(0.115979, 0.111111)
+texture = ExtResource("16_we7j3")
 
 [node name="LOGORACIONALISTA" type="Sprite2D" parent="."]
 visible = false

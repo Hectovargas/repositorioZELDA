@@ -17,6 +17,10 @@ func _physics_process(delta):
 
 func _process(delta):
 	controldireccion()
+	if Global.logo1== true:
+		$RichTextLabel/Sprite2D.show()
+	if Global.logo2== true:
+		$RichTextLabel/Sprite2D3.show()
 	if Input.is_key_pressed(KEY_SPACE) && Global.espadahabilitada==true && Global.pegando==false && Global.vida>0:
 		velocity=Vector2(0,0)
 		Global.pegando=true

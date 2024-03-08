@@ -53,3 +53,5 @@ var pegando = false
 var castillo = false
 var entradaCastillo = false
 var dialogo = false
+var logo1 = false
+var logo2 = false
