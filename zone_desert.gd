@@ -142,13 +142,13 @@ func _process(delta):
 					Global.dañoenemy4=true
 					await get_tree().create_timer(1).timeout
 					$skeleton1_3.hide()
-					$skeleton.hide()
+					$momia.hide()
 				if Global.nacionalista==true:
 					Global.dañoenemy=true
 					Global.dañoenemy2=true
 					await get_tree().create_timer(1).timeout
 					$orc1_2.hide()
-					$orc1_4.hide()
+					$buitre.hide()
 			elif contadorfallos==1:
 				print("entre3")
 				$TextureRect2/Label.set_text("Empate, El Combate seguira")
@@ -259,7 +259,7 @@ func _on_botonorco_1_pressed():
 		numerodeenemigo = 1
 		print("si1")
 
-func _on_botonorco_2_pressed():
+func _on_botonbuitre_pressed():
 	if Global.empirista == true :
 		numerodeenemigo = 2
 		print("si2")
@@ -270,12 +270,12 @@ func _on_botonesqueleto_pressed():
 		print("si3")
 
 
-func _on_botonorco_2_mouse_entered():
-	$orc1_4/botonorco2/PointLight2D.show()
+func _on_botonbuitre_mouse_entered():
+	$buitre/botonbuitre/PointLight2D.show()
 
 
-func _on_botonorco_2_mouse_exited():
-	$orc1_4/botonorco2/PointLight2D.hide()
+func _on_botonbuitre_mouse_exited():
+	$buitre/botonbuitre/PointLight2D.hide()
 
 
 func _on_botonorco_1_mouse_entered():
@@ -294,15 +294,15 @@ func _on_botonesqueleto_mouse_exited():
 	$skeleton1_3/botonesqueleto/PointLight2D.hide()	
 
 
-func _on_botonesqueleto_2_mouse_entered():
-	$skeleton/botonesqueleto2/PointLight2D.show()
+func _on_botonmomia_mouse_entered():
+	$momia/botonmomia/PointLight2D.show()
 
 
-func _on_botonesqueleto_2_mouse_exited():
-	$skeleton/botonesqueleto2/PointLight2D.hide()	
+func _on_botonmomia_mouse_exited():
+	$momia/botonmomia/PointLight2D.hide()	
 
 
-func _on_botonesqueleto_2_pressed():
+func _on_botonmomia_pressed():
 	if Global.nacionalista == true :
 		print("sexo4")
 		numerodeenemigo = 4
@@ -321,11 +321,11 @@ func fallaprgunta():
 		await get_tree().create_timer(1.5).timeout
 		$orc1_2.position=posicion
 	if numerodeenemigo==2:
-		var posicion = $orc1_4.position
-		$orc1_4.position = Vector2($Jugador.position.x-65,$Jugador.position.y)
+		var posicion = $buitre.position
+		$buitre.position = Vector2($Jugador.position.x-65,$Jugador.position.y)
 		Global.ataqueenemy2=true
 		await get_tree().create_timer(1.5).timeout
-		$orc1_4.position=posicion
+		$buitre.position=posicion
 	if numerodeenemigo==3:
 		var posicion = $skeleton1_3.position
 		$skeleton1_3.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
@@ -333,11 +333,11 @@ func fallaprgunta():
 		await get_tree().create_timer(1.5).timeout
 		$skeleton1_3.position=posicion
 	if numerodeenemigo==4:
-		var posicion = $skeleton.position
-		$skeleton.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
+		var posicion = $momia.position
+		$momia.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
 		Global.ataqueenemy4=true
 		await get_tree().create_timer(1.5).timeout
-		$skeleton.position=posicion
+		$momia.position=posicion
 	Global.vida-=1
 	num=0
 	numerodeenemigo=0
@@ -352,14 +352,14 @@ func aciertapregunta():
 			if numerodeenemigo==1:
 				$Jugador.position = Vector2($orc1_2.position.x+35,$orc1_2.position.y)
 			else:
-				$Jugador.position = Vector2($orc1_4.position.x+35,$orc1_4.position.y)
+				$Jugador.position = Vector2($buitre.position.x+35,$buitre.position.y)
 
 		if Global.nacionalista==true:
 			#mover personaje hacia enemigo seleccionado
 			if numerodeenemigo==3:
 				$Jugador.position = Vector2($skeleton1_3.position.x-35,$skeleton1_3.position.y)
 			else:
-				$Jugador.position = Vector2($skeleton.position.x-35,$skeleton.position.y)
+				$Jugador.position = Vector2($momia.position.x-35,$momia.position.y)
 		#efecto de camara en ataque
 		$Jugador/Camera2D.make_current()
 		await get_tree().create_timer(0.5).timeout
@@ -381,7 +381,7 @@ func aciertapregunta():
 		if numerodeenemigo==2:
 			Global.dañoenemy2=true
 			await get_tree().create_timer(1).timeout
-			$orc1_4.hide()
+			$buitre.hide()
 		if numerodeenemigo==3:
 			Global.dañoenemy3=true
 			await get_tree().create_timer(1).timeout
@@ -389,7 +389,7 @@ func aciertapregunta():
 		if numerodeenemigo==4:
 			Global.dañoenemy4=true
 			await get_tree().create_timer(1).timeout
-			$skeleton.hide()
+			$momia.hide()
 		await get_tree().create_timer(0.5).timeout
 		$TileMap/Camera2D.make_current()
 		$Jugador/Camera2D.zoom = Vector2(3,3)
@@ -403,3 +403,4 @@ func aciertapregunta():
 		numerodeenemigo=0
 		contadorpreguntas+=1
 		$Ataque.show()
+

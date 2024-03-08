@@ -9,11 +9,11 @@
 [ext_resource type="AudioStream" uid="uid://v72guwgkoti8" path="res://Y2meta.app - Efecto de sonido de Katana (128 kbps).mp3" id="4_kykrp"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="6_x4wef"]
 [ext_resource type="Texture2D" uid="uid://ddwjcxtv75vf1" path="res://pngegg.png" id="7_v731y"]
-[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://wolf.tscn" id="9_301f2"]
-[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://yeti.tscn" id="11_hgymk"]
+[ext_resource type="PackedScene" uid="uid://5b12ohsppvjq" path="res://skeleton.tscn" id="9_301f2"]
+[ext_resource type="PackedScene" uid="uid://dccd8r1euj34f" path="res://orc_1_2.tscn" id="11_hgymk"]
 [ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="11_ofbit"]
-[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://samurai.tscn" id="12_qogao"]
-[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://elefante.tscn" id="14_870w5"]
+[ext_resource type="PackedScene" uid="uid://dhvtwf0bj8g" path="res://orc_1_4.tscn" id="12_qogao"]
+[ext_resource type="PackedScene" uid="uid://dkpvrquxt35bp" path="res://skeleton_1_3.tscn" id="14_870w5"]
 [ext_resource type="Texture2D" uid="uid://dy2nlp8pvn7qk" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_Connection_Down.png" id="14_p45sf"]
 [ext_resource type="AudioStream" uid="uid://iphyxi6fk8vo" path="res://RECURSO DE VIDEO E IMAGENES/Y2meta.app - Field Battle (The Legend of Zelda_ Breath of the Wild OST) (128 kbps).mp3" id="15_bjxht"]
 
@@ -9755,6 +9755,7 @@ volume_db = -10.111
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 z_index = 5
 offset_left = -99.0
 offset_top = 16.0

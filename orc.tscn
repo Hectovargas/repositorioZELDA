@@ -1,6 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://5nkdb5em3vwc"]
+[gd_scene load_steps=14 format=3 uid="uid://5nkdb5em3vwc"]
 
 [ext_resource type="Texture2D" uid="uid://dop2wnjdg7xi" path="res://RECURSO DE VIDEO E IMAGENES/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Idle/Idle-Sheet.png" id="1_muto7"]
+[ext_resource type="Script" path="res://orc.gd" id="1_q3ph2"]
+[ext_resource type="Texture2D" uid="uid://c7qt2hkmgtwku" path="res://imagenesTransparentes/archerOrc.png" id="2_yc050"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiw6n"]
+atlas = ExtResource("2_yc050")
+region = Rect2(0, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ca3p"]
+atlas = ExtResource("2_yc050")
+region = Rect2(160, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfrry"]
+atlas = ExtResource("2_yc050")
+region = Rect2(320, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cnlr"]
+atlas = ExtResource("2_yc050")
+region = Rect2(480, 0, 160, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxku1"]
 atlas = ExtResource("1_muto7")
@@ -22,6 +40,23 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jiw6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ca3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfrry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cnlr")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uxku1")
 }, {
 "duration": 1.0,
@@ -39,12 +74,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60wn4"]
+radius = 24.0
+height = 48.0
 
 [node name="orc" type="CharacterBody2D"]
+script = ExtResource("1_q3ph2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 4)
 sprite_frames = SubResource("SpriteFrames_534to")
-animation = &"idle_orc"
+animation = &"ataque"
 autoplay = "idle_orc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

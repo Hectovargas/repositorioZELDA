@@ -87,10 +87,6 @@ func _on_question_zone_2_body_entered(body):
 		
 		if contadorQuestion==0:
 			contadorQuestion+=1;
-			$A.position.y-=375;
-			$B.position.y-=375;
-			$C.position.y-=375;
-			$D.position.y-=375;
 			$StaticBody2D5.position.x -= 50;
 			$StaticBody2D5/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada.show();
@@ -102,10 +98,6 @@ func _on_question_zone_3_body_entered(body):
 		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question3.dialogue"),"start");
 		if contadorQuestion2==0:
 			contadorQuestion2+=1;
-			$A.position.y-=380;
-			$B.position.y-=380;
-			$C.position.y-=380;
-			$D.position.y-=380;
 			$PuertaCerrada2/StaticBody2D22.position.x -= 50;
 			$PuertaCerrada2/StaticBody2D22/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada2.show();
@@ -118,10 +110,6 @@ func _on_question_zone_4_body_entered(body):
 		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question4.dialogue"),"start");
 		if contadorQuestion3==0:
 			contadorQuestion3+=1;
-			$A.position.y-=400;
-			$B.position.y-=400;
-			$C.position.y-=400;
-			$D.position.y-=400;
 			$PuertaCerrada3/StaticBody2D.position.x -= 50;
 			$PuertaCerrada3/StaticBody2D/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada3.show();
@@ -134,10 +122,6 @@ func _on_question_zone_5_body_entered(body):
 		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question5.dialogue"),"start");
 		if contadorQuestion4==0:
 			contadorQuestion4+=1;
-			$A.position.y-=360;
-			$B.position.y-=360;
-			$C.position.y-=360;
-			$D.position.y-=360;
 			$PuertaCerrada4/StaticBody2D.position.x -= 50;
 			$PuertaCerrada4/StaticBody2D/CollisionShape2D.position.x -= 50;
 			$PuertaCerrada4.show();

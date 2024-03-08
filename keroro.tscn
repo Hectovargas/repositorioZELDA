@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=3 uid="uid://blid1sb4p1ctw"]
+
+[ext_resource type="Script" path="res://keroro.gd" id="1_4cefo"]
+[ext_resource type="Texture2D" uid="uid://cgd2k15prkuek" path="res://KeroroBueno.png" id="1_ittyb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_286y2"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(0, 53, 50, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7gbt"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(50, 53, 50, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu8e4"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(100, 56, 50, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3pwb"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(162, 56, 54, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pqgd"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(0, 116, 50, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2hmf"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(0, 174, 50, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3r8g"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(0, 225, 50, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a25x6"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(0, 0, 50, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fghm2"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(50, 0, 50, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tch6b"]
+atlas = ExtResource("1_ittyb")
+region = Rect2(100, 0, 50, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q412f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_286y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7gbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu8e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3pwb")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pqgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2hmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3r8g")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a25x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fghm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tch6b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e6ler"]
+radius = 40.025
+
+[node name="keroro" type="CharacterBody2D"]
+script = ExtResource("1_4cefo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q412f")
+animation = &"daño"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e6ler")

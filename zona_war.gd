@@ -140,14 +140,14 @@ func _process(delta):
 					Global.dañoenemy3=true
 					Global.dañoenemy4=true
 					await get_tree().create_timer(1).timeout
-					$Wolf.hide()
-					$elefante.hide()
+					$skeleton1_3.hide()
+					$wolf.hide()
 				if Global.nacionalista==true:
 					Global.dañoenemy=true
 					Global.dañoenemy2=true
 					await get_tree().create_timer(1).timeout
-					$samurai.hide()
 					$yeti.hide()
+					$samurai.hide()
 			elif contadorfallos==1:
 				print("entre3")
 				$TextureRect2/Label.set_text("Empate, El Combate seguira")
@@ -166,7 +166,6 @@ func _process(delta):
 				Global.estoyencombate=false
 				Global.pelea1 = true
 				Global.posicionbatalla=false
-				Global.posicionbatallainversa=false
 				get_tree().change_scene_to_file("res://zona Inical.tscn")
 
 
@@ -255,57 +254,57 @@ func _on_texture_button_4_pressed():
 	$TileMap/Camera2D/AnimatedSprite2D.stop()
 	fallaprgunta()
 
-func _on_boton_samurai_pressed():
+func _on_botonyeti_pressed():
 	if Global.empirista == true :
 		numerodeenemigo = 1
 		print("si1")
 
-func _on_boton_yeti_pressed():
+func _on_botonsamurai_pressed():
 	if Global.empirista == true :
 		numerodeenemigo = 2
 		print("si2")
 
-func _on_boton_wolf_pressed():
+func _on_botonesqueleto_pressed():
 	if Global.nacionalista == true :
 		numerodeenemigo = 3
 		print("si3")
 
 
-func _on_boton_yeti_mouse_entered():
-	$yeti/botonYeti/PointLight2D.show()
+func _on_botonsamurai_mouse_entered():
+	$samurai/botonsamurai/PointLight2D.show()
 
 
-func _on_boton_yeti_mouse_exited():
-	$yeti/botonYeti/PointLight2D.hide()
+func _on_botonsamurai_mouse_exited():
+	$samurai/botonsamurai/PointLight2D.hide()
 
 
-func _on_boton_samurai_mouse_entered():
-	$samurai/BotonSamurai/PointLight2D.show()
+func _on_botonyeti_mouse_entered():
+	$yeti/botonyeti/PointLight2D.show()
 
 
-func _on_boton_samurai_mouse_exited():
-	$samurai/BotonSamurai/PointLight2D.hide()
+func _on_botonyeti_mouse_exited():
+	$yeti/botonyeti/PointLight2D.hide()
 
 
-func _on_boton_wolf_mouse_entered():
-	$Wolf/botonWolf/PointLight2D.show()
+func _on_botonesqueleto_mouse_entered():
+	$skeleton1_3/botonesqueleto/PointLight2D.show()
 
 
-func _on_boton_wolf_mouse_exited():
-	$Wolf/botonWolf/PointLight2D.hide()	
+func _on_botonesqueleto_mouse_exited():
+	$skeleton1_3/botonesqueleto/PointLight2D.hide()	
 
 
-func _on_boton_elefante_mouse_entered():
-	$elefante/botonElefante/PointLight2D.show()
+func _on_botonwolf_mouse_entered():
+	$wolf/botonwolf/PointLight2D.show()
 
 
-func _on_boton_elefante_mouse_exited():
-	$elefante/botonElefante/PointLight2D.hide()	
+func _on_botonwolf_mouse_exited():
+	$wolf/botonwolf/PointLight2D.hide()	
 
 
-func _on_boton_elefante_pressed():
+func _on_botonwolf_pressed():
 	if Global.nacionalista == true :
-		print("ai4")
+		print("sexo4")
 		numerodeenemigo = 4
 
 func fallaprgunta():
@@ -316,29 +315,29 @@ func fallaprgunta():
 	preguntado=false
 	await get_tree().create_timer(1).timeout
 	if numerodeenemigo==1:
-		var posicion = $samurai.position
-		$samurai.position = Vector2($Jugador.position.x-35,$Jugador.position.y)
+		var posicion = $yeti.position
+		$yeti.position = Vector2($Jugador.position.x-35,$Jugador.position.y)
 		Global.ataqueenemy=true
 		await get_tree().create_timer(1.5).timeout
-		$samurai.position=posicion
+		$yeti.position=posicion
 	if numerodeenemigo==2:
-		var posicion = $yeti.position
-		$yeti.position = Vector2($Jugador.position.x-65,$Jugador.position.y)
+		var posicion = $samurai.position
+		$samurai.position = Vector2($Jugador.position.x-65,$Jugador.position.y)
 		Global.ataqueenemy2=true
 		await get_tree().create_timer(1.5).timeout
-		$yeti.position=posicion
+		$samurai.position=posicion
 	if numerodeenemigo==3:
-		var posicion = $elefante.position
-		$elefante.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
+		var posicion = $skeleton1_3.position
+		$skeleton1_3.position = Vector2($Jugador.position.x+70,$Jugador.position.y)
 		Global.ataqueenemy3=true
 		await get_tree().create_timer(1.5).timeout
-		$elefante.position=posicion
+		$skeleton1_3.position=posicion
 	if numerodeenemigo==4:
-		var posicion = $Wolf.position
-		$Wolf.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
+		var posicion = $wolf.position
+		$wolf.position = Vector2($Jugador.position.x+45,$Jugador.position.y)
 		Global.ataqueenemy4=true
 		await get_tree().create_timer(1.5).timeout
-		$Wolf.position=posicion
+		$wolf.position=posicion
 	Global.vida-=1
 	num=0
 	numerodeenemigo=0
@@ -351,16 +350,16 @@ func aciertapregunta():
 		if Global.empirista==true:
 			#mover personaje hacia enemigo seleccionado
 			if numerodeenemigo==1:
-				$Jugador.position = Vector2($samurai.position.x+35,$samurai.position.y)
-			else:
 				$Jugador.position = Vector2($yeti.position.x+35,$yeti.position.y)
+			else:
+				$Jugador.position = Vector2($samurai.position.x+35,$samurai.position.y)
 
 		if Global.nacionalista==true:
 			#mover personaje hacia enemigo seleccionado
 			if numerodeenemigo==3:
-				$Jugador.position = Vector2($elefante.position.x-35,$elefante.position.y)
+				$Jugador.position = Vector2($skeleton1_3.position.x-35,$skeleton1_3.position.y)
 			else:
-				$Jugador.position = Vector2($elefante.position.x-35,$elefante.position.y)
+				$Jugador.position = Vector2($wolf.position.x-35,$wolf.position.y)
 		#efecto de camara en ataque
 		$Jugador/Camera2D.make_current()
 		await get_tree().create_timer(0.5).timeout
@@ -378,19 +377,19 @@ func aciertapregunta():
 		if numerodeenemigo==1:
 			Global.dañoenemy=true
 			await get_tree().create_timer(1).timeout
-			$samurai.hide()
+			$yeti.hide()
 		if numerodeenemigo==2:
 			Global.dañoenemy2=true
 			await get_tree().create_timer(1).timeout
-			$yeti.hide()
+			$samurai.hide()
 		if numerodeenemigo==3:
 			Global.dañoenemy3=true
 			await get_tree().create_timer(1).timeout
-			$elefante.hide()
+			$skeleton1_3.hide()
 		if numerodeenemigo==4:
 			Global.dañoenemy4=true
 			await get_tree().create_timer(1).timeout
-			$Wolf.hide()
+			$wolf.hide()
 		await get_tree().create_timer(0.5).timeout
 		$TileMap/Camera2D.make_current()
 		$Jugador/Camera2D.zoom = Vector2(3,3)
@@ -404,4 +403,8 @@ func aciertapregunta():
 		numerodeenemigo=0
 		contadorpreguntas+=1
 		$Ataque.show()
+
+
+
+
 

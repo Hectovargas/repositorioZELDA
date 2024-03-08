@@ -5474,6 +5474,90 @@ position = Vector2(153, -682)
 scale = Vector2(0.051, 0.052)
 texture = ExtResource("9_m00g5")
 
+[node name="D4" type="Label" parent="."]
+offset_left = 373.0
+offset_top = -717.0
+offset_right = 413.0
+offset_bottom = -694.0
+text = "   D"
+
+[node name="C4" type="Label" parent="."]
+offset_left = 295.0
+offset_top = -717.0
+offset_right = 335.0
+offset_bottom = -694.0
+text = "   C"
+
+[node name="B4" type="Label" parent="."]
+offset_left = 215.0
+offset_top = -716.0
+offset_right = 255.0
+offset_bottom = -693.0
+text = "   B"
+
+[node name="A4" type="Label" parent="."]
+offset_left = 135.0
+offset_top = -716.0
+offset_right = 175.0
+offset_bottom = -693.0
+text = "   A"
+
+[node name="D3" type="Label" parent="."]
+offset_left = 376.0
+offset_top = 36.0
+offset_right = 416.0
+offset_bottom = 59.0
+text = "   D"
+
+[node name="C3" type="Label" parent="."]
+offset_left = 294.0
+offset_top = 36.0
+offset_right = 334.0
+offset_bottom = 59.0
+text = "   C"
+
+[node name="B3" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 37.0
+offset_right = 256.0
+offset_bottom = 60.0
+text = "   B"
+
+[node name="A3" type="Label" parent="."]
+offset_left = 135.0
+offset_top = 38.0
+offset_right = 175.0
+offset_bottom = 61.0
+text = "   A"
+
+[node name="D2" type="Label" parent="."]
+offset_left = 342.0
+offset_top = 422.0
+offset_right = 382.0
+offset_bottom = 445.0
+text = "   D"
+
+[node name="C2" type="Label" parent="."]
+offset_left = 279.0
+offset_top = 422.0
+offset_right = 319.0
+offset_bottom = 445.0
+text = "   C"
+
+[node name="B2" type="Label" parent="."]
+offset_left = 213.0
+offset_top = 423.0
+offset_right = 253.0
+offset_bottom = 446.0
+text = "   B"
+
+[node name="A2" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 424.0
+offset_right = 191.0
+offset_bottom = 447.0
+text = "   A"
+
 [node name="D" type="Label" parent="."]
 offset_left = 342.0
 offset_top = 804.0
@@ -5483,23 +5567,23 @@ text = "   D"
 
 [node name="C" type="Label" parent="."]
 offset_left = 277.0
-offset_top = 802.0
+offset_top = 804.0
 offset_right = 317.0
-offset_bottom = 825.0
+offset_bottom = 827.0
 text = "   C"
 
 [node name="B" type="Label" parent="."]
-offset_left = 214.0
-offset_top = 802.0
-offset_right = 254.0
-offset_bottom = 825.0
+offset_left = 216.0
+offset_top = 805.0
+offset_right = 256.0
+offset_bottom = 828.0
 text = "   B"
 
 [node name="A" type="Label" parent="."]
 offset_left = 150.0
-offset_top = 803.0
+offset_top = 807.0
 offset_right = 190.0
-offset_bottom = 826.0
+offset_bottom = 830.0
 text = "   A"
 
 [node name="areaChangeScene" type="Area2D" parent="."]
