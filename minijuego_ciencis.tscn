@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://85k3jge3sijp"]
+[gd_scene load_steps=126 format=3 uid="uid://85k3jge3sijp"]
 
 [ext_resource type="Script" path="res://minijuego_ciencis.gd" id="1_pc3iv"]
 [ext_resource type="Texture2D" uid="uid://c6035p8gqr0iv" path="res://RECURSO DE VIDEO E IMAGENES/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2-ALL_by_AxulArt.png" id="1_pn33a"]
@@ -14819,12 +14819,19 @@ font_names = PackedStringArray("Verdana")
 
 [sub_resource type="LabelSettings" id="LabelSettings_rhmd0"]
 font = SubResource("SystemFont_tcp2n")
+font_size = 14
 font_color = Color(0, 0, 0.0313726, 1)
 shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_uoqn0"]
 font = ExtResource("25_fo0ha")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_ju2no"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3pe8"]
+font = SubResource("SystemFont_ju2no")
+font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_itqrv"]
 font = ExtResource("25_fo0ha")
@@ -15208,10 +15215,11 @@ label_settings = SubResource("LabelSettings_glg2k")
 
 [node name="TextureRect" type="TextureRect" parent="Jugador"]
 visible = false
-offset_left = -191.0
-offset_top = 36.0
-offset_right = 197.0
-offset_bottom = 104.0
+z_index = 6
+offset_left = -193.0
+offset_top = -104.0
+offset_right = 195.0
+offset_bottom = -36.0
 texture = ExtResource("21_by4pc")
 expand_mode = 1
 
@@ -15222,10 +15230,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0166667
 anchor_bottom = 0.0166667
-offset_left = 16.0
-offset_top = 3.86666
-offset_right = 373.0
-offset_bottom = 63.8667
+offset_left = 11.0
+offset_top = 4.86666
+offset_right = 379.0
+offset_bottom = 64.8667
 label_settings = SubResource("LabelSettings_rhmd0")
 autowrap_mode = 2
 
@@ -15256,10 +15264,10 @@ flip_h = true
 
 [node name="TextureButton" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = -67.0
-offset_right = 83.0
-offset_bottom = -37.0
+offset_left = 19.0
+offset_top = 75.0
+offset_right = 54.0
+offset_bottom = 105.0
 texture_normal = ExtResource("24_52da6")
 ignore_texture_size = true
 stretch_mode = 0
@@ -15276,12 +15284,20 @@ justification_flags = 0
 text_overrun_behavior = 2
 uppercase = true
 
+[node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 3.0
+offset_right = 174.0
+offset_bottom = 26.0
+label_settings = SubResource("LabelSettings_c3pe8")
+
 [node name="TextureButton2" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = -25.0
-offset_right = 83.0
-offset_bottom = 5.0
+offset_left = 19.0
+offset_top = 107.0
+offset_right = 54.0
+offset_bottom = 137.0
 texture_normal = ExtResource("24_52da6")
 ignore_texture_size = true
 stretch_mode = 0
@@ -15295,12 +15311,18 @@ offset_bottom = 22.0
 text = "2"
 label_settings = SubResource("LabelSettings_itqrv")
 
+[node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton2"]
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 170.0
+offset_bottom = 25.0
+
 [node name="TextureButton3" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 281.0
-offset_top = -66.0
-offset_right = 316.0
-offset_bottom = -36.0
+offset_left = 20.0
+offset_top = 139.0
+offset_right = 55.0
+offset_bottom = 169.0
 texture_normal = ExtResource("24_52da6")
 ignore_texture_size = true
 stretch_mode = 0
@@ -15314,12 +15336,18 @@ offset_bottom = 27.0
 text = "3"
 label_settings = SubResource("LabelSettings_rnvg4")
 
+[node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton3"]
+offset_left = 39.0
+offset_top = 1.0
+offset_right = 172.0
+offset_bottom = 24.0
+
 [node name="TextureButton4" type="TextureButton" parent="Jugador/TextureRect"]
 layout_mode = 0
-offset_left = 281.0
-offset_top = -24.0
-offset_right = 316.0
-offset_bottom = 6.0
+offset_left = 20.0
+offset_top = 170.0
+offset_right = 55.0
+offset_bottom = 200.0
 texture_normal = ExtResource("24_52da6")
 ignore_texture_size = true
 stretch_mode = 0
@@ -15333,27 +15361,11 @@ offset_bottom = 23.0
 text = "4"
 label_settings = SubResource("LabelSettings_t74bs")
 
-[node name="TextureRect2" type="TextureRect" parent="Jugador"]
-visible = false
-z_index = 2
-offset_left = -194.0
-offset_top = -97.0
-offset_right = 194.0
-offset_bottom = -29.0
-texture = ExtResource("21_by4pc")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="Jugador/TextureRect2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0166667
-anchor_bottom = 0.0166667
-offset_left = 7.0
-offset_top = -0.133336
-offset_right = 387.0
-offset_bottom = 58.8667
-label_settings = SubResource("LabelSettings_rhmd0")
-autowrap_mode = 3
+[node name="Label2" type="Label" parent="Jugador/TextureRect/TextureButton4"]
+offset_left = 39.0
+offset_top = 1.0
+offset_right = 172.0
+offset_bottom = 24.0
 
 [node name="nopescados" type="Sprite2D" parent="Jugador"]
 position = Vector2(110.359, -44.0179)

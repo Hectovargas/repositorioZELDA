@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dkg12ebichbdb"]
 
-[ext_resource type="Texture2D" uid="uid://dc5mu1vl33c16" path="res://Mobile - Senran no Samurai Kingdom JPN - White Tiger Soldier.png" id="1_g0n5u"]
+[ext_resource type="Texture2D" uid="uid://dj4a5t38um610" path="res://Mobile - Senran no Samurai Kingdom JPN - White Tiger Soldier.png" id="1_g0n5u"]
 [ext_resource type="Script" path="res://samurai.gd" id="1_ml6r8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpn7e"]

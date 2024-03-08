@@ -318,11 +318,13 @@ stream = ExtResource("4_tkdm8")
 position = Vector2(226, 137)
 
 [node name="botonkeroro" type="TextureButton" parent="keroro"]
+offset_left = -34.0
+offset_top = -29.0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="PointLight2D" type="PointLight2D" parent="keroro/botonkeroro"]
-visible = false
+position = Vector2(32, 31)
 texture = ExtResource("9_0e26d")
 
 [node name="orc1_4" parent="." instance=ExtResource("10_0ku30")]

@@ -75,7 +75,7 @@ func _on_area_2d_3_body_entered(body):
 func _on_area_2d_4_body_entered(body):
 	if body.is_in_group("Jugador"):
 		Global.caida = false
-		Global.pelea2 = true
+		Global.pelea3 = true
 		Global.posicion= Vector2($MapaInicial/Jugador.position.x+200,$MapaInicial/Jugador.position.y-100)
 		get_tree().change_scene_to_file("res://buceozone.tscn")
 

@@ -106,7 +106,6 @@ func _process(delta):
 				if(preguntado == false && fallosleves<6 && extraerpez == false):
 					
 					$Jugador/TextureRect.show()
-					$Jugador/TextureRect2.show()
 					
 					preguntado = true
 					
@@ -115,28 +114,43 @@ func _process(delta):
 						num = rng.randi_range(1,5)
 						
 						if (num == 1 && pregunta1==false):
-							$Jugador/TextureRect2/Label.set_text("Entre los siguientes renacentistas seleccione, uno de los precursores filósofo-científico del heliocentrismo")
-							$Jugador/TextureRect/Label.set_text(" 1) Tomas Moro. 2) Galileo. 3) Platón. 4) Arquimedes")
+							$Jugador/TextureRect/Label.set_text("Entre los siguientes renacentistas seleccione, uno de los precursores filósofo-científico del heliocentrismo")
+							$Jugador/TextureRect/TextureButton/Label2.set_text("Tomas Moro")
+							$Jugador/TextureRect/TextureButton2/Label2.set_text("Galileo")
+							$Jugador/TextureRect/TextureButton3/Label2.set_text("Platón")
+							$Jugador/TextureRect/TextureButton4/Label2.set_text("Arquimedes")
 							break
 							
 						if (num == 2 && pregunta2==false):
-							$Jugador/TextureRect2/Label.set_text("El método científico se introduce por tres filósofos. uno de los 4 mencionados no es precursor del método científico")
-							$Jugador/TextureRect/Label.set_text("1) Francis Bacon. 2) Galileo Galilei. 3)Nicolas Maquiavelo. 4) René Descartes")
+							$Jugador/TextureRect/Label.set_text("El método científico se introduce por tres filósofos. uno de los 4 mencionados no es precursor del método científico")
+							$Jugador/TextureRect/TextureButton/Label2.set_text("Francis Bacon")
+							$Jugador/TextureRect/TextureButton2/Label2.set_text("Galileo Galilei")
+							$Jugador/TextureRect/TextureButton3/Label2.set_text("Nicolas Maquiavelo")
+							$Jugador/TextureRect/TextureButton4/Label2.set_text("René Descartes")
 							break
 							
 						if (num == 3 && pregunta3==false):
-							$Jugador/TextureRect2/Label.set_text("Es uno de los precursores del pensamiento Moderno")
-							$Jugador/TextureRect/Label.set_text("1) Isaac Newton. 2) René Descartes. 3) Erasmo de Roterdam. 4) Francis Bacon")
+							$Jugador/TextureRect/Label.set_text("Es uno de los precursores del pensamiento Moderno")
+							$Jugador/TextureRect/TextureButton/Label2.set_text("Isaac Newton")
+							$Jugador/TextureRect/TextureButton2/Label2.set_text("René Descartes")
+							$Jugador/TextureRect/TextureButton3/Label2.set_text("Erasmo de Roterdam")
+							$Jugador/TextureRect/TextureButton4/Label2.set_text("Francis Bacon")
 							break
 							
 						if (num == 4 && pregunta4==false):
-							$Jugador/TextureRect2/Label.set_text("De los siguientes filósofos niega el geocentrismo (teoría que afirma que el centro de nuestro sistema solar es la tierra) ")
-							$Jugador/TextureRect/Label.set_text(" 1) Aristóteles. 2) Nicolás Copérnico. 3) Tomás de Aquino. 4) Isaac Newton")
+							$Jugador/TextureRect/Label.set_text("De los siguientes filósofos niega el geocentrismo (teoría que afirma que el centro de nuestro sistema solar es la tierra) ")
+							$Jugador/TextureRect/TextureButton/Label2.set_text("Aristóteles")
+							$Jugador/TextureRect/TextureButton2/Label2.set_text("Nicolás Copérnico")
+							$Jugador/TextureRect/TextureButton3/Label2.set_text("Tomás de Aquino")
+							$Jugador/TextureRect/TextureButton4/Label2.set_text("Isaac Newton")
 							break
 							
 						if (num == 5 && pregunta5==false):
-							$Jugador/TextureRect/Label.set_text("1) El astrolabio. 2) La imprenta. 3) La Nao y la Carabela. 4) El Telescopio")
-							$Jugador/TextureRect2/Label.set_text("Uno de los inventos que suscitó un conocimiento ilimitado, fue el de Gutenberg")
+							$Jugador/TextureRect/Label.set_text("Uno de los inventos que suscitó un conocimiento ilimitado, fue el de Gutenberg")
+							$Jugador/TextureRect/TextureButton/Label2.set_text("El astrolabio")
+							$Jugador/TextureRect/TextureButton2/Label2.set_text("La imprenta")
+							$Jugador/TextureRect/TextureButton3/Label2.set_text("La Nao y la Carabela")
+							$Jugador/TextureRect/TextureButton4/Label2.set_text("El Telescopio")
 							break
 							
 						if(pregunta1 && pregunta2 && pregunta3 && pregunta4 && pregunta5):
@@ -192,12 +206,16 @@ func _on_area_de_salida_body_entered(body):
 			$AnimatedSprite2D.play("puerta")
 			Global.maxvida+=1
 			Global.vida+=1
-			$Jugador/TextureRect2.show()
-			$Jugador/TextureRect2/Label.set_text("Felicidades Has ganado un corazon")
+			$Jugador/TextureRect.show()
+			$Jugador/TextureRect/TextureButton.hide()
+			$Jugador/TextureRect/TextureButton2.hide()
+			$Jugador/TextureRect/TextureButton3.hide()
+			$Jugador/TextureRect/TextureButton4.hide()
+			$Jugador/TextureRect/Label.set_text("Felicidades Has ganado un corazon")
 			$AnimatedSprite2D/StaticBody2D.position = Vector2(1000,1000)
 			$AreaDeSalida.position = Vector2(1000,1000)
 			await get_tree().create_timer(1).timeout
-			$Jugador/TextureRect2.hide()
+			$Jugador/TextureRect.hide()
 
 func _on_instrucciones_body_entered(body):
 	if body.is_in_group("Jugador"):
@@ -226,21 +244,18 @@ func _on_texture_button_pressed():
 	if(aumento==false):
 		fallosleves += 1
 		aumento=false
-	$Jugador/TextureRect.hide()
-	$Jugador/TextureRect2/Label.set_text("INCORRECTO")
+	$Jugador/TextureRect/Label.set_text("INCORRECTO")
 	await get_tree().create_timer(2).timeout
 	if(fallosleves==6):
 		$Jugador/CUERDA.hide()
 		$Jugador/tabladepesca.hide()
 		Global.pescar=true
-		$Jugador/TextureRect2.hide()
 		secuenciatiburon()
 		await get_tree().create_timer(10).timeout
 		Global.vida=Global.maxvida
 		Global.pescar=false
 		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
-	$Jugador/TextureRect2.hide()
 	valor=false
 	pescando=false
 	preguntado = false
@@ -250,8 +265,7 @@ func _on_texture_button_pressed():
 func _on_texture_button_2_pressed():
 
 	if(num != 2):
-		$Jugador/TextureRect2/Label.set_text("CORRECTO")
-		$Jugador/TextureRect.hide()
+		$Jugador/TextureRect/Label.set_text("CORRECTO")
 		extraerpez = true
 		pescados+=1
 		if (num == 1):
@@ -268,22 +282,19 @@ func _on_texture_button_2_pressed():
 		if(aumento==false):
 			fallosleves += 1
 			aumento=true
-		$Jugador/TextureRect.hide()
-		$Jugador/TextureRect2/Label.set_text("INCORRECTO")
+		$Jugador/TextureRect/Label.set_text("INCORRECTO")
 
 	await get_tree().create_timer(2).timeout
 	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
 			$Jugador/tabladepesca.hide()
 			Global.pescar=true
-			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
 			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
-	$Jugador/TextureRect2.hide()
 	valor=false
 	pescando=false
 	preguntado = false
@@ -292,8 +303,7 @@ func _on_texture_button_2_pressed():
 
 func _on_texture_button_3_pressed():
 	if(num == 2):
-		$Jugador/TextureRect2/Label.set_text("CORRECTO")
-		$Jugador/TextureRect.hide()
+		$Jugador/TextureRect/Label.set_text("CORRECTO")
 		extraerpez=true
 		pescados+=1
 		if (num == 1):
@@ -311,21 +321,18 @@ func _on_texture_button_3_pressed():
 			fallosleves += 1
 			aumento=true
 		
-		$Jugador/TextureRect2/Label.set_text("INCORRECTO")
-		$Jugador/TextureRect.hide()
+		$Jugador/TextureRect/Label.set_text("INCORRECTO")
 	await get_tree().create_timer(2).timeout
 	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
 			$Jugador/tabladepesca.hide()
 			Global.pescar=true
-			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
 			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
-	$Jugador/TextureRect2.hide()
 	valor=false
 	preguntado = false
 	pescando=false
@@ -336,21 +343,18 @@ func _on_texture_button_4_pressed():
 	if(aumento==false):
 		fallosleves += 1
 		aumento=true
-	$Jugador/TextureRect2/Label.set_text("INCORRECTO")
-	$Jugador/TextureRect.hide()
+	$Jugador/TextureRect/Label.set_text("INCORRECTO")
 	await get_tree().create_timer(2).timeout
 	if(fallosleves==6):
 			$Jugador/CUERDA.hide()
 			$Jugador/tabladepesca.hide()
 			Global.pescar=true
-			$Jugador/TextureRect2.hide()
 			secuenciatiburon()
 			await get_tree().create_timer(10).timeout
 			Global.vida=Global.maxvida
 			Global.pescar=false
 			get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	$Jugador/TextureRect.hide()
-	$Jugador/TextureRect2.hide()
 	valor=false
 	pescando=false
 	preguntado = false
