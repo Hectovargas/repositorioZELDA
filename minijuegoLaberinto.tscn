@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cofngc3wuc5br"]
+[gd_scene load_steps=46 format=3 uid="uid://cofngc3wuc5br"]
 
 [ext_resource type="Texture2D" uid="uid://4mtsphvomkvx" path="res://RECURSO DE VIDEO E IMAGENES/2D Pixel Dungeon Asset Pack/character and tileset/demonstration.png" id="1_1m0rq"]
 [ext_resource type="Script" path="res://minijuegoLaberinto.gd" id="1_ew2nn"]
@@ -14,7 +14,6 @@
 [ext_resource type="FontFile" uid="uid://djhexv14ukq7a" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Light.ttf" id="9_bppih"]
 [ext_resource type="Texture2D" uid="uid://dpodhfu2o0tvu" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="10_b3c6l"]
 [ext_resource type="Texture2D" uid="uid://dc8ypj2hvwojg" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Yellow_Connection_Up_Pressed.png" id="10_s6jy5"]
-[ext_resource type="Texture2D" uid="uid://btarob8qyfh3l" path="res://linkImg.png" id="11_8hom6"]
 [ext_resource type="Texture2D" uid="uid://bwsr57hnhbq6l" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_Pressed.png" id="11_fjv3x"]
 [ext_resource type="Texture2D" uid="uid://cp38w1n0pnbap" path="res://RECURSO DE VIDEO E IMAGENES/SCR2/100/doorB_1.png" id="12_olel8"]
 [ext_resource type="Texture2D" uid="uid://mgbn8wvi1nph" path="res://RECURSO DE VIDEO E IMAGENES/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="19_thpja"]
@@ -26,6 +25,47 @@
 [ext_resource type="Texture2D" uid="uid://cpm2o4pev725y" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore6.png" id="24_ofc2g"]
 [ext_resource type="Texture2D" uid="uid://cas721tbxx322" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore7.png" id="25_8h544"]
 [ext_resource type="Texture2D" uid="uid://c4h7m44g7jrqs" path="res://RECURSO DE VIDEO E IMAGENES/HearTile/Cuore8.png" id="26_1m71t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwdyl"]
+size = Vector2(53, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4rm6"]
+size = Vector2(13, 159)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4ar0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_triut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rc18b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_khf8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_si4mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_wexdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ofc2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8h544")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1m71t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwvvg"]
+radius = 6.08276
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skh35"]
 texture = ExtResource("1_1m0rq")
@@ -11753,66 +11793,314 @@ size = Vector2(15, 30)
 polygon = PackedVector2Array(-8, -16, -8, 15, 8, 15, 9, -16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6psti"]
-size = Vector2(16, 13.5)
+size = Vector2(26, 17.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3hfo"]
+size = Vector2(39, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_axpbx"]
 font = ExtResource("9_bppih")
 font_color = Color(0, 0, 0, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_6t1i8"]
-font = ExtResource("9_bppih")
-font_size = 10
+[sub_resource type="LabelSettings" id="LabelSettings_yoem5"]
+line_spacing = 0.0
+font_size = 14
 font_color = Color(0, 0, 0, 1)
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3hfo"]
-size = Vector2(39, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwdyl"]
-size = Vector2(53, 79)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4rm6"]
-size = Vector2(13, 159)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d4ar0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_triut")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_rc18b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_khf8h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_si4mj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_wexdc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_ofc2g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_8h544")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_1m71t")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rwvvg"]
-radius = 6.08276
+outline_size = 1
+shadow_color = Color(0, 0.25098, 0.623529, 1)
+shadow_offset = Vector2(0, 0)
 
 [node name="minijuego" type="Node2D"]
 script = ExtResource("1_ew2nn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(623, 202)
+texture = ExtResource("7_itj0l")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+z_index = 3
+position = Vector2(0.82812, -7)
+scale = Vector2(0.161091, 0.121441)
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(73.9786, -966.772)
+scale = Vector2(0.376899, 0.46579)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D/PointLight2D/PointLight2D"]
+z_index = 3
+position = Vector2(1321.82, 1668.95)
+scale = Vector2(0.616465, 0.639296)
+energy = 1.83
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(-731.438, 1556.31)
+scale = Vector2(0.300921, 0.221054)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(-2146.79, 759.162)
+scale = Vector2(1.27484, 0.429569)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+visible = false
+z_index = 3
+position = Vector2(1838.54, 1622.19)
+scale = Vector2(0.262114, 0.367027)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+visible = false
+z_index = 3
+position = Vector2(1832.33, 2140.96)
+scale = Vector2(0.305546, 0.292954)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+visible = false
+z_index = 3
+position = Vector2(2223.41, 1366.92)
+scale = Vector2(0.398615, 0.404064)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(2242.04, 732.866)
+scale = Vector2(0.386205, 0.367027)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Sprite2D/PointLight2D/PointLight2D10"]
+z_index = 3
+position = Vector2(1607.34, 1009.6)
+scale = Vector2(1.70901, 1.1755)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(1944.07, -362.316)
+scale = Vector2(0.295478, 0.370754)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(2335.15, -996.368)
+scale = Vector2(0.340461, 0.366638)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(2440.68, -469.364)
+scale = Vector2(0.354421, 0.368696)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(2645.54, -172.924)
+scale = Vector2(0.469967, 0.465791)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(-1842.61, 3104.39)
+scale = Vector2(0.528911, 0.519288)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(-340.355, 3087.92)
+scale = Vector2(0.63749, 0.675665)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(559.758, 2140.96)
+scale = Vector2(0.369156, 0.381186)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Sprite2D/PointLight2D/PointLight2D17"]
+z_index = 3
+position = Vector2(3934.91, -691.271)
+scale = Vector2(0.831664, 0.773561)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D18" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(5854.9, 90.5789)
+scale = Vector2(1.70143, 0.684557)
+energy = 3.2
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D21" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(5774.2, -848.148)
+scale = Vector2(1.52322, 0.653894)
+energy = 4.35
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D22" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(6457.05, -461.129)
+scale = Vector2(0.411243, 0.736198)
+energy = 4.52
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D23" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(2440.68, -469.364)
+scale = Vector2(0.354421, 0.368696)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+z_index = 3
+position = Vector2(-1091.48, 938.727)
+scale = Vector2(0.227439, 0.255141)
+energy = 2.54
+range_layer_max = 1
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_2a420")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="restaurarluzplayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="restaurarluzplayer"]
+position = Vector2(456.5, 32)
+shape = SubResource("RectangleShape2D_bwdyl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="restaurarluzplayer"]
+position = Vector2(1439, 145)
+shape = SubResource("RectangleShape2D_bwdyl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="restaurarluzplayer"]
+position = Vector2(877, 422)
+shape = SubResource("RectangleShape2D_bwdyl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="restaurarluzplayer"]
+position = Vector2(505, 383)
+shape = SubResource("RectangleShape2D_bwdyl")
+
+[node name="BarreraCorazon" type="StaticBody2D" parent="."]
+position = Vector2(1570, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreraCorazon"]
+position = Vector2(28.5, 85.5)
+shape = SubResource("RectangleShape2D_a4rm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="BarreraCorazon"]
+position = Vector2(30, 45)
+texture = ExtResource("19_thpja")
+hframes = 8
+vframes = 2
+frame = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="BarreraCorazon"]
+position = Vector2(30, 121)
+scale = Vector2(1, 1.1)
+texture = ExtResource("19_thpja")
+hframes = 8
+vframes = 2
+frame = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1625, 142)
+sprite_frames = SubResource("SpriteFrames_d4ar0")
+
+[node name="AreaCorazon" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AreaCorazon"]
+shape = SubResource("CircleShape2D_rwvvg")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_fxg85")
@@ -11986,63 +12274,8 @@ occluder = SubResource("OccluderPolygon2D_g0p7h")
 position = Vector2(89, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
-position = Vector2(-1, 1)
+position = Vector2(-2, 3.125)
 shape = SubResource("RectangleShape2D_6psti")
-
-[node name="Jugador" parent="TileMap" instance=ExtResource("2_3ouls")]
-position = Vector2(88, 74)
-
-[node name="Camera2D" type="Camera2D" parent="TileMap/Jugador"]
-zoom = Vector2(5, 5)
-
-[node name="AvisosLabel" type="Label" parent="TileMap/Jugador"]
-visible = false
-z_index = 5
-offset_left = 24.0
-offset_top = -24.0
-offset_right = 181.0
-offset_bottom = 20.0
-label_settings = SubResource("LabelSettings_axpbx")
-autowrap_mode = 3
-
-[node name="NinePatchRect" type="NinePatchRect" parent="TileMap/Jugador"]
-visible = false
-z_index = 3
-offset_left = -137.0
-offset_top = 21.0
-offset_right = 143.0
-offset_bottom = 61.0
-texture = ExtResource("10_s6jy5")
-region_rect = Rect2(0, 0, 64, 64)
-
-[node name="TextureRect" type="TextureRect" parent="TileMap/Jugador/NinePatchRect"]
-layout_mode = 0
-offset_left = 218.0
-offset_top = -12.0
-offset_right = 254.0
-offset_bottom = 22.0
-texture = ExtResource("11_8hom6")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="TileMap/Jugador/NinePatchRect"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 43.0
-offset_top = 7.0
-offset_right = 235.0
-offset_bottom = 34.0
-label_settings = SubResource("LabelSettings_6t1i8")
-autowrap_mode = 3
-clip_text = true
-uppercase = true
-
-[node name="luzdeljugador" type="PointLight2D" parent="TileMap/Jugador"]
-visible = false
-position = Vector2(-2, -2)
-scale = Vector2(0.0374813, 0.031984)
-energy = 1.6
-texture = ExtResource("8_2a420")
-texture_scale = 2.08
 
 [node name="Area2D2" type="Area2D" parent="TileMap"]
 
@@ -12100,8 +12333,8 @@ texture = ExtResource("7_itj0l")
 
 [node name="PointLight2D" type="PointLight2D" parent="TileMap/Sprite2D2"]
 z_index = 3
-position = Vector2(5.99997, 1)
-scale = Vector2(0.0361105, 0.021946)
+position = Vector2(4.50462, 8.38565)
+scale = Vector2(0.0418447, 0.0254349)
 energy = 2.67
 range_layer_max = 1
 shadow_enabled = true
@@ -12629,314 +12862,91 @@ offset_bottom = -36.0
 text = "4"
 label_settings = SubResource("LabelSettings_2g01l")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(623, 202)
-texture = ExtResource("7_itj0l")
+[node name="Jugador" parent="TileMap" instance=ExtResource("2_3ouls")]
+position = Vector2(82, 49)
 
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-z_index = 3
-position = Vector2(0.82812, -7)
-scale = Vector2(0.161091, 0.121441)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
+[node name="Camera2D" type="Camera2D" parent="TileMap/Jugador"]
+zoom = Vector2(3.5, 3.5)
 
-[node name="PointLight2D" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-247.239, -1235.17)
-scale = Vector2(0.697956, 0.734054)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
+[node name="AvisosLabel" type="Label" parent="TileMap/Jugador"]
+visible = false
+z_index = 5
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 181.0
+offset_bottom = 20.0
+label_settings = SubResource("LabelSettings_axpbx")
+autowrap_mode = 3
 
-[node name="PointLight2D2" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-743.852, 1441.03)
-scale = Vector2(0.360063, 0.26104)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-1477.12, 814.822)
-scale = Vector2(0.404058, 0.395445)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-1935.72, 790.507)
-scale = Vector2(0.42112, 0.378984)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-2301.97, 732.866)
-scale = Vector2(0.484717, 0.455115)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-2748.93, 765.804)
-scale = Vector2(0.489765, 0.442575)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+[node name="NinePatchRect" type="NinePatchRect" parent="TileMap/Jugador"]
 visible = false
 z_index = 3
-position = Vector2(1838.54, 1622.19)
-scale = Vector2(0.262114, 0.367027)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
+offset_left = -207.0
+offset_top = 21.0
+offset_right = 205.0
+offset_bottom = 96.0
+texture = ExtResource("10_s6jy5")
+region_rect = Rect2(0, 0, 64, 64)
 
-[node name="PointLight2D8" type="PointLight2D" parent="Sprite2D/PointLight2D"]
+[node name="Label" type="Label" parent="TileMap/Jugador/NinePatchRect"]
+z_index = 10
+offset_left = 51.0
+offset_top = 5.0
+offset_right = 364.0
+offset_bottom = 72.0
+text = "sssssssssssssssss"
+label_settings = SubResource("LabelSettings_yoem5")
+autowrap_mode = 3
+
+[node name="PointLight2D" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(89, 36)
+scale = Vector2(0.0363568, 0.0216298)
+energy = 2.55
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(166, 34)
+scale = Vector2(0.0363568, 0.0216298)
+energy = 2.55
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(242, 35)
+scale = Vector2(0.0363568, 0.0216298)
+energy = 2.55
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(313, 38)
+scale = Vector2(0.0363568, 0.0216298)
+energy = 2.55
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="PointLight2D5" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(63, 34)
+scale = Vector2(0.0147426, 0.0203845)
+energy = 4.96
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="PointLight2D6" type="PointLight2D" parent="TileMap/Jugador/NinePatchRect"]
+position = Vector2(338, 43)
+scale = Vector2(0.028923, 0.034553)
+energy = 2.55
+texture = ExtResource("8_2a420")
+texture_scale = 2.0
+
+[node name="luzdeljugador" type="PointLight2D" parent="TileMap/Jugador"]
 visible = false
-z_index = 3
-position = Vector2(1832.33, 2140.96)
-scale = Vector2(0.305546, 0.292954)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
+position = Vector2(-2, -2)
+scale = Vector2(0.0374813, 0.031984)
+energy = 1.6
 texture = ExtResource("8_2a420")
-
-[node name="PointLight2D9" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-visible = false
-z_index = 3
-position = Vector2(2223.41, 1366.92)
-scale = Vector2(0.398615, 0.404064)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D10" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(2242.04, 732.866)
-scale = Vector2(0.386205, 0.367027)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D10" type="PointLight2D" parent="Sprite2D/PointLight2D/PointLight2D10"]
-z_index = 3
-position = Vector2(1607.34, 1009.6)
-scale = Vector2(1.70901, 1.1755)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D11" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(1944.07, -362.316)
-scale = Vector2(0.295478, 0.370754)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D12" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(2335.15, -996.368)
-scale = Vector2(0.340461, 0.366638)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D13" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(2440.68, -469.364)
-scale = Vector2(0.354421, 0.368696)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D14" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(2645.54, -172.924)
-scale = Vector2(0.469967, 0.465791)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D15" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-1842.61, 3104.39)
-scale = Vector2(0.528911, 0.519288)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D16" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-340.355, 3087.92)
-scale = Vector2(0.63749, 0.675665)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D17" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(559.758, 2140.96)
-scale = Vector2(0.369156, 0.381186)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D17" type="PointLight2D" parent="Sprite2D/PointLight2D/PointLight2D17"]
-z_index = 3
-position = Vector2(3934.91, -691.271)
-scale = Vector2(0.831664, 0.773561)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D18" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(5854.9, 90.5789)
-scale = Vector2(1.70143, 0.684557)
-energy = 3.2
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D21" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(5774.2, -848.148)
-scale = Vector2(1.52322, 0.653894)
-energy = 4.35
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D22" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(6457.05, -461.129)
-scale = Vector2(0.411243, 0.736198)
-energy = 4.52
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D23" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(2440.68, -469.364)
-scale = Vector2(0.354421, 0.368696)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="PointLight2D19" type="PointLight2D" parent="Sprite2D/PointLight2D"]
-z_index = 3
-position = Vector2(-1091.48, 938.727)
-scale = Vector2(0.227439, 0.255141)
-energy = 2.54
-range_layer_max = 1
-shadow_enabled = true
-shadow_filter = 1
-texture = ExtResource("8_2a420")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
-
-[node name="restaurarluzplayer" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="restaurarluzplayer"]
-position = Vector2(456.5, 32)
-shape = SubResource("RectangleShape2D_bwdyl")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="restaurarluzplayer"]
-position = Vector2(1439, 145)
-shape = SubResource("RectangleShape2D_bwdyl")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="restaurarluzplayer"]
-position = Vector2(877, 422)
-shape = SubResource("RectangleShape2D_bwdyl")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="restaurarluzplayer"]
-position = Vector2(505, 383)
-shape = SubResource("RectangleShape2D_bwdyl")
-
-[node name="BarreraCorazon" type="StaticBody2D" parent="."]
-position = Vector2(1570, 59)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreraCorazon"]
-position = Vector2(28.5, 85.5)
-shape = SubResource("RectangleShape2D_a4rm6")
-
-[node name="Sprite2D" type="Sprite2D" parent="BarreraCorazon"]
-position = Vector2(30, 45)
-texture = ExtResource("19_thpja")
-hframes = 8
-vframes = 2
-frame = 4
-
-[node name="Sprite2D2" type="Sprite2D" parent="BarreraCorazon"]
-position = Vector2(30, 121)
-scale = Vector2(1, 1.1)
-texture = ExtResource("19_thpja")
-hframes = 8
-vframes = 2
-frame = 4
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1625, 142)
-sprite_frames = SubResource("SpriteFrames_d4ar0")
-
-[node name="AreaCorazon" type="Area2D" parent="AnimatedSprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AreaCorazon"]
-shape = SubResource("CircleShape2D_rwvvg")
+texture_scale = 2.08
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -12946,6 +12956,8 @@ offset_right = 1587.0
 offset_bottom = 222.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="body_entered" from="restaurarluzplayer" to="." method="_on_restaurarluzplayer_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite2D/AreaCorazon" to="." method="_on_area_corazon_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas" to="." method="_on_boton_de_preguntas_body_entered"]
 [connection signal="body_exited" from="TileMap/botonDePreguntas" to="." method="_on_boton_de_preguntas_body_exited"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas/botonDeRespuesta1" to="." method="_on_boton_de_respuesta_1_body_entered"]
@@ -12953,6 +12965,7 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_entered" from="TileMap/botonDePreguntas/botonDeRespuesta3" to="." method="_on_boton_de_respuesta_3_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas/botonDeRespuesta4" to="." method="_on_boton_de_respuesta_4_body_entered"]
 [connection signal="body_entered" from="TileMap/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="TileMap/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="TileMap/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas2" to="." method="_on_boton_de_preguntas_2_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas2/botonDeRespuesta1_2" to="." method="_on_boton_de_respuesta_1_2_body_entered"]
@@ -12974,5 +12987,3 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_entered" from="TileMap/botonDePreguntas5/botonDeRespuesta2_5" to="." method="_on_boton_de_respuesta_2_5_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas5/botonDeRespuesta3_5" to="." method="_on_boton_de_respuesta_3_5_body_entered"]
 [connection signal="body_entered" from="TileMap/botonDePreguntas5/botonDeRespuesta4_5" to="." method="_on_boton_de_respuesta_4_5_body_entered"]
-[connection signal="body_entered" from="restaurarluzplayer" to="." method="_on_restaurarluzplayer_body_entered"]
-[connection signal="body_entered" from="AnimatedSprite2D/AreaCorazon" to="." method="_on_area_corazon_body_entered"]

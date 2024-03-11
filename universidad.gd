@@ -33,7 +33,6 @@ func _process(delta):
 		$Jugador/pizarra.show();
 		$Jugador/fondo.hide();
 		$Jugador/msgRegistro.hide();
-		$Jugador/Label2.show()
 		
 		if correcta==0:
 			$"Jugador/pizarra/0buenas".show();
@@ -209,6 +208,7 @@ const respuestas:Array=[
 ]
 
 func _ready():
+	Global.progreso += 8
 	$alex.play("idle");
 	$adam.play("idle");
 	$bob.play("idle");
@@ -1219,6 +1219,7 @@ func _on_area_pizarron_2_body_exited(body):
 
 
 func _on_button_pressed():
+	Global.progreso -= 8
 	dentroPizarron=false;
 	$Jugador/Label2.hide()
 	$Jugador/pizarra.hide()
@@ -1232,6 +1233,8 @@ func _on_button_pressed():
 
 
 func _on_button_2_pressed():
+	Global.progreso += 10
+	Global.logo1=true
 	dentroPizarron=false;
 	$Jugador/pizarra.hide()
 	$Jugador/Label2.hide()
@@ -1246,6 +1249,7 @@ func _on_button_2_pressed():
 	terminoclass=true
 	
 func _on_button_3_pressed():
+	Global.progreso -= 8
 	dentroPizarron=false;
 	$Jugador/pizarra.hide()
 	$Jugador/msgRegistro.show();
@@ -1259,6 +1263,7 @@ func _on_button_3_pressed():
 
 
 func _on_button_4_pressed():
+	Global.progreso -= 8
 	dentroPizarron=false;
 	$Jugador/pizarra.hide()
 	$Jugador/msgRegistro.show();
@@ -1290,6 +1295,8 @@ func _on_buttonp_pressed():
 	$Jugador.position = $TileMap/Marker2D.position
 
 func _on_buttonp_2_pressed():
+	Global.progreso += 10
+	Global.logo2=true
 	$Jugador/Buttonp.hide()
 	$Jugador/Buttonp2.hide()
 	$Jugador/Buttonp3.hide()

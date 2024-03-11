@@ -32252,7 +32252,6 @@ offset_bottom = 45.7954
 label_settings = SubResource("LabelSettings_e3rg8")
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect/TextureButton"]
-visible = false
 position = Vector2(32.9385, 26.9632)
 scale = Vector2(0.681008, 0.769858)
 energy = 3.0
@@ -32400,6 +32399,12 @@ offset_bottom = 96.0559
 scale = Vector2(0.969716, 0.749688)
 label_settings = SubResource("LabelSettings_rudm7")
 autowrap_mode = 3
+
+[node name="PointLight2D" type="PointLight2D" parent="Jugador/TextureRect"]
+position = Vector2(508.017, 51.4128)
+scale = Vector2(11.3433, 1.38343)
+energy = 1.28
+texture = ExtResource("29_ov61w")
 
 [node name="incorrecta" type="TextureRect" parent="Jugador"]
 visible = false
