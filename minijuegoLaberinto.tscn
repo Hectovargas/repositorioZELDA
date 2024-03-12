@@ -12094,6 +12094,7 @@ vframes = 2
 frame = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
 position = Vector2(1625, 142)
 sprite_frames = SubResource("SpriteFrames_d4ar0")
 

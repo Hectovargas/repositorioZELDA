@@ -43,7 +43,7 @@ func _process(delta):
 			valor = true
 		$Jugador/pescados/Label.set_text(str(pescados))
 
-		if $Jugador.position.x > 214 && $Jugador.position.y > 375 && $Jugador.position.x < 380 && $Jugador.position.y < 400 && wincondition==false && extraerpez==false && preguntado==false:
+		if $Jugador.position.x > 214 && $Jugador.position.y > 375 && $Jugador.position.x < 380 && $Jugador.position.y < 400 && wincondition==false && extraerpez==false && preguntado==false && fallosleves<6:
 			if Input.is_key_pressed(KEY_E) && pescando==false:
 				pescando=true
 				$Jugador/CUERDA.show()
@@ -53,7 +53,7 @@ func _process(delta):
 				$Jugador/CUERDA.stop()
 				$Jugador/CUERDA.play("stand")
 	#Aqui empieza el juego
-		if pescando==true && preguntado==false && wincondition==false:
+		if pescando==true && preguntado==false && wincondition==false && fallosleves<6:
 			var randomNumber := rng.randf() * (maxNumber - minNumber) + minNumber
 			$Jugador/tabladepesca.show()
 			#-----------------------------------------------------------------------------
@@ -162,7 +162,7 @@ func _process(delta):
 			await get_tree().create_timer(0.2).timeout
 			while true:
 					var posy = $Jugador/pseudoanimacionpez.position.y
-					if(posy > 1):
+					if(posy > 1 && fallosleves<6):
 						await get_tree().create_timer(0.3).timeout
 						$Jugador/pseudoanimacionpez.position.y -=1
 					else:
@@ -176,29 +176,28 @@ func _process(delta):
 				$AreaDeSalida/AnimatedSprite2D.position = Vector2(454,366)
 				wincondition = true
 				
-			if $Jugador/tabladepesca/ProgressBar.value == 0:
-				if(aumento==false):
-					aumento=true
-					fallosleves += 1
+		if $Jugador/tabladepesca/ProgressBar.value == 0:
+			if(aumento==false):
+				aumento=true
+				fallosleves += 1
+			$Jugador/CUERDA.hide()
+			$Jugador/tabladepesca.hide()
+			pescando=false
+			Global.pescar = false
+			$Jugador/tabladepesca/ProgressBar.value = 30
+			aumento=false
+			
+			if(fallosleves==6):
 				$Jugador/CUERDA.hide()
 				$Jugador/tabladepesca.hide()
+				$Jugador/TextureRect.hide()
 				pescando=false
-				Global.pescar = false
-				$Jugador/tabladepesca/ProgressBar.value = 30
-				aumento=false
-				
-				if(fallosleves==6):
-					$Jugador/CUERDA.hide()
-					$Jugador/tabladepesca.hide()
-					$Jugador/TextureRect.hide()
-					pescando=false
-					Global.pescar=true
-					secuenciatiburon()
-					await get_tree().create_timer(10).timeout
-					Global.pescar=false
-					Global.vida=Global.maxvida
-					get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
-
+				Global.pescar=true
+				secuenciatiburon()
+				await get_tree().create_timer(10).timeout
+				Global.pescar=false
+				Global.vida=Global.maxvida
+				get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 
 func _on_area_de_salida_body_entered(body):
 	if body.is_in_group("Jugador"):
