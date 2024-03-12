@@ -4,6 +4,7 @@ var dialogo = false
 var final = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.escene = "res://Victoria.tscn"
 	$TileMap/portal/AnimatedSprite2D.play("default")
 	$TileMap/AnimatedSprite2D.play("default")
 	Global.progreso += 3

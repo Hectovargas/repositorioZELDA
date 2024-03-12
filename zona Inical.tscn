@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://ffxc4ko45xj"]
+[gd_scene load_steps=122 format=3 uid="uid://ffxc4ko45xj"]
 
 [ext_resource type="Script" path="res://zona Inical.gd" id="1_twnni"]
 [ext_resource type="Texture2D" uid="uid://b1yjgqyayhc66" path="res://RECURSO DE VIDEO E IMAGENES/Overworld.png" id="1_wn2e0"]
@@ -49,8 +49,14 @@
 [ext_resource type="Texture2D" uid="uid://coj0n6xxes6ph" path="res://carpeta de sprites aparte, hay muchos en la otra/Free Dungeon - Fantasy Dreamland/RPG Maker/RPG Maker MZ (16x16)/tilesets/FD_Dungeon_Free_A5_1.png" id="35_dlb5v"]
 [ext_resource type="Texture2D" uid="uid://cbkxpe14rso7k" path="res://carpeta de sprites aparte, hay muchos en la otra/dungeon.png" id="36_xtmjt"]
 [ext_resource type="Texture2D" uid="uid://va4j67bqlgg4" path="res://carpeta de sprites aparte, hay muchos en la otra/exterior.png" id="37_mr4i2"]
+[ext_resource type="Texture2D" uid="uid://cd1mvoenogjf" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/sword_02c.png" id="45_7bqbr"]
+[ext_resource type="Texture2D" uid="uid://bgabbgo25wewm" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/sword_02a.png" id="46_dk6pl"]
+[ext_resource type="Texture2D" uid="uid://cphtgjt8imc0y" path="res://RECURSO DE VIDEO E IMAGENES/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="47_av562"]
 [ext_resource type="Texture2D" uid="uid://da0yrlmt183n2" path="res://RECURSO DE VIDEO E IMAGENES/fondo-abstracto-textura.jpg" id="47_tofb6"]
+[ext_resource type="Texture2D" uid="uid://cqo0626whn60e" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/armor_01b.png" id="48_6nlfr"]
+[ext_resource type="Texture2D" uid="uid://dxw002k4nctt1" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/armor_01e.png" id="49_ngtif"]
 [ext_resource type="PackedScene" uid="uid://bevy8a5w4axi8" path="res://doncella.tscn" id="49_salqp"]
+[ext_resource type="Texture2D" uid="uid://y81j08mu5ncq" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/48x48/boots_01c.png" id="50_qkbij"]
 [ext_resource type="Texture2D" uid="uid://cwd7qjgh3jirb" path="res://RECURSO DE VIDEO E IMAGENES/SCR2/RMMV/!$doorA_3.png" id="52_m03hi"]
 [ext_resource type="Texture2D" uid="uid://b6p50akqxtc0s" path="res://pixil-frame-0.png" id="53_plm3c"]
 [ext_resource type="PackedScene" uid="uid://bttfun6yo8jpv" path="res://doncella_nieve.tscn" id="54_3c84f"]
@@ -54638,11 +54644,12 @@ font = ExtResource("28_dkbrk")
 font_color = Color(0, 0, 0, 1)
 outline_size = 3
 
+[sub_resource type="SystemFont" id="SystemFont_kurih"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_27ysd"]
-font = ExtResource("28_dkbrk")
-font_color = Color(0, 0, 0, 1)
-outline_size = 3
-shadow_size = 3
+font = SubResource("SystemFont_kurih")
+font_size = 18
+shadow_size = 0
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2tab"]
@@ -54668,9 +54675,6 @@ size = Vector2(79, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sw4f"]
 size = Vector2(27, 13.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8n5n"]
-size = Vector2(39, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evliq"]
 size = Vector2(41.5625, 49.5)
@@ -54723,6 +54727,103 @@ offset_right = 266.0
 offset_bottom = 60.0
 label_settings = SubResource("LabelSettings_ncerq")
 
+[node name="Panel" type="Panel" parent="MapaInicial/Jugador/Camera2D"]
+offset_left = 166.0
+offset_top = -107.0
+offset_right = 192.0
+offset_bottom = -4.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MapaInicial/Jugador/Camera2D/Panel"]
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 103.0
+
+[node name="Button" type="Button" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 25.0
+offset_bottom = 23.0
+focus_mode = 1
+mouse_force_pass_scroll_events = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button"]
+visible = false
+position = Vector2(11, 12)
+scale = Vector2(0.458333, 0.458333)
+texture = ExtResource("45_7bqbr")
+
+[node name="Sprite2D" type="Sprite2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button"]
+position = Vector2(11, 12)
+scale = Vector2(0.458333, 0.458333)
+texture = ExtResource("46_dk6pl")
+
+[node name="PointLight2D" type="PointLight2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button"]
+visible = false
+position = Vector2(12, 12)
+scale = Vector2(0.40625, 0.375)
+energy = 3.27
+texture = ExtResource("47_av562")
+
+[node name="Button2" type="Button" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 26.0
+offset_right = 25.0
+offset_bottom = 49.0
+focus_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2"]
+position = Vector2(12, 12)
+scale = Vector2(0.5, 0.458333)
+texture = ExtResource("48_6nlfr")
+
+[node name="PointLight2D" type="PointLight2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2"]
+visible = false
+position = Vector2(12, 12)
+scale = Vector2(0.40625, 0.375)
+energy = 3.27
+texture = ExtResource("47_av562")
+
+[node name="Button3" type="Button" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 52.0
+offset_right = 25.0
+offset_bottom = 75.0
+focus_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3"]
+position = Vector2(11, 12)
+scale = Vector2(0.458333, 0.458333)
+texture = ExtResource("49_ngtif")
+
+[node name="PointLight2D" type="PointLight2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3"]
+visible = false
+position = Vector2(12, 12)
+scale = Vector2(0.40625, 0.375)
+energy = 3.27
+texture = ExtResource("47_av562")
+
+[node name="Button4" type="Button" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 25.0
+offset_bottom = 101.0
+focus_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button4"]
+position = Vector2(11, 12)
+scale = Vector2(0.458333, 0.458333)
+texture = ExtResource("50_qkbij")
+
+[node name="PointLight2D" type="PointLight2D" parent="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button4"]
+visible = false
+position = Vector2(12, 12)
+scale = Vector2(0.40625, 0.375)
+energy = 3.27
+texture = ExtResource("47_av562")
+
 [node name="AvisosLabel" type="Label" parent="MapaInicial/Jugador"]
 z_index = 5
 offset_left = 14.0
@@ -54734,13 +54835,14 @@ autowrap_mode = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MapaInicial/Jugador"]
 visible = false
-offset_left = -239.0
-offset_top = 54.0
-offset_right = 240.0
-offset_bottom = 150.0
+offset_left = -238.0
+offset_top = 22.0
+offset_right = 241.0
+offset_bottom = 118.0
 texture = ExtResource("29_kim76")
 
 [node name="TextureRect" type="TextureRect" parent="MapaInicial/Jugador/NinePatchRect"]
+visible = false
 layout_mode = 0
 offset_left = 370.0
 offset_top = -26.0
@@ -54752,9 +54854,9 @@ expand_mode = 1
 [node name="Label" type="Label" parent="MapaInicial/Jugador/NinePatchRect"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 79.0
+offset_left = 73.0
 offset_top = 6.0
-offset_right = 359.0
+offset_right = 405.0
 offset_bottom = 80.0
 label_settings = SubResource("LabelSettings_27ysd")
 autowrap_mode = 3
@@ -54883,12 +54985,6 @@ shape = SubResource("RectangleShape2D_8sw4f")
 position = Vector2(2184, 1567)
 shape = SubResource("RectangleShape2D_8sw4f")
 
-[node name="Area2D8" type="Area2D" parent="MapaInicial"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapaInicial/Area2D8"]
-position = Vector2(288.5, 33)
-shape = SubResource("RectangleShape2D_c8n5n")
-
 [node name="Area2D9" type="Area2D" parent="MapaInicial"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapaInicial/Area2D9"]
@@ -54901,8 +54997,17 @@ shape = SubResource("RectangleShape2D_evliq")
 position = Vector2(-648, 1414.5)
 shape = SubResource("RectangleShape2D_gxedr")
 
+[node name="Marker2D" type="Marker2D" parent="MapaInicial"]
+position = Vector2(1856, 249)
+
+[node name="Marker2D" type="Marker2D" parent="MapaInicial/Marker2D"]
+position = Vector2(510, 673)
+
+[node name="Marker2D2" type="Marker2D" parent="MapaInicial"]
+position = Vector2(-1362, 728)
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 15.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -54960,6 +55065,10 @@ position = Vector2(2496, 322)
 [node name="DoncellaMontana" parent="." instance=ExtResource("56_wdebp")]
 position = Vector2(-1769, 386)
 
+[connection signal="pressed" from="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="body_entered" from="MapaInicial/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D3" to="." method="_on_area_2d_3_body_entered"]
@@ -54967,7 +55076,6 @@ position = Vector2(-1769, 386)
 [connection signal="body_entered" from="MapaInicial/Area2D5" to="." method="_on_area_2d_5_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D6" to="." method="_on_area_2d_6_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D7" to="." method="_on_area_2d_7_body_entered"]
-[connection signal="body_entered" from="MapaInicial/Area2D8" to="." method="_on_area_2d_8_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D9" to="." method="_on_area_2d_9_body_entered"]
 [connection signal="body_entered" from="MapaInicial/Area2D10" to="." method="_on_area_2d_10_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

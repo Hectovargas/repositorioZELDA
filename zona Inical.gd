@@ -3,45 +3,56 @@ var cambiar_escena = false
 var escena_actual = "zona Inical"
 var esqueleto = preload("res://esqueleto.tscn")
 var numeroaleatorio
+var espera= true
+var espera2 = true
+var advertenciadesierto = false
+var estoyendesert = false
+var advertencianieve = false
+var estoyennieve = false
 var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.escene = "res://zona Inical.tscn"
 	$MapaInicial/Jugador.position = Global.posicion
 
 func _process(delta):
-		if Global.trifuerza==true:
-			$Sprite2D.show()
-		if Global.pelea1 == true:
-			if Global.dialogo==true:
-				$MapaInicial/Jugador/NinePatchRect.show()
-				$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
-				$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
-			else:
-				$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
-				$MapaInicial/Jugador/NinePatchRect.hide()
-				$MapaInicial/Jugador/AvisosLabel.set_text("")
-		if Global.pelea2 == true:
-			if Global.dialogo==true:
-				$MapaInicial/Jugador/NinePatchRect.show()
-				$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
-				$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
-			else:
-				$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
-				$MapaInicial/Jugador/NinePatchRect.hide()
-				$MapaInicial/Jugador/AvisosLabel.set_text("")
-				
-		if Global.espadahabilitada == true:
-			$MapaInicial/StaticBody2D.position = Vector2(-1000,-1000)
-			$MapaInicial/StaticBody2D2.position = Vector2(-1000,-1000)
-			$MapaInicial/StaticBody2D3.position = Vector2(-1000,-1000)
-		if ($MapaInicial/Jugador.position.x >= 1326 && $MapaInicial/Jugador.position.x <= 1382 && $MapaInicial/Jugador.position.y <= 742 && $MapaInicial/Jugador.position.y >= 691 && Global.espadahabilitada==false  or $MapaInicial/Jugador.position.x >= 392 && $MapaInicial/Jugador.position.x <= 458 && $MapaInicial/Jugador.position.y <= 1508 && $MapaInicial/Jugador.position.y >= 1470 && Global.espadahabilitada==false or $MapaInicial/Jugador.position.x >= -830 && $MapaInicial/Jugador.position.x <= -778 && $MapaInicial/Jugador.position.y <= 750 && $MapaInicial/Jugador.position.y >= 689 && Global.espadahabilitada==false):
-			$MapaInicial/Jugador/AvisosLabel.set_text("Presione ENTER para interactuar")
-			if Input.is_key_pressed(KEY_ENTER):
-				$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
-				$MapaInicial/Jugador/NinePatchRect/TextureRect2.show()
-				$MapaInicial/Jugador/NinePatchRect.show()
-				$MapaInicial/Jugador/NinePatchRect/Label.set_text("No puedes pasar hasta que tengas un arma")
-		elif Global.dialogo==true:
+	if $MapaInicial/Jugador.position.x > $MapaInicial/Marker2D.position.x && $MapaInicial/Jugador.position.y > $MapaInicial/Marker2D/Marker2D.position.y && advertencianieve == false && Global.trajeantifrio==false:
+		estoyennieve=true
+		advertencianieve=true
+		$MapaInicial/Jugador/NinePatchRect.show()
+		$MapaInicial/Jugador/NinePatchRect/Label.set_text("¡Ponte el traje anti frio o perderas vida!")
+		await get_tree().create_timer(3).timeout
+		$MapaInicial/Jugador/NinePatchRect.hide()
+		estoyennieve=false
+		espera=false
+	if $MapaInicial/Jugador.position.x > $MapaInicial/Marker2D.position.x && $MapaInicial/Jugador.position.y < $MapaInicial/Marker2D/Marker2D.position.y && Global.trajeantifrio==false && espera==false:
+		espera=true
+		Global.vida-=1
+		await get_tree().create_timer(2).timeout
+		espera=false
+#------------------------------------------------------------
+	if $MapaInicial/Marker2D2.position.x>$MapaInicial/Jugador.position.x && advertenciadesierto == false && Global.trajeanticalor==false:
+		estoyendesert=true
+		advertenciadesierto=true
+		$MapaInicial/Jugador/NinePatchRect.show()
+		$MapaInicial/Jugador/NinePatchRect/Label.set_text("¡Ponte el traje anti calor o perderas vida!")
+		await get_tree().create_timer(3).timeout
+		$MapaInicial/Jugador/NinePatchRect.hide()
+		estoyendesert=false
+		espera2=false
+	if $MapaInicial/Marker2D2.position.x>$MapaInicial/Jugador.position.x && Global.trajeanticalor==false && espera2==false:
+		espera2=true
+		Global.vida-=1
+		await get_tree().create_timer(2).timeout
+		espera2=false
+#----------------------------------
+	if(Global.espadahabilitada):
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button/Sprite2D2.show()
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button/Sprite2D.hide()
+	if Global.trifuerza==true:
+		$Sprite2D.show()
+	if Global.pelea1 == true:
+		if Global.dialogo==true:
 			$MapaInicial/Jugador/NinePatchRect.show()
 			$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
 			$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
@@ -49,8 +60,36 @@ func _process(delta):
 			$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
 			$MapaInicial/Jugador/NinePatchRect.hide()
 			$MapaInicial/Jugador/AvisosLabel.set_text("")
+	if Global.pelea2 == true:
+		if Global.dialogo==true:
+			$MapaInicial/Jugador/NinePatchRect.show()
+			$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
+			$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
+		else:
+			$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
+			$MapaInicial/Jugador/NinePatchRect.hide()
+			$MapaInicial/Jugador/AvisosLabel.set_text("")
+	if Global.espadahabilitada == true:
+		$MapaInicial/StaticBody2D.position = Vector2(-1000,-1000)
+		$MapaInicial/StaticBody2D2.position = Vector2(-1000,-1000)
+		$MapaInicial/StaticBody2D3.position = Vector2(-1000,-1000)
+	if ($MapaInicial/Jugador.position.x >= 1326 && $MapaInicial/Jugador.position.x <= 1382 && $MapaInicial/Jugador.position.y <= 742 && $MapaInicial/Jugador.position.y >= 691 && Global.espadahabilitada==false  or $MapaInicial/Jugador.position.x >= 392 && $MapaInicial/Jugador.position.x <= 458 && $MapaInicial/Jugador.position.y <= 1508 && $MapaInicial/Jugador.position.y >= 1470 && Global.espadahabilitada==false or $MapaInicial/Jugador.position.x >= -830 && $MapaInicial/Jugador.position.x <= -778 && $MapaInicial/Jugador.position.y <= 750 && $MapaInicial/Jugador.position.y >= 689 && Global.espadahabilitada==false):
+		$MapaInicial/Jugador/AvisosLabel.set_text("Presione ENTER para interactuar")
+		if Input.is_key_pressed(KEY_ENTER):
+			$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
+			$MapaInicial/Jugador/NinePatchRect/TextureRect2.show()
+			$MapaInicial/Jugador/NinePatchRect.show()
+			$MapaInicial/Jugador/NinePatchRect/Label.set_text("No puedes pasar hasta que tengas una buena espada")
+	elif Global.dialogo==true:
+		$MapaInicial/Jugador/NinePatchRect.show()
+		$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aún no puedo hablar contigo,entra al castillo primero.")
+		$MapaInicial/Jugador/NinePatchRect/TextureRect.hide()
+	elif estoyennieve==false && estoyendesert==false:
+		$MapaInicial/Jugador/NinePatchRect/Label.set_text("")
+		$MapaInicial/Jugador/NinePatchRect.hide()
+		$MapaInicial/Jugador/AvisosLabel.set_text("")
+	
 		
-			
 		if Global.caida==true:
 			$MapaInicial/Jugador.position.y+=4
 		if Global.pelea1 && Global.pelea2 && Global.pelea3 && Global.pelea4:
@@ -160,3 +199,38 @@ func _on_area_2d_10_body_entered(body):
 			$MapaInicial/Jugador/NinePatchRect/Label.set_text("Aun No eres Digno de entrar A UNITEC")
 			await get_tree().create_timer(3).timeout
 			$MapaInicial/Jugador/NinePatchRect.hide()
+
+
+func _on_button_4_pressed():
+	if Global.supervelicidad==false:
+		Global.supervelicidad=true
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button4/PointLight2D.show()
+	else:
+		Global.supervelicidad=false
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button4/PointLight2D.hide()
+
+
+func _on_button_3_pressed():
+	if Global.trajeanticalor == false:
+		Global.trajeanticalor=true
+		Global.trajeantifrio=false
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3/PointLight2D.show()
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2/PointLight2D.hide()
+	else:
+		Global.trajeanticalor=false
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3/PointLight2D.hide()
+
+
+func _on_button_2_pressed():
+	if Global.trajeantifrio == false:
+		Global.trajeanticalor=false
+		Global.trajeantifrio=true
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2/PointLight2D.show()
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button3/PointLight2D.hide()
+	else:
+		Global.trajeantifrio=false
+		$MapaInicial/Jugador/Camera2D/Panel/NinePatchRect/Button2/PointLight2D.hide()
+
+
+func _on_button_pressed():
+	pass # Replace with function body.

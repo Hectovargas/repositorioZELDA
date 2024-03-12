@@ -12890,6 +12890,7 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="Label" type="Label" parent="TileMap/Jugador/NinePatchRect"]
 z_index = 10
+layout_mode = 0
 offset_left = 51.0
 offset_top = 5.0
 offset_right = 364.0
