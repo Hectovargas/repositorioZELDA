@@ -69,4 +69,46 @@ func _on_texture_button_pressed():
 
 
 func _on_texture_button_2_pressed():
+	Global.pelea1 = false
+	Global.pelea2 = false
+	Global.pelea3 = false
+	Global.pelea4 = false
+	var load_datas : Dictionary = FileUtils.load_users(Global.names)
 	get_tree().change_scene_to_file("res://registro.tscn")
+	load_datas.contraseña = Global.password
+	Global.vida=Global.maxvida
+	load_datas.patha=Global.escene
+	if Global.escene == "res://zona Inical.tscn" :
+		load_datas.x = position.x
+		load_datas.y = position.y
+	else:
+		load_datas.x = Global.posicion.x
+		load_datas.y = Global.posicion.y
+	load_datas.usuario = Global.names
+	load_datas.vida = Global.vida
+	load_datas.maxvida = Global.maxvida
+	load_datas.progreso = Global.progreso
+	load_datas.ciencia = Global.ciencia
+	load_datas.arte = Global.arte
+	load_datas.historia = Global.historia
+	load_datas.politica = Global.politica
+	load_datas.ruleteado = Global.ruleteado
+	load_datas.dialog = Global.dialog
+	load_datas.empirista = Global.empirista
+	load_datas.nacionalista = Global.nacionalista
+	load_datas.obtenciongema = Global.obtenciongema
+	load_datas.espadahabilitada = Global.espadahabilitada
+	load_datas.nadando = Global.nadando
+	load_datas.pelea1 = Global.pelea1
+	load_datas.pelea2 = Global.pelea2
+	load_datas.pelea3 = Global.pelea3
+	load_datas.pelea4 = Global.pelea4
+	load_datas.trifuerza = Global.trifuerza
+	load_datas.castillo = Global.castillo
+	load_datas.entradaCastillo = Global.entradaCastillo
+	load_datas.logo1 = Global.logo1
+	load_datas.logo2 = Global.logo2
+	var path = "res://save_game_"+Global.names+".save"
+	var file =FileAccess.open(path,FileAccess.WRITE)
+	var datajason = JSON.stringify(load_datas)
+	file.store_line(datajason)

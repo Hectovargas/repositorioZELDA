@@ -12072,6 +12072,7 @@ position = Vector2(505, 383)
 shape = SubResource("RectangleShape2D_bwdyl")
 
 [node name="BarreraCorazon" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(1570, 59)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarreraCorazon"]

@@ -1,0 +1,674 @@
+[gd_scene load_steps=16 format=3 uid="uid://cn5fg3gwdgvda"]
+
+[ext_resource type="Script" path="res://ESTADISTICAS.gd" id="1_c42j2"]
+[ext_resource type="Texture2D" uid="uid://bx2atkp2s4sjt" path="res://fondoopaco.png" id="1_tn1o3"]
+[ext_resource type="FontFile" uid="uid://djhexv14ukq7a" path="res://RECURSO DE VIDEO E IMAGENES/Abaddon_Fonts_v1.2/Abaddon Light.ttf" id="2_v3ljb"]
+[ext_resource type="Texture2D" uid="uid://dyak0qhdkywha" path="res://RECURSO DE VIDEO E IMAGENES/Hearts/PNG/basic/border.png" id="4_3aoqb"]
+[ext_resource type="Texture2D" uid="uid://iej57ptmx0dl" path="res://RECURSO DE VIDEO E IMAGENES/Hearts/PNG/basic/heart.png" id="5_wspdt"]
+[ext_resource type="Texture2D" uid="uid://dhrqqh8n8qbp8" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01e.png" id="6_72mgq"]
+[ext_resource type="Texture2D" uid="uid://os1yvhlhygke" path="res://RECURSO DE VIDEO E IMAGENES/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shard_01d.png" id="7_w0n18"]
+[ext_resource type="Texture2D" uid="uid://daoiqhx8qtv5l" path="res://trifuerza.png" id="8_uc0d3"]
+[ext_resource type="Texture2D" uid="uid://ctxdiatn3rnov" path="res://WhatsApp Image 2024-03-07 at 8.19.18 PM (2).png" id="9_mr6vu"]
+[ext_resource type="Texture2D" uid="uid://b76upctexc42y" path="res://WhatsApp Image 2024-03-07 at 8.19.18 PM (1) (1).png" id="10_xx104"]
+[ext_resource type="Texture2D" uid="uid://cgfabvmhfq10n" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (10).png" id="11_j1qj0"]
+[ext_resource type="Texture2D" uid="uid://t1hubrnat15u" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (12).png" id="12_7a1so"]
+[ext_resource type="Texture2D" uid="uid://bpha7behckwbi" path="res://RECURSO DE VIDEO E IMAGENES/pixil-frame-0 (11).png" id="13_dq5hb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvsq1"]
+font = ExtResource("2_v3ljb")
+font_size = 62
+outline_size = 3
+outline_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_reumc"]
+font_size = 64
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c42j2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 653.0
+texture = ExtResource("1_tn1o3")
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 21.0
+offset_right = 1160.0
+offset_bottom = 92.0
+text = "ESTADISTICAS DE LOS 5 MEJORES USUARIOS"
+label_settings = SubResource("LabelSettings_lvsq1")
+
+[node name="ProgressBar" type="ProgressBar" parent="NinePatchRect"]
+self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 141.0
+offset_right = 132.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0.992157, 1)
+fill_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -57.0
+offset_right = 90.0
+offset_bottom = -4.0
+scroll_following = true
+tab_size = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/ProgressBar"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 276.0
+offset_right = 90.0
+offset_bottom = 364.0
+text = "1°"
+label_settings = SubResource("LabelSettings_reumc")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar"]
+z_index = 10
+offset_left = 89.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 266.0
+
+[node name="coracointainer" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 7)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora1" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer2" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 18)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora2" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer2"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer3" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 29)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora3" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer3"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer4" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 40)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora4" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer4"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer5" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 51)
+scale = Vector2(0.681441, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora5" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer5"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer6" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 62)
+scale = Vector2(0.688, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora6" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer6"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer7" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 73)
+scale = Vector2(0.7, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora7" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2/coracointainer7"]
+texture = ExtResource("5_wspdt")
+
+[node name="LOGORACIONALISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("6_72mgq")
+
+[node name="LOGOEMPIRISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("7_w0n18")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(11, 109)
+scale = Vector2(0.0625, 0.0515203)
+texture = ExtResource("8_uc0d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(11, 126)
+scale = Vector2(0.131455, 0.120213)
+texture = ExtResource("9_mr6vu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/ProgressBar/RichTextLabel2"]
+visible = false
+position = Vector2(10.5625, 150)
+scale = Vector2(0.12951, 0.111111)
+texture = ExtResource("10_xx104")
+
+[node name="ProgressBar2" type="ProgressBar" parent="NinePatchRect"]
+self_modulate = Color(0, 1, 1, 1)
+offset_left = 267.0
+offset_top = 141.0
+offset_right = 356.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+fill_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar2"]
+offset_left = -5.0
+offset_top = -55.0
+offset_right = 95.0
+offset_bottom = -6.0
+tab_size = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/ProgressBar2"]
+offset_left = 14.0
+offset_top = 276.0
+offset_right = 90.0
+offset_bottom = 364.0
+text = "2°"
+label_settings = SubResource("LabelSettings_reumc")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar2"]
+z_index = 10
+offset_left = 89.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 266.0
+
+[node name="coracointainer" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 7)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora1" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer2" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 18)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora2" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer2"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer3" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 29)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora3" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer3"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer4" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 40)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora4" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer4"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer5" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 51)
+scale = Vector2(0.681441, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora5" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer5"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer6" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 62)
+scale = Vector2(0.688, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora6" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer6"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer7" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 73)
+scale = Vector2(0.7, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora7" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2/coracointainer7"]
+texture = ExtResource("5_wspdt")
+
+[node name="LOGORACIONALISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("6_72mgq")
+
+[node name="LOGOEMPIRISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("7_w0n18")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(11, 109)
+scale = Vector2(0.0625, 0.0515203)
+texture = ExtResource("8_uc0d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(11, 126)
+scale = Vector2(0.131455, 0.120213)
+texture = ExtResource("9_mr6vu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/ProgressBar2/RichTextLabel2"]
+visible = false
+position = Vector2(10.5625, 150)
+scale = Vector2(0.12951, 0.111111)
+texture = ExtResource("10_xx104")
+
+[node name="ProgressBar3" type="ProgressBar" parent="NinePatchRect"]
+self_modulate = Color(0, 1, 1, 1)
+offset_left = 484.0
+offset_top = 143.0
+offset_right = 572.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+fill_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar3"]
+offset_left = -4.0
+offset_top = -59.0
+offset_right = 91.0
+offset_bottom = -8.0
+tab_size = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/ProgressBar3"]
+offset_left = 14.0
+offset_top = 276.0
+offset_right = 90.0
+offset_bottom = 364.0
+text = "3°"
+label_settings = SubResource("LabelSettings_reumc")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar3"]
+z_index = 10
+offset_left = 89.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 266.0
+
+[node name="coracointainer" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 7)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora1" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer2" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 18)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora2" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer2"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer3" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 29)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora3" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer3"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer4" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 40)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora4" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer4"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer5" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 51)
+scale = Vector2(0.681441, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora5" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer5"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer6" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 62)
+scale = Vector2(0.688, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora6" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer6"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer7" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 73)
+scale = Vector2(0.7, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora7" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2/coracointainer7"]
+texture = ExtResource("5_wspdt")
+
+[node name="LOGORACIONALISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("6_72mgq")
+
+[node name="LOGOEMPIRISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("7_w0n18")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(11, 109)
+scale = Vector2(0.0625, 0.0515203)
+texture = ExtResource("8_uc0d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(11, 126)
+scale = Vector2(0.131455, 0.120213)
+texture = ExtResource("9_mr6vu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/ProgressBar3/RichTextLabel2"]
+visible = false
+position = Vector2(10.5625, 150)
+scale = Vector2(0.12951, 0.111111)
+texture = ExtResource("10_xx104")
+
+[node name="ProgressBar4" type="ProgressBar" parent="NinePatchRect"]
+self_modulate = Color(0, 1, 1, 1)
+offset_left = 696.0
+offset_top = 141.0
+offset_right = 781.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+fill_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar4"]
+offset_left = -2.0
+offset_top = -57.0
+offset_right = 88.0
+offset_bottom = -3.0
+tab_size = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/ProgressBar4"]
+offset_left = 14.0
+offset_top = 276.0
+offset_right = 90.0
+offset_bottom = 364.0
+text = "4°"
+label_settings = SubResource("LabelSettings_reumc")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar4"]
+z_index = 10
+offset_left = 89.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 266.0
+
+[node name="coracointainer" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 7)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora1" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer2" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 18)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora2" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer2"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer3" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 29)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora3" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer3"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer4" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 40)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora4" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer4"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer5" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 51)
+scale = Vector2(0.681441, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora5" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer5"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer6" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 62)
+scale = Vector2(0.688, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora6" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer6"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer7" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 73)
+scale = Vector2(0.7, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora7" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2/coracointainer7"]
+texture = ExtResource("5_wspdt")
+
+[node name="LOGORACIONALISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("6_72mgq")
+
+[node name="LOGOEMPIRISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("7_w0n18")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(11, 109)
+scale = Vector2(0.0625, 0.0515203)
+texture = ExtResource("8_uc0d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(11, 126)
+scale = Vector2(0.131455, 0.120213)
+texture = ExtResource("9_mr6vu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/ProgressBar4/RichTextLabel2"]
+visible = false
+position = Vector2(10.5625, 150)
+scale = Vector2(0.12951, 0.111111)
+texture = ExtResource("10_xx104")
+
+[node name="ProgressBar5" type="ProgressBar" parent="NinePatchRect"]
+self_modulate = Color(0, 1, 1, 1)
+offset_left = 915.0
+offset_top = 143.0
+offset_right = 1006.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+fill_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar5"]
+offset_left = -8.0
+offset_top = -62.0
+offset_right = 99.0
+offset_bottom = -2.0
+tab_size = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/ProgressBar5"]
+offset_left = 14.0
+offset_top = 276.0
+offset_right = 90.0
+offset_bottom = 364.0
+text = "5°"
+label_settings = SubResource("LabelSettings_reumc")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar5"]
+z_index = 10
+offset_left = 89.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 266.0
+
+[node name="coracointainer" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 7)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora1" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer2" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 18)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora2" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer2"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer3" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 29)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora3" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer3"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer4" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 40)
+scale = Vector2(0.657, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora4" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer4"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer5" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 51)
+scale = Vector2(0.681441, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora5" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer5"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer6" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 62)
+scale = Vector2(0.688, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora6" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer6"]
+texture = ExtResource("5_wspdt")
+
+[node name="coracointainer7" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 73)
+scale = Vector2(0.7, 0.627)
+texture = ExtResource("4_3aoqb")
+
+[node name="cora7" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2/coracointainer7"]
+texture = ExtResource("5_wspdt")
+
+[node name="LOGORACIONALISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("6_72mgq")
+
+[node name="LOGOEMPIRISTA" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10, 89)
+texture = ExtResource("7_w0n18")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(11, 109)
+scale = Vector2(0.0625, 0.0515203)
+texture = ExtResource("8_uc0d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(11, 126)
+scale = Vector2(0.131455, 0.120213)
+texture = ExtResource("9_mr6vu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/ProgressBar5/RichTextLabel2"]
+visible = false
+position = Vector2(10.5625, 150)
+scale = Vector2(0.12951, 0.111111)
+texture = ExtResource("10_xx104")
+
+[node name="TextureButton2" type="TextureButton" parent="NinePatchRect"]
+offset_left = 5.0
+offset_top = 525.0
+offset_right = 245.0
+offset_bottom = 653.0
+texture_normal = ExtResource("11_j1qj0")
+texture_pressed = ExtResource("12_7a1so")
+texture_hover = ExtResource("13_dq5hb")
+
+[connection signal="pressed" from="NinePatchRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]

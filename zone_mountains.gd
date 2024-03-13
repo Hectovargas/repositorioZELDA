@@ -163,7 +163,7 @@ func _process(delta):
 			if(contadorfallos==0 || contadorfallos == 2):
 				await get_tree().create_timer(3).timeout
 				Global.estoyencombate=false
-				Global.pelea1 = true
+				Global.pelea4 = true
 				Global.posicionbatalla=false
 				Global.posicionbatallainversa=false
 				get_tree().change_scene_to_file("res://zona Inical.tscn")

@@ -1,4 +1,14 @@
 extends Node
+func dir_contents() -> Array:
+	var dir = DirAccess.open("res://")
+	var file_names = []
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir() and file_name.substr(0,10)=="save_game_":
+			file_names.append(file_name)
+		file_name = dir.get_next()
+	return file_names
 func save_user(name, password):
 	var data : Dictionary = {
 		usuario = name,
@@ -48,6 +58,9 @@ func load_users(nombre):
 		load_datas = {
 		usuario = "error",
 		contraseña = "error",
+		patha = "res://cinematica.tscn",
+		x = -18,
+		y = 37,
 		vida = 3 ,#
 		maxvida = 3, #
 		progreso = 0 ,#

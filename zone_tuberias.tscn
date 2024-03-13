@@ -242,7 +242,6 @@ size = Vector2(8, 8)
 font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0uka"]
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qhdhg"]
 font_size = 40
@@ -400,7 +399,6 @@ volume_db = -25.102
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 z_index = 5
 offset_left = -104.0
 offset_top = 16.0

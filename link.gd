@@ -224,7 +224,6 @@ func _process(delta):
 				$AnimatedSprite2D.play("MUERTO")
 				await get_tree().create_timer(1).timeout
 				$AnimatedSprite2D.play("MUERTEDEFINITIVA")
-				await get_tree().create_timer(1).timeout
 				Global.muerteencombate = false
 			else:
 				if Global.vida < 1:
@@ -309,8 +308,12 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://registro.tscn")
 	load_datas.contraseña = Global.password
 	load_datas.patha=Global.escene
-	load_datas.x = position.x
-	load_datas.y = position.y
+	if Global.escene == "res://zona Inical.tscn" :
+		load_datas.x = position.x
+		load_datas.y = position.y
+	else:
+		load_datas.x = Global.posicion.x
+		load_datas.y = Global.posicion.y
 	load_datas.usuario = Global.names
 	load_datas.vida = Global.vida
 	load_datas.maxvida = Global.maxvida
