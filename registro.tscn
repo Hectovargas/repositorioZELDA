@@ -78,6 +78,7 @@ texture_pressed = ExtResource("3_qykgk")
 texture_hover = ExtResource("2_bsb07")
 
 [node name="TextureButton3" type="TextureButton" parent="VideoStreamPlayer"]
+layout_mode = 0
 offset_left = 537.0
 offset_top = 538.0
 offset_right = 680.0
