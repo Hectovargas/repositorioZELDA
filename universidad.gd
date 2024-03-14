@@ -208,6 +208,7 @@ const respuestas:Array=[
 ]
 
 func _ready():
+	Global.escene = get_path_to(get_tree().current_scene)
 	Global.progreso += 8
 	$alex.play("idle");
 	$adam.play("idle");

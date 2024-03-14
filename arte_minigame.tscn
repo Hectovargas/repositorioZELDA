@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://b3h52s3g1twpj"]
+[gd_scene load_steps=100 format=3 uid="uid://b3h52s3g1twpj"]
 
 [ext_resource type="Script" path="res://arte_minigame.gd" id="1_jso20"]
 [ext_resource type="Texture2D" uid="uid://curwq7qqt3xmx" path="res://RECURSO DE VIDEO E IMAGENES/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="1_pch0x"]
@@ -4622,6 +4622,9 @@ radius = 12.1655
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26yql"]
 size = Vector2(17, 14)
 
+[sub_resource type="LabelSettings" id="LabelSettings_w3px4"]
+font = ExtResource("17_evvqr")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4qr3"]
 radius = 11.0
 
@@ -4926,6 +4929,21 @@ position = Vector2(208, 958)
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(2, 4)
 zoom = Vector2(3, 3)
+
+[node name="Panel" type="Panel" parent="Jugador/Camera2D"]
+visible = false
+offset_left = -192.0
+offset_top = 40.0
+offset_right = 191.0
+offset_bottom = 108.0
+
+[node name="Label" type="Label" parent="Jugador/Camera2D/Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 376.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_w3px4")
+autowrap_mode = 3
 
 [node name="Area2DC2" type="Area2D" parent="."]
 

@@ -1,5 +1,6 @@
 extends Node2D
 var vida
+var a= false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	vida = Global.vida
@@ -239,18 +240,21 @@ func mostraartextos(text,time):
 	$TileMap/Jugador/NinePatchRect/Label.set_text("")
 
 func mostarpreguntas(text,text2,text3,text4,text5):
-	$TileMap/Jugador/NinePatchRect.show()
-	$TileMap/Jugador/NinePatchRect/Label.set_text(text)
-	await get_tree().create_timer(4.5).timeout
-	$TileMap/Jugador/NinePatchRect/Label.set_text(text2)
-	await get_tree().create_timer(1.7).timeout
-	$TileMap/Jugador/NinePatchRect/Label.set_text(text3)
-	await get_tree().create_timer(1.7).timeout
-	$TileMap/Jugador/NinePatchRect/Label.set_text(text4)
-	await get_tree().create_timer(1.7).timeout
-	$TileMap/Jugador/NinePatchRect/Label.set_text(text5)
-	await  get_tree().create_timer(1.7).timeout
-	$TileMap/Jugador/NinePatchRect.hide()
+	if (a == false):
+		a=true
+		$TileMap/Jugador/NinePatchRect.show()
+		$TileMap/Jugador/NinePatchRect/Label.set_text(text)
+		await get_tree().create_timer(4.5).timeout
+		$TileMap/Jugador/NinePatchRect/Label.set_text(text2)
+		await get_tree().create_timer(1).timeout
+		$TileMap/Jugador/NinePatchRect/Label.set_text(text3)
+		await get_tree().create_timer(1).timeout
+		$TileMap/Jugador/NinePatchRect/Label.set_text(text4)
+		await get_tree().create_timer(1).timeout
+		$TileMap/Jugador/NinePatchRect/Label.set_text(text5)
+		await  get_tree().create_timer(1).timeout
+		$TileMap/Jugador/NinePatchRect.hide()
+		a = false
 
 func _on_area_2d_body_exited(body):
 	$TileMap/Jugador/NinePatchRect.hide()

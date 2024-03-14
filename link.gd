@@ -6,6 +6,7 @@ var vivo=true
 var currentvida
 var contador:int=0
 var last_input
+
 func _ready():
 	currentvida = Global.vida
 	AnimatedSprite = $AnimatedSprite2D
@@ -16,6 +17,12 @@ func _physics_process(delta):
 	
 
 func _process(delta):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		$Panel.show()
+	if Global.supervelicidad==true:
+		Speed = 280
+	else:
+		Speed = 140
 	if Input.is_key_pressed(KEY_G):
 		$TextureProgressBar.value = Global.progreso
 		$TextureProgressBar.show()
@@ -217,7 +224,6 @@ func _process(delta):
 				$AnimatedSprite2D.play("MUERTO")
 				await get_tree().create_timer(1).timeout
 				$AnimatedSprite2D.play("MUERTEDEFINITIVA")
-				await get_tree().create_timer(1).timeout
 				Global.muerteencombate = false
 			else:
 				if Global.vida < 1:
@@ -291,3 +297,48 @@ func controldireccion():
 		last_input = "ui_up"
 	elif Input.is_action_pressed("ui_down"):
 		last_input = "ui_down"
+
+
+func _on_button_2_pressed():
+	$Panel.hide()
+
+
+func _on_button_pressed():
+	var load_datas : Dictionary = FileUtils.load_users(Global.names)
+	get_tree().change_scene_to_file("res://registro.tscn")
+	load_datas.contraseña = Global.password
+	load_datas.patha=Global.escene
+	if Global.escene == "res://zona Inical.tscn" :
+		load_datas.x = position.x
+		load_datas.y = position.y
+	else:
+		load_datas.x = Global.posicion.x
+		load_datas.y = Global.posicion.y
+	load_datas.usuario = Global.names
+	load_datas.vida = Global.vida
+	load_datas.maxvida = Global.maxvida
+	load_datas.progreso = Global.progreso
+	load_datas.ciencia = Global.ciencia
+	load_datas.arte = Global.arte
+	load_datas.historia = Global.historia
+	load_datas.politica = Global.politica
+	load_datas.ruleteado = Global.ruleteado
+	load_datas.dialog = Global.dialog
+	load_datas.empirista = Global.empirista
+	load_datas.nacionalista = Global.nacionalista
+	load_datas.obtenciongema = Global.obtenciongema
+	load_datas.espadahabilitada = Global.espadahabilitada
+	load_datas.nadando = Global.nadando
+	load_datas.pelea1 = Global.pelea1
+	load_datas.pelea2 = Global.pelea2
+	load_datas.pelea3 = Global.pelea3
+	load_datas.pelea4 = Global.pelea4
+	load_datas.trifuerza = Global.trifuerza
+	load_datas.castillo = Global.castillo
+	load_datas.entradaCastillo = Global.entradaCastillo
+	load_datas.logo1 = Global.logo1
+	load_datas.logo2 = Global.logo2
+	var path = "res://save_game_"+Global.names+".save"
+	var file =FileAccess.open(path,FileAccess.WRITE)
+	var datajason = JSON.stringify(load_datas)
+	file.store_line(datajason)

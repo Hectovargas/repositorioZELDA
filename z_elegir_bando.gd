@@ -4,6 +4,7 @@ var sword:bool=false;
 var contador:int=0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.escene = "res://z_elegir_bando.tscn"
 	$SpritesOrcos/baseOrc.play("orc")
 	$SpritesOrcos/rogueOrc.play("orcRogue")
 	$SpritesOrcos/shamanOrc.play("orcShaman")

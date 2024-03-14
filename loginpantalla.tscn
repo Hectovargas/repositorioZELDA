@@ -12,41 +12,41 @@
 [ext_resource type="Texture2D" uid="uid://cmhxm7u64cm6b" path="res://RECURSO DE VIDEO E IMAGENES/Large Buttons/pixil-frame-0 (5).png" id="10_bau4t"]
 [ext_resource type="Texture2D" uid="uid://d2yjk2i08kilm" path="res://RECURSO DE VIDEO E IMAGENES/Large Buttons/pixil-frame-0 (6).png" id="11_rdnih"]
 
-[sub_resource type="SystemFont" id="SystemFont_ggjnf"]
+[sub_resource type="SystemFont" id="SystemFont_2qb63"]
 font_names = PackedStringArray("Segoe UI")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8gt5q"]
-font = SubResource("SystemFont_ggjnf")
+font = SubResource("SystemFont_2qb63")
 font_size = 40
 font_color = Color(0, 0, 0, 1)
 outline_size = 15
 outline_color = Color(0.894118, 0, 0.898039, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_n73u2"]
+[sub_resource type="SystemFont" id="SystemFont_n7h4q"]
 font_names = PackedStringArray("Segoe UI")
 
 [sub_resource type="LabelSettings" id="LabelSettings_s1w88"]
-font = SubResource("SystemFont_n73u2")
+font = SubResource("SystemFont_n7h4q")
 font_size = 40
 font_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 outline_size = 15
 outline_color = Color(0.772549, 0, 0.776471, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_l8t02"]
+[sub_resource type="SystemFont" id="SystemFont_hrcx0"]
 font_names = PackedStringArray("Tahoma")
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxyep"]
-font = SubResource("SystemFont_l8t02")
+font = SubResource("SystemFont_hrcx0")
 font_size = 64
 font_color = Color(0.0196078, 0.0196078, 0, 1)
 outline_size = 23
 outline_color = Color(0.184314, 0.494118, 1, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_0dgqy"]
+[sub_resource type="SystemFont" id="SystemFont_tp8ar"]
 font_names = PackedStringArray("Arial")
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3ixs"]
-font = SubResource("SystemFont_0dgqy")
+font = SubResource("SystemFont_tp8ar")
 font_size = 30
 font_color = Color(0.831373, 0, 0, 1)
 

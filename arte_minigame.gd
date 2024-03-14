@@ -78,13 +78,23 @@ func _process(delta):
 		Global.vida=Global.maxvida
 		get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 	if contador==0:
+		contador+=1
 		$audioTP.play();
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question1.dialogue"),"start");
-	contador+=1;
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("Uno de los siguientes personajes fue el encargado de pintar la capilla Sixtina:")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel/Label.set_text("A) Miguel Ángel. B) Donatello. C) Leonardo Da Vinci. D) Francis Bacon")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 
 func _on_question_zone_2_body_entered(body):
 	if body.is_in_group("Jugador"):
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question2.dialogue"),"start");
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("Genio del renacimiento que esculpio el Moises, el David y la Pieta:")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel/Label.set_text("A) Miguel Ángel Buonarroti. B) Leonardo Da Vinci. C) Rafael Sanzio. D) Galileo Galilei")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 		
 		if contadorQuestion==0:
 			contadorQuestion+=1;
@@ -96,7 +106,12 @@ func _on_question_zone_2_body_entered(body):
 
 func _on_question_zone_3_body_entered(body):
 	if body.is_in_group("Jugador"):
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question3.dialogue"),"start");
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("Durante el renacimiento el estilo artístico que impregnó el arte, la filosofía, la pintura escritura fue el:")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel/Label.set_text("A) El Gotico. B) El barroco. C) el clasicismo. D) Romanticismo")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 		if contadorQuestion2==0:
 			contadorQuestion2+=1;
 			$PuertaCerrada2/StaticBody2D22.position.x -= 50;
@@ -108,7 +123,12 @@ func _on_question_zone_3_body_entered(body):
 
 func _on_question_zone_4_body_entered(body):
 	if body.is_in_group("Jugador"):
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question4.dialogue"),"start");
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("En el renacimiento surge una nueva vision del hombre, que se vio reflejada en el arte, en la política y en las ciencias sociales y se llamaba:")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel/Label.set_text("A) Antropocentrismo. B) Humanismo. C) Paradigma antropologico. D) Teocentrismo")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 		if contadorQuestion3==0:
 			contadorQuestion3+=1;
 			$PuertaCerrada3/StaticBody2D.position.x -= 50;
@@ -120,7 +140,12 @@ func _on_question_zone_4_body_entered(body):
 
 func _on_question_zone_5_body_entered(body):
 	if body.is_in_group("Jugador"):
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/question5.dialogue"),"start");
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("Cuatro genios del renacimiento (Leonardo, Donatello, Rafael y Michelangelo) han sido llevados a la pantalla en los comics de:")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel/Label.set_text("A) Las tortugas ninjas. B) Los caballeros del Zodiaco. C) Los cuatro fantásticos. D) Los antagonistas de Attack Titan")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 		if contadorQuestion4==0:
 			contadorQuestion4+=1;
 			$PuertaCerrada4/StaticBody2D.position.x -= 50;
@@ -255,7 +280,10 @@ func _on_area_2d_13_body_entered(body):
 		esCofreCorrecto5=true;
 		$CHECK5.show()
 		$audioCorrecto.play();
-		DialogueManager.show_dialogue_balloon(load("res://artMinigame/Dialogues_Art_MiniGame/questions/pullUpLever.dialogue"),"start");
+		$Jugador/Camera2D/Panel.show()
+		$Jugador/Camera2D/Panel/Label.set_text("Felicidades! Haz completado el desafio, baja la palanca para abrir la puerta!")
+		await get_tree().create_timer(5).timeout
+		$Jugador/Camera2D/Panel.hide()
 		Lever=true;
 
 

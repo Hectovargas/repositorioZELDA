@@ -853,3 +853,38 @@ offset_top = 4.0
 offset_right = 210.0
 offset_bottom = 34.0
 label_settings = SubResource("LabelSettings_r6fo6")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+z_index = 2
+offset_left = -94.0
+offset_top = -48.0
+offset_right = 98.0
+offset_bottom = 50.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 54.0
+offset_right = 176.0
+offset_bottom = 94.0
+text = "SI"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 53.0
+offset_right = 85.0
+offset_bottom = 93.0
+text = "NO"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 16.0
+offset_right = 125.0
+offset_bottom = 43.0
+text = "¿SALIR?"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

@@ -12072,6 +12072,7 @@ position = Vector2(505, 383)
 shape = SubResource("RectangleShape2D_bwdyl")
 
 [node name="BarreraCorazon" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(1570, 59)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarreraCorazon"]
@@ -12094,6 +12095,7 @@ vframes = 2
 frame = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
 position = Vector2(1625, 142)
 sprite_frames = SubResource("SpriteFrames_d4ar0")
 
@@ -12890,6 +12892,7 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="Label" type="Label" parent="TileMap/Jugador/NinePatchRect"]
 z_index = 10
+layout_mode = 0
 offset_left = 51.0
 offset_top = 5.0
 offset_right = 364.0

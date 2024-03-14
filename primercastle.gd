@@ -1,7 +1,8 @@
 extends Node2D
 var cambiar_escena = false
 var escena_actual = "primercastle"
-
+func _ready():
+	Global.escene ="res://primercastle.tscn"
 func _on_zona_inicial_body_entered(body):
 	if body.is_in_group("Jugador"):
 		cambiar_escena = true

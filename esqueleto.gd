@@ -14,8 +14,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _process(delta):
-	print (position.x)
-	print (position.y)
 	if atacando == false && vida > 0:
 		if encontrado == true:
 			position += (player.position-position)/speed
