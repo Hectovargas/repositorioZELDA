@@ -5,6 +5,7 @@ var disparo = false
 var respondio = true
 var win = false
 var portal = false
+var lose = false
 # Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +30,7 @@ func _process(delta):
 		win = true
 	if win == false:
 		if $Marker2D.position.y<$TileMap/StaticBody2D.position.y:
+			var lose = true
 			$TileMap/Sprite2D.show()
 			Global.caida=true
 			$TileMap/StaticBody2D.hide()
@@ -46,7 +48,7 @@ func _process(delta):
 		$TileMap/StaticBody2D2.position.y -= 20
 		$TileMap/StaticBody2D3.position.y -= 20
 		$TileMap/StaticBody2D4.position.y -= 20
-		if win==false:
+		if win==false && lose == false:
 			await get_tree().create_timer(1).timeout
 			$TextureRect.hide()
 			$TileMap/AnimatedSprite2D2.show()
@@ -58,7 +60,7 @@ func _process(delta):
 		$TileMap/StaticBody2D3.position.y += 45
 		$TileMap/StaticBody2D4.position.y += 45
 		$TextureRect/Label.set_text("Incorrecto")
-		if win==false:
+		if win==false && lose == false:
 			await get_tree().create_timer(1).timeout
 			$TextureRect.hide()
 			$TileMap/AnimatedSprite2D2.show()
