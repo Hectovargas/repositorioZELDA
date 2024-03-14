@@ -66,20 +66,20 @@ func _process(delta):
 			await get_tree().create_timer(0.5).timeout
 			Global.flechando=false
 			disparo=false
-	#if(disparo==false):
-		#if Input.is_key_pressed(KEY_Q):
-			#await get_tree().create_timer(0.6).timeout
-			#$Link/flecha.position = Vector2(-4,-20)
-			#disparo = true
-	#else:
-		#print("no puedes disparar")
-			#
-	#if disparo == true:
-		#$Link/flecha.show()
-		#$Link/flecha.position.y -= 4
-		#await get_tree().create_timer(1.2).timeout
-		#print("disponible")
-		#disparo = false
+	if(disparo==false):
+		if Input.is_key_pressed(KEY_Q):
+			await get_tree().create_timer(0.6).timeout
+			$Link/flecha.position = Vector2(-4,-20)
+			disparo = true
+	else:
+		print("no puedes disparar")
+			
+	if disparo == true:
+		$Link/flecha.show()
+		$Link/flecha.position.y -= 4
+		await get_tree().create_timer(1.2).timeout
+		print("disponible")
+		disparo = false
 	if pregunta ==5:
 		sailda.show()
 		
@@ -121,15 +121,19 @@ func cambiarPregunta():
 	if pregunta==1:
 		DialogueManager.show_dialogue_balloon(load("res://shooter2.dialogue"), "start")
 		pregunta=2
+		print(pregunta)
 	elif pregunta==2:
 		DialogueManager.show_dialogue_balloon(load("res://shooter3.dialogue"), "start")
 		pregunta=3
+		print(pregunta)
 	elif pregunta==3:
 		DialogueManager.show_dialogue_balloon(load("res://shooter4.dialogue"), "start")
 		pregunta=4
+		print(pregunta)
 	elif pregunta==4:
 		DialogueManager.show_dialogue_balloon(load("res://shooter5.dialogue"), "start")
 		pregunta=5
+		print(pregunta)
 
 
 func _on_area_salida_body_entered(body):
@@ -141,7 +145,7 @@ func _on_area_salida_body_entered(body):
 
 
 func _on_area_stalfos_d_body_entered(body):
-	if body.is_in_group("shoot"):
+	if body.is_in_group("Arrow"):
 		print("Estoy dentro!")
 		if pregunta>0:
 			DialogueManager.show_dialogue_balloon(load("res://shooterFallaste.dialogue"),"start")
@@ -152,7 +156,7 @@ func _on_area_stalfos_d_body_entered(body):
 
 
 func _on_area_stalfos_c_body_entered(body):
-	if body.is_in_group("shoot"):
+	if body.is_in_group("Arrow"):
 		print("Estoy dentro!")
 		if pregunta==4:
 			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
@@ -167,7 +171,7 @@ func _on_area_stalfos_c_body_entered(body):
 
 
 func _on_area_stalfos_b_body_entered(body):
-	if body.is_in_group("shoot"):
+	if body.is_in_group("Arrow"):
 		print("Estoy dentro!")
 		if pregunta!=1 || pregunta!=4:
 			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
@@ -181,10 +185,11 @@ func _on_area_stalfos_b_body_entered(body):
 	pass
 
 
-func _on_area_stalfos_a_body_entered(body):
-	if body.is_in_group("shoot"):
-		print("Estoy dentro!")
+func _on_area_s_aprueba_area_entered(area):
+	if area.is_in_group("Arrow"):
+		print(pregunta)
 		if pregunta==1:
+			print("estamos en pregunta 1")
 			DialogueManager.show_dialogue_balloon(load("res://shooterCorrecto.dialogue"),"start")
 			timerReset()
 			cambiarPregunta()
@@ -193,4 +198,3 @@ func _on_area_stalfos_a_body_entered(body):
 			timerReset()
 			Global.vida-=1
 			cambiarPregunta()
-	pass

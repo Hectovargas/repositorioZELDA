@@ -1,12 +1,11 @@
 class_name Arrow extends Area2D
 
-var speed = 300
+var speed = 230
 
 func _ready():
 	add_to_group("Arrow")
 
 func _physics_process(delta):
-
 	position -= transform.y*speed*delta
 
 func _on_body_entered(body):
