@@ -22,3 +22,8 @@ func _on_area_2d_body_entered(body):
 		die()
 	get_tree().change_scene_to_file("res://mazmorra con ruleta.tscn")
 
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("arrow"):
+		print("watch out!")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cif780fnx86pe"]
+[gd_scene load_steps=40 format=3 uid="uid://cif780fnx86pe"]
 
 [ext_resource type="Texture2D" uid="uid://oml6xr4snk4u" path="res://RECURSO DE VIDEO E IMAGENES/Inner.png" id="1_5hk51"]
 [ext_resource type="Script" path="res://shooter_politica.gd" id="1_mk6v4"]
@@ -7113,6 +7113,9 @@ radius = 11.0
 font_size = 36
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7738"]
+size = Vector2(59, 59)
+
 [node name="Shooter(Politica)" type="Node2D"]
 script = ExtResource("1_mk6v4")
 
@@ -7141,6 +7144,7 @@ position = Vector2(460, 61)
 scale = Vector2(3.5, 3.5)
 
 [node name="AreaStalfosA" type="Area2D" parent="StalfoA"]
+disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfoA/AreaStalfosA"]
 shape = SubResource("CircleShape2D_0mumn")
@@ -7157,6 +7161,7 @@ position = Vector2(604, 58)
 scale = Vector2(3.5, 3.5)
 
 [node name="AreaStalfosB" type="Area2D" parent="StalfosB"]
+disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosB/AreaStalfosB"]
 shape = SubResource("CircleShape2D_scwni")
@@ -7173,6 +7178,7 @@ position = Vector2(742, 65)
 scale = Vector2(3.5, 3.5)
 
 [node name="AreaStalfosC" type="Area2D" parent="StalfosC"]
+disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosC/AreaStalfosC"]
 shape = SubResource("CircleShape2D_bmqkg")
@@ -7189,6 +7195,7 @@ position = Vector2(908, 62)
 scale = Vector2(3.5, 3.5)
 
 [node name="AreaStalfosD" type="Area2D" parent="StalfosD"]
+disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StalfosD/AreaStalfosD"]
 shape = SubResource("CircleShape2D_en3b4")
@@ -7246,6 +7253,14 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_68yx2")
 
+[node name="AreaSAprueba" type="Area2D" parent="."]
+position = Vector2(463, 233)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSAprueba"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_m7738")
+
 [connection signal="body_entered" from="StalfoA/AreaStalfosA" to="." method="_on_area_stalfos_a_body_entered"]
 [connection signal="body_entered" from="StalfosB/AreaStalfosB" to="." method="_on_area_stalfos_b_body_entered"]
 [connection signal="area_entered" from="StalfosC/AreaStalfosC" to="." method="_on_area_stalfos_c_area_entered"]
@@ -7254,3 +7269,4 @@ label_settings = SubResource("LabelSettings_68yx2")
 [connection signal="area_entered" from="AreaSalida" to="." method="_on_area_salida_area_entered"]
 [connection signal="body_entered" from="AreaSalida" to="." method="_on_area_salida_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="AreaSAprueba" to="." method="_on_area_s_aprueba_area_entered"]
