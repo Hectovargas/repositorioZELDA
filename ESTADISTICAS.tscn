@@ -78,6 +78,7 @@ label_settings = SubResource("LabelSettings_reumc")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar"]
 z_index = 10
+layout_mode = 0
 offset_left = 89.0
 offset_top = 2.0
 offset_right = 112.0
@@ -176,6 +177,7 @@ texture = ExtResource("10_xx104")
 
 [node name="ProgressBar2" type="ProgressBar" parent="NinePatchRect"]
 self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
 offset_left = 267.0
 offset_top = 141.0
 offset_right = 356.0
@@ -184,6 +186,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 fill_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar2"]
+layout_mode = 0
 offset_left = -5.0
 offset_top = -55.0
 offset_right = 95.0
@@ -191,6 +194,7 @@ offset_bottom = -6.0
 tab_size = 1
 
 [node name="Label" type="Label" parent="NinePatchRect/ProgressBar2"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 276.0
 offset_right = 90.0
@@ -200,6 +204,7 @@ label_settings = SubResource("LabelSettings_reumc")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar2"]
 z_index = 10
+layout_mode = 0
 offset_left = 89.0
 offset_top = 2.0
 offset_right = 112.0
@@ -298,6 +303,7 @@ texture = ExtResource("10_xx104")
 
 [node name="ProgressBar3" type="ProgressBar" parent="NinePatchRect"]
 self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
 offset_left = 484.0
 offset_top = 143.0
 offset_right = 572.0
@@ -306,6 +312,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 fill_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar3"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = -59.0
 offset_right = 91.0
@@ -313,6 +320,7 @@ offset_bottom = -8.0
 tab_size = 1
 
 [node name="Label" type="Label" parent="NinePatchRect/ProgressBar3"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 276.0
 offset_right = 90.0
@@ -322,6 +330,7 @@ label_settings = SubResource("LabelSettings_reumc")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar3"]
 z_index = 10
+layout_mode = 0
 offset_left = 89.0
 offset_top = 2.0
 offset_right = 112.0
@@ -420,6 +429,7 @@ texture = ExtResource("10_xx104")
 
 [node name="ProgressBar4" type="ProgressBar" parent="NinePatchRect"]
 self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
 offset_left = 696.0
 offset_top = 141.0
 offset_right = 781.0
@@ -428,6 +438,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 fill_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar4"]
+layout_mode = 0
 offset_left = -2.0
 offset_top = -57.0
 offset_right = 88.0
@@ -435,6 +446,7 @@ offset_bottom = -3.0
 tab_size = 1
 
 [node name="Label" type="Label" parent="NinePatchRect/ProgressBar4"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 276.0
 offset_right = 90.0
@@ -444,6 +456,7 @@ label_settings = SubResource("LabelSettings_reumc")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar4"]
 z_index = 10
+layout_mode = 0
 offset_left = 89.0
 offset_top = 2.0
 offset_right = 112.0
@@ -542,6 +555,7 @@ texture = ExtResource("10_xx104")
 
 [node name="ProgressBar5" type="ProgressBar" parent="NinePatchRect"]
 self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
 offset_left = 915.0
 offset_top = 143.0
 offset_right = 1006.0
@@ -550,6 +564,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 fill_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/ProgressBar5"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = -62.0
 offset_right = 99.0
@@ -557,6 +572,7 @@ offset_bottom = -2.0
 tab_size = 1
 
 [node name="Label" type="Label" parent="NinePatchRect/ProgressBar5"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 276.0
 offset_right = 90.0
@@ -566,6 +582,7 @@ label_settings = SubResource("LabelSettings_reumc")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect/ProgressBar5"]
 z_index = 10
+layout_mode = 0
 offset_left = 89.0
 offset_top = 2.0
 offset_right = 112.0
@@ -663,6 +680,7 @@ scale = Vector2(0.12951, 0.111111)
 texture = ExtResource("10_xx104")
 
 [node name="TextureButton2" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 525.0
 offset_right = 245.0
