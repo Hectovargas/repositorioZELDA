@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2ma4r060laao"]
+
+[ext_resource type="Script" path="res://enemyshooter.gd" id="1_cyxig"]
+[ext_resource type="Texture2D" uid="uid://bw1wj0a0g7bov" path="res://Sprites/Stalfos.png" id="1_n2oo8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwstx"]
+atlas = ExtResource("1_n2oo8")
+region = Rect2(8, 93, 31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl8wo"]
+atlas = ExtResource("1_n2oo8")
+region = Rect2(39, 93, 31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgqc3"]
+atlas = ExtResource("1_n2oo8")
+region = Rect2(70, 93, 31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6mdj"]
+atlas = ExtResource("1_n2oo8")
+region = Rect2(101, 93, 31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryx4d"]
+atlas = ExtResource("1_n2oo8")
+region = Rect2(147, 320, 49, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntu2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwstx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl8wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgqc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6mdj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryx4d")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jk584"]
+radius = 13.0
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i74ne"]
+size = Vector2(32, 55)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["enemy", "enemy2", "enemy3", "enemy4", "enemy5"]]
+position = Vector2(105, 27)
+script = ExtResource("1_cyxig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(1.27419, 1.43103)
+sprite_frames = SubResource("SpriteFrames_ntu2j")
+animation = &"new_animation"
+autoplay = "default"
+frame_progress = 0.686054
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_jk584")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_i74ne")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

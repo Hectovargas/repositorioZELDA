@@ -64,3 +64,6 @@ var trajeantifrio = false;
 var trajeanticalor = false;
 var bootsvelocidad = false;
 var supervelicidad = false;
+var incorrecto = false
+var conshoo = 0
+var correcto = false
